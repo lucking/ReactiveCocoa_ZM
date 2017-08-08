@@ -17,9 +17,10 @@ http://stackoverflow.com/questions/36147625/xcode-7-3-cannot-create-weak-referen
 3.编程思想
 
 ReactiveCocoa结合了几种编程风格：
-1）函数式编程（Functional Programming）：使用高阶函数，例如函数用其他函数作为参数。
-2）响应式编程（Reactive Programming）：关注于数据流和变化传播。
-3）所以，你可能听说过ReactiveCocoa被描述为函数响应式编程（FRP）框架。
+
+1、函数式编程（Functional Programming）：使用高阶函数，例如函数用其他函数作为参数。
+2、响应式编程（Reactive Programming）：关注于数据流和变化传播。
+3、所以，你可能听说过ReactiveCocoa被描述为函数响应式编程（FRP）框架。
 以后使用RAC解决问题，就不需要考虑调用顺序，直接考虑结果，把每一次操作都写成一系列嵌套的方法中，使代码高聚合，方便管理。
 
 4.底层原理
@@ -34,9 +35,10 @@ ReactiveCocoa结合了几种编程风格：
 说明：一般表示将来有数据传递，只要有数据改变，信号内部接收到数据，就会马上发出数据。
 
 事件类型:
-1.next：发送数据到下一个管道
-2.error：发送数据失败
-3.completed：发送数据完成
+
+1、next：发送数据到下一个管道
+2、error：发送数据失败
+3、completed：发送数据完成
 
 
 用法：需要订阅不同的事件类型才能发挥作用，即调用下面这些实例方法
@@ -69,15 +71,22 @@ return @(value.length);
 
 // RACSignal使用步骤：
 // 1.创建信号 + (RACSignal *)createSignal:(RACDisposable * (^)(id<RACSubscriber> subscriber))didSubscribe
+
 // 2.订阅信号,才会激活信号. - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock
+
 // 3.发送信号 - (void)sendNext:(id)value
 
 // RACSignal底层实现：
 // 1.创建信号，首先把didSubscribe保存到信号中，还不会触发。
+
 // 2.当信号被订阅，也就是调用signal的subscribeNext:nextBlock
+
 // 2.2 subscribeNext内部会创建订阅者subscriber，并且把nextBlock保存到subscriber中。
+
 // 2.1 subscribeNext内部会调用siganl的didSubscribe
+
 // 3.siganl的didSubscribe中调用[subscriber sendNext:@1];
+
 // 3.1 sendNext底层其实就是执行subscriber的nextBlock
 
 
