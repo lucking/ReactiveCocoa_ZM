@@ -23,18 +23,22 @@ ReactiveCocoa结合了几种编程风格：
 
 4.底层原理
 
-      1、运用的是Hook（钩子）思想，Hook是一种用于改变API(应用程序编程接口：方法)执行结果的技术.
-      2、Hook用处：截获API调用的技术。
-      3、Hook原理：在每次调用一个API返回结果之前，先执行你自己的方法，改变结果的输出。
+    1、运用的是Hook（钩子）思想，Hook是一种用于改变API(应用程序编程接口：方法)执行结果的技术.
+    2、Hook用处：截获API调用的技术。
+    3、Hook原理：在每次调用一个API返回结果之前，先执行你自己的方法，改变结果的输出。
 
 
 信号（signal）— RACSignal类
 本质：是一种流（流是值的序列化的抽象）
 说明：一般表示将来有数据传递，只要有数据改变，信号内部接收到数据，就会马上发出数据。
+
 事件类型:
-        next：发送数据到下一个管道
-        error：发送数据失败
-        completed：发送数据完成
+   
+next：发送数据到下一个管道
+error：发送数据失败
+completed：发送数据完成
+
+
 用法：需要订阅不同的事件类型才能发挥作用，即调用下面这些实例方法
 - (RACDisposable *)subscribeNext:(void (^)(id x))nextBlock;
 - (RACDisposable *)subscribeError:(void (^)(NSError *error))errorBlock;
