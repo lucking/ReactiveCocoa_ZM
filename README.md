@@ -18,11 +18,10 @@ http://stackoverflow.com/questions/36147625/xcode-7-3-cannot-create-weak-referen
 
 ReactiveCocoa结合了几种编程风格：
 
-1、函数式编程（Functional Programming）：使用高阶函数，例如函数用其他函数作为参数。 \n
+
+1、函数式编程（Functional Programming）：使用高阶函数，例如函数用其他函数作为参数。.
 2、响应式编程（Reactive Programming）：关注于数据流和变化传播。
-
 3、所以，你可能听说过ReactiveCocoa被描述为函数响应式编程（FRP）框架。
-
 以后使用RAC解决问题，就不需要考虑调用顺序，直接考虑结果，把每一次操作都写成一系列嵌套的方法中，使代码高聚合，方便管理。
 
 
