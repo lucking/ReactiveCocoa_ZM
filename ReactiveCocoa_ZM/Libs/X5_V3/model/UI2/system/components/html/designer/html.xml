@@ -1,0 +1,986 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="a" tag-name="a" icon="a.gif" text="链接" 
+		 	
+		component-class="A" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-text"/>  
+			<property name="accessKey" text="快捷键" />
+			<property name="class" text="class" />
+			<property name="charset" text="字符集名称" />
+			<property name="coords" text="坐标" />
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="href" text="URL" />
+			<property name="hreflang" text="ISO语言代码" />
+			<property name="lang" text="语言代码" />
+			<property name="name" text="名称" />
+			<property name="rel" text="当前文档与目标URL之间的关系" />
+			<property name="rev" text="目标URL与当前文档之间的关系" />
+			<property name="shape" text="形状" editor-ref="edit-a-shape" default-text="default"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="target" text="在何处打开目标URL" editor-ref="edit-a-target"/>
+			<property name="text" text="内容" path="text()"/>
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="type" text="MIME编码类型" />
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>			
+		</properties>
+			
+		<property-editors>
+			<property-editor name="edit-a-shape" type="list">
+				<static-data value="default,rect,circle,poly" />
+			</property-editor>
+			<property-editor name="edit-a-target" type="list">
+				<static-data value=",_blank,_parent,_self,_top" />
+			</property-editor>
+		</property-editors>
+
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <a>link</a>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="select" tag-name="select" icon="select.gif" text="下拉列表" 
+		 	
+		component-class="Select" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="class" text="class" editor-extend-data="select:select"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="multiple" text="是否多选" editor-ref="edit-multiple" readonly="true" />
+			<property name="name" text="名称" />
+			<property name="size" text="可见选项的数目" data-type="integer" default-value="1"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="edit-multiple" type="list">
+				<static-data value=":false,multiple:true" />
+			</property-editor>
+		</property-editors>
+
+		<events>
+			<event name="bind-change"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+
+		<toolbar>
+			<item text="编辑选项"  method="editOptionData" />
+		</toolbar>	
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <select></select>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="textarea" tag-name="textarea" icon="textarea.gif" text="文本域" 
+		 	
+		component-class="Textarea" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-text"/>  
+			<property name="accessKey" text="快捷键" />
+			<property name="class" text="class" editor-extend-data="textarea:textarea"/>
+			<property name="cols" data-type="integer" default-value="5" text="文本区可见宽度" />  
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="rows" data-type="integer" default-value="5" text="文本区可见行数" />   
+			<property name="text" text="文本区的内容" path="text()"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/> 
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+		</property-editors>
+
+		<events>
+			<event name="bind-change"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <textarea cols="5" rows="5"></textarea>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="image" tag-name="img" icon="img.gif" text="图像" 
+		 	
+		component-class="Image" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="align" text="对齐方式" editor-ref="edit-img-align"/>
+			<property name="alt" text="图像文本" />
+			<property name="border" text="边框" data-type="integer"/>  
+			<property name="class" text="class" />
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="height" text="高度" />
+			<property name="hspace" text="左侧和右侧的空白" />
+			<property name="ismap" text="定义作为服务器端图像映射的一幅图像(URL)" />
+			<property name="lang" text="语言代码" />
+			<property name="longdesc" text="指向包含长的图像描述文档的 URL" />
+			<property name="name" text="名称" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="usemap" text="定义作为客户端图像映射的一幅图像(URL)" />
+			<property name="vspace" text="顶部和底部的空白" />
+			<property name="width" text="高度" />
+			<property name="xml:lang" text="XHTML语言代码" />
+			<property name="bind-attr-src"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+			<property-editor name="edit-img-align" type="list">
+				<static-data value="bottom,left,middle,right,top" />
+			</property-editor>
+		</property-editors>
+
+		<events>
+		   <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*[@name!='focus']"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <img src="" alt=""></img>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="hideinput" tag-name="input" icon="hidden.gif" text="隐藏表单" 
+		 	
+		discriminate-condition="@type=hidden"
+		component-class="Hidden" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-input:input"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<event name="bind-change"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="hidden" value=""></input>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	<element name="radio" tag-name="input" icon="radio.gif" text="单选按钮" 
+		 	
+		discriminate-condition="@type=radio"
+		component-class="Radio" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-radio:radio"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<event name="bind-change"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="radio" value="" name=""></input>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="checkbox" tag-name="input" icon="checkbox.gif" text="复选框" 
+		 	
+		discriminate-condition="@type=checkbox"
+		component-class="CheckBox" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-checkbox:checkbox"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<event name="bind-change"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="checkbox" value="" name=""></input>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="password" tag-name="input" icon="password.gif" text="密码输入框" 
+		 	
+		discriminate-condition="@type=password"
+		component-class="Password" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-input:input"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<event name="bind-change"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="password" value=""></input>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="file" tag-name="input" icon="file.gif" text="文件选择" 
+		 	
+		discriminate-condition="@type=file"
+		component-class="File" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-input:input"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<event name="bind-change"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="file" value=""></input>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="input" tag-name="input" icon="text.gif" text="文本框" 
+		 	
+		discriminate-condition="@type=text or notHasAttribute('type')=true"
+		component-class="Text" component-type="html"  >
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-input:input"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<event name="bind-change"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="text" value=""></input>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="submit" tag-name="input" icon="submit.gif" text="提交按钮" 
+		 	
+		discriminate-condition="@type=submit"
+		component-class="Submit" component-type="html"  >
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-button:button"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="submit" value="submit"></input>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="reset" tag-name="input" icon="submit.gif" text="重置按钮" 
+		 	
+		discriminate-condition="@type=reset"
+		component-class="Reset" component-type="html"  >
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-button:button"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="reset" value="reset"></input>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="input_button" tag-name="input" icon="button.gif" text="普通按钮" 
+		 	
+		discriminate-condition="@type=button"
+		component-class="InputButton" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-value"/>  
+			<property name="accept" text="规定通过文件上传来提交的文件的类型" />  			
+			<property name="accessKey" text="快捷键" />
+			<property name="align" text="对齐方式" editor-ref="edit-input-align"/>
+			<property name="alt" text="文本" />
+			<property name="checked" text="文本" />
+			<property name="class" text="class" editor-extend-data="xui-button:button"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="lang" text="语言代码" />
+			<property name="maxlength" text="字符最大长度" data-type="integer" />
+			<property name="name" text="名称" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" readonly="true"/>
+			<property name="size" text="字段的宽度" data-type="integer" default-value="20" />
+			<property name="src" text="图像URL" editor-ref="imgDialog" editor-parameter="*.*;*.gif;*.jpg;*.png;*.jpeg;*.bmp"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="value" text="值" />  
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="imgDialog" type="dialog" class-name="EditSrcPage"/>
+		</property-editors>
+
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <input type="button" value="button"></input>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="div" tag-name="div" icon="div.gif" text="div"  component-class="Div"  canAddChild="true"
+		 component-type="layout-container"  >
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="align" text="对齐方式" editor-ref="edit-div-align"/> 
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0common": {
+						label: "常用",
+						value: "x-full",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="lang" text="语言代码" />
+			<property name="style" text="样式" editor-ref="styleDialog"/>  
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<property-editors>
+			<property-editor name="edit-div-align" type="list">
+				<static-data value="left,right,center,justify" />
+			</property-editor>
+		</property-editors>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <div></div>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+
+	<element name="ol" tag-name="ol" icon="span.gif" text="ol" canAddChild="true"
+		 	
+		 component-class="UL"  child-range="li"
+		 component-type="layout-container"  >
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="class" text="class" editor-extend-data="xui-ul:ul"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="lang" text="语言代码" />
+			<property name="style" text="样式" editor-ref="styleDialog"/>  
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <ol></ol>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="ul" tag-name="ul" icon="span.gif" text="ul" canAddChild="true"
+		 	
+		 component-class="UL"  child-range="li"
+		 component-type="layout-container"  >
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="class" text="class" editor-extend-data="xui-ul:ul"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="lang" text="语言代码" />
+			<property name="style" text="样式" editor-ref="styleDialog"/>  
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <ul></ul>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+
+	<element name="li" tag-name="li" icon="span.gif" text="li" canAddChild="true"
+		 	
+		 component-class="Li"  parent-range="ul"
+		 component-type="layout-container"  >
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="class" text="class" editor-extend-data="xui-li:li"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="lang" text="语言代码" />
+			<property name="style" text="样式" editor-ref="styleDialog"/>  
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <li></li>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="span" tag-name="span" icon="span.gif" text="span"  canAddChild="true"
+		 component-type="layout-container"  >
+		<properties>
+			<property name="bind-text"/>  
+		    <property name="text" text="文本" path="text()"/>    
+			<property name="style" text="样式" editor-ref="styleDialog"/> 
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <span></span>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+
+	<element name="p" tag-name="p" icon="span.gif" text="p"   canAddChild="true"
+		 component-type="layout-container"  >
+		<properties>
+			<property name="style" text="样式" editor-ref="styleDialog"/> 
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <p></p>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+
+	<element name="i" tag-name="i" icon="img.gif" text="i"   canAddChild="false">
+		<properties>
+			<property name="class" text="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/> 
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <i></i>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+
+	<element name="fieldset" tag-name="fieldset" icon="div.gif" text="fieldset"  canAddChild="true"
+		 component-type="layout-container"  >
+		<properties>
+			<property name="legend" path="legend/text()" text="标题"/> 
+			<property name="align" text="对齐方式" editor-ref="edit-div-align"/> 
+			<property name="class" text="class" editor-extend-data="xui-container:container"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="lang" text="语言代码" />
+			<property name="style" text="样式" editor-ref="styleDialog"/>  
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <fieldset><legend/></fieldset>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="label" tag-name="label" icon="label.gif" text="htmlLabel" 
+		 	
+		 component-class="HtmlLabel"
+		 component-type="html"  >
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-text"/>  
+			<property name="class" text="class" editor-extend-data="xui-label:label"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="for" text="绑定元素ID" />
+			<property name="lang" text="语言代码" />
+			<property name="style" text="样式" editor-ref="styleDialog"/>  
+			<property name="text" text="文本" path="text()"/>    
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <label>label</label>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="script" tag-name="script" icon="htmlScript.png" text="js脚本" display-property="src"
+		 >
+		<properties>
+			<property name="src" text="文件路径" editor-ref="fileTreeDialog" editor-parameter=".js#true#false" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		      <script> 
+		      </script> 
+		   ]]></template>
+		</templates>
+	</element>
+	
+	
+	<element name="link" tag-name="link" icon="htmlScript.png" text="css样式表"  display-property="href"
+		 >
+		<properties>
+			<property name="href" text="文件路径" editor-ref="fileTreeDialog" editor-parameter=".css#true#false" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		      <link rel="stylesheet" type="text/css">
+		       </link>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="h1" tag-name="h1" icon="span.gif" text="h3" 
+		 	
+		 component-class="HX"
+		 component-type="layout-container"  >
+		<properties>
+		    <property name="bind-text"/>  
+		    <property name="text" text="文本" path="text()"/>    
+			<property name="style" text="样式" editor-ref="styleDialog"/> 
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <h1>h1</h1>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="h2" tag-name="h2" icon="span.gif" text="h3" 
+		 	
+		 component-class="HX"
+		 component-type="layout-container"  >
+		<properties>
+		     <property name="bind-text"/>
+		     <property name="text" text="文本" path="text()"/>    
+			<property name="style" text="样式" editor-ref="styleDialog"/> 
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <h2>h2</h2>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="h3" tag-name="h3" icon="span.gif" text="h3" 
+		 	
+		 component-class="HX"
+		 component-type="layout-container"  >
+		<properties>
+		     <property name="bind-text"/>
+		     <property name="text" text="文本" path="text()"/>    
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/> 
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <h3>h3</h3>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+
+	<element name="h4" tag-name="h4" icon="span.gif" text="h3" 	
+		 component-class="HX"
+		 component-type="layout-container"  >
+		<properties>
+		     <property name="bind-text"/>
+		     <property name="text" text="文本" path="text()"/>    
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/> 
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <h4>h4</h4>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="h5" tag-name="h5" icon="span.gif" text="h3" 	
+		 component-class="HX"
+		 component-type="layout-container"  >
+		<properties>
+		     <property name="bind-text"/>
+		     <property name="text" text="文本" path="text()"/>    
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/> 
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <h5>h5</h5>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="button" tag-name="button" icon="button.gif" text="按钮" 
+		 	
+		 component-class="Button" component-type="html">
+		<properties>
+			<property name="xid" text="编号" />
+			<property name="bind-text"/>  
+			<property name="bind-value"/>  
+			<property name="accessKey" text="快捷键" />
+			<property name="class" text="class" editor-extend-data="xui-button:button"/>
+			<property name="dir" editor-ref="edit-dir" text="文本方向" />
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" readonly="true"/>
+			<property name="for" text="绑定元素ID" />
+			<property name="lang" text="语言代码" />
+			<property name="name" text="名称" />
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="text" text="文本" path="text()"/>    
+			<property name="title" text="额外信息(可在工具提示中显示)"/>
+			<property name="type" text="按钮的类型" editor-ref="edit-button-type"/>
+			<property name="value" text="值" />
+			<property name="xml:lang" text="XHTML语言代码" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<property-editors>
+			<property-editor name="edit-button-type" type="list">
+				<static-data value="button,reset,submit" />
+			</property-editor>
+		</property-editors>
+
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <button>button</button>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+</elements>

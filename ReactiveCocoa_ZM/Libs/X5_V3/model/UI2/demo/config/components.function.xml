@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root> 
+  <item label="组件" iconClass="icon-ios7-browsers"> 
+    <item label="model" process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="/system/components/justep/model/demo/model.a" display="solid"/>  
+    <item label="data" process="/demo/components/process/grid/gridProcess" activity="mainActivity"
+      url="/system/components/justep/data/demo/base.a"/> 
+    <item label="contents" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/contents/demo/contents.a"/>  
+    <item label="carousel" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/bootstrap/carousel/demo/base.a"/>  
+    <item label="panel" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/panel/demo/panel.a"/>  
+    <item label="grid 9" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/bootstrap/row/demo/grid.a"/>  
+    <item label="scrollView" process="/demo/components/process/grid/gridProcess"
+      activity="mainActivity" url="/system/components/justep/scrollView/demo/list/demo.a"/>  
+    <item label="row" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/row/demo/base.a"/>  
+    <item label="popOver" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/popOver/demo/base.a"/>  
+    <item label="popMenu" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/popMenu/demo/popMenu.a"/>
+    <item label="wing" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/wing/demo/wing.a"/> 
+    <item label="windowContainer" process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="/system/components/justep/windowContainer/demo/main.a" display="solid"/>
+    <item label="input" process="/demo/components/process/grid/gridProcess"
+      activity="mainActivity" url="/system/components/justep/input/demo/input.a"/>  
+    <item label="range" process="/demo/components/process/ui2/ui2Process"
+      display="solid" activity="mainActivity" url="/system/components/justep/input/demo/range.a"/>  
+    <item label="output" process="/demo/components/process/ui2/ui2Process"
+      display="solid" activity="mainActivity" url="/system/components/justep/output/demo/output.a"/>  
+    <item label="textarea" process="/demo/components/process/ui2/ui2Process"
+      display="solid" activity="mainActivity" url="/system/components/justep/textarea/demo/textarea.a"/>  
+    <item label="button" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/button/demo/button.a"/>  
+    <item label="toggle" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/button/demo/toggle.a"/>  
+    <item label="radio" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/button/demo/radio.a"/>  
+    <item label="checkbox" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/button/demo/checkbox.a"/>  
+    <item label="select" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/select/demo/select.a"/>  
+    <item label="labelEdit" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/labelEdit/demo/demo.a"/>  
+    <item label="list" process="/demo/components/process/org/orgProcess" activity="mainActivity"
+      url="/system/components/justep/list/demo/list.a"/>  
+    <item label="controlGroup" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/controlGroup/demo/demo.a"/>  
+    <item label="menu" process="/demo/components/process/grid/gridProcess" activity="mainActivity"
+      url="/system/components/justep/menu/demo/base.a"/>  
+    <item label="messageDialog" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/messageDialog/demo/demo.a"/>
+    <item label="windowDialog" process="/demo/components/process/ui2/ui2Process" display="solid"
+      activity="mainActivity" url="/system/components/justep/windowDialog/demo/demo.a"/>
+    <item label="硬件能力(cordova)" process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="/system/components/justep/cordova/demo/www/index.a" display="solid"/>
+    <item label="barcodeImage" process="/demo/components/process/ui2/ui2Process" activity="mainActivity"
+      url="/system/components/justep/barcode/demo/demoBarcodeImage.a" display="solid"/>  
+  </item>  
+</root>

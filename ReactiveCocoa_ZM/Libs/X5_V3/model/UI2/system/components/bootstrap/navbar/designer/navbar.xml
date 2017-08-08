@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/navbar/navbar" tag-type="rich" tag-name="div" icon="navbar.png" text="工具条"  
+	    binding-component="$UI/system/components/bootstrap/navbar/navbar" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="title" text="标题" required="false" editor-discriptor-ref=""/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "navbar"
+					} 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<nav class="navbar navbar-default" component="$UI/system/components/bootstrap/navbar/navbar">
+			  <div class="container-fluid">
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			        <span class="sr-only">Toggle navigation</span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			      </button>
+			      <a class="navbar-brand" href="#">Title</a>
+			    </div>
+			
+			    <div class="collapse navbar-collapse">
+			    </div>
+			  </div>
+			</nav>		    
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+</elements>

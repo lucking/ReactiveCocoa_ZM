@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="default" tag-name="*" icon="element.gif" visible="false"
+	  component-class="Default">
+ 
+		<toolbar>
+			<item text="左对齐" method="leftAlign" icon="align_h_left.gif"/>
+			<item text="右对齐" method="rightAlign" icon="align_h_right.gif"/>
+			<item text="上对齐" method="topAlign" icon="align_v_top.gif"/>
+			<item text="下对齐" method="bottomAlign" icon="align_v_bottom.gif"/>
+			<item text="水平中心对齐" method="horizontalCenterAlign" icon="align_h_centers.gif"/>
+			<item text="垂直中心对齐" method="verticalCenterAlign" icon="align_v_centers.gif"/>
+			<item text="水平等间距" method="horizontalSpaceEqually" icon="align_h_space.gif"/>
+			<item text="垂直等间距" method="verticalSpaceEqually" icon="align_v_space.gif"/>
+			<item text="复制宽度" method="replicateWidth" icon="align_width.gif"/>
+			<item text="复制高度" method="replicateHeight" icon="align_height.gif"/>
+			<item text="水平中间" method="horizontalCenter" icon="align_h_center.gif"/>
+			<item text="垂直中间" method="verticalCenter" icon="align_v_center.gif"/>
+		</toolbar>
+	</element>
+</elements>

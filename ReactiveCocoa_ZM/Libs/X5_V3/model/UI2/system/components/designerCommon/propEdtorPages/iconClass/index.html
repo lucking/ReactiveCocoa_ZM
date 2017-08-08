@@ -1,0 +1,51 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html style="height:100%;width:100%;padding:0px;margin:0px;">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	    <script src="json.js"></script>
+	 <script>
+	     var eventInfo = {};
+	     var background = callJava(JSON.stringify({event:"getBackground"}));
+	     
+	     /**java端調用方法设置样式数据**/
+	     function init(filePath,currentValue,cssItems){
+	    	  if(window.frames["cssIframe"].init){
+			      window.frames["cssIframe"].init(filePath,currentValue,cssItems);
+	    	  }
+	     }
+	     
+	     function reload(){ 
+	    	 window.frames["cssIframe"].location.reload()
+	     }
+          
+	     /**java端调用的方法获取数据**/
+	     function getEventInfo(){
+	    	return JSON.stringify(eventInfo);
+	     }
+	     
+	     /**java端点击确定后调用的方法**/
+	     function getValue(){ 
+	         eventInfo.event = "getValue"; 
+	         eventInfo.data = ""; 
+	         if(window.frames["cssIframe"].getValue){
+	        	 eventInfo.data = window.frames["cssIframe"].getValue(); 
+	         }
+	         callJava(JSON.stringify(eventInfo));
+	     }
+	     
+	     /**页面加载完调用的方法**/
+	     function ifameLoad(){
+	    	 window.frames["cssIframe"].document.body.style.background = background;
+	    	 window.frames["cssIframe"].document.getElementById("head").style.background = background;
+	     
+	         eventInfo.event = "afterInit";
+	         callJava(JSON.stringify(eventInfo));
+	     }
+	 
+	 </script>
+	</head>
+	<body scroll="no" style="overflow:hidden;cursor:default;margin:0;width:100%;height:100%;overflow:hidden;padding:0px;background:#ECE9D"    > 
+        <iframe name="cssIframe" onload="ifameLoad();" frameborder="no" border="0" marginwidth="0" marginheight="0"  style='border:0px;width:100%;height:100%;' src="content.html"></iframe>    
+	</body>
+</html>

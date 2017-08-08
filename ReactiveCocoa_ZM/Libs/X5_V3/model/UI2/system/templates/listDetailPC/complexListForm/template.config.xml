@@ -1,0 +1,14 @@
+<template text="主从表" desc="列表（主表）+详细（从表）">
+	<images>
+		<image src="main.png" />
+		<image src="detail.png" />
+	</images>
+
+	<items file="template/complexListForm.w">
+		<item text="主数据" configPage="$UI/system/templates/common/mainData.w" />
+		<item text="主表视图" configPage="$UI/system/templates/common/formView.w" />
+		<item text="从表视图" configPage="$UI/system/templates/common/detailView.w" />
+		<item file="template/complexListForm.js" />
+		<item file="template/complexListForm.css" />
+	</items>
+</template>

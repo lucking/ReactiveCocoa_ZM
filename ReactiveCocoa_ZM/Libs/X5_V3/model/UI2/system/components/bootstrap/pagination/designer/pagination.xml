@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/pagination/pagination" tag-type="rich" tag-name="div" icon="pagination.png" text="工具条"  
+	    binding-component="$UI/system/components/bootstrap/pagination/pagination" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>
+			<property name="data" text="引用数据" required="true"  editor-ref="dataPropDlg" is-id-ref="true"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "pagination"
+					},
+					"1align": {
+						label: "对齐方式",
+						value: "pull-left|pull-right"
+					}, 
+					"2size": {
+						label: "尺寸样式",
+						value: "pagination-lg|pagination-sm"
+					} 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[
+			<ul class="pagination" component="$UI/system/components/bootstrap/pagination/pagination">
+		        <li class="prev"><a href="#"><span aria-hidden="true">«</span><span class="sr-only">Previous</span></a></li>
+		        <li class="next"><a href="#"><span aria-hidden="true">»</span><span class="sr-only">Next</span></a></li>
+	      	</ul>		    
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

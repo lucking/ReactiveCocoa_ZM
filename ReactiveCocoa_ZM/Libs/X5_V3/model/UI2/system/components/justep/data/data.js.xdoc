@@ -1,0 +1,1598 @@
+/**
+	@name Data.Row
+	@url $UI/system/components/justep/data/data#Row
+	@class 
+	@extends Object
+	@extendurl $UI/system/lib/base/object
+	@category javascript
+	@description data的行数据对象
+	@model UI2
+**/
+
+/**
+	@name Data.Row#data
+	@property
+	@type Data 
+	@description <b>[filed][readonly]</b>行数据的data对象
+ */ 
+
+/**
+	@name Data.Row#parent
+	@function
+	@type Data.Row 
+	@description 行数据的parent对象，当是树形数据时有效
+ */ 
+
+/**
+	@name Data.Row#hasChildren
+	@function
+	@type Boolean 
+	@description 行数据是否有子数据
+ */ 
+
+/**
+ @name Data.Row#ref
+ @function
+ @param	{String} col 列名
+ @description 返回对应列的观察对象，主要用于感知组件的bind
+ @example
+  <xmp>
+    var row = this.comp('mainData').getCurrentRow();
+    row.ref('fName').get();//获取fName列的值
+    row.ref('fName').set('wang');//给fName列赋值
+  </xmp>  
+*/
+
+/**
+ @name Data.Row#val
+ @function
+ @param	{String} col 列名
+ @param	{String} value 值，可选参数，当没有这个参数时为取值
+ @description 对应列取值或者赋值
+ @example
+  <xmp>
+    var row = this.comp('mainData').getCurrentRow();
+    row.val('fName');//获取fName列的值
+    row.val('fName','wang');//给fName列赋值
+  </xmp>  
+*/
+
+/**
+ @name Data.Row#label
+ @function
+ @param	{String} col 列名
+ @description 对应列的显示名称，主要用于感知组件的bind
+ @example
+  <xmp>
+    var row = this.comp('mainData').getCurrentRow();
+    row.label('fName');//获取fName列的显示名称
+  </xmp>  
+*/
+
+/**
+ @name Data.Row#getID
+ @function
+ @description 获取当前行的ID
+*/
+
+/**
+	@name Data
+	@component $UI/system/components/justep/data/data
+	@extends ModelComponent
+	@extendurl $UI/system/lib/base/modelComponent
+	@description data组件
+	@model UI2
+	@example
+	<xmp>
+	数据刷新说明：
+		原则：
+			1、limit为-1时表示不分页加载数据，一次全部加载，反之
+			2、部分刷新函数提供“增量模式”参数，当使用“增量模式”时原修改数据不会覆盖，只是增加新刷新的数据
+			3、getCount()函数获取的是前端已经加载的记录数，getTotal()函数获取的是全部的记录数，包括分页没有加载的数据。getTotal()函数在refreshData或者loadData后可以使用
+ 		主要函数：
+ 			1、refreshData刷新首页或者全部数据，受limit影响
+			2、loadPageData加载指定页数据，limit!=-1时可以使用
+			3、loadNextPageData根据当前offset加载下一页数据，limit!=-1时可以使用
+			4、loadAllPageData分页时加载所有数据，limit!=-1时可以使用
+	数据新增案例参考：Data#newData
+	数据保存案例参考：Data#saveData
+	遍历当前.W中的Data案例参考：Data.each、Data.eachAll
+	统计函数参考：Data.Count、Data.Sum、Data.Avg、Data.Min、Data.Max
+	过滤条件设置参考：Data#setFilter
+	数据查找参考：Data#find
+	</xmp>
+*/	
+
+/**
+	@name Data.STATE
+	@constant
+	@type object 
+	@description data的状态常量
+	@example
+	  包括：Data.STATE.NEW、Data.STATE.DELETE、Data.STATE.EDIT、Data.STATE.NONE
+ */ 
+
+/**
+ @name Data#count
+ @function
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'source':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data的记录数，函数返回的是前端当前已经加载的数据的记录数，不包含分页还没有加载到前端的数据
+ @example
+  <xmp>
+    //统计mainData中记录数
+    var count = this.comp('mainData').count();
+    //统计mainData中fName姓“李”的记录数
+    var count = this.comp('mainData').count(function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name Data#sum
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'source':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的合计，函数返回的是前端当前已经加载记录的合计，不包含分页还没有加载到前端的数据，注意：返回的数值精度受js的number精度影响
+ @example
+  <xmp>
+    //统计mainData中年龄fAge合计
+    var sum = this.comp('mainData').sum('fAge');
+    //统计mainData中fName姓“李”的年龄fAge合计
+    var sum = this.comp('mainData').sum('fAge',function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name Data#avg
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'source':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的平均值，函数返回的是前端当前已经加载记录的平均值，不包含分页还没有加载到前端的数据，注意：返回的数值精度受js的number精度影响
+ @example
+  <xmp>
+    //统计mainData中年龄fAge平均值
+    var avg = this.comp('mainData').avg('fAge');
+    //统计mainData中fName姓“李”的年龄fAge平均值
+    var avg = this.comp('mainData').avg('fAge',function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name Data#min
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'source':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的最小值，函数返回的是前端当前已经加载记录的最小值，不包含分页还没有加载到前端的数据，注意：返回的数值精度受js的number精度影响
+ @example
+  <xmp>
+    //统计mainData中年龄fAge最小值
+    var min = this.comp('mainData').min('fAge');
+    //统计mainData中fName姓“李”的年龄fAge最小值
+    var avg = this.comp('mainData').min('fAge',function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+ @name Data#max
+ @function
+ @param	{string} column <b>[required]</b>进行统计的列
+ @param	{function} filterCallback 过滤的回调函数，需要返回boolean，为true时行有效，回调函数给出参数event，{'source':data对象，row：行}，缺省全部有效
+ @returns {number}
+ @description 获取data中指定列的最大值，函数返回的是前端当前已经加载记录的最大值，不包含分页还没有加载到前端的数据，注意：返回的数值精度受js的number精度影响
+ @example
+  <xmp>
+    //统计mainData中年龄fAge最大值
+    var min = this.comp('mainData').max('fAge');
+    //统计mainData中fName姓“李”的年龄fAge最大值
+    var avg = this.comp('mainData').max('fAge',function(ev){
+    	var v = ev.source.getValue('fName',ev.row);
+    	return v.indexOf('李')==0;
+    });
+  </xmp>  
+*/
+
+/**
+	@name Data#autoLoad
+	@property
+	@type boolean 
+	@description <b>[filed][readonly]</b>是否自动加载数据
+ */ 
+
+/**
+	@name Data#autoNew
+	@property
+	@type boolean 
+	@description <b>[filed][readonly]</b>是否自动新增数据
+ */ 
+
+/**
+	@name Data#xid
+	@property
+	@type string 
+	@description <b>[filed][readonly]</b>data的xid
+ */ 
+
+/**
+	@name Data#slaveDatas                                                                                   
+	@property 
+	@description 从data的id数组
+*/
+
+/**
+	@name Data#directDeleteMode
+	@property
+	@type boolean 
+	@description <b>[filed]</b>直接删除方式，删除时直接进行数据提交，当为false时删除记录将在saveData时统一提交
+ */ 
+ 
+/**
+	@name Data#confirmDelete
+	@property
+	@type boolean 
+	@description <b>[filed]</b>删除确认提示
+	@see Data#confirmDeleteText
+ */ 
+
+/**
+	@name Data#confirmDeleteText
+	@property
+	@type string 
+	@description <b>[filed]</b>删除确认提示文本
+	@see Data#confirmDelete
+ */ 
+
+/**
+	@name Data#confirmRefresh
+	@property
+	@type boolean 
+	@description <b>[filed]</b>数据修改后未保存刷新时的确认提示
+	@see Data#confirmRefreshText
+ */ 
+
+/**
+	@name Data#confirmRefreshText
+	@property
+	@type string 
+	@description <b>[filed]</b>未保存数据刷新确认提示文本
+	@see Data#confirmRefresh
+ */ 
+
+/**
+	@name Data#limit
+	@attribute
+	@type integer 
+	@description <b>[filed]</b>分页取数据的页记录数，等于-1时不执行分页一次取全部数据，运行时谨慎修改，会影响数据导航条分页取数据状态
+ */ 
+	
+/**
+	@name Data#filters
+	@property
+	@type {Filters}
+	@description <b>[filed]</b>数据过滤条件控制对象
+ */ 
+
+/**
+	@name Data#defCols
+	@property
+	@type {object}
+	@description data的列定义，是运行时data组件js对象上所有列的定义
+ */ 
+
+/**
+	@name Data#master                                                                                   
+	@attribute 
+	@description 主从关系
+	@example
+	<b>包括属性：</b>
+		data 主Data对象
+		column 关联关系
+	<b>xml格式：</b>
+	<xmp>
+		<master data="" column=""/>
+	</xmp>
+*/
+
+/**
+ @name Data#each
+ @function
+ @param	{function} callback 回调函数，执行回调函数的this是row对象
+ <br/><b>回调函数给出参数param格式：</b>
+<xmp>  
+ {
+	index: {integer} 行索引,
+	row: {Data.Row} 行对象,
+	cancel: {boolean} 是否忽略遍历,
+	parent: {Data.Row} 行的父对象，当树形数据时有效
+ }
+</xmp>
+ @description 遍历当前data的数据，如果是从Data，只遍历和主当前行相关的数据行
+ @example
+  <xmp>
+    var names = [];
+    this.comp('mainData').each(function(param){
+    	names.push(param.row.val('fName'));
+    });
+  </xmp>  
+*/
+
+/**
+ @name Data#eachAll
+ @function
+ @param	{function} callback 回调函数，执行回调函数的this是row对象
+ <br/><b>回调函数给出参数param格式：</b>
+<xmp>  
+ {
+	index: {integer} 行索引,
+	row: {Data.Row} 行对象,
+	cancel: {boolean} 是否忽略遍历,
+	parent: {Data.Row} 行的父对象，当树形数据时有效
+ }
+</xmp>
+ @description 遍历当前data的全部数据
+ @example
+  <xmp>
+    var names = [];
+    this.comp('mainData').eachAll(function(param){
+    	names.push(param.row.val('fName'));
+    });
+  </xmp>  
+*/
+
+/**
+ @name Data#getTreeOption
+ @function
+ @returns {object} 
+	<b>包括属性：</b>
+		isDelayLoad 数据分级加载，进入叶子节点进行数据加载 
+		parentRelation 父关系，形成父子树的父关系
+		rootFilter 根过滤条件，当设置时树形数据将按节点加载数据
+		nodeKindRelation 节点类型关系，data操作时使用指定relation自动记录是否叶子节点信息
+ @description 获取树的定义信息
+*/
+
+/**
+ @name Data#clear
+ @function
+ @description 清空data的所有数据，会触发data的onDataChanged事件
+*/
+
+/**
+ @name Data#buildFilter
+ @function
+ @returns {string}
+ @description 生成返回过滤字符串
+*/
+
+/**
+	@name Data#getReadonly
+	@function
+ 	@returns {boolean}
+	@description 返回data只读状态
+ */ 
+
+/**
+	@name Data#getColumnIDs
+	@function
+ 	@returns {string}
+	@description 返回使用','分隔的data所有列名
+ */ 
+
+/**
+ @name Data#getFilter
+ @function
+ @param {string} name <b>[required]</b>过滤名称
+ @returns {string}
+ @description 返回指定名称的过滤表达式
+*/
+
+/**
+ @name Data#setFilter
+ @function
+ @param {string} name <b>[required]</b>过滤名称
+ @param {string} filter <b>[required]</b>过滤表达式，标准的KSQL语法，如：SA_OPPerson.sName like '%李%'
+ @description 设置指定名称的过滤表达式，所有的过滤将按and连接
+ @example
+  <xmp>
+    var data = this.comp('mainData');
+    data.setFilter('filter1',"SA_OPPerson.sName like '%李%'");
+    data.setFilter('filter2',"SA_OPPerson.sCode = :operatorCode() or SA_OPPerson.sCode = :code");
+    //给变参code赋值
+    data.filter.setStringVar("code","code_abc");
+    //最终qureyAction的KSQL中where部分将增加 and ((SA_OPPerson.sName like '%李%') and (SA_OPPerson.sCode = :operatorCode() or SA_OPPerson.sCode = 'code_abc'))
+  </xmp>  
+*/
+
+/**
+ @name Data#open
+ @function
+ @description 当data.isLoaded()==true时执行data的refreshData
+*/
+
+/**
+ @name Data#getCurrentRow
+ @function
+ @description 获取data当前的行
+*/
+
+/**
+ @name Data#getCurrentRowID
+ @function
+ @description 获取data当前的行ID
+*/
+
+/**
+ @name Data#getFirstRow
+ @function
+ @returns {Data.Row} 行对象  
+ @description 获取data的第一行，没有数据时返回null
+ */
+
+/**
+ @name Data#getLastRow
+ @function
+ @returns {Data.Row} 行对象  
+ @description 获取data的最后一行，没有数据时返回null
+ */
+
+/**
+ @name Data#getRowID
+ @function
+ @param {Data.Row} row，行对象  
+ @description 获取data的行Id，默认获取当前行的id
+ */
+
+/**
+ @name Data#loadData
+ @function
+ @param {object} data <b>[required]</b>需要加载的Json数据，格式同biz层序列化格式
+ @param {boolean} append 数据增加模式 true/false
+ @param {Data.Row} parent 树形数据时增加数据的父，为null时数据加载到根下
+ @param {integer} index 加载数据的插入位置,缺省数据为追加模式
+ @description 加载数据
+*/
+
+/**
+ @name Data#toJson
+ @function
+ @param {boolean} changed 只序列化data的变化行，缺省：false
+ @param {boolean} excludeCalculateCol 排除data定义计算列，缺省：false
+ @returns {string} data的json格式序列化对象
+ @description 获取data的json格式序列化对象
+*/
+
+/**
+ @name Data#isExist
+ @function
+ @param {string} rowID
+ @returns {boolean}
+ @description 判断行是否存在，只判断当前已经加载的数据
+*/
+
+/**
+ @name Data#getUserData
+ @function
+ @param {string} name <b>[required]</b>名称
+ @param {Data.Row} row 行，在指定行上获取用户数据，当不给时获取全局用户扩展数据
+ @returns {object}
+ @description 获取用户扩展数据
+ @see Data#setUserData
+ @example
+  <xmp>
+    典型用法：
+    1、当queryAction或者createAction返回Table时通过table.getProperties().put("name", "beijing")设置值可以使用this.comp(dataID).getUserData('name')获取
+    2、和setUserData函数配合使用扩展data的状态或者行状态
+    注意：5.2.6及以后版本提供    
+
+    典型用法1案例：
+    //biz端java中createAction设置扩展属性key
+	public static Table create(Table table, String concept, Map<String, String> defaultValues, String fnModel) {
+		Table t = BizData.create(table, concept, defaultValues, fnModel);
+		t.getProperties().put("key", "password");
+		return t;
+	}
+	//前端js中通过data获取    
+    this.comp('mainData').getUserData('key');
+    典型用法2案例：
+    //给当前行增加key
+    var data = this.comp('mainData');
+    var row = data.getCurrentRow();
+    data.setUserData('key','abcdefg',row);
+    //读取行的key
+    data.getUserData('key', row);    
+  </xmp>        
+*/
+
+/**
+ @name Data#setUserData
+ @function
+ @param {string} name <b>[required]</b>名称
+ @param {string} value <b>[required]</b>数据
+ @param {Data.Row} row 行，在指定行上设置扩展用户数据，当不给时设置全局用户扩展数据
+ @description 设置用户扩展数据
+ @see Data#getUserData
+*/
+
+/**
+ @name Data#getValue
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {Data.Row} row 行，默认：当前行
+ @returns {object}
+ @description 通过列名和行获取列的值
+*/
+
+/**
+ @name Data#setValue
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {object} value <b>[required]</b>值
+ @param {Data.Row} row 行，默认：当前行
+ @description 通过列名和行设置列的值
+*/
+
+/**
+ @name Data#val
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {Data.Row} row 行，默认：当前行
+ @returns {object}
+ @description 通过列名和行获取值
+*/
+
+/**
+ @name Data#label
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @returns {string}
+ @description 通过列名获取显示名称
+*/
+
+/**
+ @name Data#ref
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @param {Data.Row} row 行，默认：当前行
+ @returns {object}
+ @description 通过列名获取列绑定对象
+*/
+
+/**
+ @name Data#getProcess
+ @function
+ @returns {string}
+ @description 获取data对象指定的process
+*/
+
+/**
+ @name Data#getActivity
+ @function
+ @returns {string}
+ @description 获取data对象指定的activity
+*/
+
+/**
+ @name Data#setOrderBy
+ @function
+ @param {string} relation <b>[required]</b>关系名
+ @param {integer} type OrderBy的类型0:DESC/1:ASC,为null时清空对应关系的排序
+ @description 设置查询排序
+*/
+	
+/**
+ @name Data#getOrderBy
+ @function
+ @param {string} relation <b>[required]</b>关系名
+ @returns {integer} OrderBy的类型0:DESC/1:ASC
+ @description 获取查询排序
+*/
+
+/**
+ @name Data#clearOrderBy
+ @function
+ @description 清除data上的OrderBy定义
+*/
+		
+/**
+ @name Data#first
+ @function
+ @description 移动到第一条
+*/
+
+/**
+ @name Data#last
+ @function
+ @description 移动到最后一条
+*/
+
+/**
+ @name Data#next
+ @function
+ @description 移动到下一条
+*/
+
+/**
+ @name Data#pre
+ @function
+ @description 移动到前一条
+*/
+
+/**
+ @name Data#to
+ @function
+ @param {Data.Row|string} row 行或者行ID
+ @description 移动到指定行
+*/
+
+/**
+ @name Data#find
+ @function
+ @param {List} fields <b>[required]</b>列列表
+ @param {List} values <b>[required]</b>值列表
+ @param {boolean} first 是否只是返回第一条
+ @param {boolean} caseInsensitive 忽略大小写
+ @param {boolean} partialKey 模糊查询
+ @param {boolean} all data所有数据查找，当是从Data时all==false只查找和主关联的行数据
+ @returns {List} 行对象数组
+ @description 数据查找
+ @example
+  根据列和值匹配进行数据查找，可以匹配多列
+ <xmp>
+ //查找fName中包含"李"的提一条数据
+ var rows = this.comp('mainData').find(['fName'],['李'],true,true,true);
+ if(rows.length()==0) alert('没有符合条件数据');
+ //查找fName="李四"，fAge=18的数据
+ var rows = this.comp('mainData').find(['fName','fAge'],['李',18]);
+ if(rows.length()==0) alert('没有符合条件数据');
+ </xmp>
+*/
+
+/**
+ @name Data#add
+ @function
+ @param {object} defaultValue <b>[required]</b>行默认值
+ <br/><b>参数格式：</b>
+<xmp>
+	{
+		列名:值,
+		列名:值,
+ 	 	...
+	}
+</xmp>	
+ @param {Data.Row} parent 新增数据的父对象
+ @description 前端新增一行数据，状态需要开发者设定
+*/
+
+/**
+ @name Data#remove
+ @function
+ @param {Data.Row} row <b>[required]</b>行
+ @description 移除一行数据，只在前端移除不影响数据库
+*/
+
+/**
+ @name Data#newData
+ @function
+ @param {Object} options 新增参数，支持多行新增
+<br/><b>参数格式：</b>
+<xmp>
+	{
+		"parent" : Data.Row - 树形数据的父（非树形不需要）,
+		"index" : integer - 新增数据的位置，缺省新增到最后,
+		"defaultValues" : array - 新增行的默认值数组 ，数组的长度决定新增行数，数组中的对象是列的默认值
+            defaultValues格式：
+              	[
+              		{列名:默认值,...},
+              		{列名:默认值,...},
+              		...
+              	]
+		"onError" : function - 失败回调函数，function(event);
+         	event的格式：
+         		{
+         			"source" : {Data} - 组件的js对象,
+         			"errorType" : {string} - 'server',
+         			"errorNode" : {object} - 错误信息,
+         			"httpError" : {boolean} - 是否http请求失败,
+         			"httpState" : {string} - http请求返回码
+         		}
+		"onSuccess" : function - 成功回调函数，function(event);
+         	event的格式：
+         		{
+         			"source" : {Data} - 组件的js对象,
+         			"rows"    : {List} - 新增行的数组
+              	}
+	}
+</xmp>              
+ @returns {List} 返回新增行的rows
+ @description 业务数据新增方法，支持返回多行
+ @example 
+ <xmp>
+ 	//新增两行数据到最后，并且给出sName和sCode的默认值
+ 	var data = this.comp('mainData');
+ 	var options = {
+ 		defaultValues : [
+ 			{sName:'a1',sCode:'b1'},
+ 			{sName:'a2',sCode:'b2'}
+ 		]
+ 	};	
+ 	data.newData(options);
+ </xmp>
+*/
+
+/**
+ @name Data#deleteData
+ @function
+ @param {List} rows 行数组，缺省当前行
+ @returns {boolean}
+ @see Data#directDeleteMode
+ @see Data#confirmDelete
+ @description 业务数据删除方法，当directDeleteMode=true时直接提交后台删除，当confirmDelete=true时会弹出删除确认框
+ @example 
+ <xmp>
+ //不提示直接提交后台删除当前行
+ var data = this.comp('mainData');
+ var confirmDelete = data.confirmDelete;
+ var directDeleteMode = data.directDeleteMode;
+ try{
+	 data.confirmDelete = false;
+	 data.directDeleteMode = true;
+	 data.deleteData(data.getCurrentRow());
+ }finally{
+ 	data.confirmDelete = confirmDelete;
+ 	data.directDeleteMode = directDeleteMode;
+ }
+ </xmp>
+*/
+
+/**
+ @name Data#saveData
+ @function
+ @param {Object} options 新增参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象,
+	         			"errorType" : {string} - 'server',
+	         			"errorNode" : {object} - 错误信息,
+	         			"httpError" : {boolean} - 是否http请求失败,
+	         			"httpState" : {string} - http请求返回码
+	         		}
+		"onSuccess" : {function} - 成功回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {XData} - 组件的js对象
+	              	}
+		"ignoreInvalid" : {boolean} - 保存时忽略有效性校验，默认false
+	}
+ </xmp>	
+ @returns {boolean} 
+ @description 业务数据保存方法，向后端提交修改的数据，包括从Data数据
+ @example 
+ <xmp>
+ 	//保存成功后刷新data
+ 	this.comp('mainData').saveData(
+	 {
+	 	"onSuccess" : function(event){
+	 		event.source.refreshData();
+	 	}
+ 	 });
+ </xmp>		
+*/
+
+/**
+ @name Data#applyUpdates
+ @function
+ @description 进行数据状态的更新，设置data的数据行状态，如：清除删除行，清除编辑状态，版本号维护；通常在数据提交服务端成功后调用
+*/
+
+/**
+ @name Data#refreshData
+ @function
+ @param {Object} options 刷新参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+				{
+					"source" : {Data} - 组件的js对象,
+					"errorType" : {string} - 'server',
+					"errorNode" : {object} - 错误信息,
+					"httpError" : {boolean} - 是否http请求失败,
+					"httpState" : {string} - http请求返回码
+				}
+		"onSuccess" : {function} - 成功回调，function(event),
+			event的格式：
+				{
+					"source" : {Data} - 组件的js对象
+				}
+	}
+ </xmp>	
+ @returns {boolean}
+ @see Data#limit
+ @see Data#confirmRefresh
+ @see Data#loadPageData
+ @see Data#loadNextPageData
+ @see Data#loadAllPageData
+ @description 业务数据刷新，会刺激从data级联刷新，当limit!=-1时取第一页数据，当limit=-1时取全部数据，当confirmRefresh=true并且数据是编辑或者新增状态时刷新数据时显示刷新确认提示框
+ @example 
+ <xmp>
+ //强制刷新data
+ var data = this.comp('mainData');
+ var confirmRefresh = data.confirmRefresh;
+ try{
+	 data.confirmRefresh = false;
+	 data.refreshData();
+ }finally{
+ 	data.confirmRefresh = confirmRefresh;
+ }
+ </xmp>		
+*/
+
+/**
+ @name Data#loadNextPageData
+ @function
+ @param {Object} options 刷新参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象,
+	         			"errorType" : {string} - 'server',
+	         			"errorNode" : {object} - 错误信息,
+	         			"httpError" : {boolean} - 是否http请求失败,
+	         			"httpState" : {string} - http请求返回码
+	         		}
+		"onSuccess" : {function} - 成功回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象
+	              	}
+	}
+ </xmp>	
+ @returns {boolean}
+ @description 加载下一页的数据，受offset、limit影响
+ @see Data#getOffset
+ @see Data#setOffset
+ @see Data#limit
+ @see Data#refreshData
+ @see Data#loadPageData
+ @see Data#loadAllPageData
+*/
+
+/**
+ @name Data#loadAllPageData
+ @function
+ @param {Object} options 刷新参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象,
+	         			"errorType" : {string} - 'server',
+	         			"errorNode" : {object} - 错误信息,
+	         			"httpError" : {boolean} - 是否http请求失败,
+	         			"httpState" : {string} - http请求返回码
+	         		}
+		"onSuccess" : {function} - 成功回调，function(event),
+	    	event的格式：
+	         		{
+	         			"source" : {Data} - 组件的js对象
+	              	}
+	}
+ </xmp>	
+ @returns {boolean}
+ @description 在分页状态加载所有数据
+ @see Data#getOffset
+ @see Data#setOffset
+ @see Data#limit
+ @see Data#refreshData
+ @see Data#loadPageData
+ @see Data#loadNextPageData
+*/
+
+/**
+ @name Data#loadPageData
+ @function
+ @param {integer} pageIndex <b>[required]</b>页索引
+ @param {Object} options 刷新参数
+<br/><b>参数格式：</b>
+ <xmp>
+	{
+		"onError" : {function} - 失败回调，function(event),
+			event的格式：
+	         	{
+	         		"source" : {Data} - 组件的js对象,
+	         		"errorType" : {string} - 'server',
+	         		"errorNode" : {object} - 错误信息,
+	         		"httpError" : {boolean} - 是否http请求失败,
+	         		"httpState" : {string} - http请求返回码
+	         	}
+		"onSuccess" : {function} - 成功回调，function(event),
+	    	event的格式：
+	         	{
+	         		"source" : {Data} - 组件的js对象
+	            }
+	}
+ </xmp>	
+ @returns {boolean}
+ @description 分页模式下加载第N页数据
+ @see Data#getOffset
+ @see Data#setOffset
+ @see Data#limit
+ @see Data#refreshData
+ @see Data#loadNextPageData
+ @see Data#loadAllPageData
+*/
+
+/**
+ @name Data#getCount
+ @function
+ @returns {integer}
+ @description 获取data记录数
+*/
+
+/**
+ @name Data#getTotal
+ @function
+ @param {Data.Row} parent 树形数据的父
+ @returns {integer}
+ @description 返回data的全部记录数,包括分页没有加载的记录数
+*/
+
+/**
+ @name Data#getOffset
+ @function
+ @param {Data.Row} parent 树形数据的父
+ @returns {integer}
+ @description 返回data加载数据的偏移量
+*/
+
+/**
+ @name Data#isSelfChanged
+ @function
+ @returns {boolean}
+ @description 判断data自身是否修改
+*/
+
+/**
+ @name Data#isSlaveChanged
+ @function
+ @returns {boolean}
+ @description 判断从data是否修改
+*/
+
+/**
+ @name Data#isChanged
+ @function
+ @returns {boolean}
+ @description 判断data是否修改,包括从data的修改状态
+*/
+
+/**
+ @name Data#getRowState
+ @function
+ @param {Data.Row} row <b>[required]</b>行
+ @returns {Data.STATE}
+ @description 获取对应行的状态
+*/
+
+/**
+ @name Data#setRowState
+ @function
+ @param {Data.Row} row <b>[required]</b>行
+ @param {Data.STATE} state <b>[required]</b>状态 
+ @description 设置行的状态，特殊说明：不能设置delete状态，使用deleteData函数实现
+ @see Data#deleteData
+*/
+
+/**
+ @name Data#isValid
+ @function
+ @returns {boolean}
+ @description 判断data是否违反约束
+*/
+
+/**
+ @name Data#getInvalidInfo
+ @function
+ @returns {string}
+ @description 获取data违反约束的信息
+*/
+
+/**
+ @name Data#disableRecordChange
+ @function
+ @description 禁止data数据修改状态变化
+*/
+
+/**
+ @name Data#enabledRecordChange
+ @function
+ @description 启用data数据修改状态变化
+*/
+
+/**
+ @name Data#isCalculateCol
+ @function
+ @param {string} col <b>[required]</b>列名称
+ @returns {boolean}
+ @description 判断列是否为计算列
+*/
+
+/**
+	@name Data#onCreate
+	@event
+	@description <b>[回调型事件]</b>组件创建时
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+	}
+	</xmp>
+*/
+
+/**
+	@name Data#onDataChange
+	@event
+	@description <b>[回调型事件]</b>数据发生变化（包括新增、刷新、删除、修改引起的变化），感知从data的变化
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"changedSource" ：触发变化的组件的js对象，当从data触发时返回从data对象,
+		"selfChanged" : 是否自身变化，false：从data触发的变化,
+		"type" : 触发变化的类型，包括：new、delete、refresh、valueChanged、clear，其他参数根据触发类型不同给出不同参数，参考onAfterNew等事件参数
+	}
+	</xmp>
+*/
+
+
+/**
+	@name Data#onValueChange
+	@event
+	@description <b>[回调型事件]</b>数据变化
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"row" : 行,
+		"col" : 列,
+		"newValue" : 新值,
+		"oldValue" : 旧值
+	}
+	</xmp>
+*/
+
+/**
+	@name Data#onValueChanged
+	@event
+	@description <b>[回调型事件]</b>数据变化后
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"row" : 行,
+		"col" : 列,
+		"value" : 值
+	}
+	</xmp>
+*/
+
+/**
+	@name Data#onIndexChanged
+	@event
+	@description <b>[回调型事件]</b>行记录变化
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"row" : 行,
+		"originalRow" : 原行
+	}
+	</xmp>
+*/
+
+/**
+	@name Data#onIndexChanging
+	@event
+	@description <b>[回调型事件]</b>行记录变化中
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"row" : 行,
+		"originalRow" : 原行,
+		"cancel" : 取消切换index
+	}
+	</xmp>
+*/
+
+/**
+	@name Data#onLoadSlave
+	@event
+	@description <b>[回调型事件]</b>data加载从数据
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+	}
+	</xmp>
+*/
+
+/**
+	@name Data#onNewError
+	@event
+	@description <b>[回调型事件]</b>新增数据失败
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"errorType" : 'server',
+		"errorNode" : 错误信息,
+		"httpError" : http请求失败(true/false),
+		"httpState" : http请求返回码
+	}
+	</xmp>
+*/
+
+/**
+	@name Data#onBeforeNew
+	@event
+	@description <b>[回调型事件]</b>业务数据新增前
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"option" : 新增时传入的option参数，包括：parent,defaultValues
+		"cancel" : 可修改，设置为true后中断当前new动作
+	}
+	</xmp>
+*/
+
+/**
+	@name Data#onCustomNew
+	@event
+	@description <b>[回调型事件]</b>业务数据新增接管，完全接管new动作，需要接管此事件完成data的newData逻辑
+	@see Data.STATE
+	@see Data#newData
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"option" : 新增时传入的option参数，包括：parent,defaultValues
+		"data" : 行数据对象数组[{sName:'LiMing',sAge:18},...]，数组的length决定新增的行数
+			data格式：
+				[
+					{
+						"列名" : 默认值,
+						"列名" : 默认值,
+						...
+					},
+					...
+				]
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onAfterNew
+	@event
+	@description <b>[回调型事件]</b>业务数据新增后
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"rows" : {List} 新增的行数组
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onDeleteError
+	@event
+	@description <b>[回调型事件]</b>直接删除数据失败
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"errorType" : 'server',
+		"errorNode" : 错误信息,
+		"httpError" : http请求失败(true/false),
+		"httpState" : http请求返回码
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onBeforeDelete
+	@event
+	@description <b>[回调型事件]</b>业务数据删除前
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"cancel" : 可修改，设置为true后中断当前delete动作,
+		"deleteRows" : 删除的行数组
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onCustomDelete
+	@event
+	@description <b>[回调型事件]</b>业务数据删除接管，完全接管delete动作
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"cancel" : 可修改，设置为true后中断当前delete动作, 
+		"deleteRows" : 删除的行数组
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onAfterDelete
+	@event
+	@description <b>[回调型事件]</b>业务数据删除后
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"deleteRows" : 删除的行数组
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onRefreshError
+	@event
+	@description <b>[回调型事件]</b>刷新数据失败
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"errorType" : 'server',
+		"errorNode" : 错误信息,
+		"httpError" : http请求失败(true/false),
+		"httpState" : http请求返回码
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onBeforeRefresh
+	@event
+	@description <b>[回调型事件]</b>业务数据刷新前
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"options" : 刷新给入的参数
+		"cancel" : 可修改，设置为true后中断当前刷新动作
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onAfterRefresh
+	@event
+	@description <b>[回调型事件]</b>业务数据刷新后
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+		"limit" : 页大小, 
+		"offset" : 偏移,
+		"options" : 刷新给入的参数
+		"success" : 是否成功刷新
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onCustomRefresh
+	@event
+	@description <b>[回调型事件]</b>业务数据刷新接管，完全接管刷新动作
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象, 
+		"cancel" : 可修改，设置为true后中断当前刷新动作, 
+		"limit" : 页大小, 
+		"offset" : 偏移,
+		"options" : 刷新给入的参数
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onSaveError
+	@event
+	@description <b>[回调型事件]</b>保存数据失败
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"errorType" : 'server',
+		"errorNode" : 错误信息,
+		"httpError" : http请求失败(true/false),
+		"httpState" : http请求返回码
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onBeforeSave
+	@event
+	@description <b>[回调型事件]</b>业务数据保存前，事件在批事务启动后触发，写在这个事件里的biz action请求将在一个批操作完成
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"cancel" : 可修改，设置为true后中断当前保存动作
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onAfterSave
+	@event
+	@description <b>[回调型事件]</b>业务数据保存后，事件在批事务启动后触发，写在这个事件里的biz action请求将在一个批操作完成
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source":组件的js对象,
+		"cancel" : 可修改，设置为true后中断当前保存动作
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onCustomSave
+	@event
+	@description <b>[回调型事件]</b>业务数据保存接管，完全接管保存动作
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象, 
+		"cancel" : 可修改，设置为true后中断当前保存动作
+	}
+	</xmp>	
+*/
+
+/**
+	@name Data#onSaveCommit
+	@event
+	@description <b>[回调型事件]</b>业务数据保存事务提交后，数据提交成功
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象
+	}
+	</xmp>	
+*/
+
+/**
+ @name Data#new
+ @operation
+ @see Data#newData
+ @description 新增数据
+ @returns {void}
+*/
+
+/**
+ @name Data#newChild
+ @operation
+ @see Data#newData
+ @description 新增子数据
+ @returns {void}
+*/
+
+/**
+ @name Data#newBrother
+ @operation
+ @see Data#newData
+ @description 新增同级数据
+ @returns {void}
+*/
+
+/**
+ @name Data#save
+ @operation
+ @see Data#saveData
+ @description 保存数据
+ @returns {void}
+*/
+
+/**
+ @name Data#delete
+ @operation
+ @see Data#deleteData
+ @param {List<Data.Row|Data.Row>} 删除的行或者行数组，缺省为当前行
+ @description 删除数据
+ @returns {void}
+*/
+
+/**
+ @name Data#refresh
+ @operation
+ @see Data#refreshData
+ @description 刷新数据
+ @returns {void}
+*/
+
+/**
+ @name Data#firstRow
+ @operation
+ @description 游标定位到第一条
+ @returns {void}
+*/
+
+/**
+ @name Data#nextRow
+ @operation
+ @description 游标定位到下一条
+ @returns {void}
+*/
+
+/**
+ @name Data#prevRow
+ @operation
+ @description 游标定位到上一条
+ @returns {void}
+*/
+
+/**
+ @name Data#lastRow
+ @operation
+ @description 游标定位到最后一条
+ @returns {void}
+*/
+
+/**
+ @name Data#loadPage
+ @operation
+ @description 加载页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name Data#firstPage
+ @operation
+ @description 加载第一页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name Data#nextPage
+ @operation
+ @description 加载下一页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name Data#prevPage
+ @operation
+ @description 加载前一页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name Data#lastPage
+ @operation
+ @description 加载最后一页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name Data#loadAllPage
+ @operation
+ @description 加载剩余所有数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name Data#loadNextPage
+ @operation
+ @description 加载下页数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+ @name Data#loadAllPage
+ @operation
+ @description 加载剩余所有数据，当设置limit有效
+ @returns {void}
+*/
+
+/**
+	@name Data#rule                                                                                   
+	@attribute 
+	@type {XML}
+	@description 规则,可以定义列的只读规则(readonly)、计算规则(calculate)、必填规则(required)、约束规则(constraint)
+	@example
+	只读规则包含expr表达式部分，当表达式计算结果为True时只读，当只读定义在rule根下时为整个data的只读规则
+	计算规则包含expr表达式部分，对应列的值来自于表达式计算结果
+	必填规则包含expr表达式部分和message提示部分，当表达式计算结果为True时该列为必填，没有填写数据违反必填规则时提示message信息
+	约束规则包含expr表达式部分和message提示部分，当表达式计算结果为False时违反约束规则提示message信息
+	
+	<b>xml格式说明：</b>
+	<xmp>
+      <rule>
+        <!--data的只读规则定义-->
+        <readonly> 
+            <expr>js:true</expr> 
+        </readonly>  
+        <col name="fDecimal"> 
+          <!--fDecimal列的只读规则定义-->
+          <readonly> 
+            <expr>js:true</expr> 
+          </readonly>
+          <!--fDecimal列的计算规则定义-->  
+          <calculate> 
+            <expr>js:$model.slaveData?$model.slaveData.sum('fDecimal',$row):0</expr> 
+          </calculate> 
+        </col> 
+        <col name="fString"> 
+          <!--fString列的必填规则定义-->
+          <required> 
+            <expr>js:true</expr>
+            <message>fString不能为空</message> 
+          </required>
+          <!--fString列的计算规则定义-->  
+          <constraint> 
+            <expr>js:$val[0]=='A'</expr> 
+            <message>fString第一个字符必须为'A'</message> 
+          </constraint> 
+        </col> 
+      </rule>  
+	</xmp>
+*/
+

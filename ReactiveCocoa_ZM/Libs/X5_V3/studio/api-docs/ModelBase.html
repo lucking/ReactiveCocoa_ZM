@@ -1,0 +1,4346 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Class</div>
+				<h1>
+					
+					ModelBase
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/lib/base/modelBase</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+		<li><a href="#static_properties">Static Properties & Enumerations</a></li>
+		
+
+		
+
+		
+
+		
+		<li><a href="#methods">Methods</a></li>
+		
+
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>class </span>
+				<strong>
+					ModelBase
+				</strong>
+
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>页面VM</p></div>
+
+			
+			
+			<!-- CLASS CONSTRUCTOR SUMMARY -->
+			<h2>
+				<a name='constructor'></a>
+				Constructor
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td class="type">&nbsp;</td>
+						<td class="last">
+							<a href="#ModelBase">ModelBase</a>
+							<span>()</span>
+							
+						<td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+			<h2>
+				<a name='static_properties'></a>
+				Static Properties & Enumerations
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#ACTIVE_EVENT">
+        	<abbr title="ModelBase.ACTIVE_EVENT">
+        		ACTIVE_EVENT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>"onActive"</code>
+        </span>
+        
+        
+        	<p>页面激活事件</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#INACTIVE_EVENT">
+        	<abbr title="ModelBase.INACTIVE_EVENT">
+        		INACTIVE_EVENT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>"onInactive"</code>
+        </span>
+        
+        
+        	<p>页面离开事件</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#LOAD_EVENT">
+        	<abbr title="ModelBase.LOAD_EVENT">
+        		LOAD_EVENT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>"onLoad"</code>
+        </span>
+        
+        
+        	<p>页面加载完事件</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MESSAGE_EVENT">
+        	<abbr title="ModelBase.MESSAGE_EVENT">
+        		MESSAGE_EVENT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>"onMessage"</code>
+        </span>
+        
+        
+        	<p>页面消息事件</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MODEL_CONSTRUCT_DONE_EVENT">
+        	<abbr title="ModelBase.MODEL_CONSTRUCT_DONE_EVENT">
+        		MODEL_CONSTRUCT_DONE_EVENT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>"onModelConstructDone"</code>
+        </span>
+        
+        
+        	<p>页面模型构造完事件</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MODEL_CONSTRUCT_EVENT">
+        	<abbr title="ModelBase.MODEL_CONSTRUCT_EVENT">
+        		MODEL_CONSTRUCT_EVENT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>"onModelConstruct"</code>
+        </span>
+        
+        
+        	<p>页面模型构造前事件</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MODEL_CONSTRUCTING_EVENT">
+        	<abbr title="ModelBase.MODEL_CONSTRUCTING_EVENT">
+        		MODEL_CONSTRUCTING_EVENT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>"onModelConstructing"</code>
+        </span>
+        
+        
+        	<p>页面模型构造中事件，主要用于数据组件加载数据</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MODEL_STATUS_CONSTRUCT">
+        	<abbr title="ModelBase.MODEL_STATUS_CONSTRUCT">
+        		MODEL_STATUS_CONSTRUCT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>1</code>
+        </span>
+        
+        
+        	<p>页面模型构造前</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MODEL_STATUS_CONSTRUCT_DONE">
+        	<abbr title="ModelBase.MODEL_STATUS_CONSTRUCT_DONE">
+        		MODEL_STATUS_CONSTRUCT_DONE
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>3</code>
+        </span>
+        
+        
+        	<p>页面模型构造</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MODEL_STATUS_CONSTRUCTED">
+        	<abbr title="ModelBase.MODEL_STATUS_CONSTRUCTED">
+        		MODEL_STATUS_CONSTRUCTED
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>5</code>
+        </span>
+        
+        
+        	<p>页面模型构造完成</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MODEL_STATUS_CONSTRUCTING">
+        	<abbr title="ModelBase.MODEL_STATUS_CONSTRUCTING">
+        		MODEL_STATUS_CONSTRUCTING
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>2</code>
+        </span>
+        
+        
+        	<p>页面模型构造中</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#MODEL_STATUS_LOAD">
+        	<abbr title="ModelBase.MODEL_STATUS_LOAD">
+        		MODEL_STATUS_LOAD
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>4</code>
+        </span>
+        
+        
+        	<p>页面模型构造Load事件中</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#UNLOAD_EVENT">
+        	<abbr title="ModelBase.UNLOAD_EVENT">
+        		UNLOAD_EVENT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+         = <code>"onunLoad"</code>
+        </span>
+        
+        
+        	<p>页面关闭事件</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+			<h2>
+				<a name='methods'></a>
+				Methods
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#addComponent">
+				<abbr title="ModelBase#addComponent">
+					addComponent
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(Element parentElement, <a href="Component.html" ><abbr title="Component">Component</abbr></a> component, Element targetElement)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#call">
+				<abbr title="ModelBase#call">
+					call
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Object.html" ><abbr title="Object">Object</abbr></a> caller, Function fn)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#comp">
+				<abbr title="ModelBase#comp">
+					comp
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Object.html" ><abbr title="Object">Object</abbr></a> xidOrNode, Element sourceNode)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#componentPromise">
+				<abbr title="ModelBase#componentPromise">
+					componentPromise
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Object.html" ><abbr title="Object">Object</abbr></a> xidOrNode)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#comps">
+				<abbr title="ModelBase#comps">
+					comps
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#constructor">
+				<abbr title="ModelBase#constructor">
+					constructor
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getComponent">
+				<abbr title="ModelBase#getComponent">
+					getComponent
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Object.html" ><abbr title="Object">Object</abbr></a> xidOrNode, Element sourceNode)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getComponents">
+				<abbr title="ModelBase#getComponents">
+					getComponents
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Context.html" ><abbr title="Context">Context</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getContext">
+				<abbr title="ModelBase#getContext">
+					getContext
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="String.html" ><abbr title="String">String</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getContextID">
+				<abbr title="ModelBase#getContextID">
+					getContextID
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Element
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getElementByXid">
+				<abbr title="ModelBase#getElementByXid">
+					getElementByXid
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getElementsByXid">
+				<abbr title="ModelBase#getElementsByXid">
+					getElementsByXid
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="String.html" ><abbr title="String">String</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getIDByXID">
+				<abbr title="ModelBase#getIDByXID">
+					getIDByXID
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="ModelBase.html" ><abbr title="ModelBase">ModelBase</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getParent">
+				<abbr title="ModelBase#getParent">
+					getParent
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Element
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getRootNode">
+				<abbr title="ModelBase#getRootNode">
+					getRootNode
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Integer
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getStatus">
+				<abbr title="ModelBase#getStatus">
+					getStatus
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Boolean
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#isConctructed">
+				<abbr title="ModelBase#isConctructed">
+					isConctructed
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#postMessage">
+				<abbr title="ModelBase#postMessage">
+					postMessage
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> message)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#ref">
+				<abbr title="ModelBase#ref">
+					ref
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> col)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#registerComponent">
+				<abbr title="ModelBase#registerComponent">
+					registerComponent
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> xid, <a href="Component.html" ><abbr title="Component">Component</abbr></a> component)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#removeComponent">
+				<abbr title="ModelBase#removeComponent">
+					removeComponent
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Component.html" ><abbr title="Component">Component</abbr></a> component)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#removeElement">
+				<abbr title="ModelBase#removeElement">
+					removeElement
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(Element element)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#removeElementByXid">
+				<abbr title="ModelBase#removeElementByXid">
+					removeElementByXid
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#unRegisterComponent">
+				<abbr title="ModelBase#unRegisterComponent">
+					unRegisterComponent
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+			<!-- CLASS CONSTRUCTOR DETAILS -->
+			<h2>
+				<a name='constructor_details'></a>
+				Constructor details
+				<small><a href="#top">Top</a></small>
+				<h3 id="ModelBase"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno1">modelBase.js.xdoc</a> at line 1
+
+  </div>
+	-->
+	<div class="signature">
+		public
+	  
+  
+		<strong>ModelBase</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>页面VM</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+								
+			</h2>
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+			<h2>
+				<a name='static_properties_details'></a>
+				Static Properties & Enumerations Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="ACTIVE_EVENT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno52">modelBase.js.xdoc</a> at line 52
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>ACTIVE_EVENT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>"onActive"</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面激活事件</p></div>
+<h3 id="INACTIVE_EVENT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno54">modelBase.js.xdoc</a> at line 54
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>INACTIVE_EVENT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>"onInactive"</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面离开事件</p></div>
+<h3 id="LOAD_EVENT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno64">modelBase.js.xdoc</a> at line 64
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>LOAD_EVENT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>"onLoad"</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面加载完事件</p><pre class="example sh_javascript">	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp></pre></div>
+<h3 id="MESSAGE_EVENT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno56">modelBase.js.xdoc</a> at line 56
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MESSAGE_EVENT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>"onMessage"</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面消息事件</p><pre class="example sh_javascript">	<xmp>
+	事件对象的内容如下：
+{
+    source: this, //页面模型
+    message: message //消息内容
+}
+	</xmp></pre></div>
+<h3 id="MODEL_CONSTRUCT_DONE_EVENT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno62">modelBase.js.xdoc</a> at line 62
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MODEL_CONSTRUCT_DONE_EVENT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>"onModelConstructDone"</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面模型构造完事件</p><pre class="example sh_javascript">	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp></pre></div>
+<h3 id="MODEL_CONSTRUCT_EVENT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno58">modelBase.js.xdoc</a> at line 58
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MODEL_CONSTRUCT_EVENT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>"onModelConstruct"</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面模型构造前事件</p><pre class="example sh_javascript">	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp></pre></div>
+<h3 id="MODEL_CONSTRUCTING_EVENT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno60">modelBase.js.xdoc</a> at line 60
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MODEL_CONSTRUCTING_EVENT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>"onModelConstructing"</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面模型构造中事件，主要用于数据组件加载数据</p><pre class="example sh_javascript">	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp></pre></div>
+<h3 id="MODEL_STATUS_CONSTRUCT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno68">modelBase.js.xdoc</a> at line 68
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MODEL_STATUS_CONSTRUCT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>1</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面模型构造前</p></div>
+<h3 id="MODEL_STATUS_CONSTRUCT_DONE" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno71">modelBase.js.xdoc</a> at line 71
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MODEL_STATUS_CONSTRUCT_DONE</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>3</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面模型构造</p></div>
+<h3 id="MODEL_STATUS_CONSTRUCTED" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno73">modelBase.js.xdoc</a> at line 73
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MODEL_STATUS_CONSTRUCTED</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>5</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面模型构造完成</p></div>
+<h3 id="MODEL_STATUS_CONSTRUCTING" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno70">modelBase.js.xdoc</a> at line 70
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MODEL_STATUS_CONSTRUCTING</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>2</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面模型构造中</p></div>
+<h3 id="MODEL_STATUS_LOAD" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno72">modelBase.js.xdoc</a> at line 72
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>MODEL_STATUS_LOAD</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>4</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面模型构造Load事件中</p></div>
+<h3 id="UNLOAD_EVENT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno66">modelBase.js.xdoc</a> at line 66
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      
+    </span>
+	  
+  
+		<strong>UNLOAD_EVENT</strong>
+	  
+	  <span class="defaultvalue">
+	     = <code>"onunLoad"</code>
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>页面关闭事件</p><pre class="example sh_javascript">	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp></pre></div>
+
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+			<h2>
+				<a name='methods_details'></a>
+				Methods Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="addComponent"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno48">modelBase.js.xdoc</a> at line 48
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>addComponent</strong>
+		
+    <span class="params">
+      (Element parentElement, <a href="Component.html" ><abbr title="Component">Component</abbr></a> component, Element targetElement)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>添加组件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Element
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>parentElement</a><p>组件的父节点</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>component</a><p>组件实例</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				Element
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>targetElement</a><p>插入位置</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="call"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno5">modelBase.js.xdoc</a> at line 5
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Object.html" ><abbr title="Object">Object</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>call</strong>
+		
+    <span class="params">
+      (<a href="Object.html" ><abbr title="Object">Object</abbr></a> caller, Function fn)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>调用指定的函数</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>caller</a><p>函数执行上下文this</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				Function
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>fn</a><p>函数</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="comp"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno27">modelBase.js.xdoc</a> at line 27
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Component.html" ><abbr title="Component">Component</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>comp</strong>
+		
+    <span class="params">
+      (<a href="Object.html" ><abbr title="Object">Object</abbr></a> xidOrNode, Element sourceNode)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取组件</p><p>See <a href="ModelBase.html#getComponent" ><abbr title="ModelBase#getComponent">ModelBase#getComponent</abbr></a></p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xidOrNode</a><p>组件xid或组件节点</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				Element
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>sourceNode</a><p>可选参数，标识从哪个节点向外找</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="componentPromise"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno17">modelBase.js.xdoc</a> at line 17
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Component.html" ><abbr title="Component">Component</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>componentPromise</strong>
+		
+    <span class="params">
+      (<a href="Object.html" ><abbr title="Object">Object</abbr></a> xidOrNode)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>异步获取组件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xidOrNode</a><p>组件xid或组件节点</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="comps"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno30">modelBase.js.xdoc</a> at line 30
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Object.html" ><abbr title="Object">Object</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>comps</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取组件</p><p>See <a href="ModelBase.html#getComponents" ><abbr title="ModelBase#getComponents">ModelBase#getComponents</abbr></a></p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xid</a><p>组件xid</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>组件数组</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="constructor"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno3">modelBase.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>constructor</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>构造函数</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getComponent"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno23">modelBase.js.xdoc</a> at line 23
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Component.html" ><abbr title="Component">Component</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>getComponent</strong>
+		
+    <span class="params">
+      (<a href="Object.html" ><abbr title="Object">Object</abbr></a> xidOrNode, Element sourceNode)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取组件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xidOrNode</a><p>组件xid或组件节点</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				Element
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>sourceNode</a><p>可选参数，标识从哪个节点向外找</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getComponents"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno25">modelBase.js.xdoc</a> at line 25
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Object.html" ><abbr title="Object">Object</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>getComponents</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取组件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xid</a><p>组件xid</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>组件数组</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getContext"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno44">modelBase.js.xdoc</a> at line 44
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Context.html" ><abbr title="Context">Context</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>getContext</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取上下文</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Context.html" ><abbr title="Context">Context</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getContextID"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno42">modelBase.js.xdoc</a> at line 42
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="String.html" ><abbr title="String">String</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>getContextID</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取上下文唯一标识</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getElementByXid"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno34">modelBase.js.xdoc</a> at line 34
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Element
+	    </span>
+    
+	  
+	  
+  
+		<strong>getElementByXid</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>根据xid获取Element</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xid</a>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Element
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getElementsByXid"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno36">modelBase.js.xdoc</a> at line 36
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Object.html" ><abbr title="Object">Object</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>getElementsByXid</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>根据xid获取Element列表</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xid</a>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>Element列表</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getIDByXID"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno32">modelBase.js.xdoc</a> at line 32
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="String.html" ><abbr title="String">String</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>getIDByXID</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>根据xid获取id</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xid</a>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getParent"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno9">modelBase.js.xdoc</a> at line 9
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="ModelBase.html" ><abbr title="ModelBase">ModelBase</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>getParent</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取父VM</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="ModelBase.html" ><abbr title="ModelBase">ModelBase</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getRootNode"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno11">modelBase.js.xdoc</a> at line 11
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Element
+	    </span>
+    
+	  
+	  
+  
+		<strong>getRootNode</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取当前页面的根节点</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Element
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getStatus"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno15">modelBase.js.xdoc</a> at line 15
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Integer
+	    </span>
+    
+	  
+	  
+  
+		<strong>getStatus</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取页面模型构造状态</p><p>See <a href="ModelBase.html#MODEL_STATUS_CONSTRUCT" ><abbr title="ModelBase.MODEL_STATUS_CONSTRUCT">ModelBase.MODEL_STATUS_CONSTRUCT</abbr></a></p><p>See <a href="ModelBase.html#MODEL_STATUS_CONSTRUCTING" ><abbr title="ModelBase.MODEL_STATUS_CONSTRUCTING">ModelBase.MODEL_STATUS_CONSTRUCTING</abbr></a></p><p>See <a href="ModelBase.html#MODEL_STATUS_CONSTRUCT_DONE" ><abbr title="ModelBase.MODEL_STATUS_CONSTRUCT_DONE">ModelBase.MODEL_STATUS_CONSTRUCT_DONE</abbr></a></p><p>See <a href="ModelBase.html#MODEL_STATUS_LOAD" ><abbr title="ModelBase.MODEL_STATUS_LOAD">ModelBase.MODEL_STATUS_LOAD</abbr></a></p><p>See <a href="ModelBase.html#MODEL_STATUS_CONSTRUCTED" ><abbr title="ModelBase.MODEL_STATUS_CONSTRUCTED">ModelBase.MODEL_STATUS_CONSTRUCTED</abbr></a></p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Integer
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="isConctructed"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno13">modelBase.js.xdoc</a> at line 13
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Boolean
+	    </span>
+    
+	  
+	  
+  
+		<strong>isConctructed</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>判断当前页面是否构造完成</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Boolean
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="postMessage"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno46">modelBase.js.xdoc</a> at line 46
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>postMessage</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> message)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>向VM发送一条消息，触发{Model.MESSAGE_EVENT}事件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>message</a>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="ref"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno7">modelBase.js.xdoc</a> at line 7
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Object.html" ><abbr title="Object">Object</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>ref</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> col)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取列的值</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>col</a><p>列标识</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="registerComponent"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno19">modelBase.js.xdoc</a> at line 19
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Component.html" ><abbr title="Component">Component</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>registerComponent</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> xid, <a href="Component.html" ><abbr title="Component">Component</abbr></a> component)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>注册组件实例（只有数据组件需要自己注册）</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xid</a><p>组件标识</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>component</a><p>组件实例</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="removeComponent"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno50">modelBase.js.xdoc</a> at line 50
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>removeComponent</strong>
+		
+    <span class="params">
+      (<a href="Component.html" ><abbr title="Component">Component</abbr></a> component)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>删除组件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Component.html" ><abbr title="Component">Component</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>component</a><p>组件实例</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="removeElement"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno38">modelBase.js.xdoc</a> at line 38
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Object.html" ><abbr title="Object">Object</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>removeElement</strong>
+		
+    <span class="params">
+      (Element element)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>删除指定的节点</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Element
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>element</a>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="removeElementByXid"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno40">modelBase.js.xdoc</a> at line 40
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>removeElementByXid</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>根据xid删除指定的节点</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xid</a>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="unRegisterComponent"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_modelBase_js_xdoc.html#lineno21">modelBase.js.xdoc</a> at line 21
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>unRegisterComponent</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> xid)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>取消组件实例（只有数据组件需要自己取消）</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>xid</a><p>组件标识</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:03:01 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

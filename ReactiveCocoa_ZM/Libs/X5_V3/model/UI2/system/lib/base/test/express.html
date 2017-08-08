@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></meta>
+  <title>Jasmine Spec Runner v2.0.0</title>
+
+  <link rel="shortcut icon" type="image/png" href="../../jasmine-2.0.0/jasmine_favicon.png"></link>
+  <link rel="stylesheet" type="text/css" href="../../jasmine-2.0.0/jasmine.css"></link>
+
+  <script type="text/javascript" src="../../jasmine-2.0.0/jasmine.js"></script>
+  <script type="text/javascript" src="../../jasmine-2.0.0/jasmine-html.js"></script>
+  <script type="text/javascript" src="../../jasmine-2.0.0/boot.js"></script>
+
+	<script src="../../require/require.2.1.10.js"></script>
+	<script type='text/javascript'>
+		requirejs.config({
+			urlArgs: "$v=" +  (new Date()).getTime(),
+		    paths: {
+		    	'$UI': '/x5/UI2',
+		    	'spec': '/x5/UI2/system/lib/base/test/spec',
+		    	'jquery': '/x5/UI2/system/lib/jquery/jquery-1.9.1'
+		    }
+		});
+			
+		require(['spec/express'], function(){
+			jasmine.getEnv().execute();
+		});
+	</script>	
+</head>
+
+<body>
+</body>
+</html>

@@ -1,0 +1,15 @@
+.xui-model{
+	border:1px dotted;
+	width:150px;
+	height:40px;
+	z-index:800;
+	background:#EEE8AA;
+}
+
+.xui-model-title{
+	height:20px;
+	font: bold 13px arial;
+	padding-left:16px;
+	background:url(../img/model.gif) no-repeat left 2px;
+	border-bottom:1px dotted;
+}

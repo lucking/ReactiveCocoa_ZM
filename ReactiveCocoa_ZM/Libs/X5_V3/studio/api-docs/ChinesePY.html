@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Class</div>
+				<h1>
+					
+					ChinesePY
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/lib/base/chinesePY</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+
+		
+
+		
+		<li><a href="#static_methods">Static Methods</a></li>
+		
+
+		
+
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>class </span>
+				<strong>
+					ChinesePY
+				</strong>
+
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>汉字拼音首字母函数</p></div>
+
+			
+			
+			<!-- CLASS CONSTRUCTOR SUMMARY -->
+			<h2>
+				<a name='constructor'></a>
+				Constructor
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td class="type">&nbsp;</td>
+						<td class="last">
+							<a href="#ChinesePY">ChinesePY</a>
+							<span>()</span>
+							
+						<td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+			<h2>
+				<a name='static_methods'></a>
+				Static Methods
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#makeFirstPY">
+				<abbr title="ChinesePY.makeFirstPY">
+					makeFirstPY
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		( text)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+			<!-- CLASS CONSTRUCTOR DETAILS -->
+			<h2>
+				<a name='constructor_details'></a>
+				Constructor details
+				<small><a href="#top">Top</a></small>
+				<h3 id="ChinesePY"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_chinesePY_js_xdoc.html#lineno1">chinesePY.js.xdoc</a> at line 1
+
+  </div>
+	-->
+	<div class="signature">
+		public
+	  
+  
+		<strong>ChinesePY</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>汉字拼音首字母函数</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+								
+			</h2>
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+			<h2>
+				<a name='static_methods_details'></a>
+				Static Methods Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="makeFirstPY"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_chinesePY_js_xdoc.html#lineno3">chinesePY.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      
+	    </span>
+    
+	  
+	  
+  
+		<strong>makeFirstPY</strong>
+		
+    <span class="params">
+      ( text)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取指定文本text对应的拼音首字母字符串</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>text</a><p>中英文混排的字符串，类型为string</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>string</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:02:53 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

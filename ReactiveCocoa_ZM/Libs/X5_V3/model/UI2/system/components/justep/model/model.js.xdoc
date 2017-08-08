@@ -1,0 +1,80 @@
+/**
+	@name Model
+	@component $UI/system/components/justep/model/model
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@model UI2
+	@description 页面上下文
+*/
+
+/**
+	@name Model#onModelConstruct
+	@event
+	@description 构造Model之前
+	@param event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name Model#onModelConstructed
+	@event
+	@description 构造Model之后
+	@param event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name Model#onLoad
+	@event
+	@description 页面加载完成事件
+	@param event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name Model#onunLoad
+	@event
+	@description 页面关闭事件
+	@param event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name Model#onActive
+	@event
+	@description 页面激活事件
+	@param event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/
+
+/**
+	@name Model#onInactive
+	@event
+	@description 页面离开事件
+	@param event 它的结构如下:
+<xmp>
+	{
+		"source":Model组件对应的js实例
+	}
+</xmp>	
+*/

@@ -1,0 +1,14 @@
+{
+	"userID" : "@userID@",
+	"appName" : "@appName@",
+	"version" : "@version@",
+	"packageName" : "@packageName@",
+	"serverURL" : "@serverURL@",
+	"indexURL" : "@indexURL@",
+	"uiResDirs" : "@uiResDirs@",
+	"extBrowser" : @extBrowser@,
+	"autoSelectPlugins" : @autoSelectPlugins@,
+	"plugins" : "@plugins@",
+	"resEncryption" : @resEncryption@,
+	"mqttServerURL" : "@mqttServerURL@"
+}

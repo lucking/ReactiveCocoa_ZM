@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/contents/contents" tag-type="rich" tag-name="div" icon="contents.png" text="滑动容器"  
+	    binding-component="$UI/system/components/justep/contents/contents" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" child-range="contents#content" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-contents"
+					},	 
+					"1common": {
+						label: "常用",
+						value: "x-full",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<property name="wrap" text="是否可循环" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="swipe" text="手势" default-value="true" editor-ref="swipeList"/>
+			<property name="active" text="活动页" data-type="integer" default-value="0"/>
+			<property name="slidable" text="是否可滚动" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    <div component="$UI/system/components/justep/contents/contents" class="x-contents x-full" active="0">
+	    		<div class="x-contents-content"></div>
+		    </div>	 
+		   ]]></template>
+		</templates>
+		<property-editors>
+			<property-editor name="swipeList" type="list" >
+				<static-data value="true,false,prev,next"/>				
+			</property-editor>
+		</property-editors>
+		<operations>
+			<operation name="to" label="切换到" enable="true" visible="true" icon=""/>
+			<operation name="prev" label="前一条" enable="true" visible="true" icon="icon-chevron-left"/>
+			<operation name="next" label="下一页" enable="true" visible="true" icon="icon-chevron-right"/>
+		</operations>
+		<events>
+			<event name="onActiveChange" type="event" text="页面变化事件" parameters="event" is-script="true"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+ 
+		<toolbar>
+			<item text="添加content" method="add"/>
+		</toolbar>
+	</element>
+	
+	<element name="$UI/system/components/justep/contents/content" tag-name="div" icon="content.png" text="content"  display-property="xid"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/contents/contents')"  
+		component-type="content" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-contents-content"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+			<event name="onActive" type="event" text="页面进入事件" parameters="event" is-script="true"/>
+			<event name="onInactive" type="event" text="页面离开事件" parameters="event" is-script="true"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<div class="x-contents-content"></div>
+		   ]]></template> 
+		</templates>
+	</element>
+	
+</elements>

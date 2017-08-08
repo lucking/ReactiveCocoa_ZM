@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/controlGroup/controlGroup" tag-name="div" icon="group.gif" 
+		binding-component="$UI/system/components/justep/controlGroup/controlGroup" 
+        
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="title" text="标题" />	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-control-group"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>  <!--组件事件-->		
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/controlGroup/controlGroup" class="x-control-group" title="title">
+				<div class="x-control-group-title"><span>title</span></div>				
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/controlGroup/controlGroup#controlGroupTitle" tag-name="div" icon="group.gif" 
+		discriminate-condition="executeXpath(../@component='$UI/system/components/justep/controlGroup/controlGroup' and contains(@class,'x-control-group-title'))" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			<property name="text" text="test" path="span/text()"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-control-group-title"
+					},	 
+					"1color":{
+						label: "颜色样式",
+						value: "x-control-group-title-primary|x-control-group-title-success|x-control-group-title-info|x-control-group-title-warning|x-control-group-title-danger|x-blue|x-orange|x-green|x-red|x-yellow|x-gray",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div class="x-control-group-title"></div>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

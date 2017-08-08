@@ -1,0 +1,802 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4120D80FAA0D2D4580AEDFAA /* Pods_ReactiveCocoa_ZM.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72863C6BFA38A78FA7EE4712 /* Pods_ReactiveCocoa_ZM.framework */; };
+		682A86791EC93EF7004F76A2 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A86731EC93EF7004F76A2 /* FirstViewController.m */; };
+		682A867A1EC93EF7004F76A2 /* FirstViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 682A86741EC93EF7004F76A2 /* FirstViewController.xib */; };
+		682A867B1EC93EF7004F76A2 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A86761EC93EF7004F76A2 /* SecondViewController.m */; };
+		682A867C1EC93EF7004F76A2 /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A86781EC93EF7004F76A2 /* ThreeViewController.m */; };
+		682A86851EC93F4F004F76A2 /* BBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A86801EC93F4F004F76A2 /* BBaseViewController.m */; };
+		682A86861EC93F4F004F76A2 /* Common.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A86821EC93F4F004F76A2 /* Common.m */; };
+		682A86871EC93F4F004F76A2 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 682A86841EC93F4F004F76A2 /* RootViewController.m */; };
+		686C8D6F1EB8927D00EA366F /* RedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 686C8D6E1EB8927D00EA366F /* RedView.m */; };
+		68AA24091EB2DC3C00132808 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24081EB2DC3C00132808 /* main.m */; };
+		68AA240C1EB2DC3C00132808 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AA240B1EB2DC3C00132808 /* AppDelegate.m */; };
+		68AA240F1EB2DC3C00132808 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AA240E1EB2DC3C00132808 /* ViewController.m */; };
+		68AA24121EB2DC3C00132808 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AA24101EB2DC3C00132808 /* Main.storyboard */; };
+		68AA24151EB2DC3C00132808 /* ReactiveCocoa_ZM.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24131EB2DC3C00132808 /* ReactiveCocoa_ZM.xcdatamodeld */; };
+		68AA24171EB2DC3C00132808 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68AA24161EB2DC3C00132808 /* Assets.xcassets */; };
+		68AA241A1EB2DC3C00132808 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68AA24181EB2DC3C00132808 /* LaunchScreen.storyboard */; };
+		68AA24251EB2DC3C00132808 /* ReactiveCocoa_ZMTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AA24241EB2DC3C00132808 /* ReactiveCocoa_ZMTests.m */; };
+		68AA24301EB2DC3C00132808 /* ReactiveCocoa_ZMUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 68AA242F1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests.m */; };
+		68B4D5A91EB9BE7700208479 /* UIView+ZMFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 68B4D5A81EB9BE7700208479 /* UIView+ZMFrame.m */; };
+		68CB4E571EB78C14007A24DE /* FlagItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 68CB4E561EB78C14007A24DE /* FlagItem.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		68AA24211EB2DC3C00132808 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68AA23FC1EB2DC3C00132808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68AA24031EB2DC3C00132808;
+			remoteInfo = ReactiveCocoa_ZM;
+		};
+		68AA242C1EB2DC3C00132808 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 68AA23FC1EB2DC3C00132808 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 68AA24031EB2DC3C00132808;
+			remoteInfo = ReactiveCocoa_ZM;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		682A86721EC93EF7004F76A2 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		682A86731EC93EF7004F76A2 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		682A86741EC93EF7004F76A2 /* FirstViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirstViewController.xib; sourceTree = "<group>"; };
+		682A86751EC93EF7004F76A2 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		682A86761EC93EF7004F76A2 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		682A86771EC93EF7004F76A2 /* ThreeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
+		682A86781EC93EF7004F76A2 /* ThreeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
+		682A867E1EC93F4F004F76A2 /* BaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHeader.h; sourceTree = "<group>"; };
+		682A867F1EC93F4F004F76A2 /* BBaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBaseViewController.h; sourceTree = "<group>"; };
+		682A86801EC93F4F004F76A2 /* BBaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBaseViewController.m; sourceTree = "<group>"; };
+		682A86811EC93F4F004F76A2 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		682A86821EC93F4F004F76A2 /* Common.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Common.m; sourceTree = "<group>"; };
+		682A86831EC93F4F004F76A2 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		682A86841EC93F4F004F76A2 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		686C8D6D1EB8927D00EA366F /* RedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedView.h; sourceTree = "<group>"; };
+		686C8D6E1EB8927D00EA366F /* RedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedView.m; sourceTree = "<group>"; };
+		68911B7C1EC97DB400A232A2 /* ReactiveCocoaPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReactiveCocoaPrefixHeader.pch; path = ../ReactiveCocoaPrefixHeader.pch; sourceTree = "<group>"; };
+		68A19B6C1ECE866500E28FC3 /* HTViewModelProtocolImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTViewModelProtocolImpl.h; sourceTree = "<group>"; };
+		68A19B6D1ECE867C00E28FC3 /* HTViewModelService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTViewModelService.h; sourceTree = "<group>"; };
+		68AA24041EB2DC3C00132808 /* ReactiveCocoa_ZM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReactiveCocoa_ZM.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		68AA24081EB2DC3C00132808 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		68AA240A1EB2DC3C00132808 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		68AA240B1EB2DC3C00132808 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		68AA240D1EB2DC3C00132808 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		68AA240E1EB2DC3C00132808 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		68AA24111EB2DC3C00132808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		68AA24141EB2DC3C00132808 /* ReactiveCocoa_ZM.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReactiveCocoa_ZM.xcdatamodel; sourceTree = "<group>"; };
+		68AA24161EB2DC3C00132808 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		68AA24191EB2DC3C00132808 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		68AA241B1EB2DC3C00132808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68AA24201EB2DC3C00132808 /* ReactiveCocoa_ZMTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCocoa_ZMTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68AA24241EB2DC3C00132808 /* ReactiveCocoa_ZMTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactiveCocoa_ZMTests.m; sourceTree = "<group>"; };
+		68AA24261EB2DC3C00132808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68AA242B1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReactiveCocoa_ZMUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		68AA242F1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactiveCocoa_ZMUITests.m; sourceTree = "<group>"; };
+		68AA24311EB2DC3C00132808 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		68B4D5A71EB9BE7700208479 /* UIView+ZMFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+ZMFrame.h"; sourceTree = "<group>"; };
+		68B4D5A81EB9BE7700208479 /* UIView+ZMFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+ZMFrame.m"; sourceTree = "<group>"; };
+		68CB4E551EB78C14007A24DE /* FlagItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlagItem.h; sourceTree = "<group>"; };
+		68CB4E561EB78C14007A24DE /* FlagItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlagItem.m; sourceTree = "<group>"; };
+		68F116681EB960590005B17D /* BaseHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseHeader.h; sourceTree = "<group>"; };
+		68FA5A7E1EC9847A0090FF9C /* aaaaa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = aaaaa.h; sourceTree = "<group>"; };
+		72863C6BFA38A78FA7EE4712 /* Pods_ReactiveCocoa_ZM.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ReactiveCocoa_ZM.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		83898EB23389A397DCE6D653 /* Pods-ReactiveCocoa_ZM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoa_ZM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoa_ZM/Pods-ReactiveCocoa_ZM.debug.xcconfig"; sourceTree = "<group>"; };
+		B900F8056910F6CB2493987C /* Pods-ReactiveCocoa_ZM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ReactiveCocoa_ZM.release.xcconfig"; path = "Pods/Target Support Files/Pods-ReactiveCocoa_ZM/Pods-ReactiveCocoa_ZM.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		68AA24011EB2DC3C00132808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4120D80FAA0D2D4580AEDFAA /* Pods_ReactiveCocoa_ZM.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68AA241D1EB2DC3C00132808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68AA24281EB2DC3C00132808 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		325B61A4EF69AD71A675829D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				83898EB23389A397DCE6D653 /* Pods-ReactiveCocoa_ZM.debug.xcconfig */,
+				B900F8056910F6CB2493987C /* Pods-ReactiveCocoa_ZM.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		49F57F9C4E72393BCC1C0EFF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				72863C6BFA38A78FA7EE4712 /* Pods_ReactiveCocoa_ZM.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		680CA8DB1EB34A7000944FCD /* VController */ = {
+			isa = PBXGroup;
+			children = (
+				682A867D1EC93F4F004F76A2 /* BaseFile */,
+				682A86641EC93ACE004F76A2 /* TestVC */,
+				682A865F1EC9398C004F76A2 /* City */,
+			);
+			path = VController;
+			sourceTree = "<group>";
+		};
+		682A865F1EC9398C004F76A2 /* City */ = {
+			isa = PBXGroup;
+			children = (
+				68A19B6B1ECE865700E28FC3 /* Protocol */,
+				682A86601EC939E3004F76A2 /* ViewController */,
+				682A86611EC939E3004F76A2 /* View */,
+				682A86621EC939E3004F76A2 /* Model */,
+				682A86631EC939E3004F76A2 /* ViewModel */,
+			);
+			path = City;
+			sourceTree = "<group>";
+		};
+		682A86601EC939E3004F76A2 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		682A86611EC939E3004F76A2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		682A86621EC939E3004F76A2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		682A86631EC939E3004F76A2 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		682A86641EC93ACE004F76A2 /* TestVC */ = {
+			isa = PBXGroup;
+			children = (
+				682A86721EC93EF7004F76A2 /* FirstViewController.h */,
+				682A86731EC93EF7004F76A2 /* FirstViewController.m */,
+				682A86741EC93EF7004F76A2 /* FirstViewController.xib */,
+				682A86751EC93EF7004F76A2 /* SecondViewController.h */,
+				682A86761EC93EF7004F76A2 /* SecondViewController.m */,
+				682A86771EC93EF7004F76A2 /* ThreeViewController.h */,
+				682A86781EC93EF7004F76A2 /* ThreeViewController.m */,
+			);
+			path = TestVC;
+			sourceTree = "<group>";
+		};
+		682A867D1EC93F4F004F76A2 /* BaseFile */ = {
+			isa = PBXGroup;
+			children = (
+				682A867E1EC93F4F004F76A2 /* BaseHeader.h */,
+				682A867F1EC93F4F004F76A2 /* BBaseViewController.h */,
+				682A86801EC93F4F004F76A2 /* BBaseViewController.m */,
+				682A86811EC93F4F004F76A2 /* Common.h */,
+				682A86821EC93F4F004F76A2 /* Common.m */,
+				682A86831EC93F4F004F76A2 /* RootViewController.h */,
+				682A86841EC93F4F004F76A2 /* RootViewController.m */,
+			);
+			path = BaseFile;
+			sourceTree = "<group>";
+		};
+		686C8D6C1EB8926C00EA366F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				686C8D6D1EB8927D00EA366F /* RedView.h */,
+				686C8D6E1EB8927D00EA366F /* RedView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		68A19B6B1ECE865700E28FC3 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				68A19B6C1ECE866500E28FC3 /* HTViewModelProtocolImpl.h */,
+				68A19B6D1ECE867C00E28FC3 /* HTViewModelService.h */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		68AA23FB1EB2DC3C00132808 = {
+			isa = PBXGroup;
+			children = (
+				68AA24061EB2DC3C00132808 /* ReactiveCocoa_ZM */,
+				68AA24231EB2DC3C00132808 /* ReactiveCocoa_ZMTests */,
+				68AA242E1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests */,
+				68AA24051EB2DC3C00132808 /* Products */,
+				325B61A4EF69AD71A675829D /* Pods */,
+				49F57F9C4E72393BCC1C0EFF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		68AA24051EB2DC3C00132808 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				68AA24041EB2DC3C00132808 /* ReactiveCocoa_ZM.app */,
+				68AA24201EB2DC3C00132808 /* ReactiveCocoa_ZMTests.xctest */,
+				68AA242B1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		68AA24061EB2DC3C00132808 /* ReactiveCocoa_ZM */ = {
+			isa = PBXGroup;
+			children = (
+				68AA240A1EB2DC3C00132808 /* AppDelegate.h */,
+				68AA240B1EB2DC3C00132808 /* AppDelegate.m */,
+				68AA240D1EB2DC3C00132808 /* ViewController.h */,
+				68AA240E1EB2DC3C00132808 /* ViewController.m */,
+				68FA5A7E1EC9847A0090FF9C /* aaaaa.h */,
+				686C8D6C1EB8926C00EA366F /* View */,
+				68CB4E541EB78C0C007A24DE /* Model */,
+				680CA8DB1EB34A7000944FCD /* VController */,
+				68AA24161EB2DC3C00132808 /* Assets.xcassets */,
+				68AA24071EB2DC3C00132808 /* Supporting Files */,
+			);
+			path = ReactiveCocoa_ZM;
+			sourceTree = "<group>";
+		};
+		68AA24071EB2DC3C00132808 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				68B4D5A71EB9BE7700208479 /* UIView+ZMFrame.h */,
+				68B4D5A81EB9BE7700208479 /* UIView+ZMFrame.m */,
+				68F116681EB960590005B17D /* BaseHeader.h */,
+				68911B7C1EC97DB400A232A2 /* ReactiveCocoaPrefixHeader.pch */,
+				68AA241B1EB2DC3C00132808 /* Info.plist */,
+				68AA24081EB2DC3C00132808 /* main.m */,
+				68AA24131EB2DC3C00132808 /* ReactiveCocoa_ZM.xcdatamodeld */,
+				68AA24181EB2DC3C00132808 /* LaunchScreen.storyboard */,
+				68AA24101EB2DC3C00132808 /* Main.storyboard */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		68AA24231EB2DC3C00132808 /* ReactiveCocoa_ZMTests */ = {
+			isa = PBXGroup;
+			children = (
+				68AA24241EB2DC3C00132808 /* ReactiveCocoa_ZMTests.m */,
+				68AA24261EB2DC3C00132808 /* Info.plist */,
+			);
+			path = ReactiveCocoa_ZMTests;
+			sourceTree = "<group>";
+		};
+		68AA242E1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests */ = {
+			isa = PBXGroup;
+			children = (
+				68AA242F1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests.m */,
+				68AA24311EB2DC3C00132808 /* Info.plist */,
+			);
+			path = ReactiveCocoa_ZMUITests;
+			sourceTree = "<group>";
+		};
+		68CB4E541EB78C0C007A24DE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				68CB4E551EB78C14007A24DE /* FlagItem.h */,
+				68CB4E561EB78C14007A24DE /* FlagItem.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		68AA24031EB2DC3C00132808 /* ReactiveCocoa_ZM */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68AA24341EB2DC3C00132808 /* Build configuration list for PBXNativeTarget "ReactiveCocoa_ZM" */;
+			buildPhases = (
+				D07BC8834F61B3C04CCC728B /* [CP] Check Pods Manifest.lock */,
+				68AA24001EB2DC3C00132808 /* Sources */,
+				68AA24011EB2DC3C00132808 /* Frameworks */,
+				68AA24021EB2DC3C00132808 /* Resources */,
+				F7706CE746AC11A6001BF274 /* [CP] Embed Pods Frameworks */,
+				93A6FB55A14B3A9C24BDAA2D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ReactiveCocoa_ZM;
+			productName = ReactiveCocoa_ZM;
+			productReference = 68AA24041EB2DC3C00132808 /* ReactiveCocoa_ZM.app */;
+			productType = "com.apple.product-type.application";
+		};
+		68AA241F1EB2DC3C00132808 /* ReactiveCocoa_ZMTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68AA24371EB2DC3C00132808 /* Build configuration list for PBXNativeTarget "ReactiveCocoa_ZMTests" */;
+			buildPhases = (
+				68AA241C1EB2DC3C00132808 /* Sources */,
+				68AA241D1EB2DC3C00132808 /* Frameworks */,
+				68AA241E1EB2DC3C00132808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68AA24221EB2DC3C00132808 /* PBXTargetDependency */,
+			);
+			name = ReactiveCocoa_ZMTests;
+			productName = ReactiveCocoa_ZMTests;
+			productReference = 68AA24201EB2DC3C00132808 /* ReactiveCocoa_ZMTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		68AA242A1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 68AA243A1EB2DC3C00132808 /* Build configuration list for PBXNativeTarget "ReactiveCocoa_ZMUITests" */;
+			buildPhases = (
+				68AA24271EB2DC3C00132808 /* Sources */,
+				68AA24281EB2DC3C00132808 /* Frameworks */,
+				68AA24291EB2DC3C00132808 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				68AA242D1EB2DC3C00132808 /* PBXTargetDependency */,
+			);
+			name = ReactiveCocoa_ZMUITests;
+			productName = ReactiveCocoa_ZMUITests;
+			productReference = 68AA242B1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		68AA23FC1EB2DC3C00132808 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = ZM;
+				TargetAttributes = {
+					68AA24031EB2DC3C00132808 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 6VVZ2WJX69;
+						ProvisioningStyle = Automatic;
+					};
+					68AA241F1EB2DC3C00132808 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 6VVZ2WJX69;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 68AA24031EB2DC3C00132808;
+					};
+					68AA242A1EB2DC3C00132808 = {
+						CreatedOnToolsVersion = 8.3.1;
+						DevelopmentTeam = 6VVZ2WJX69;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 68AA24031EB2DC3C00132808;
+					};
+				};
+			};
+			buildConfigurationList = 68AA23FF1EB2DC3C00132808 /* Build configuration list for PBXProject "ReactiveCocoa_ZM" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 68AA23FB1EB2DC3C00132808;
+			productRefGroup = 68AA24051EB2DC3C00132808 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				68AA24031EB2DC3C00132808 /* ReactiveCocoa_ZM */,
+				68AA241F1EB2DC3C00132808 /* ReactiveCocoa_ZMTests */,
+				68AA242A1EB2DC3C00132808 /* ReactiveCocoa_ZMUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		68AA24021EB2DC3C00132808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68AA241A1EB2DC3C00132808 /* LaunchScreen.storyboard in Resources */,
+				68AA24171EB2DC3C00132808 /* Assets.xcassets in Resources */,
+				68AA24121EB2DC3C00132808 /* Main.storyboard in Resources */,
+				682A867A1EC93EF7004F76A2 /* FirstViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68AA241E1EB2DC3C00132808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68AA24291EB2DC3C00132808 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		93A6FB55A14B3A9C24BDAA2D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveCocoa_ZM/Pods-ReactiveCocoa_ZM-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D07BC8834F61B3C04CCC728B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F7706CE746AC11A6001BF274 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ReactiveCocoa_ZM/Pods-ReactiveCocoa_ZM-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		68AA24001EB2DC3C00132808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				682A86861EC93F4F004F76A2 /* Common.m in Sources */,
+				682A867B1EC93EF7004F76A2 /* SecondViewController.m in Sources */,
+				686C8D6F1EB8927D00EA366F /* RedView.m in Sources */,
+				68CB4E571EB78C14007A24DE /* FlagItem.m in Sources */,
+				68AA240F1EB2DC3C00132808 /* ViewController.m in Sources */,
+				68AA240C1EB2DC3C00132808 /* AppDelegate.m in Sources */,
+				68AA24091EB2DC3C00132808 /* main.m in Sources */,
+				68AA24151EB2DC3C00132808 /* ReactiveCocoa_ZM.xcdatamodeld in Sources */,
+				682A86851EC93F4F004F76A2 /* BBaseViewController.m in Sources */,
+				68B4D5A91EB9BE7700208479 /* UIView+ZMFrame.m in Sources */,
+				682A86871EC93F4F004F76A2 /* RootViewController.m in Sources */,
+				682A86791EC93EF7004F76A2 /* FirstViewController.m in Sources */,
+				682A867C1EC93EF7004F76A2 /* ThreeViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68AA241C1EB2DC3C00132808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68AA24251EB2DC3C00132808 /* ReactiveCocoa_ZMTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		68AA24271EB2DC3C00132808 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68AA24301EB2DC3C00132808 /* ReactiveCocoa_ZMUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		68AA24221EB2DC3C00132808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68AA24031EB2DC3C00132808 /* ReactiveCocoa_ZM */;
+			targetProxy = 68AA24211EB2DC3C00132808 /* PBXContainerItemProxy */;
+		};
+		68AA242D1EB2DC3C00132808 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 68AA24031EB2DC3C00132808 /* ReactiveCocoa_ZM */;
+			targetProxy = 68AA242C1EB2DC3C00132808 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		68AA24101EB2DC3C00132808 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68AA24111EB2DC3C00132808 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		68AA24181EB2DC3C00132808 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				68AA24191EB2DC3C00132808 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		68AA24321EB2DC3C00132808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		68AA24331EB2DC3C00132808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		68AA24351EB2DC3C00132808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 83898EB23389A397DCE6D653 /* Pods-ReactiveCocoa_ZM.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6VVZ2WJX69;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ReactiveCocoaPrefixHeader.pch";
+				INFOPLIST_FILE = ReactiveCocoa_ZM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.td.ReactiveCocoa-ZM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		68AA24361EB2DC3C00132808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B900F8056910F6CB2493987C /* Pods-ReactiveCocoa_ZM.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 6VVZ2WJX69;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/ReactiveCocoaPrefixHeader.pch";
+				INFOPLIST_FILE = ReactiveCocoa_ZM/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.td.ReactiveCocoa-ZM";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		68AA24381EB2DC3C00132808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6VVZ2WJX69;
+				INFOPLIST_FILE = ReactiveCocoa_ZMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.td.ReactiveCocoa-ZMTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveCocoa_ZM.app/ReactiveCocoa_ZM";
+			};
+			name = Debug;
+		};
+		68AA24391EB2DC3C00132808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 6VVZ2WJX69;
+				INFOPLIST_FILE = ReactiveCocoa_ZMTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.td.ReactiveCocoa-ZMTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactiveCocoa_ZM.app/ReactiveCocoa_ZM";
+			};
+			name = Release;
+		};
+		68AA243B1EB2DC3C00132808 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 6VVZ2WJX69;
+				INFOPLIST_FILE = ReactiveCocoa_ZMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.td.ReactiveCocoa-ZMUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ReactiveCocoa_ZM;
+			};
+			name = Debug;
+		};
+		68AA243C1EB2DC3C00132808 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 6VVZ2WJX69;
+				INFOPLIST_FILE = ReactiveCocoa_ZMUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.td.ReactiveCocoa-ZMUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = ReactiveCocoa_ZM;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		68AA23FF1EB2DC3C00132808 /* Build configuration list for PBXProject "ReactiveCocoa_ZM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68AA24321EB2DC3C00132808 /* Debug */,
+				68AA24331EB2DC3C00132808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68AA24341EB2DC3C00132808 /* Build configuration list for PBXNativeTarget "ReactiveCocoa_ZM" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68AA24351EB2DC3C00132808 /* Debug */,
+				68AA24361EB2DC3C00132808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68AA24371EB2DC3C00132808 /* Build configuration list for PBXNativeTarget "ReactiveCocoa_ZMTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68AA24381EB2DC3C00132808 /* Debug */,
+				68AA24391EB2DC3C00132808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		68AA243A1EB2DC3C00132808 /* Build configuration list for PBXNativeTarget "ReactiveCocoa_ZMUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				68AA243B1EB2DC3C00132808 /* Debug */,
+				68AA243C1EB2DC3C00132808 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		68AA24131EB2DC3C00132808 /* ReactiveCocoa_ZM.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				68AA24141EB2DC3C00132808 /* ReactiveCocoa_ZM.xcdatamodel */,
+			);
+			currentVersion = 68AA24141EB2DC3C00132808 /* ReactiveCocoa_ZM.xcdatamodel */;
+			path = ReactiveCocoa_ZM.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 68AA23FC1EB2DC3C00132808 /* Project object */;
+}

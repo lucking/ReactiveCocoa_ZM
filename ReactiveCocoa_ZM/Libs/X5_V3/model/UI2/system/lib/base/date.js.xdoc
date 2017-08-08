@@ -1,0 +1,101 @@
+/**
+   @name Date
+   @class
+   @url $UI/system/lib/base/date
+   @model UI2
+   @category javascript
+   @description 常用的日期操作
+ */
+
+/**
+   @name Date.isLeapYear
+   @function  
+   @description 判断日期是否是闰年
+   @param {Date} date 日期
+   @returns {Boolean} 如果是闰年返回true，否则返回false
+ */
+
+/**
+   @name Date.fromString
+   @function 
+   @description 按照给定的日期格式，把字符串转换成日期对象
+   @param {String}  str 字符串
+   @param {String} format 日期格式
+   @returns {Date} 返回日期
+ */
+
+/**
+	@name Date.DEFAULT_FORMAT_SHOT
+	@property
+	@type string 
+	@description <b>[filed]</b>时间格式常量  = "yyyy/MM/dd"
+ */ 
+
+/**
+	@name Date.DEFAULT_FORMAT
+	@property
+	@type string 
+	@description <b>[filed]</b>时间格式常量  = "yyyy/MM/dd hh:mm:ss"
+ */ 
+
+/**
+	@name Date.STANDART_FORMAT_SHOT
+	@property
+	@type string 
+	@description <b>[filed]</b>时间格式常量   = "yyyy-MM-dd"
+ */ 
+
+/**
+	@name Date.STANDART_FORMAT
+	@property
+	@type string 
+	@description <b>[filed]</b>时间格式常量  = "yyyy-MM-ddThh:mm:ss.fffZ"
+ */ 
+
+/**
+   @name Date.toString
+   @function
+   @description 按照给定的日期格式，把日期对象转换成字符串
+   @param {Date} dateTime  要处理的日期对象
+   @param {String} formatStr  日期格式
+   @returns {String} 返回字符串
+ */
+
+/**
+   @name Date.increase
+   @function
+   @description 根据日期的规则，为给定的日期添加指定的时间量
+   @param {Date} datetime  要处理的日期对象
+   @param {Number} num  添加的时间量
+   @param {String} interval  添加的时间单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年
+   @returns {Date} 返回日期
+ */
+
+/**
+   @name Date.decrease
+   @function
+   @description 根据日期的规则，为给定的日期减去指定的时间量
+   @param {Date} datetime  要处理的日期对象
+   @param {Number} num  减去的时间量
+   @param {String} interval  减去的时间单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年
+   @returns {Date} 返回日期
+ */
+
+/**
+   @name Date.diff
+   @function
+   @description 计算两个日期的差
+   @param {Date} start  起始日期
+   @param {Date} end  结束日期
+   @param {String} interval  时间单位，默认是以天为单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年
+   @return {Number} 返回结果，如果起始日期小于结束日期返回正整数，否则返回负整数
+ */
+
+/**
+   @name Date.between
+   @function
+   @description 计算两个日期相差几天，和diff很相似，返回永远是正整数
+   @param {Date} start  起始日期
+   @param {Date} end  结束日期
+   @return {Number} 返回相差几天
+ */

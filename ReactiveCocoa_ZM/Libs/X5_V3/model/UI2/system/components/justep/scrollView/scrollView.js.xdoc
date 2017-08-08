@@ -1,0 +1,160 @@
+/**
+	@name ScrollView
+	@component $UI/system/components/justep/scrollView/scrollView
+	@description 滚动容器
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name ScrollView#xid
+	@attribute 
+	@type string
+	@description 
+*/	
+
+/**
+	@name ScrollView#hScroll
+	@attribute 
+	@type boolean
+	@description 是否横向滚动
+*/
+/**
+	@name ScrollView#vScroll
+	@attribute 
+	@type string
+	@description 是否纵向滚动
+*/
+/**
+	@name ScrollView#hScrollbar
+	@attribute 
+	@type boolean
+	@description 是否有横向滚动条
+*/
+/**
+	@name ScrollView#vScrollbar
+	@attribute 
+	@type boolean
+	@description 是否有纵向滚动条
+*/
+/**
+	@name ScrollView#fadeScrollbar
+	@attribute 
+	@type boolean
+	@description 滚动条出现效果(淡入淡出)
+*/
+/**
+	@name ScrollView#hideScrollbar
+	@attribute 
+	@type boolean
+	@description 默认隐藏滚动条，滚动时才显示
+*/
+/**
+	@name ScrollView#bounce
+	@attribute 
+	@type boolean
+	@description bouncing效果(跳跃效果)
+*/
+/**
+	@name ScrollView#lockDirection
+	@attribute 
+	@type boolean
+	@description 单方向滚动锁定
+*/
+/**
+	@name ScrollView#checkDOMChanges
+	@attribute 
+	@type boolean
+	@description 自动监听滚动区域内容变化，重新计算滚动区域高度
+*/
+/**
+	@name ScrollView#snap
+	@attribute 
+	@type string
+	@description 滚动停止位置总在指定(snap)元素边缘
+*/
+/**
+	@name ScrollView#scrollbarClass
+	@attribute 
+	@type string
+	@description 自定义滚动条样式class
+*/
+/**
+	@name ScrollView#pullDownLabel
+	@attribute 
+	@type string
+	@description 下划文字
+*/
+/**
+	@name ScrollView#pullDownMoveLabel
+	@attribute 
+	@type string
+	@description 下划移动中文字
+*/
+/**
+	@name ScrollView#pullDownLoadingLabel
+	@attribute 
+	@type string
+	@description 下划加载中文字
+*/
+/**
+	@name ScrollView#pullUpLabel
+	@attribute 
+	@type string
+	@description 上划文字
+*/
+/**
+	@name ScrollView#pullUpMoveLabel
+	@attribute 
+	@type string
+	@description 上划移动中文字
+*/
+/**
+	@name ScrollView#pullUpLoadingLabel
+	@attribute 
+	@type string
+	@description 上划加载中文字
+*/
+/**
+	@name ScrollView#noMoreCanLoadLabel
+	@attribute 
+	@type string 
+	@description 没有数据加载时候的文字
+*/
+
+/**
+	@name ScrollView#onScrollMove
+	@event 
+	@type string
+	@description 滚动事件
+	@param event 它的结构如下:
+	<xmp>{"source":组件的js对象}</xmp>
+*/
+
+/**
+	@name ScrollView#onScrollEnd
+	@event 
+	@type string
+	@description 滚动结束事件
+	@param event 它的结构如下:
+	<xmp>{"source":组件的js对象}</xmp>
+*/
+
+/**
+	@name ScrollView#onPullDown
+	@event 
+	@type string
+	@description 下划事件
+	@param event 它的结构如下:
+	<xmp>{"source":组件的js对象}</xmp>
+*/
+/**
+	@name ScrollView#onPullUp
+	@event 
+	@type string
+	@description 上划事件
+	@param event 它的结构如下:
+	<xmp>{"source":组件的js对象}</xmp>
+*/

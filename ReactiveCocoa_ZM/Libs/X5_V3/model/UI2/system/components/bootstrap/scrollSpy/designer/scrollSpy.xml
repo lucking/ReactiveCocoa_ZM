@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/scrollSpy/scrollSpy" tag-type="rich" tag-name="div" icon="scrollSpy.png" text="工具条"  
+	    binding-component="$UI/system/components/bootstrap/scrollSpy/scrollSpy" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="selector" text="选择其"/>
+			<property name="class"  text="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[
+		   <div component="$UI/system/components/bootstrap/scrollSpy/scrollSpy" class="scrollspy">
+		   </div> 
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+</elements>

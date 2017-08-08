@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/dialog/dialog" tag-type="rich" tag-name="div" icon="dialog.png" text="模态对话框"  
+	    binding-component="$UI/system/components/bootstrap/dialog/dialog" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "dialog"
+					} 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+			<event name="onShow" type="event" text="打开" parameters="event" is-script="true"/>
+			<event name="onHide" type="event" text="关闭" parameters="event" is-script="true"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<toolbar>	
+		   <item text="显示" method="open"/>		
+		   <item text="隐藏" method="close"/>		
+		</toolbar>
+		<operations>
+			<operation name="open" label="显示" enable="true" visible="true"/>
+			<operation name="close" label="隐藏" enable="true" visible="true"/>
+			<operation name="toggle" label="切换显示" enable="true" visible="true"/>
+		</operations>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<div component="$UI/system/components/bootstrap/dialog/dialog" class="modal fade">
+			  <div class="modal-dialog">
+			    <div class="modal-content">
+			      <div class="modal-header">
+			        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&amp;times;</span><span class="sr-only">Close</span></button>
+			        <h4 class="modal-title">Modal title</h4>
+			      </div>
+			      <div class="modal-body">
+			        
+			      </div>
+			      <div class="modal-footer">
+			        <button type="button" class="btn btn-default">关闭</button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+</elements>

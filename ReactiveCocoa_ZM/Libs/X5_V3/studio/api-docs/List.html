@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Component</div>
+				<h1>
+					
+					List
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/components/justep/list/list</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+
+		
+		<li><a href="#properties">Properties</a></li>
+		
+
+		
+
+		
+		<li><a href="#methods">Methods</a></li>
+		
+
+		
+		<li><a href="#events">Events</a></li>
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>component </span>
+				<strong>
+					List
+				</strong>
+
+				
+				<span> extends <a href="BindComponent.html" ><abbr title="BindComponent">BindComponent</abbr></a></span>
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>List</p></div>
+
+			
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+			<h2>
+				<a name='properties'></a>
+				Properties
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#autoLoad">
+        	<abbr title="List#autoLoad">
+        		autoLoad
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>自动加载list数据，如果==false时需要显示调用refresh方法才行显示list数据</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#class">
+        	<abbr title="List#class">
+        		class
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>组件class</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#data">
+        	<abbr title="List#data">
+        		data
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>关联的data组件xid</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#disableInfiniteLoad">
+        	<abbr title="List#disableInfiniteLoad">
+        		disableInfiniteLoad
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>禁止上划加载数据</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#disablePullToRefresh">
+        	<abbr title="List#disablePullToRefresh">
+        		disablePullToRefresh
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>禁止下拉刷新</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#filter">
+        	<abbr title="List#filter">
+        		filter
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>过滤条件表达式，表达式中可以使用$model,$object,$parent,$row(执行过滤的数据行对象)变量</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        integer
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#limit">
+        	<abbr title="List#limit">
+        		limit
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>一次显示数据条数，==-1时感知data数据，data有多少数据显示多少数据，默认：-1</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#xid">
+        	<abbr title="List#xid">
+        		xid
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>组件标示</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+			<h2>
+				<a name='methods'></a>
+				Methods
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#get">
+				<abbr title="List#get">
+					get
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> name)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	List&lt;Data.Row&gt;
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getBindingObjects">
+				<abbr title="List#getBindingObjects">
+					getBindingObjects
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Data.html" ><abbr title="Data">Data</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getData">
+				<abbr title="List#getData">
+					getData
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#loadNextPage">
+				<abbr title="List#loadNextPage">
+					loadNextPage
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#refresh">
+				<abbr title="List#refresh">
+					refresh
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(boolean refreshData)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#set">
+				<abbr title="List#set">
+					set
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(json arg)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+			<h2>
+				<a name='events'></a>
+				Events
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+        <a href="#event:onAfterRender">
+			<abbr title="List#event:onAfterRender">
+				
+				<a href="List.html#event:onAfterRender" ><abbr title="List#event:onAfterRender">onAfterRender</abbr></a>
+				
+        	</abbr>
+        </a>
+        
+      	<span>
+      		(object event)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+			<h2>
+				<a name='properties_details'></a>
+				Properties Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="autoLoad" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno13">list.js.xdoc</a> at line 13
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      boolean
+    </span>
+	  
+  
+		<strong>autoLoad</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>自动加载list数据，如果==false时需要显示调用refresh方法才行显示list数据</p></div>
+<h3 id="class" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno5">list.js.xdoc</a> at line 5
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>class</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>组件class</p><pre class="example sh_javascript">	<xmp>
+		基础样式: x-list(必须)
+		其他: x-inner-scroll(list内部出滚动条样式，不使用此class根据内容自增长)
+		
+		内部其他class说明：
+		x-list-template：标示对应节点下的内容是模板，会根据data数据进行生成显示
+	</xmp></pre></div>
+<h3 id="data" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno7">list.js.xdoc</a> at line 7
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>data</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>关联的data组件xid</p></div>
+<h3 id="disableInfiniteLoad" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno17">list.js.xdoc</a> at line 17
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      boolean
+    </span>
+	  
+  
+		<strong>disableInfiniteLoad</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>禁止上划加载数据</p></div>
+<h3 id="disablePullToRefresh" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno15">list.js.xdoc</a> at line 15
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      boolean
+    </span>
+	  
+  
+		<strong>disablePullToRefresh</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>禁止下拉刷新</p></div>
+<h3 id="filter" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno11">list.js.xdoc</a> at line 11
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>filter</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>过滤条件表达式，表达式中可以使用$model,$object,$parent,$row(执行过滤的数据行对象)变量</p></div>
+<h3 id="limit" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno9">list.js.xdoc</a> at line 9
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      integer
+    </span>
+	  
+  
+		<strong>limit</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>一次显示数据条数，==-1时感知data数据，data有多少数据显示多少数据，默认：-1</p></div>
+<h3 id="xid" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno3">list.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>xid</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>组件标示</p></div>
+
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+			<h2>
+				<a name='methods_details'></a>
+				Methods Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="get"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno21">list.js.xdoc</a> at line 21
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Object.html" ><abbr title="Object">Object</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>get</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> name)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取属性值</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>name</a><p>属性名称，取值范围："limit"、"filter"</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getBindingObjects"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno29">list.js.xdoc</a> at line 29
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      List&lt;Data.Row&gt;
+	    </span>
+    
+	  
+	  
+  
+		<strong>getBindingObjects</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>list组件绑定的数据行</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				List&lt;Data.Row&gt;
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getData"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno23">list.js.xdoc</a> at line 23
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Data.html" ><abbr title="Data">Data</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>getData</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取绑定的Data组件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Data.html" ><abbr title="Data">Data</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="loadNextPage"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno27">list.js.xdoc</a> at line 27
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>loadNextPage</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>加载下页数据</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="refresh"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno25">list.js.xdoc</a> at line 25
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>refresh</strong>
+		
+    <span class="params">
+      (boolean refreshData)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>刷新list组件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				boolean
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>refreshData</a><p>是否刷新data</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="set"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_list_js_xdoc.html#lineno19">list.js.xdoc</a> at line 19
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>set</strong>
+		
+    <span class="params">
+      (json arg)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>设置属性值</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				json
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>arg</a><p>属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"limit" : {integer} 一次显示数据条数，==-1时感知data数据，data有多少数据显示多少数据，默认：-1
+		"filter: {string}	过滤条件表达式，表达式中可以使用$model,$object,$parent,$row(执行过滤的数据行对象)变量		
+	}
+	</xmp></p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+			<h2>
+				<a name='events_details'></a>
+				Events Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="event:onAfterRender"  class="public">
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      void
+    </span>
+	  
+  
+		<strong>onAfterRender</strong>
+		
+    <span class="params">
+      (object event)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p><b>[回调型事件]</b>List组件刷新渲染后</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				object
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>event</a><p><br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象，
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp></p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+
+    <!-- TRIGGERED BY -->
+    
+
+    <!-- LISTENED BY -->
+    
+    
+	</div>
+</div>
+
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:03:00 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

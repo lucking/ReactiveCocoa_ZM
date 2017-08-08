@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" class="window" component="$model/UI2/system/components/justep/window/window" id="window1" style="height:6px;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/justep/window/window,$model/UI2/system/components/bootstrap/alert/alert,">  
+  <div class="alert alert-success" component="$model/UI2/system/components/bootstrap/alert/alert" xid="alert2" data-bind="component:{name:'$model/UI2/system/components/bootstrap/alert/alert'}">some text here 
+    <button type="button" class="close" data-dismiss="alert" xid="button2"> 
+      <span aria-hidden="true" xid="span3">×</span>  
+      <span class="sr-only" xid="span4">Close</span> 
+    </button> 
+  </div>  
+  <div class="alert alert-info" component="$model/UI2/system/components/bootstrap/alert/alert" xid="alert1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/alert/alert'}">some text here 
+    <button type="button" class="close" data-dismiss="alert" xid="button1"> 
+      <span aria-hidden="true" xid="span1">×</span>  
+      <span class="sr-only" xid="span2">Close</span>
+    </button> 
+  </div>  
+  <div class="alert alert-warning" component="$model/UI2/system/components/bootstrap/alert/alert" xid="alert3" data-bind="component:{name:'$model/UI2/system/components/bootstrap/alert/alert'}">some text here 
+    <button type="button" class="close" data-dismiss="alert" xid="button3"> 
+      <span aria-hidden="true" xid="span5">×</span>  
+      <span class="sr-only" xid="span6">Close</span>
+    </button> 
+  </div>  
+  <div class="alert alert-danger" component="$model/UI2/system/components/bootstrap/alert/alert" xid="alert4" data-bind="component:{name:'$model/UI2/system/components/bootstrap/alert/alert'}">some text here 
+    <button type="button" class="close" data-dismiss="alert" xid="button4"> 
+      <span aria-hidden="true" xid="span7">×</span>  
+      <span class="sr-only" xid="span8">Close</span>
+    </button> 
+  </div>
+</div>

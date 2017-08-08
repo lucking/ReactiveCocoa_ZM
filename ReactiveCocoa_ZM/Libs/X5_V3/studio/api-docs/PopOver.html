@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Component</div>
+				<h1>
+					
+					PopOver
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/components/justep/popOver/popOver</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+
+		
+		<li><a href="#properties">Properties</a></li>
+		
+
+		
+
+		
+		<li><a href="#methods">Methods</a></li>
+		
+
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>component </span>
+				<strong>
+					PopOver
+				</strong>
+
+				
+				<span> extends <a href="ViewComponent.html" ><abbr title="ViewComponent">ViewComponent</abbr></a></span>
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>一个可定位的区域, 可以相对屏幕或者给定的元素来定位.</p><pre class="example sh_javascript">	<xmp>
+	</xmp></pre></div>
+
+			
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+			<h2>
+				<a name='properties'></a>
+				Properties
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#anchor">
+        	<abbr title="PopOver#anchor">
+        		anchor
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>指定相对停靠的组件的xid</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#direction">
+        	<abbr title="PopOver#direction">
+        		direction
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>停靠的方向, 当设置了anchor属性有效, 值可以是 left-bottom,right-bottom,left-top,right-top</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#dismissible">
+        	<abbr title="PopOver#dismissible">
+        		dismissible
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>决定点击空白区域是否隐藏</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#opacity">
+        	<abbr title="PopOver#opacity">
+        		opacity
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>遮罩得透明度</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#position">
+        	<abbr title="PopOver#position">
+        		position
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>相对屏幕的位置, 值可以是 top,left,center,right,bottom</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#xid">
+        	<abbr title="PopOver#xid">
+        		xid
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+			<h2>
+				<a name='methods'></a>
+				Methods
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#get">
+				<abbr title="PopOver#get">
+					get
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(string name)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#hide">
+				<abbr title="PopOver#hide">
+					hide
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#set">
+				<abbr title="PopOver#set">
+					set
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(json arg)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#show">
+				<abbr title="PopOver#show">
+					show
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+			<h2>
+				<a name='properties_details'></a>
+				Properties Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="anchor" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno7">popOver.js.xdoc</a> at line 7
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>anchor</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>指定相对停靠的组件的xid</p></div>
+<h3 id="direction" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno9">popOver.js.xdoc</a> at line 9
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>direction</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>停靠的方向, 当设置了anchor属性有效, 值可以是 left-bottom,right-bottom,left-top,right-top</p></div>
+<h3 id="dismissible" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno13">popOver.js.xdoc</a> at line 13
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      boolean
+    </span>
+	  
+  
+		<strong>dismissible</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>决定点击空白区域是否隐藏</p></div>
+<h3 id="opacity" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno11">popOver.js.xdoc</a> at line 11
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>opacity</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>遮罩得透明度</p></div>
+<h3 id="position" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno5">popOver.js.xdoc</a> at line 5
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>position</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>相对屏幕的位置, 值可以是 top,left,center,right,bottom</p></div>
+<h3 id="xid" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno3">popOver.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>xid</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+
+
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+			<h2>
+				<a name='methods_details'></a>
+				Methods Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="get"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno20">popOver.js.xdoc</a> at line 20
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      
+	    </span>
+    
+	  
+	  
+  
+		<strong>get</strong>
+		
+    <span class="params">
+      (string name)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取popOver的属性</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				string
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>name</a><p>属性名, 值范围: "anchor", "direction", "opacity", "dismissible", "position"</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>返回属性值</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="hide"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno18">popOver.js.xdoc</a> at line 18
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>hide</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>隐藏内容区域</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="set"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno22">popOver.js.xdoc</a> at line 22
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>set</strong>
+		
+    <span class="params">
+      (json arg)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>设置popOver的属性</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				json
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>arg</a><p>属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"anchor" : 指定相对停靠的组件的xid
+		"direction" : 停靠的方向, 当设置了anchor属性有效, 值可以是 left-bottom,right-bottom,left-top,right-top
+		"opacity" : 遮罩得透明度
+		"dismissible": 决定点击空白区域是否隐藏
+		"position": 相对屏幕的位置, 值可以是 top,left,center,right,bottom
+	}
+	</xmp></p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="show"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_popOver_js_xdoc.html#lineno16">popOver.js.xdoc</a> at line 16
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>show</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>显示内容区域</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:03:05 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

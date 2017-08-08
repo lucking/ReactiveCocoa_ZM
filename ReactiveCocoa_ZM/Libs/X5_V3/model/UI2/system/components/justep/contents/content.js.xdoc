@@ -1,0 +1,51 @@
+/**
+	@name Content
+	@component $UI/system/components/justep/contents/content
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description contents组件使用的content类, 在Contents内部使用, 不能独立使用
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name Content#onActive
+	@event
+	@description <b>[回调型事件]</b>当content被激活
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : Contents组件的js对象,
+		"index": 激活的content的索引
+	}
+	</xmp>
+*/
+
+/**
+	@name Content#onInactive
+	@event
+	@description <b>[回调型事件]</b>当content被取消激活
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : Contents组件的js对象,
+		"index": 激活的content的索引
+	}
+	</xmp>
+*/
+
+/**
+ @name Content#dispose
+ @function
+ @description 销毁content对象
+*/
+
+/**
+ @name Content#active
+ @function
+ @description 激活content
+*/

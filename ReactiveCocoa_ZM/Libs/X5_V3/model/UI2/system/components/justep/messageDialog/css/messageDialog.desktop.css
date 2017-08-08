@@ -1,0 +1,190 @@
+.x-modal-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  /*IE*/
+  filter: alpha(opacity=40);
+  /*IE*/
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2500;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition-duration: 200ms;
+  transition-duration: 200ms;
+}
+.x-modal-overlay.x-modal-overlay-visible {
+  visibility: visible;
+  opacity: 1;
+}
+.x-modal {
+  background-color: #ffffff;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+  width: 270px;
+  position: absolute;
+  z-index: 2501;
+  left: 50%;
+  margin-left: -135px;
+  margin-top: 0;
+  top: 50%;
+  text-align: center;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0) scale(1.185);
+  -ms-transform: translate3d(0, 0, 0) scale(1.185);
+  transform: translate3d(0, 0, 0) scale(1.185);
+  -webkit-transition-property: -webkit-transform, opacity;
+  -moz-transition-property: -moz-transform, opacity;
+  -ms-transition-property: -ms-transform, opacity;
+  -o-transition-property: -o-transform, opacity;
+  transition-property: transform, opacity;
+  display: none;
+}
+.x-modal.x-modal-in {
+  opacity: 1;
+  -webkit-transition-duration: 400ms;
+  transition-duration: 400ms;
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+.x-modal-inner {
+  padding: 15px;
+  border-radius: 6px 6px 0 0;
+  background-color: #ffffff;
+}
+.x-modal-buttons {
+  height: 44px;
+  overflow: hidden;
+  border-top: 1px solid #b5b5b5;
+}
+.x-modal-button {
+  padding: 0 5px;
+  height: 44px;
+  font-size: 14px;
+  line-height: 44px;
+  text-align: center;
+  color: #007aff;
+  background-color: #ffffff;
+  position: relative;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-right: 1px solid #b5b5b5;
+  display: none;
+}
+span[type='OKCancel'] .x-modal-button.OK,
+span[type='Prompt'] .x-modal-button.OK,
+span[type='YesNo'] .x-modal-button.Yes,
+span[type='YesNoCancel'] .x-modal-button.Yes {
+  border-radius: 0 0 0 6px;
+}
+span[type='OK'] .x-modal-button.OK,
+span[type='OKCancel'] .x-modal-button.Cancel,
+span[type='Prompt'] .x-modal-button.Cancel,
+span[type='YesNoCancel'] .x-modal-button.Cancel,
+span[type='YesNo'] .x-modal-button.No {
+  border-right: none;
+  border-radius: 0 0 6px 0;
+}
+span[type='OK'] .x-modal-button.OK {
+  border-radius: 0 0 6px 6px;
+}
+.x-modal-button.x-modal-button-bold {
+  font-weight: 500;
+}
+span[type='OK'] .x-modal-button.OK,
+span[type='OKCancel'] .x-modal-button.OK,
+span[type='Prompt'] .x-modal-button.OK {
+  display: inline-block;
+}
+span[type='OKCancel'] .x-modal-button.Cancel,
+span[type='Prompt'] .x-modal-button.Cancel,
+span[type='YesNoCancel'] .x-modal-button.Cancel {
+  display: inline-block;
+}
+span[type='YesNo'] .x-modal-button.Yes,
+span[type='YesNoCancel'] .x-modal-button.Yes {
+  display: inline-block;
+}
+span[type='YesNo'] .x-modal-button.No,
+span[type='YesNoCancel'] .x-modal-button.No {
+  display: inline-block;
+}
+span[type='OK'] .x-modal-button.OK {
+  width: 100%;
+}
+span[type='OKCancel'] .x-modal-button.OK,
+span[type='OKCancel'] .x-modal-button.Cancel,
+span[type='Prompt'] .x-modal-button.OK,
+span[type='Prompt'] .x-modal-button.Cancel,
+span[type='YesNo'] .x-modal-button.Yes,
+span[type='YesNo'] .x-modal-button.No {
+  width: 45%;
+}
+span[type='YesNoCancel'] .x-modal-button.Yes,
+span[type='YesNoCancel'] .x-modal-button.No,
+span[type='YesNoCancel'] .x-modal-button.Cancel {
+  width: 30%;
+}
+.x-modal-title {
+  word-break: break-all;
+  word-wrap: break-word;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+}
+.x-modal-title + .x-modal-text {
+  margin-top: 5px;
+  word-break: break-all;
+  word-wrap: break-word;
+  text-align: left;
+}
+input.x-modal-prompt-input {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555555;
+  background-color: #ffffff;
+  background-image: none;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+  margin-top: 15px;
+  display: none;
+}
+input.x-modal-prompt-input:focus {
+  border-color: #66afe9;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(102, 175, 233, 0.6);
+}
+input.x-modal-prompt-input::-moz-placeholder {
+  color: #999999;
+  opacity: 1;
+}
+input.x-modal-prompt-input:-ms-input-placeholder {
+  color: #999999;
+}
+input.x-modal-prompt-input::-webkit-input-placeholder {
+  color: #999999;
+}
+span[type='Prompt'] input.x-modal-prompt-input {
+  display: block;
+}

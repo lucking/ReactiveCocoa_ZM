@@ -1,0 +1,3 @@
+安装/卸载服务
+1. 安装：执行installService.bat，则在Windows服务中增加“MySQL”服务（如果是Win7、Windows2008需要右键管理员运行）
+2. 卸载：执行removeService.bat即可，卸载前需要先停止MySQL服务（如果是Win7、Windows2008需要右键管理员运行）

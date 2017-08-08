@@ -1,0 +1,127 @@
+/**
+	@name Select
+	@component $UI/system/components/justep/select/select
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Select
+*/
+
+/**
+	@name Select#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name Select#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: form-control(必须),
+		尺寸样式: input-lg、input-sm
+	</xmp>
+*/
+
+/**
+	@name Select#disabled
+	@attribute 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name Select#bind-ref
+	@attribute 
+	@type string
+	@description 引用
+*/
+
+/**
+	@name Select#bind-labelRef
+	@attribute 
+	@type string
+	@description 显示名引用
+*/
+
+/**
+	@name Select#optionsAutoLoad
+	@attribute 
+	@type boolean
+	@description 自动加载options数据
+*/
+
+/**
+	@name Select#bind-options
+	@attribute 
+	@type string
+	@description 下拉部分options的bind
+*/
+
+/**
+	@name Select#bind-optionsCaption
+	@attribute 
+	@type string
+	@description 无值时的提示信息
+*/
+
+/**
+	@name Select#bind-optionsLabel
+	@attribute 
+	@type string
+	@description options中的显示列
+*/
+
+/**
+	@name Select#bind-optionsValue
+	@attribute 
+	@type string
+	@description options中的值列
+*/
+
+/**
+	@name Select#val
+	@function
+	@description 给select赋值或者取值
+*/
+
+/**
+	@name Select#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用，
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name Select#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"
+	@return {Object} 
+*/
+
+/**
+	@name Select#onChange
+	@event
+	@description <b>[回调型事件]</b>值修改事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"value" : 新值
+	}
+	</xmp>	
+*/
+

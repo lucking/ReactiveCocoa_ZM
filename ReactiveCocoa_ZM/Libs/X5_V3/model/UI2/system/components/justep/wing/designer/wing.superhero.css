@@ -1,0 +1,13 @@
+.x-wing .x-wing-left,
+.x-wing[display='reveal'] .x-wing-left,
+.x-wing[display='push'] .x-wing-left,
+.x-wing .x-wing-right,
+.x-wing[display='reveal'] .x-wing-right,
+.x-wing[display='push'] .x-wing-right {
+  z-index: 100!important;
+}
+.x-wing .x-wing-content,
+.x-wing[display='reveal'] .x-wing-content,
+.x-wing[display='push'] .x-wing-content {
+  z-index: 0!important;
+}

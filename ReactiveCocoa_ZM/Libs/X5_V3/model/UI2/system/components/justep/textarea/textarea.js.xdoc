@@ -1,0 +1,90 @@
+/**
+	@name Textarea
+	@component $UI/system/components/justep/textarea/textarea
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Textarea
+*/
+
+/**
+	@name Textarea#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name Textarea#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: form-control(必须)
+	</xmp>
+*/
+
+/**
+	@name Textarea#bind-ref
+	@attribute 
+	@type string
+	@description 数据感知的绑定表达式
+*/
+
+/**
+	@name Textarea#disabled
+	@attribute 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name Textarea#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用，
+		"placeHolder: {string} 提示信息，html5特性
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name Textarea#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"placeHolder"
+	@return {Object} 
+*/
+
+/**
+	@name Textarea#val
+	@function
+	@description 给Textarea赋值或者取值
+*/
+
+/**
+	@name Textarea#clear
+	@function
+	@description 清空Textarea数据
+*/
+
+/**
+	@name Textarea#onChange
+	@event
+	@description <b>[回调型事件]</b>数据修改触发事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"value" : 值,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

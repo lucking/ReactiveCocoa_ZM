@@ -1,0 +1,270 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html style="width:100%;height:100%;-moz-user-select:none;">
+	<head>
+		<title>Process Designer</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<script type="text/javascript" src="../common/json.js"></script>
+		<script type="text/javascript" src="../common/jquery.js"></script>
+ 
+		<script type="text/javascript" src="processDesigner_all.js"></script>
+		 
+		<script type="text/javascript" src="newTestData.js"></script>
+		
+		
+		<script type="text/javascript">
+
+		var designer = null;
+		function loadProcess(){
+			
+		}
+		function loadXMLFile (file) {
+			var xmlDoc;
+			try //Internet Explorer   
+		{   
+			 xmlDoc=new ActiveXObject("Microsoft.XMLDOM");   
+			 xmlDoc.async=false;   
+			 xmlDoc.load(file);   
+			}   
+			catch(e)   
+			{   
+			 try //Firefox, Mozilla, Opera, etc.   
+			 {   
+			  xmlDoc=document.implementation.createDocument("","",null);   
+			  xmlDoc.async=false;   
+			  xmlDoc.load(file);   
+			 }   
+			 catch(e)   
+			 {   
+			  try //Google Chrome   
+			  {   
+			   var xmlhttp = new window.XMLHttpRequest();   
+			   xmlhttp.open("GET",file,false);   
+			   xmlhttp.send(null);   
+			   xmlDoc = xmlhttp.responseXML.documentElement;   
+			  }   
+			  catch(e)   
+			  {   
+			   error=e.message;   
+			  }   
+			 }   
+			}  
+		//	prompt(null,xmlDoc.xml)
+           return xmlDoc;
+		}
+		
+		function selectExecutor(designer,xmlNode,currentValue/*当前值*/){  
+			var value ={items:[{fid:'id1', fname:'test/张三'}, {fid:'id2', fname:'李四'}], expr:"findOrgUnitsHasCActivity('', false)"}; 
+			//TODO 调用选择执行者对话框
+			designer.setExecuteRuleProp("executor-range",value);
+		}
+		
+        function initDesigner(){ 
+        	 var dom = $.parseXml('<items><item activity="activity1" label="业务环节1" tag="activity"/><item activity="activity2" label="业务环节2" tag="activity"/><item activity="activity3" label="业务环节3" tag="activity"/><item activity="activity4" label="业务环节4" tag="activity"/><item activity="activity5" label="if-else环节2" tag="if-else-activity"/><item activity="activity6" label="条件环节3" tag="condition-activity"/><item activity="end1" label="结束" isEnd="true" tag="place"/></items>');//loadXMLFile("E:/x5runtime/x5Dev/studio-dev/dropins/studio-app/web-designer/process/toolboxItems.xml");
+
+        	 designer = new justep.graphics.ProcessWebCanvas({id:'canvasContainer',selectExecutor:selectExecutor,loadProcess:getModel,loadTemplate:getModel,activities:dom.childNodes[0]});
+ 		  //   designer.initToolbox();
+        } 
+
+	    function getModel(){
+	    	var style = '{"version":"2","shapeStyle":{"managerCondition":{"shape":{"w":103,"h":38,"y":328,"x":224},"LABEL":"审批是否同意？"},"start1":{"shape":{"w":43,"h":43,"y":37,"x":106},"LABEL":"开始"},"managerActivity":{"shape":{"w":103,"h":33,"y":273,"x":224},"LABEL":"公司总经理审批"},"factAmtcondition":{"shape":{"w":103,"h":38,"y":270,"x":76},"LABEL":"总金额小于10万？"},"xor2":{"shape":{"w":43,"h":43,"y":377,"x":106},"LABEL":"XOR"},"xor3":{"shape":{"w":43,"h":43,"y":95,"x":266},"LABEL":"XOR"},"deptCondition":{"shape":{"w":103,"h":38,"y":219,"x":76},"LABEL":"审核是否同意？"},"totalAmtCondition":{"shape":{"w":103,"h":38,"y":380,"x":224},"LABEL":"总金额大于100万？"},"end1":{"shape":{"w":43,"h":43,"y":551,"x":106},"LABEL":"结束"},"deptActivity":{"shape":{"w":103,"h":33,"y":167,"x":76},"LABEL":"部门经理审核"},"orderReportActivity":{"shape":{"w":103,"h":33,"y":100,"x":76},"LABEL":"订单申请"},"leadActivity":{"shape":{"w":103,"h":33,"y":488,"x":236},"LABEL":"通报总公司领导"},"salesPersonActivity":{"shape":{"w":103,"h":33,"y":488,"x":76},"LABEL":"通知销售员"},"salesPersonActivity|end1":{"outPortDir":"s","inPortDir":"n","targetNode":"end1","sourceNode":"salesPersonActivity","shape":[{"x":125.5,"y":518},{"y":550,"x":125.5}]},"xor3|orderReportActivity":{"outPortDir":"w","inPortDir":"e","targetNode":"orderReportActivity","sourceNode":"xor3","shape":[{"x":265,"y":114.5},{"y":114.5,"x":177}]},"managerCondition|totalAmtCondition":{"outPortDir":"s","inPortDir":"n","targetNode":"totalAmtCondition","sourceNode":"managerCondition","shape":[{"x":273.5,"y":363},{"y":379,"x":273.5}]},"deptActivity|deptCondition":{"outPortDir":"s","inPortDir":"n","targetNode":"deptCondition","sourceNode":"deptActivity","shape":[{"x":125.5,"y":197},{"y":218,"x":125.5}]},"factAmtcondition|managerActivity":{"outPortDir":"e","inPortDir":"w","targetNode":"managerActivity","sourceNode":"factAmtcondition","shape":[{"x":172,"y":287},{"x":197.5,"y":287},{"x":197.5,"y":287.5},{"y":287.5,"x":223}]},"managerCondition|xor3":{"outPortDir":"e","inPortDir":"e","targetNode":"xor3","sourceNode":"managerCondition","shape":[{"x":320,"y":345},{"x":350,"y":345},{"x":350,"y":114.5},{"y":114.5,"x":307}]},"totalAmtCondition|leadActivity":{"outPortDir":"s","inPortDir":"n","targetNode":"leadActivity","sourceNode":"totalAmtCondition","shape":[{"x":273.5,"y":415},{"x":273.5,"y":451},{"x":285.5,"y":451},{"y":487,"x":285.5}]},"totalAmtCondition|xor2":{"outPortDir":"w","inPortDir":"e","targetNode":"xor2","sourceNode":"totalAmtCondition","shape":[{"x":224,"y":397,"attach":"195 397 C195 393 187 393 187 397"},{"x":185.5,"y":397},{"x":185.5,"y":396.5},{"y":396.5,"x":147}]},"leadActivity|xor2":{"outPortDir":"w","inPortDir":"e","targetNode":"xor2","sourceNode":"leadActivity","shape":[{"x":235,"y":502.5},{"x":191,"y":502.5},{"x":191,"y":396.5},{"y":396.5,"x":147}]},"start1|orderReportActivity":{"outPortDir":"s","inPortDir":"n","targetNode":"orderReportActivity","sourceNode":"start1","shape":[{"x":125.5,"y":77},{"y":99,"x":125.5}]},"deptCondition|factAmtcondition":{"outPortDir":"s","inPortDir":"n","targetNode":"factAmtcondition","sourceNode":"deptCondition","shape":[{"x":125.5,"y":254},{"y":269,"x":125.5}]},"deptCondition|xor3":{"outPortDir":"e","inPortDir":"s","targetNode":"xor3","sourceNode":"deptCondition","shape":[{"x":172,"y":236},{"x":285.5,"y":236},{"y":135,"x":285.5}]},"managerActivity|managerCondition":{"outPortDir":"s","inPortDir":"n","targetNode":"managerCondition","sourceNode":"managerActivity","shape":[{"x":273.5,"y":303},{"y":327,"x":273.5}]},"factAmtcondition|xor2":{"outPortDir":"s","inPortDir":"n","targetNode":"xor2","sourceNode":"factAmtcondition","shape":[{"x":125.5,"y":305},{"y":376,"x":125.5}]},"orderReportActivity|deptActivity":{"outPortDir":"s","inPortDir":"n","targetNode":"deptActivity","sourceNode":"orderReportActivity","shape":[{"x":125.5,"y":130},{"y":166,"x":125.5}]},"xor2|salesPersonActivity":{"outPortDir":"s","inPortDir":"n","targetNode":"salesPersonActivity","sourceNode":"xor2","shape":[{"x":125.5,"y":417},{"y":487,"x":125.5}]}},"processFile":"orderProcess.process.m"}';
+	    	//var style = eval("("+style+")"); 
+ 			var tool = $.parseXml('<items><item activity="activity1" label="业务环节1" tag="activity"/><item activity="activity2" label="业务环节2" tag="activity"/><item activity="activity3" label="业务环节3" tag="activity"/><item activity="activity4" label="业务环节4" tag="activity"/><item activity="activity5" label="if-else环节2" tag="if-else-activity"/><item activity="activity6" label="条件环节3" tag="condition-activity"/><item activity="end1" label="结束" isEnd="true" tag="place"/></items>');//loadXMLFile("E:/x5runtime/x5Dev/studio-dev/dropins/studio-app/web-designer/process/toolboxItems.xml");
+ 			designer.initToolbox(tool.childNodes[0]);
+ 			var dom = loadXMLFile("E:/x5runtime/x5Dev/model/BIZ/demo/misc/process/order/orderProcess.process.m");
+	    	return [dom.xml,style,["orderReportActivity"],[]];//designer.setData();
+	    }
+	    
+	    function genaModel(){
+	    	alert(designer.getData());
+	    }
+ 
+		</script>
+		<style type="text/css">
+			.mydesigner{
+  background: url(images/grid_10.png) repeat;
+}
+.tool-item {
+	height: 22px;
+	border: 1px solid #baceeb;
+	width: 52px;
+	padding: 0;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	background-color: #E8EFF8;
+	margin-right: 2px; 
+}
+
+.tool-item-over {
+	background: url(images/button.gif) repeat-x;
+	border: 1px solid green;
+}
+
+.toolbox-title {
+	border-bottom: 1px solid #8DB2E3;
+	font-size: 12pt;
+	font-size: 12px;
+	font-weight: bold;
+	background-color: #e4ecf8;
+	line-height: 20px;
+	height: 20px;
+	margin-bottom: 2px;
+	padding: 2px;
+}
+
+.canvas-toolbar {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.toolbox-title span {
+	background-image: url(images/activities.gif);
+	background-repeat: no-repeat;
+	padding-left: 20px;
+}
+
+.toolbox-item {
+	font-size: 11pt;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	background-image: url(images/activities.gif);
+}
+
+.prop-area input {
+	
+}
+
+.toolbox-items,.prop-items {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	font-size: 10pt;
+}
+
+.toolbox-items li,.prop-items li {
+	position: relative;
+	padding-left: 2px;
+	margin: 0;
+	list-style: none;
+	vertical-align: middle;
+	text-align: left;
+	white-space: nowrap;
+	height: 24px;
+}
+
+.toolbox-items li a {
+	padding: 0;
+	margin: 0 0px 0 0;
+	height: 18px;
+	line-height: 18px;
+	cursor: pointer;
+	color: #333;
+	text-decoration: none;
+	padding-left: 20px;
+	display: block;
+	background-repeat: no-repeat;
+}
+.prop-input{
+  border: 1px solid #baceeb;
+  height:16px;
+}
+
+.checkbox {
+	vertical-align: middle;
+	margin-top: 0;
+}
+
+.business-activity {
+	background-image: url(images/biz.png);
+}
+
+.if-else-activity {
+	background-image: url(images/fork.png);
+}
+
+.condition-activity {
+	background-image: url(images/cond.png);
+}
+
+.xor-activity {
+	background-image: url(images/xor.png);
+}
+
+.and-activity {
+	background-image: url(images/and.png);
+}
+
+.cancel-selected {
+	background-image: url(images/select.gif);
+}
+
+.connection {
+	background-image: url(images/transition.png);
+}
+
+.end {
+	background-image: url(images/end.png);
+}
+
+.start {
+	background-image: url(images/start.png);
+}
+
+.tool-item .icon {
+	padding-left: 16px;
+	background-repeat: no-repeat;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+
+.tool-item .copy {
+	background-image: url(images/copy.gif);
+}
+
+.tool-item .remove {
+	background-image: url(images/remove.gif);
+}
+
+.tool-item .h-align {
+	background-image: url(images/align_v_centers.gif);
+}
+
+.tool-item .v-align {
+	background-image: url(images/align_h_centers.gif);
+}
+
+.tool-item .undo {
+	background-image: url(images/undo.gif);
+}
+
+.tool-item .redo {
+	background-image: url(images/redo.gif);
+}
+
+.tool-item .load-process {
+	background-image: url(images/trackChart.gif);
+}
+
+.tool-item .load-template {
+	background-image: url(images/template.gif);
+}
+
+.toolbox-items li a:hover {
+	background-color: blue;
+	color: white;
+}
+
+v\:* {
+	behavior: url(#default#VML);
+}
+			
+		</style>
+	</head>
+
+	<body onload="initDesigner();" topmargin=0 leftmargin=0 marginwidth="0" marginheight="0"  style="width:100%;height:100%;"  >
+		<!--  <div>dkfsaljfd</div> <div>dkfsaljfd</div> <div>dkfsaljfd</div> -->
+        <div id="canvasContainer" style="width:100%;height:100%;overflow:hidden;position:relative;">
+           
+        </div>
+	</body>
+</html>

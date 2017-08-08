@@ -1,0 +1,11 @@
+<template text="空窗体" desc="空白窗体" custom="false">
+	<images>
+		<image src="empty.png" />
+	</images>
+	
+	<items>
+		<item file="template/empty.w"/>
+		<item file="template/empty.js"/>
+	</items>
+	
+</template>

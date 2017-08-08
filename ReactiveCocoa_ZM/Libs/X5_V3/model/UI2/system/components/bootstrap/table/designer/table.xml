@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/table/table" tag-type="rich" tag-name="div" icon="table.png" text="简单表格"
+	    binding-component="$UI/system/components/bootstrap/table/table" 
+		component-type="layout-container"  design-view="web-designer" >
+		 		<properties>
+			<property name="xid" text="编号" />
+			
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0common": {
+						label: "常用",
+						value: "table",
+						require: true
+					},
+					"condensed": {
+						label: "紧凑型",
+						value: "table-condensed",
+						require: false
+					},
+					"striped": {
+						label: "条纹状",
+						value: "table-striped",
+						require: false
+					},
+					"bordered": {
+						label: "边框",
+						value: "table-bordered",
+						require: false
+					},
+					"hover": {
+						label: "鼠标悬停高亮",
+						value: "table-hover",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="row-count" text="模拟行数" dataType='int'/>
+			<property name="style"/>
+ 
+		</properties>
+		
+		 <toolbar>
+				<item text="添加列" method="appendCol"/>					
+		</toolbar>
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+			
+		<property-editors>
+			<property-editor name="edit-div-align" type="list">
+				<static-data value="left,right,center,justify" />
+			</property-editor>
+		</property-editors>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    <table class="table table-bordered table-hover table-striped" component="$UI/system/components/bootstrap/table/table">
+			      <thead>
+			        <tr>
+			          <th>#</th>
+			          <th>Column heading</th>
+			          <th>Column heading</th>
+			          <th>Column heading</th>
+			        </tr>
+			      </thead>
+			      <tbody class="x-list-template">
+			        <tr>
+			          <td>1</td>
+			          <td></td>
+			          <td></td>
+			          <td></td>
+			        </tr>
+			      </tbody>
+			    </table>
+		   ]]></template>
+		</templates>
+	  </element>
+	  
+	 <element name="$UI/system/components/bootstrap/table/table#col" tag-name="th" icon="column.gif" text="top"  display-property="label,name"
+		discriminate-condition="executeXpath(parent::node()/parent::node()/parent::node()/@component='$UI/system/components/bootstrap/table/table')" 
+		component-class="" component-type="layout-container" ownerCompName="$UI/system/components/bootstrap/table/table" parent-range="tr">
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="name"  text="列名" />
+			<property name="label"  text="列标签名" path="text()">	
+			</property>
+			<property name="class"  text="class" >
+				
+			</property>
+
+			<property name="style" text="样式" editor-ref="styleDialog" />
+		</properties>
+		 <toolbar>
+				<item text="在前面插入列" method="insertBeforeCol"/>	
+				<item text="在后面插入列" method="insertAfterCol"/>					
+		</toolbar>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    	<th>Column heading</th>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="thead" tag-name="thead" icon="element.gif" text="h3">
+		<properties>
+		     <property name="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/> 
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <tbody><tr></tr></tbody>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="tbody" tag-name="tbody" icon="element.gif" text="h3">
+		<properties>
+		     <property name="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/> 
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <tbody><tr></tr></tbody>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="tr" tag-name="tr" icon="element.gif" text="h3">
+		<properties>
+			<property name="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/> 
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <tr><td></td></tr>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="td" tag-name="td" icon="element.gif" text="h3" parent-range="tr" resizable="false">
+		<properties>
+		     <property name="bind-text" editor-ref="dataRef" editor-parameter='{"hasLabel":"true"}'/>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/> 
+		</properties>
+			
+		<templates>
+		   <template name="default"><![CDATA[ 
+		      <td></td> 
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

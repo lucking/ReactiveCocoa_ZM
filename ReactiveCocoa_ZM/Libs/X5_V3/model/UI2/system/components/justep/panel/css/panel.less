@@ -1,0 +1,49 @@
+@import '../../../bootstrap/lib/css/mixins.less';
+@import '../../lib/css/flexbox.less.mixins';
+
+@bar-height:         48px;
+@bar-ios-height:     68px;
+@bar-bottom-height:  48px;
+
+.iosstatusbar .x-panel { 
+	.x-panel-top {
+		height: @bar-ios-height;
+	}
+	.x-panel-content {
+		top: @bar-ios-height;
+	}
+}
+.x-panel {
+	overflow: hidden;
+	position: relative;
+	
+	.x-panel-top {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: @bar-height;
+		overflow: hidden;
+	}
+		
+	.x-panel-bottom {
+		position: absolute;
+		top: auto;
+		left: 0;
+		bottom: 0;
+		width: 100%;
+		height: @bar-bottom-height;
+		overflow: hidden;
+	}
+	
+	.x-panel-content {
+		position: absolute;
+		top: @bar-height;
+		left: 0;
+		right: 0;
+		bottom: @bar-height;
+		height: auto;
+		width: auto;
+		overflow: auto;
+	}	
+}

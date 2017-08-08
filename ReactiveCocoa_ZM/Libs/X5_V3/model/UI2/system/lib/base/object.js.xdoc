@@ -1,0 +1,39 @@
+/**
+	@name Object
+	@url $UI/system/lib/base/object
+	@class 
+	@category javascript
+	@model UI2
+	@description js基类
+*/
+
+/**
+	@name Object#constructor
+	@function
+	@description 构造函数
+	@return {void}
+*/
+
+/**
+	@name Object#extend
+	@function
+	@description 继承
+	@param {Object} members 父类
+	@return {Object}
+*/
+
+
+/**
+	@name Object#dispose
+	@function
+	@description 析构函数
+	@return {void} 
+*/
+
+/**
+	@name Object#callParent
+	@function
+	@description 调用父类的同名方法
+	@return {Object} 
+*/
+

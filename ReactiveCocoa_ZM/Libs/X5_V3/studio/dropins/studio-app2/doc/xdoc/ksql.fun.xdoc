@@ -1,0 +1,441 @@
+/**
+	@name concat
+	@function
+	@kind String
+	@description 连接字符串
+	@param {String} values 变参
+	@returns {String} 连接后的字符串
+	@example concat('a', 'b', 'ccc')
+*/
+
+
+/**
+	@name instr
+	@function
+	@kind String
+	@description 字符串搜索
+	@param {String} srcString 在其中查找的字符串
+	@param {String} dstString 要查找的内容
+	@param {Integer} start 起始位置，可选
+	@returns {Integer} 找到的位置
+	@example 
+	   instr('abcd', 'bc') 
+	   instr('abcd', 'bc', 1)
+*/
+
+/**
+	@name substring
+	@function
+	@kind String
+	@description 截取字符串
+	@param {String} srcString 要截取的字符串
+	@param {Integer} start 起始位置
+	@param {Integer} len 长度，可选
+	@returns {String} 截取的子串
+	@example 
+	   substring('abcd', 2) 
+	   substring('abcd', 2, 3)
+*/
+
+/**
+	@name ltrim
+	@function
+	@kind String
+	@description 去掉字符串左边的空白字符
+	@param {String} str
+	@returns {String} 去掉空白字符后的字符串
+*/ 
+
+/**
+	@name rtrim
+	@function
+	@kind String
+	@description 去掉字符串右边的空白字符
+	@param {String} str
+	@returns {String} 去掉空白字符后的字符串
+*/
+
+/**
+	@name trim
+	@function
+	@kind String
+	@description 去掉字符串右边的空白字符
+	@param {String} str
+	@returns {String} 去掉空白字符后的字符串
+*/
+
+/**
+	@name length
+	@function
+	@kind String
+	@description 字符串长度
+	@param {String} str
+	@returns {Integer} 
+*/
+
+/**
+	@name upper
+	@function
+	@kind String
+	@description 字符串转成大写
+	@param {String} str
+	@returns {String} 
+*/
+
+/**
+	@name lower
+	@function
+	@kind String
+	@description 字符串转成小写
+	@param {String} str
+	@returns {String} 
+*/
+
+
+/**
+	@name replace
+	@function
+	@kind String
+	@description 截取字符串
+	@param {String} str1 要替换的字符串
+	@param {String} str2 被替换的子串
+	@param {String} str3 替换的内容
+	@returns {String} 替换后的字符串
+*/
+
+/**
+	@name mod
+	@function
+	@kind Math
+	@description 取模
+	@param {Number} num1
+	@param {Number} num2
+	@returns {Number} num1对num2取模
+*/
+
+/**
+	@name ceil
+	@function
+	@kind Math
+	@description num向正无穷移动时第一个整数
+	@param {Number} num
+	@returns {Integer} 
+*/
+
+/**
+	@name floor
+	@function
+	@kind Math
+	@description num向负无穷移动时第一个整数
+	@param {Number} num
+	@returns {Integer} 
+*/
+
+/**
+	@name rand
+	@function
+	@kind Math
+	@description 随机生成0-1之间的数
+	@returns {Number} 
+*/
+
+/**
+	@name square
+	@function
+	@kind Math
+	@description 平方
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name ln
+	@function
+	@kind Math
+	@description 自然对数
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name log10
+	@function
+	@kind Math
+	@description 以10为底的对数
+	@param {Number} num
+	@returns {Number} 
+*/
+
+
+/**
+	@name abs
+	@function
+	@kind Math
+	@description 求绝对值
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name sin
+	@function
+	@kind Math
+	@description 正弦
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name cos
+	@function
+	@kind Math
+	@description 余弦
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name tan
+	@function
+	@kind Math
+	@description 正切
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name cot
+	@function
+	@kind Math
+	@description 余切
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name asin
+	@function
+	@kind Math
+	@description 反正弦
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name atan
+	@function
+	@kind Math
+	@description 反正切
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name sqrt
+	@function
+	@kind Math
+	@description 平方根
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name sign
+	@function
+	@kind Math
+	@description 返回给定数字的符号 ，1表示正数，0表示0， -1表示负数
+	@param {Number} num
+	@returns {Number} 
+*/
+
+/**
+	@name power
+	@function
+	@kind Math
+	@description 计算表示表达式给定次方的值
+	@param {Number} num
+	@param {Number} y  几次方
+	@returns {Number} 
+*/
+
+/**
+	@name round
+	@function
+	@kind Math
+	@description 计算指定精度的四舍五入值
+	@param {Number} num
+	@param {Integer} scale 精度
+	@returns {Number} 
+	@example 
+		round(155.55, 0) => 156
+		round(155.55, 1) => 155.6
+		round(155.55, -1) => 160
+*/
+
+/**
+	@name count
+	@function
+	@kind Set
+	@description 
+	@param {Object} col
+	@returns {Integer} 
+*/
+
+/**
+	@name countAll
+	@function
+	@kind Set
+	@description 等价与sql的count(*)
+	@returns {Integer} 
+*/
+
+/**
+	@name max
+	@function
+	@kind Set
+	@description 最大值
+	@param {Object} col
+	@returns {Number} 
+*/
+/**
+	@name min
+	@function
+	@kind Set
+	@description 最小值
+	@param {Object} col
+	@returns {Number} 
+*/
+
+/**
+	@name sum
+	@function
+	@kind Set
+	@description 求和
+	@param {Object} col
+	@returns {Number} 
+*/
+
+/**
+	@name avg
+	@function
+	@kind Set
+	@description 平均值
+	@param {Object} col
+	@returns {Number} 
+*/
+
+/**
+	@name dateTimeToDate
+	@function
+	@kind Transfer
+	@description DateTime类型转换为Date
+	@param {DateTime} dt
+	@returns {Date} 
+*/
+
+/**
+	@name dateTimeToString
+	@function
+	@kind Transfer
+	@description DateTime类型转换为String
+	@param {DateTime} dt
+	@returns {String} 
+*/
+
+
+/**
+	@name TimeToString
+	@function
+	@kind Transfer
+	@description Time类型转换为String
+	@param {Time} dt
+	@returns {String} 
+*/
+
+/**
+	@name DateToString
+	@function
+	@kind Transfer
+	@description Date类型转换为String
+	@param {Date} dt
+	@returns {String} 
+*/
+
+/**
+	@name stringToDateTime
+	@function
+	@kind Transfer
+	@description Date类型转换为DateTime
+	@param {String} str
+	@returns {DateTime} 
+*/
+
+/**
+	@name stringToDate
+	@function
+	@kind Transfer
+	@description Date类型转换为Date
+	@param {String} str
+	@returns {Date} 
+*/
+/**
+	@name stringToTime
+	@function
+	@kind Transfer
+	@description Date类型转换为Time
+	@param {String} str
+	@returns {Time} 
+*/
+
+/**
+	@name getYear
+	@function
+	@kind Date
+	@description 获取年份
+	@param {Date} dt
+	@returns {Integer} 
+*/
+
+/**
+	@name getMonth
+	@function
+	@kind Date
+	@description 获取月
+	@param {Date} dt
+	@returns {Integer} 
+*/
+/**
+	@name getDay
+	@function
+	@kind Date
+	@description 获取日
+	@param {Date} dt
+	@returns {Integer} 
+*/
+/**
+	@name getHour
+	@function
+	@kind Date
+	@description 获取小时
+	@param {Date} dt
+	@returns {Integer} 
+*/
+/**
+	@name getMinute
+	@function
+	@kind Date
+	@description 获取分钟
+	@param {Date} dt
+	@returns {Integer} 
+*/
+/**
+	@name getSecond
+	@function
+	@kind Date
+	@description 获取秒钟
+	@param {Date} dt
+	@returns {Integer} 
+*/
+	
+
+  

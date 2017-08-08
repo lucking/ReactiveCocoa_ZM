@@ -1,0 +1,16 @@
+{
+"globals": {
+    "define": false
+  },
+  "browser": true,
+  "devel": true,
+  "jquery": true,
+  "undef": true,
+  "unused": "vars",
+  "evil":true,
+  "boss": true,
+  "laxbreak": true,
+  "expr": true,
+  "sub": true
+
+}

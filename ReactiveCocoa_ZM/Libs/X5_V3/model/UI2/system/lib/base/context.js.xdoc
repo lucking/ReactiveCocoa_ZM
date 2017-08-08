@@ -1,0 +1,57 @@
+/**
+	@name Context
+	@url $UI/system/lib/base/context
+	@class
+	@extends Object
+	@extendurl $UI/system/lib/base/object
+	@category javascript
+	@model UI2
+	@description 页面上下文
+*/
+
+/**
+	@name Context#constructor
+	@function
+	@description 构造函数
+	@param data 页面上下文数据
+	@returns {void}
+*/
+
+/**
+	@name Context#getRequestParamers
+	@function
+	@description 获取所有的请求参数
+	@returns json格式的数据
+*/
+
+/**
+	@name Context#getRequestParameter
+ 	@function
+ 	@description 获取页面请求URL中的参数
+	@param {String} name <b>[required]</b>参数名称
+	@returns {String} 参数的值
+*/
+
+/**
+	@name Context#getID
+	@function
+	@description 获取上下文id 
+	@returns {String}
+*/
+
+/**
+	@name Context#getSkin
+	@function
+	@description 获取当前风格
+	@returns {String}
+*/
+
+
+
+
+
+
+
+
+
+

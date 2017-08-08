@@ -1,0 +1,142 @@
+/**
+	@name WindowDialog
+	@component $UI/system/components/justep/windowDialog/windowDialog
+	@extends Dialog
+	@extendurl $UI/system/components/justep/dialog/dialog
+	@model UI2
+	@description WindowDialog
+*/
+
+/**
+	@name WindowDialog#src
+	@attribute 
+	@type string
+	@description .w的url，需要使用require.toUrl(...)处理
+*/
+
+/**
+	@name WindowDialog#process
+	@attribute 
+	@type string
+	@description 打开.w使用的process，缺省使用当前环境的
+*/
+
+/**
+	@name WindowDialog#activity
+	@attribute 
+	@type string
+	@description 打开.w使用的activity，缺省使用当前环境的
+*/
+
+/**
+	@name WindowDialog#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : {string} 对话框标题
+		"showTitle" : {boolean} 是否显示标题
+		"status": {string} 对话框显示状态，取值范围：normal,maximize
+		"width": {string} 对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"height": {string} 对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"top": {string} 对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中		
+		"left": {string} 对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中	
+		"src" : {string} .w的url，需要使用require.toUrl(...)处理
+		"process" : {string} 打开.w使用的process，缺省使用当前环境的
+		"activity: {string}	打开.w使用的activity，缺省使用当前环境的		
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name WindowDialog#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："src"、"process"、"activity"、"title"、"showTitle"、"status"、 "width"、"height"、"top"、"left"
+	@return {Object} 
+*/
+
+/**
+	@name WindowDialog#open
+	@function
+	@param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"src" :.w的url
+		"data" : 传入.w的数据部分
+	}
+	</xmp>	
+	@description 打开对话框
+*/
+
+/**
+	@name WindowDialog#onOpen
+	@event
+	@description <b>[回调型事件]</b>打开事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name WindowDialog#onLoad
+	@event
+	@description <b>[回调型事件]</b>.w加载完成后
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name WindowDialog#onReceive
+	@event
+	@description <b>[回调型事件]</b>.w返回数据事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" :　返回的数据,
+		"sender" : 发送数据的组件js对象,这里一般WindowReceiver组件
+	}
+	</xmp>	
+*/
+
+/**
+ @name WindowDialog#open
+ @operation
+ @see WindowDialog#open
+ @param {object} option
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"src" :.w的url
+		"data" : 传入.w的数据部分
+	}
+	</xmp>	
+ @description 打开window对话框
+ @returns {void}
+*/
+
+/**
+ @name WindowDialog#close
+ @operation
+ @description 关闭window对话框
+ @returns {void}
+*/
+

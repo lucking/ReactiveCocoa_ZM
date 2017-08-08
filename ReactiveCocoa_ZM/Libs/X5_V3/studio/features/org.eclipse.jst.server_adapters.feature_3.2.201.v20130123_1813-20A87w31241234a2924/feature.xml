@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.jst.server_adapters.feature"
+      label="%featureName"
+      version="3.2.201.v20130123_1813-20A87w31241234a2924"
+      provider-name="%providerName"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="org.eclipse.jst.server.preview.adapter"
+         download-size="0"
+         install-size="0"
+         version="1.1.201.v20130123_1813"
+         unpack="false"/>
+
+</feature>

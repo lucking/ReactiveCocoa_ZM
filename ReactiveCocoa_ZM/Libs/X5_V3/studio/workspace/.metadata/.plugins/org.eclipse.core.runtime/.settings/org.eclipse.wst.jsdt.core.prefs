@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+org.eclipse.wst.jsdt.core.codeComplete.visibilityCheck=enabled
+org.eclipse.wst.jsdt.core.formatter.lineSplit=200
+org.eclipse.wst.jsdt.core.userLibrary.mobileUiJsLib=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="1">\r\n\t<archive path\="D\:/test/studio/dropins/studio-app2/doc/js/mobileUiJsLibrary.js"/>\r\n</userlibrary>\r\n
+org.eclipse.wst.jsdt.core.userLibrary.uiJsLib=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<userlibrary systemlibrary\="false" version\="1">\r\n\t<archive path\="D\:/X5.3.0.3277_trunk/studio/dropins/studio-app2/doc/js/uiJsLibrary.js"/>\r\n</userlibrary>\r\n
+semanticValidation=disabled

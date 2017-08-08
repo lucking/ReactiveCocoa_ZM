@@ -1,0 +1,92 @@
+@import '../../lib/css/flexbox.less.mixins';
+
+@bar-height:         48px;
+@bar-ios-top: 20px;
+
+.iosstatusbar .x-titlebar {
+	padding-top: @bar-ios-top;
+}
+ 
+.x-titlebar {
+	background-color: @navbar-default-bg;/*#0088D1;*/
+	/*border-bottom: 1px solid @navbar-default-bg;*/
+	color: @navbar-default-link-color;/*white;*/
+	position: relative;
+	overflow: hidden;
+	display: block;
+	height: @bar-height;
+	font-size: 18px;
+
+	-webkit-box-sizing: content-box;
+	box-sizing: content-box;
+	
+	.flexbox();
+}
+
+.x-titlebar .x-titlebar-left, 
+.x-titlebar .x-titlebar-right {
+	.flex(2009, 1);
+	.flex(2013, 1, 1, 0px);
+}
+
+.x-titlebar .x-titlebar-left, 
+.x-titlebar .x-titlebar-right {
+
+	.flexbox();
+
+    .align-items(center);
+    
+	.flex-direction(row);
+	
+	.empty {
+		.flex(2009, 1);
+		.flex(2013, auto);
+	}
+} 
+
+.x-titlebar .x-titlebar-left {
+	padding-left: 5px; 
+}
+
+.x-titlebar .x-titlebar-right { 
+	padding-right: 5px; 
+}
+
+.x-titlebar .x-titlebar-left.reverse,
+.x-titlebar .x-titlebar-right.reverse {
+	.flex-direction(row-reverse);
+}
+
+/*为了解决android 4.2　不能reverse的缺陷*/
+.x-titlebar .x-titlebar-left>*,
+.x-titlebar .x-titlebar-right>* {
+	display: block;
+}
+
+.x-titlebar .x-titlebar-title {
+	text-align: center;
+	font-weight: bold;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: inherit;
+	white-space: nowrap;
+	padding: 12px 0;
+
+	.flex(2009, 2);
+	.flex(2013, 2, 1, 0px);
+	
+}
+/*
+ .x-titlebar .button {
+    color: #fff;
+    background:none;
+    border-color: transparent;
+ 	font-size:12px;
+	padding:7px;
+ 	height:32px;
+	margin:5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+ .x-titlebar .button:active { background-color:transparent; }
+*/ 

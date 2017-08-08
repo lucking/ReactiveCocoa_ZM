@@ -1,0 +1,18 @@
+/**
+	@name Bar
+	@component $UI/system/components/justep/bar/bar
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description bar组件, 属于容器组件, 一般放button, buttonGroup
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/	
+
+/**
+	@name Bar#xid
+	@attribute 
+	@type string
+	@description 
+*/

@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/model/model" tag-name="div" position="absolute" icon="model.gif" text="数据模型" display-property="xid"
+			 parent-range="$UI/system/components/justep/window/window"  binding-component="$UI/system/components/justep/model/model"
+			 component-type="model" validator="DataValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" />        
+		</properties>
+
+		<events>
+			<event name="onActive" text="页面激活" parameters="event"/>
+			<event name="onInactive" text="页面离开" parameters="event"/>
+			<event name="onModelConstruct" text="数据模型创建时" parameters="event"/>
+			<event name="onModelConstructDone" text="数据模型创建完成" parameters="event"/>
+			<event name="onLoad" text="页面初始化完成" parameters="event"/>
+			<event name="onunLoad" text="页面关闭时" parameters="event"/>
+		</events>
+		<toolbar>	
+<!-- 		   <item text="添加业务数据(BizData)" method="addBizData"/>		 -->
+<!-- 		   <item text="添加通用数据(data)" method="addData"/> -->
+		   <item text="隐藏" method="hide"/>
+		   <item text="显示" method="show"/>			
+		</toolbar>
+ 
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <div component="$UI/system/components/justep/model/model"></div>
+		   ]]></template>
+		</templates>
+		
+		<events>
+		</events>			
+	</element>
+</elements>

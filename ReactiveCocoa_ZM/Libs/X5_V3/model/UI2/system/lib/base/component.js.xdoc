@@ -1,0 +1,188 @@
+/**
+	@name Component
+	@url $UI/system/lib/base/component
+	@class
+	@category javascript
+	@extends Object
+	@extendurl $UI/system/lib/base/object
+	@mixes  Observable
+	@mixes  Operational
+	@model UI2
+	@description 组件基类
+*/
+
+/**
+	@name Component#constructor
+	@function
+	@description 构造函数
+	@return {void}
+*/
+
+/**
+	@name Component#getConfig
+	@function
+	@description 获取组件配置信息
+	@return {Object}
+	@examples 后代类需要重写这个方法
+*/
+
+/**
+	@name Component#getOperationDefs
+	@function
+	@description 获取操作定义
+	@return {Object}
+*/
+
+/**
+	@name Component#initOperation
+	@function
+	@description 初始化组件操作
+	@return {void} 
+	@examples 后代类重写initOperation方法, 用来定义自己的操作
+*/
+
+/**
+	@name Component#setModel
+	@function
+	@description 设置组件的Model
+	@param {ModelBase} model
+	@return {void} 
+*/
+
+/**
+	@name Component#getModel
+	@function
+	@description 获取组件的Model
+	@return {ModelBase} 
+*/
+
+/**
+	@name Component#dispose
+	@function
+	@description 析构函数
+	@return {ModelBase} 
+	@examples 组件的子类要重写这个方法释放组件关联的资源，最后要调用父类的dispose。
+*/
+
+/**
+	@name Component#propertyChangedHandler
+	@function
+	@description 属性值更新处理器
+	@return {void} 
+	@examples 组件属性的值更新后，会自动调用这个方法，后代可以重写这个方法
+*/
+
+/**
+	@name Component#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	@return {void} 
+*/
+
+/**
+	@name Component#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称
+	@return {Object} 
+*/
+
+/**
+	@name Component#getEventOperation
+	@function
+	@description 获取事件关联的操作
+	@param {String} name 事件名称
+	@return {json} 
+*/
+
+/**
+	@name Component#on
+	@function
+	@description 添加事件处理器
+	@param {String} ename 事件名称
+	@param {Function} fn 事件处理器
+	@param {Object} scope 调用事件处理器时的执行上下文this
+	@param {Object} options 选项
+	@return {void} 
+*/
+
+/**
+	@name Component#off
+	@function
+	@description 取消事件处理器
+	@param {String} ename 事件名称
+	@param {Function} fn 事件处理器
+	@param {Object} scope 调用事件处理器时的执行上下文this
+	@return {void} 
+*/
+
+
+/**
+	@name Component.addComponent
+	@function
+	@description 在指定的节点下添加组件
+	@param {Element} parentElement 组件的父节点
+	@param {ViewComponent} component 组件实例
+	@param {targetElement} target 插入位置，可选参数 
+	@return {void} 
+*/
+
+/**
+	@name Component.removeComponent
+	@function
+	@description 删除指定的组件
+	@param {ViewComponent} component 组件实例
+	@return {void} 
+*/
+
+/**
+	@name Component.getComponent
+	@function
+	@description 获取DOM节点上绑定的组件实例
+	@param {Element} element 
+	@return {ViewComponent} 
+*/
+
+/**
+	@name Component.hasComponent
+	@function
+	@description 判断DOM节点是否绑定组件实例
+	@param {Element} element 
+	@return {boolean} 
+*/
+
+/**
+	@name Component.addOperations
+	@function
+	@description 添加操作
+	@param {Function} ComponentClass 组件类
+	@param {Object} operations 操作 
+	@return {void} 
+*/
+
+/**
+	@name Component.register
+	@function
+	@description 注册组件
+	@param {String} name 组件名称(全路径)
+	@param {Function} ComponentClass 组件类
+	@return {void} 
+*/
+
+/**
+	@name Component.OPERATION_CHANGED
+	@property "onOperationChanged"
+	@description 组件操作修改事件
+	@default "onOperationChanged"
+	@example
+	<xmp>
+	事件对象的内容如下：
+{
+	source : this, //组件自身
+	eventName : ename, //事件名称
+	operation : this.__eventOperation__[ename] //最新的操作
+}
+	</xmp>
+*/
+

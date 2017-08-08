@@ -1,0 +1,87 @@
+/**
+	@name Output
+	@component $UI/system/components/justep/output/output
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description output
+*/
+
+/**
+	@name Output#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name Output#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-output(必须)
+	</xmp>
+*/
+
+/**
+	@name Output#bind-ref
+	@attribute 
+	@type string
+	@description 数据感知的绑定表达式
+*/
+
+/**
+	@name Output#dataType
+	@attribute 
+	@type string
+	@description 数据类型,当有bind-ref时使用bind-ref的数据类型
+*/
+
+/**
+	@name Output#format
+	@attribute 
+	@type string
+	@description 格式化，当绑定数据类型为Date、DateTime、Time时的显示格式
+*/
+
+/**
+	@name Output#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"dataType: {string}	指定数据类型，当bind-ref没有定义时有效		
+		"format: {string} 格式化，当绑定数据类型为Date、DateTime、Time时的显示格式
+		"value": {object} 设置output的值，当没有设置bind-ref时可使用
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name Output#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："dataType"、"format"、"value"
+	@return {Object} 
+*/
+
+/**
+	@name Output#onRender
+	@event
+	@description <b>[回调型事件]</b>渲染output触发事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"value" : 值,
+		"html" : 输出的html片段，通过修改此属性影响output组件展现
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

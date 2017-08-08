@@ -1,0 +1,112 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/tabs/tabs" tag-type="rich" tag-name="div" icon="tabs.png" text="页签"  
+	    binding-component="$UI/system/components/bootstrap/tabs/tabs" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+<!-- 			<property name="type" text="类别" editor-ref="typeList" default-value="tab"/> -->
+<!-- 			<property name="fade" text="是否渐入" editor-ref="booleanList" default-value="false"/> -->
+<!-- 			<property name="justified" text="是否自适应" editor-ref="booleanList" default-value="false"/> -->
+<!-- 			<property name="stacked" text="是否堆叠" editor-ref="booleanList" default-value="false"/> -->
+<!-- 			<property name="activeTab" text="活动Tab页" editor-ref="tabList"/> -->
+			<property name="class" text="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="true"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="tabList" type="list">
+				<dynamic-data xpath="./*[local-name(.)='ul']/*[local-name(.)='li']/@xid" search-start="bsTabs"/>						
+			</property-editor>
+			<property-editor name="typeList" type="list" >
+				<static-data value="tab,pill"/>				
+			</property-editor>
+		</property-editors>
+		
+		<toolbar>
+			<item text="添加tab" method="addTab"/>
+		</toolbar>
+		
+		<events>
+			<event name="onDeselect" type="event" text="页签隐藏" parameters="event" is-script="true"/>
+			<event name="onSelect" type="event" text="页签显示" parameters="event" is-script="true"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/bootstrap/tabs/tabs">
+					<ul class="nav nav-tabs">
+						<li class="active">
+							<a content="tabContent_1">tab1</a>
+						</li>
+				 		<li role="presentation">
+					        <a content="tabContent_2">tab2</a>
+					    </li>  
+					</ul>
+					<div class="tab-content">
+						<div class="tab-pane active" xid="tabContent_1"></div>
+						<div class="tab-pane" xid="tabContent_2"></div>
+					</div>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/bootstrap/tabs/tabs#tabItem" tag-name="a" icon="a.gif" text="bsTab"  
+		discriminate-condition="executeXpath(../../../@component='$UI/system/components/bootstrap/tabs/tabs')" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="label" text="label" path="text()" />  
+			<property name="content" text="内容xid" is-id-ref="true" />  
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<property-editors>
+			<property-editor name="objlist" type="list">
+				<dynamic-data search-start="window" xpath="//*[@component='/UI/system/components/chart.xbl.xml#chart' or @component='/UI/system/components/decisionGrid.xbl.xml#grid']/@id"/>								
+			</property-editor>
+		</property-editors>		
+
+		
+		<events>
+			<event name="onDeselect" type="event" text="隐藏" parameters="event" is-script="true"/>
+			<event name="onSelect" type="event" text="显示" parameters="event" is-script="true"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<li>
+					<a>tab1</a>
+				</li>
+		   ]]></template>
+		</templates>
+	</element>	
+	
+	<element name="$UI/system/components/bootstrap/tabs/tabs#tabNav" text="bsTabNav" icon="div.gif" tag-name="ul" owner="$UI/system/components/bootstrap/tabs/tabs"
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/bootstrap/tabs/tabs')" >
+		 <properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0common": {
+						label: "常用",
+						value: "nav",
+						require: true
+					},
+					"style": {
+						label: "风格",
+						value: "nav-tabs|nav-pills",
+						require: true
+					}
+				}
+				]]></editor-parameter>
+			</property>
+		</properties>
+	 
+	</element>	
+	
+</elements>

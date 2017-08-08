@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/panel/panel" tag-type="rich" tag-name="div" icon="panel.png" text="panel布局"  
+ 
+	    binding-component="$UI/system/components/justep/panel/panel" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-panel"
+					},
+					'1common': {
+						label: "常用",
+						value: "x-full",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+			<!-- 
+			<property name="top" text="是否显示top"/>
+			<property name="bottom" text="是否显示bottom"/>
+			 -->
+		</properties>
+		<toolbar>
+			<item text="添加top" method="addTop"/>
+			<item text="添加bottom" method="addBottom"/>
+		</toolbar>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    <div component="$UI/system/components/justep/panel/panel" class="x-panel x-full">
+		    	<div class="x-panel-top"/>
+		    	<div class="x-panel-content">
+		    	</div>
+		    	<div class="x-panel-bottom"/>
+		    </div>	 
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="$UI/system/components/justep/panel/panel#top" tag-name="div" icon="top.png" text="top"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/panel/panel' and contains(@class, 'x-panel-top'))" 
+		component-class="" component-type="layout-container" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="visible" text="是否可见" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="height" text="高度" data-type="integer" default-value="48"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-panel-top"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    	<div class="x-panel-top"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/justep/panel/panel#content" tag-name="div" icon="content.png" text="content"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/panel/panel' and contains(@class, 'x-panel-content'))" 
+		component-class="" component-type="layout-container" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-panel-content"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+	</element>
+	
+	<element name="$UI/system/components/justep/panel/panel#bottom" tag-name="div" icon="bottom.png" text="bottom"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/panel/panel' and contains(@class, 'x-panel-bottom'))" 
+		component-class="" component-type="layout-container" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="visible" text="是否可见" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="height" text="高度" data-type="integer" default-value="48"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-panel-bottom"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    	<div class="x-panel-bottom"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

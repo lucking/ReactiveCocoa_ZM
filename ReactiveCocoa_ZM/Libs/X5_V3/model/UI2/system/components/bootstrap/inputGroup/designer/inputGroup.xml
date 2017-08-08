@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/inputGroup/inputGroup" tag-name="div" icon="element.gif" text="输入框组"  
+	    binding-component="$UI/system/components/bootstrap/inputGroup/inputGroup" 
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "input-group",
+						require: true
+					}
+				}
+				]]></editor-parameter>
+			</property>
+<!-- 			<property name="style" text="样式" editor-ref="styleDialog" use-default="true"/> -->
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<toolbar>
+			<item text="添加按钮后缀" method="addSuffixBtn"/>
+			<item text="添加文本后缀" method="addSuffix"/>
+			<item text="添加按钮前缀" method="addPrefixBtn"/>
+			<item text="添加文本前缀" method="addPrefix"/>
+		</toolbar>
+		
+		<events>
+<!-- 			<event name="onDeselect" type="event" text="页签隐藏" parameters="event" is-script="true"/> -->
+<!-- 			<event name="onSelect" type="event" text="页签显示" parameters="event" is-script="true"/> -->
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div class="input-group" component="$UI/system/components/bootstrap/inputGroup/inputGroup">
+				   <input type="text" class="form-control" component="$UI/system/components/justep/input/input"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

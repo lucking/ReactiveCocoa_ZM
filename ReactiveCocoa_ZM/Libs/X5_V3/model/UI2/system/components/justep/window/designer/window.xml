@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/window/window"
+		tag-name="div" icon="window.gif" text="窗体组件"
+		binding-component="$UI/system/components/justep/window/window"
+		display-property="data-x-id" display-name="window" resizable="false"
+		canAddChild="true" canRemove="false" canCopy="false" component-type="layout-container"
+		validator="WindowValidator" js-class-file="windowNew.js"
+		component-class="Window" design-view="web-designer">
+		<properties>
+			<property name="xid" text="编码" readonly="true" />
+			<property name="extends" text="继承" editor-ref="fileTreeDialog"
+				editor-parameter=".w#true#true" />
+					<property name="class" text="class" />
+<!-- 			<property name="resolution" text="分辨率(该属性只在设计时有效)" editor-ref="resolutionList" -->
+<!-- 				editor-parameter=".w#true#true" /> -->
+			<property name="design" text="设计时属性(该属性只在设计时有效)" readonly="true">
+				<property name="resolution" text="分辨率" editor-ref="resolutionList" />
+				<property name="device" text="设备" editor-ref="deviceList" />
+				<property name="$skin" text="皮肤" editor-ref="skinList" />
+			</property>
+		
+		</properties>
+		
+		<property-editors>
+			<property-editor name="resolutionList" type="list">
+				<static-data value=",320 x 480,320 x 533,320 x 568,360 x 640,1024 x 768,1280 x 800 " /> <!--直接定义的静态数据 -->
+			</property-editor>
+			<property-editor name="deviceList" type="list">
+				<static-data value=",pc:pc,m:mobile" /> <!--直接定义的静态数据 -->
+			</property-editor>
+			<property-editor name="skinList" type="list">
+				<static-data value=",desktop,slate,superhero,united,yeti" /> <!--直接定义的静态数据 -->
+			</property-editor>
+		</property-editors>
+
+		<template name="default">
+		   <![CDATA[ 
+	 			<div xmlns="http://www.w3.org/1999/xhtml" xid="window" class="window" component="$UI/system/components/justep/window/window">
+					<div component="$UI/system/components/justep/model/model" xid="model"></div>
+				</div>
+		   ]]>
+		</template>
+		<events>
+
+		</events>
+	</element>
+</elements>

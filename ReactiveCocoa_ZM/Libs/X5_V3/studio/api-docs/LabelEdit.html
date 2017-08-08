@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Component</div>
+				<h1>
+					
+					LabelEdit
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/components/justep/labelEdit/labelEdit</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+
+		
+		<li><a href="#properties">Properties</a></li>
+		
+
+		
+
+		
+
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>component </span>
+				<strong>
+					LabelEdit
+				</strong>
+
+				
+				<span> extends <a href="BindComponent.html" ><abbr title="BindComponent">BindComponent</abbr></a></span>
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>标签加编辑组件</p><pre class="example sh_javascript">	<xmp>
+		LabelEdit组件是复合组件包含Label和Edit两部分，分别使用class:x-label和class:x-edit表示；
+		相关衍生组件有：
+			labelInput
+			labelPassword
+			labelRange
+			labelOutput
+			labelSelect
+			labelTextarea
+			labelRadioGroup
+			labelCheckboxGroup
+			labelToggle			
+	</xmp></pre></div>
+
+			
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+			<h2>
+				<a name='properties'></a>
+				Properties
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#class">
+        	<abbr title="LabelEdit#class">
+        		class
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>组件class</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#xid">
+        	<abbr title="LabelEdit#xid">
+        		xid
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>组件标示</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+			<h2>
+				<a name='properties_details'></a>
+				Properties Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="class" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_labelEdit_js_xdoc.html#lineno5">labelEdit.js.xdoc</a> at line 5
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>class</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>组件class</p><pre class="example sh_javascript">	<xmp>
+		基础样式: x-label-edit(必须)
+		排列方式: x-label-top、x-label-bottom、x-label-right
+		Label占比: x-label5、x-label10、x-label15、x-label20、x-label30、x-label35、x-label40、x-label45、x-label50、x-label55、x-label60
+	</xmp></pre></div>
+<h3 id="xid" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_labelEdit_js_xdoc.html#lineno3">labelEdit.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>xid</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>组件标示</p></div>
+
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:03:00 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

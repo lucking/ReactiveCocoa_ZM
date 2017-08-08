@@ -1,0 +1,11 @@
+<template text="含标题的空窗体" desc="包含一个标题的窗体" custom="false">
+	<images>
+		<image src="empty.png" />
+	</images>
+	
+	<items>
+		<item file="template/empty.w"/>
+		<item file="template/empty.js"/>
+	</items>
+	
+</template>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.jst.server_core.feature"
+      label="%featureName"
+      version="3.4.0.v20120503_1042-31FEe8s73554A4Fa2153"
+      provider-name="%providerName"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin
+         id="org.eclipse.jst.server.core"
+         download-size="0"
+         install-size="0"
+         version="1.2.302.v20120503_1042"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jst.server.generic.core"
+         download-size="0"
+         install-size="0"
+         version="1.0.700.v20101219"
+         unpack="false"/>
+
+</feature>

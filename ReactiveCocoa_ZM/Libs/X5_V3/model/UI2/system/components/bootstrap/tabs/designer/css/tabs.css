@@ -1,0 +1,17 @@
+.tab-pane {
+	min-height: 50px;
+}
+
+.bsTabs:hover,
+.bsTabs>.nav>li:hover,
+.bsTabs>.tab-content>.tab-pane:hover
+{
+	outline: blue dashed 1px;
+}
+.nav-pills{
+	border-bottom:1px solid #428bca;
+}
+.nav-pills > li > a {
+	border-radius:0;
+	border-top-right-radius: 4px;
+}

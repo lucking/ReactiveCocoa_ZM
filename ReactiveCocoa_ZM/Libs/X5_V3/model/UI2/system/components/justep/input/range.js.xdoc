@@ -1,0 +1,23 @@
+/**
+	@name Range
+	@component $UI/system/components/justep/input/Range
+	@extends Input
+	@extendurl $UI/system/components/justep/input/input
+	@model UI2
+	@description Range
+*/
+
+/**
+	@name Range#min
+	@attribute 
+	@type number
+	@description 最小值
+*/
+
+/**
+	@name Range#max
+	@attribute 
+	@type number
+	@description 最大值
+*/
+

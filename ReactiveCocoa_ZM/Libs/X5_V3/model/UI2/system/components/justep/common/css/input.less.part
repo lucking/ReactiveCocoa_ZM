@@ -1,0 +1,71 @@
+.datetime.form-control,.date.form-control,.time.form-control {
+	background: #fff url(./img/datePicker.png) no-repeat 100%;
+	padding-right: 22px;
+	cursor: pointer;
+
+  // Disabled and read-only inputs
+  //
+  // HTML5 says that controls under a fieldset > legend:first-child won't be
+  // disabled if the fieldset is disabled. Due to implementation difficulty, we
+  // don't honor that edge case; we style them as disabled anyway.
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    background-color: @input-bg-disabled;
+    opacity: 1; // iOS fix for unreadable disabled content
+  }
+}
+
+input, textarea{
+	-webkit-user-select: text;
+	-moz-user-select: -moz-text;
+	-moz-user-select: text;
+}
+
+textarea.form-control {
+	resize: none;
+}
+
+input.form-control[type='range']{
+	border:0;
+	-webkit-appearance: slider-horizontal;
+	-moz-appearance: slider-horizontal;
+	appearance: slider-horizontal;
+}
+
+select.form-control {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+	padding: 0 @padding-base-horizontal;
+	text-indent: 0px;
+	background: @input-bg url(./img/chevron.png) no-repeat 100%;
+}
+
+select.input-sm {
+	padding: 0 @padding-small-horizontal;
+}
+
+select.input-lg {
+	padding: 0 @padding-large-horizontal;
+}
+
+.x-output {
+  display: block;
+  font-size: @font-size-base;
+  line-height: @line-height-base;
+  /*color: @label-color;*/
+}
+
+.form-inline {
+
+  // Kick in the inline
+  @media (min-width: @screen-sm-min) {
+    // In navbar-form, allow folks to *not* use `.form-group`
+    .x-output {
+      display: inline-block;
+      width: auto; // Prevent labels from stacking above inputs in `.form-group`
+      vertical-align: middle;
+    }
+  }
+}

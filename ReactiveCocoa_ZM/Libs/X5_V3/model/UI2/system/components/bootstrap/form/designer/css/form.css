@@ -1,0 +1,10 @@
+.form-group,.form-horizontal {
+	min-height:30px;
+	outline:1px dotted #E0E0E0;
+}
+
+.form-group>div{
+	min-height:30px;
+	outline:1px dotted #E0E0E0;
+}
+

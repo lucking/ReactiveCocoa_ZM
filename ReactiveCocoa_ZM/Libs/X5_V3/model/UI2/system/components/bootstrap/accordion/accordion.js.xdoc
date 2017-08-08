@@ -1,0 +1,80 @@
+/**
+	@name Accordion
+	@component $UI/system/components/boostrap/accordion/accordion
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description Accordion组件, 多区域可折叠组件
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name Accordion#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name Accordion#onShow
+	@event
+	@description <b>[回调型事件]</b>当显示时候
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"index": 显示的区域索引
+	}
+	</xmp>
+*/
+
+/**
+	@name Accordion#onHide
+	@event
+	@description <b>[回调型事件]</b>当隐藏时候
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"index": 隐藏的区域索引
+	}
+	</xmp>
+*/
+
+/**
+ @name Accordion#show
+ @function
+ @param {Integer} index 区域索引
+ @returns {void}
+ @description 显示特定的区域
+*/
+
+/**
+ @name Accordion#hide
+ @function
+ @param {Integer} index 区域索引
+ @returns {void}
+ @description 隐藏特定的区域
+*/
+
+/**
+ @name Accordion#show
+ @operation
+ @see Accordion#show
+ @param {Integer} index
+ @description 显示特定的区域
+ @returns {void}
+*/
+
+/**
+ @name Accordion#hide
+ @operation
+ @see Accordion#hide
+ @param {Integer} index
+ @description 隐藏特定的区域
+ @returns {void}
+*/

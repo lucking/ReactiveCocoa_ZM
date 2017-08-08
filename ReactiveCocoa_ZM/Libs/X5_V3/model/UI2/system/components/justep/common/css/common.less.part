@@ -1,0 +1,113 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, i, u, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, fieldset, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+ol, ul {
+  list-style: none; 
+}
+
+* {
+	-webkit-user-select: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+	-ms-touch-action: none;
+	-moz-user-select: -moz-none;
+	-webkit-touch-callout: none;
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.x-currentRow {
+	background-color: @table-bg-hover;
+	border-radius:@navbar-border-radius;
+}
+
+.has-error {
+  &.form-control {
+    border-color: @state-danger-text;
+    .box-shadow(inset 0 1px 1px rgba(0,0,0,.075)); // Redeclare so transitions work
+    &:focus {
+      border-color: darken(@state-danger-text, 10%);
+      @shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 6px lighten(@state-danger-text, 20%);
+      .box-shadow(@shadow);
+    }
+  }
+}
+
+//重新定义
+.panel-group {
+	.panel {
+		overflow-y: visible;
+	}
+}
+/** flex b------------------------- **/
+.x-flex(){
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -moz-box;
+	display: -moz-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.x-flex{
+	.x-flex();
+}
+
+.x-flex-column(){
+	-webkit-box-direction: normal;
+	-moz-box-direction: normal;
+	-webkit-box-orient: vertical;
+	-moz-box-orient: vertical;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+.x-flex-column{
+	.x-flex-column();
+}
+
+.x-flex(@i){
+	-webkit-box-flex: @i;
+	-webkit-flex: @i;
+	flex: @i;
+}
+
+.x-flex1{
+	.x-flex(1);
+}
+.x-flex2{
+	.x-flex(2);
+}
+.x-flex3{
+	.x-flex(3);
+}
+.x-flex4{
+	.x-flex(4);
+}
+.x-flex5{
+	.x-flex(5);
+}
+/** flex e------------------------- **/
+
+/**window**/
+.window{
+   width:100%;
+   height:100%;
+}
+
+.x-full {
+	position: absolute!important;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	height: auto;
+	width: 100%;
+}

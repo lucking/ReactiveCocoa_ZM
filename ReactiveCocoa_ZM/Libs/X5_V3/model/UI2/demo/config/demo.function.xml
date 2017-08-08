@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root> 
+  <item label="演示案例" iconClass="icon-flag"> 
+    <item label="Todo MVC" process="/demo/components/process/ui2/ui2Process"
+      activity="mainActivity" url="/demo/uiSample/todoMVC/index.a" display="solid"/> 
+  </item> 
+</root>

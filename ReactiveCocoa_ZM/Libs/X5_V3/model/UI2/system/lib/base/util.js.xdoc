@@ -1,0 +1,138 @@
+/**
+	@name Util
+	@url $UI/system/lib/base/util
+	@class
+	@category javascript
+	@model UI2
+	@description Util工具类
+*/
+
+/**
+	@name Util.isBoolean
+	@function
+	@description 判断值的类型是否是Boolean类型
+	@param {Object} value
+	@returns {Boolean}
+*/
+
+/**
+	@name Util.isString
+	@function
+	@description 判断值的类型是否是String类型
+	@param {Object} value
+	@returns {Boolean}
+*/
+
+/**
+	@name Util.isFunction
+	@function
+	@description 判断是否是函数
+	@param {Object} value
+	@returns {Boolean}
+*/
+
+/**
+	@name Util.isArray
+	@function
+	@description 判断值的类型是否是Array类型
+	@param {Object} value
+	@returns {Boolean}
+*/
+
+/**
+	@name Util.toArray
+	@function
+	@description 转换成数组
+	@param {Object} iterable
+	@param {Integer} start
+	@param {Integer} end
+	@returns {Object} 数组
+*/
+
+/**
+	@name Util.clone
+	@function
+	@description 对象克隆
+	@param {Object} value
+	@returns {Object}
+*/
+
+/**
+	@name Util.isObject
+	@function
+	@description 判断值的类型是否是Object类型
+	@param {Object} value
+	@returns {Boolean}
+*/
+
+/**
+	@name Util.apply
+	@function
+	@description 
+	@param {Object} object
+	@param {Object} config
+	@param {Object} defaults
+	@returns {Object}
+*/
+
+/**
+	@name Util.addCookie
+	@function
+	@description 添加cookie
+	@param {String} name 名称
+	@param {Object} value 值
+	@param {String} path 路径
+	@param {Date} expiresHours 有效期
+	@returns {void}
+*/
+
+/**
+	@name Util.getCookie
+	@function
+	@description 获取cookie
+	@param {String} name 名称
+	@returns {String}
+*/
+
+/**
+	@name Util.deleteCookie
+	@function
+	@description 删除cookie
+	@param {String} name 名称
+	@param {String} path 路径
+	@returns {void}
+*/
+
+/**
+	@name Util.toExprString
+	@function
+	@description 转换成表达式
+	@param {String} dataType 类型
+	@param {Object} value 值
+	@param {Boolean} isKSQL 是否使用在KSQL中
+	@returns {String}
+*/
+
+/**
+	@name Util.disableTouchMove
+	@function
+	@description 取消节点上的触摸功能
+	@param {Element} e
+	@returns {void}
+*/
+
+/**
+	@name Util.enableTouchMove
+	@function
+	@description 开启节点上的触摸功能
+	@param {Element} e
+	@returns {void}
+*/
+
+
+
+
+
+
+
+

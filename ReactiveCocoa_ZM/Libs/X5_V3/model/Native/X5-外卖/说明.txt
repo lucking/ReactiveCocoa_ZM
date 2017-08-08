@@ -1,0 +1,48 @@
+一、目录和文件说明
+build                     编译中间结果目录，可以删除
+dist                      编译后的本地App存放目录
+log                       编译日志目录
+platforms                 基于cordova目录结构的代码和资源目录
+    android
+        res               android图标和启动欢迎图片
+    ios
+        X5
+            Resources
+                icons     ios图标
+                splash    ios启动欢迎图片
+                
+www                       UI资源编译后结果
+plugins                   本地应用的扩展插件，默认没有该目录，如果需要使用扩展插件，可以新建plugins目录，并放入类似com.xxx格式的cordova插件
+android.keystore          android数字签名使用的证书，默认带一个开发调试用证书，正式发布需要新生成
+build.properties          编译配置文件，配置证书密码和记录上一次打包相关配置
+
+如下文件默认没有，生成ios的app时，需要放置，具体参考“四、如何生成ios证书”
+ios.developer.mobileprovision
+ios.developer.p12
+ios.distribution.mobileprovision
+ios.distribution.p12
+
+二、如何替换应用图标和启动图片
+    1. ios 下替换platforms/ios/X5/Resources/icons和 platforms/ios/X5/Resources/splash对应文件即可，注意文件名和分辨率
+	2. andorid 下platforms/android/res子目录中的icon.png是应用图标，screen.png表示启动欢迎图片，替换对应文件即可，同样需要注意一下文件名和分辨率
+
+三、如何生成android证书
+
+使用java自带的工具keytool生成，假设x5在E盘E:\X5.3-openSource
+在命令行下：
+E:\X5.3-openSource\java\jre1.7\bin\keytool -genkey -alias android -keypass 123456 -keyalg RSA -keysize 1024 -validity 3650 -keystore E:\android.keystore -storepass 123456 -dname "CN=Debugger, OU=X5, O=X5, L=BJ, ST=BJ, C=CN"
+将在E:\下生成android.keystore文件，把它剪切到自己本地应用根目录覆盖同名文件即可使用自己的证书
+参数说明：
+-keypass 123456    证书密钥，这里用123445，此处指定的值需要和build.properties文件中的androidKeyAliasPassword对应
+-storepass 123456  证书存储密钥，这里用123445，此处指定的值需要和build.properties文件中的androidKeyStorePassword对应
+-validity 3650     证书有效期，单位是天
+CN=Debugger        名字与姓氏
+OU=X5              组织单位名称
+O=X5               组织名称
+L=BJ               城市或区域名称
+ST=BJ              省/市/自治区名称
+C=CN               双字母国家/地区代码
+其它参数含义可以参考keytool的说明
+
+四、如何生成ios证书
+参考 http://bbs.justep.com/thread-67704-1-1.html

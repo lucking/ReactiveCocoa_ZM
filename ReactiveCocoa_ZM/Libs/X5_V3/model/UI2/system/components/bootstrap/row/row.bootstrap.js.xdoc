@@ -1,0 +1,18 @@
+/**
+	@name Row
+	@component $UI/system/components/bootstrap/row/row
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description bootstrap Row组件, 属于容器组件
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name Row#xid
+	@attribute 
+	@type string
+	@description 
+*/	

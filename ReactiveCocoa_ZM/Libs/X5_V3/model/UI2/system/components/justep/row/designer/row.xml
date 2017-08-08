@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/row/row" tag-name="div" icon="row.png" text="行" display-property="xid" 
+			 binding-component="$UI/system/components/justep/row/row"
+			 child-range="$UI/system/components/justep/row/row#col"
+			 component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" />        
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-row",
+					},	 
+					"1align":{
+						label: "垂直对齐",
+						value: "x-row-top|x-row-center|x-row-bottom",
+						require: false
+					}, 
+					"2responsive": {
+						label: "相应样式",
+						value: "x-responsive-sm|x-responsive-md|x-responsive-lg",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<toolbar>	
+		   <item text="添加列" method="addCol"/>		
+		   <item text="在上边添加行" method="addRowAtBefore"/>		
+		   <item text="在下边添加行" method="addRowAtAfter"/>		
+		</toolbar>
+ 
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <div component="$UI/system/components/justep/row/row" class="x-row">
+		        <div class="x-col">
+		          
+		        </div>
+		        <div class="x-col">
+		          
+		        </div>
+		        <div class="x-col">
+		        
+		        </div>
+		     </div>
+		   ]]></template>
+		</templates>
+		
+	</element>
+	
+    <element name="$UI/system/components/justep/row/row#col" tag-name="div" icon="col.png" text="列" display-property="class"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/row/row')" 
+		parent-range="row" resizable="false"
+		component-type="layout-container" >
+		<properties>
+			<property name="xid" /> 
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-col",
+					},	 
+					"1size":{
+						label: "尺寸样式",
+						value: "x-col-10|x-col-20|x-col-25|x-col-33|x-col-50|x-col-67||x-col-75|x-col-80|x-col-90|x-col-fixed",
+						require: false
+					}, 
+					"2offset": {
+						label: "偏移样式",
+						value: "x-col-offset-10|x-col-offset-20|x-col-offset-25|x-col-offset-33|x-col-offset-50|x-col-offset-67|x-col-offset-75|x-col-offset-80|x-col-offset-90",
+						require: false
+					},
+					"3align":{
+						label: "垂直对齐",
+						value: "x-col-top|x-col-center|x-col-bottom",
+						require: false
+					} 
+					
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+<!--			<property name="icon" text="图标" editor-ref="commonWebPage"/>-->
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<toolbar>	
+		   <item text="添加行" method="addRow"/>		
+		</toolbar>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			   <div class="x-col"></div>
+		   ]]></template> 
+		</templates>
+	</element>
+</elements>

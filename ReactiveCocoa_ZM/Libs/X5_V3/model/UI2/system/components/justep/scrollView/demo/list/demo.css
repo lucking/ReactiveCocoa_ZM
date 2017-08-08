@@ -1,0 +1,77 @@
+.head {
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+	height: 100px;
+	background: url(img/food.jpg) no-repeat center top;
+	-webkit-background-size: 100% auto;
+	background-size: 100% auto;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	-webkit-border-top-left-radius: 8px;
+	-webkit-border-top-right-radius: 8px;
+}
+
+.curRow {
+	background-color: #FFC;
+}
+
+.km-listview {
+	border-top-color: #dcbe87;
+	background-image: url(img/pattern8.png);
+	line-height: 1.6em;
+	overflow: hidden;
+}
+
+.km-group-title h2 {
+	margin: 0;
+	padding-top: .2em;
+	text-shadow: none;
+	color: #974d2e;
+	font-weight: normal;
+	font-size: 1.4em;
+	background-image: -moz-linear-gradient(center top, rgba(255, 255, 255, 0.5),
+		rgba(255, 255, 255, 0.45) 6%, rgba(255, 255, 255, 0.2) 50%,
+		rgba(255, 255, 255, 0.15) 50%, rgba(100, 100, 100, 0) ),
+		url(img/pattern4.png);
+	background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255,
+		255, 0.5) ), color-stop(0.06, rgba(255, 255, 255, 0.45) ),
+		color-stop(0.5, rgba(255, 255, 255, 0.2) ),
+		color-stop(0.5, rgba(255, 255, 255, 0.15) ),
+		color-stop(1, rgba(100, 100, 100, 0) ) ), url(img/pattern4.png);
+}
+
+.km-listview .item-photo {
+	width: 4em;
+	height: 4em;
+	float: left;
+	margin: .5em 0;
+	-webkit-box-shadow: 0 1px 3px #333;
+	box-shadow: 0 1px 3px #333;
+	-webkit-border-radius: 8px;
+	border-radius: 8px;
+}
+
+.km-listview .item-title {
+	float: left;
+	font-size: 1em;
+	line-height: 1.4em;
+	margin: .3em 1em 0 .6em;
+	width: 50%;
+	color: #4c2a1b;
+}
+
+.km-listview .item-info {
+	float: left;
+	font-size: .7em;
+	line-height: 1em;
+	margin: 0 0 0 .95em;
+	width: 60%;
+	color: #974d2e;
+}
+
+.details-link {
+	margin-top: 1em;
+	background: url(img/pattern9.png);
+	color: #ffffff;
+}

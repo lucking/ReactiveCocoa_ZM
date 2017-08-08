@@ -1,0 +1,28 @@
+<!DOCTYPE html  PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html style="height:100%;width:100%;padding:0px;margin:0px;">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+ 
+	    <script src="../public/js/json.js"></script>
+	 <script>
+	     /**java端調用方法设置样式数据**/
+	     function init(config){
+             document.body.style.background=config.background;
+	     }
+	     
+	     /**java端点击确定后调用的方法,可以直接返回一个字符串值也可以直接返回一个json结构的字符串，
+	                      如果是json结构时，json的key对应属性名，值对应属性值，可以同时对多个属性进行设置**/
+	     function getValue(){  
+	        return JSON.stringify({label:'fff'});
+	     }
+	     
+	     function clickAction(){
+	    	 callJava(JSON.stringify({event:'test'}));
+	     }
+	 </script>
+	</head>
+	<body scroll="no" style="overflow:hidden;cursor:default;margin:0;width:100%;height:100%;overflow:hidden;padding:0px;background:#ECE9D;"    > 
+           dfdfds333
+           <button onclick="clickAction()">callJava</button>
+	</body>
+</html>

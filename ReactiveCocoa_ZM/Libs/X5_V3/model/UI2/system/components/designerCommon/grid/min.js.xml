@@ -1,0 +1,11 @@
+<root>
+	<config>
+		<depend>../../../core.min.js</depend>
+		<depend>../../../common.min.js</depend>
+
+		<file>grid.js</file>
+		<file>js/grid-base.js</file>
+		
+		<output name="grid.min.js"/>
+	</config>
+</root>

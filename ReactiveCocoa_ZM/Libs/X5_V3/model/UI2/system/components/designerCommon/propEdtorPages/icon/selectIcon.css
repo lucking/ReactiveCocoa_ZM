@@ -1,0 +1,62 @@
+.list,.block {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.list li {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 300px;
+	padding-top: 4px;
+	padding-bottom: 4px;
+}
+
+.block li {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 50px;
+	height: 60px;
+	margin: 5px;
+	text-align: center;
+}
+
+.block li label {
+	cursor: pointer;
+}
+
+.block li i {
+	font-size: 36px;
+}
+
+.list li label {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+}
+
+.list li span {
+	color: black;
+}
+
+.list li:hover {
+	background-color: #EEE;
+}
+
+.list li label:hover,.list li input:hover {
+	cursor: pointer;
+}
+
+.container li {
+	color: #444;
+}
+
+.container li.active {
+	background-color: #F2BA29;
+}
+
+.icon36 {
+	margin-left: 5px;
+}

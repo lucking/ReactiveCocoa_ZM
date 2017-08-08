@@ -1,0 +1,39 @@
+.navbar-buttons-container {
+	height:54px;
+	padding:8px;
+}
+
+#sidebar li.active {
+  border:0 #eee solid;
+  border-right-width:5px;
+}
+
+.nav-container {
+  background-color:#f5f5f5;
+}
+
+.scroll {
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+/* fix margin-bottom */
+.navbar-static-top {
+  margin-bottom: 0;
+}
+
+/* 和bootstrap统一，为14px */
+.jqx-widget-content {
+    font-size: 14px;
+}
+
+/* 与 bootstrap a 的颜色统一 */
+.jqx-item {
+	color: #2a6496; 
+}
+
+.btn-dialog-default, .btn-dialog-ok, .btn-dialog-cancel, .btn-dialog-back, .btn-dialog-next, .btn-dialog-finish {
+	margin-left: 4px;
+	margin-right: 4px;
+	width: 80px;
+}

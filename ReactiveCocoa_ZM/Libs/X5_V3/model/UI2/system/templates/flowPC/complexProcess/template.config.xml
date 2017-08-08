@@ -1,0 +1,15 @@
+<template text="流程" desc="主从表流程，">
+	<images>
+		<image src="empty.png" />
+		<image src="detail.png" />
+	</images>
+
+	<items file="template/complexProcess.w">
+		<item text="主数据" configPage="$UI/system/templates/common/mainData.w" />
+		<item text="主表视图" configPage="$UI/system/templates/common/formView.w" />
+		<item text="从表视图" configPage="$UI/system/templates/common/detailListView.w" />
+<!-- 		<item text="流程环节" configPage="$UI/system/templates/common/processLink.w" -->
+<!-- 			file="template/otherActivity.w" /> -->
+		<item file="template/complexProcess.js" />
+	</items>
+</template>

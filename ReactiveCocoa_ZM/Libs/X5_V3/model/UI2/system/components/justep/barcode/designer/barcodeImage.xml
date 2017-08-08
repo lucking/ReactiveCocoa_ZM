@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/barcode/barcodeImage" tag-name="div" icon="barcodeImage.png" text="图片"
+		binding-component="$UI/system/components/justep/barcode/barcodeImage" 
+        display-property="xid" component-type="formControl" 
+        design-view="web-designer">
+        
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="bind-ref" text="引用" editor-ref="dataRef" required="true"/>
+			<property name="type" text="编码类型" editor-ref="barcode-type" required="false" default-value="code39" readonly="true"/>
+			<property name="config" path="@barcodeConfig" editor-ref="barcode-config" text="参数"/>
+<!--			<property name="auto-load" text="自动生成条形码" default-value="false" editor-ref="booleanList" data-type="boolean"/>				-->
+			<property name="stretch" text="拉伸" required="false" editor-ref="booleanList" default-value="true" data-type="boolean" allow-empty="true"/>
+			<property name="class" text="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog">
+				<property name="width" text="宽度" is-style="true" />
+				<property name="height" text="高度" is-style="true" />
+			</property>
+		</properties>
+		<property-editors>
+			<property-editor name="barcode-config" type="dialog">
+				<dialog-page class-name="BarcodeConfigPage" /> 
+			</property-editor>
+ 		</property-editors>
+
+		<events>  <!--组件事件-->	
+			<event name="onRefresh"  text="刷新"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/barcode/barcodeImage" class="xui-barcodeImage" type="code39" templateName="templateName" />
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

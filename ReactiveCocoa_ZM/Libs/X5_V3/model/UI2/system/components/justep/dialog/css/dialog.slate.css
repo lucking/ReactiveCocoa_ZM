@@ -1,0 +1,82 @@
+.x-dialog-overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  /*IE*/
+  filter: alpha(opacity=40);
+  /*IE*/
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2000;
+  visibility: hidden;
+  opacity: 0;
+}
+.x-dialog-overlay.x-dialog-overlay-visible {
+  visibility: visible;
+  opacity: 1;
+}
+.x-dialog {
+  position: fixed;
+  z-index: 2001;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  background-color: #272b30;
+  display: none;
+  width: 100%;
+  height: 100%;
+}
+.x-dialog.x-dialog-normal {
+  width: auto;
+  height: auto;
+  background-color: #2e3338;
+  border: 1px solid #999999;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 6px;
+  -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
+  background-clip: padding-box;
+}
+.x-dialog.x-dialog-normal .x-dialog-body {
+  padding: 20px;
+}
+.x-dialog .x-dialog-title {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  padding: 15px;
+  border-bottom: 1px solid #1c1e22;
+  min-height: 16.42857143px;
+  display: none;
+}
+.x-dialog.x-dialog-in {
+  opacity: 1;
+}
+.x-dialog[showTitle='true'] {
+  padding-top: 56px;
+  /*'padding-top'+'padding-bottom'+text+border*/
+}
+.x-dialog[showTitle='true'] .x-dialog-title {
+  display: block;
+}
+.x-dialog-title-text {
+  margin: 0;
+  line-height: 1.42857143;
+}
+.x-dialog-title .close {
+  margin-top: -2px;
+}
+.x-dialog-body {
+  position: relative;
+  overflow: auto;
+  height: 100%;
+}
+@media (min-width: 768px) {
+  .x-dialog-normal {
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+  }
+}

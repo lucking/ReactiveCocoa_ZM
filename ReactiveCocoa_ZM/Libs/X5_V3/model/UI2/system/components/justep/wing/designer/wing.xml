@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/wing/wing" tag-type="rich" tag-name="div" icon="wing.png" text="移动布局"  
+ 
+	    binding-component="$UI/system/components/justep/wing/wing" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>
+			<property name="animate" text="是否使用动画效果" required="false" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="display" text="侧边区域显示方式" required="false" default-value="overlay" editor-ref="displayList"/>
+			<property name="dismissible" text="是否在内容区域点击后侧边区域关闭" required="false" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-wing"
+					},
+					"1size": {
+						label: "尺寸样式",
+						value: "x-wing-xs",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+			<property-editor name="displayList" type="list" >
+				<static-data value="overlay,push,reveal,compress"/>
+			</property-editor>
+		</property-editors>	
+		<toolbar>
+			<item text="添加left" method="addLeft"/>
+			<item text="添加right" method="addRight"/>
+		</toolbar>
+		<operations>
+			<operation name="toggleLeft" label="切换左边栏" enable="true" visible="true" icon=""/>
+			<operation name="toggleRight" label="切换右边栏" enable="true" visible="true" icon=""/>
+		</operations>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    <div component="$UI/system/components/justep/wing/wing" class="x-wing">
+		    	<div class="x-wing-left"/>
+		    	<div class="x-wing-content">
+		    		<div class="x-wing-backdrop"></div>
+		    	</div>
+		    	<div class="x-wing-right"/>
+		    </div>	 
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="$UI/system/components/justep/wing/wing#left" tag-name="div" icon="left.png" text="left"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/wing/wing' and contains(@class, 'x-wing-left'))" 
+		component-class="" component-type="layout-container" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-wing-left"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    	<div class="x-wing-left"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/justep/wing/wing#content" tag-name="div" icon="content.png" text="content"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/wing/wing' and contains(@class, 'x-wing-content'))" 
+		component-class="" component-type="layout-container" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-wing-content"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+	</element>
+	
+	<element name="$UI/system/components/justep/wing/wing#right" tag-name="div" icon="right.png" text="right"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/wing/wing' and contains(@class, 'x-wing-right'))" 
+		component-class="" component-type="layout-container" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-wing-right"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    	<div class="x-wing-right"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

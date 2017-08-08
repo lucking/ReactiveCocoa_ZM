@@ -1,0 +1,44 @@
+@import url("../common/css/jqx.base.css");
+
+@import url("../../components/designerCommon/css/common.css");
+
+#imgWindow {
+	background: #FFF;
+	overflow: hidden;
+}
+
+#imgWindow img {
+	border: 3px solid #F2F2F2;
+	margin-right: 5px;
+}
+
+#container {
+	float: left;
+	width: 800%;
+}
+
+#imgContainer {
+	float: left;
+}
+
+.lr-btn {
+	width: 0;
+	height: 0;
+	border-top: 40px dashed transparent;
+	border-bottom: 40px dashed transparent;
+	font-sie: 0;
+	position: absolute;
+	display: none;
+	cursor: pointer;
+	filter: alpha(opacity =         50);
+	-moz-opacity: 0.5;
+	opacity: 0.5;
+}
+
+.arrow-left {
+	border-right: 30px solid #444444;
+}
+
+.arrow-right {
+	border-left: 30px solid #444444;
+}

@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/label/label" tag-name="span" icon="element.gif" text="boostrap标签"  
+	    discriminate-condition="hasClass('label')" resizable="false"
+		component-type="formControl"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="text" text="文本" required="true" path="text()"/>  
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "label",
+						require: true
+					},
+					"color": {
+						label: "颜色样式",
+						value: "label-default|label-primary|label-success|label-info|label-warning|label-danger",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式"/>
+<!-- 			<property name="style" text="样式" editor-ref="styleDialog" use-default="true"/> -->
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		
+		<events>
+<!-- 			<event name="onDeselect" type="event" text="页签隐藏" parameters="event" is-script="true"/> -->
+<!-- 			<event name="onSelect" type="event" text="页签显示" parameters="event" is-script="true"/> -->
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<span class="label label-default">Default</span>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

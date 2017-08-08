@@ -1,0 +1,176 @@
+.x-contents {
+  overflow: hidden;
+  position: relative;
+}
+.x-contents .x-contents-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.x-contents .x-contents-content.active {
+  opacity: 1;
+  display: block;
+  position: static;
+}
+.x-full.x-contents > .x-contents-content {
+  bottom: 0;
+  overflow: auto;
+}
+.x-full.x-contents > .x-contents-content.active {
+  position: absolute;
+}
+.cssanimations .x-contents > .x-contents-content {
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+.cssanimations .x-contents > .x-contents-content.active {
+  -webkit-transform: none;
+  -ms-transform: none;
+  transform: none;
+}
+.x-contents > .x-content-on-left {
+  opacity: 0.8;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+.x-contents > .x-content-on-right {
+  opacity: 0.8;
+  -webkit-transform: translate3d(100%, 0, 0);
+  -ms-transform: translate3d(100%, 0, 0);
+  transform: translate3d(100%, 0, 0);
+}
+.x-contents > .x-contents-content.x-center-to-right {
+  -webkit-animation: C2R 400ms forwards;
+  animation: C2R 400ms forwards;
+  display: block;
+}
+.x-contents > .x-contents-content.x-center-to-left {
+  -webkit-animation: C2L 400ms forwards;
+  animation: C2L 400ms forwards;
+  display: block;
+}
+.x-contents > .x-contents-content.x-left-to-center {
+  -webkit-animation: L2C 400ms forwards;
+  animation: L2C 400ms forwards;
+  display: block;
+}
+.x-contents > .x-contents-content.x-right-to-center {
+  -webkit-animation: R2C 400ms forwards;
+  animation: R2C 400ms forwards;
+  display: block;
+}
+@-webkit-keyframes R2C {
+  from {
+    opacity: 0.8;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1.0;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes C2R {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.8;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@-webkit-keyframes C2L {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.8;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@-webkit-keyframes L2C {
+  from {
+    opacity: 0.8;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes R2C {
+  from {
+    opacity: 0.8;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes C2R {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.8;
+    -webkit-transform: translate3d(100%, 0, 0);
+    -ms-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+}
+@keyframes C2L {
+  from {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    opacity: 0.8;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+@keyframes L2C {
+  from {
+    opacity: 0.8;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

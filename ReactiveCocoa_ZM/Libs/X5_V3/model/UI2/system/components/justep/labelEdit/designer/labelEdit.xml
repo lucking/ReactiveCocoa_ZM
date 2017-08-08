@@ -1,0 +1,484 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/labelEdit/labelInput" tag-name="div" icon="input.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/input/input')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<input component="$UI/system/components/justep/input/input" class="form-control x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelPassword" tag-name="div" icon="password.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/input/password')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<input component="$UI/system/components/justep/input/password" class="form-control x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelRange" tag-name="div" icon="range.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/input/range')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<input component="$UI/system/components/justep/input/range" class="x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelOutput" tag-name="div" icon="output.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/output/output')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<div component="$UI/system/components/justep/output/output" class="x-output x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelSelect" tag-name="div" icon="select.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/select/select')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<select component="$UI/system/components/justep/select/select" class="form-control x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelTextarea" tag-name="div" icon="textarea.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/textarea/textarea')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<textarea component="$UI/system/components/justep/textarea/textarea" class="form-control x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelRadioGroup" tag-name="div" icon="radio.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/select/radioGroup')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<span component="$UI/system/components/justep/select/radioGroup" class="x-radios x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelCheckboxGroup" tag-name="div" icon="checkbox.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/select/checkboxGroup')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<span component="$UI/system/components/justep/select/checkboxGroup" class="x-checkboxs x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelToggle" tag-name="div" icon="checkbox.gif" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit' and .//@component='$UI/system/components/justep/button/toggle')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<span component="$UI/system/components/justep/button/toggle" class="x-toggle x-edit"/>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/labelEdit/labelEdit" tag-name="div" icon="text.gif" 
+		_binding-component="$UI/system/components/justep/labelEdit/labelEdit" 
+		discriminate-condition="executeXpath(./@component='$UI/system/components/justep/labelEdit/labelEdit')" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid"/>	
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-label-edit"
+					},	 
+					"1kind": {
+						label: "排列方式",
+						value: "x-label-top|x-label-bottom|x-label-right",
+						require: false
+					},	 
+					"2size": {
+						label: "Label占比",
+						value: "x-label5|x-label10|x-label15|x-label20|x-label25|x-label30|x-label35|x-label40|x-label45|x-label50|x-label55|x-label60",
+						require: false
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/labelEdit/labelEdit" class="x-label-edit x-label20">
+					<label class="x-label"/>
+					<div class="x-edit"></div>   					
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+ 	
+</elements>

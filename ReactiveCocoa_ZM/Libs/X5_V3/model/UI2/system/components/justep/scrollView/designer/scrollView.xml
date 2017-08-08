@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/scrollView/scrollView" tag-type="rich" tag-name="div" icon="scrollView.png" text="滚动视图"
+	    binding-component="$UI/system/components/justep/scrollView/scrollView" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>
+			<property name="class"  text="class" editor-ref="classSelector"></property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<property name="hScroll" text="是否可以横向滚动" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<property name="vScroll" text="是否可以纵向滚动" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="hScrollbar" text="是否显示横向滚动条" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<property name="vScrollbar" text="是否显示纵向滚动条" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="fadeScrollbar" text="隐藏滚动条时候是否有淡出效果" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="hideScrollbar" text="无交互时候自动隐藏滚动条" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="bounce" text="bouncing效果" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="lockDirection" text="单方向锁定" default-value="true" editor-ref="booleanList" data-type="boolean"/>
+			<property name="checkDOMChanges" text="自动检测Dom变化" default-value="false" editor-ref="booleanList" data-type="boolean"/>
+			<property name="snap" text="滚动位置预定义" default-value="false"/>
+			<property name="scrollbarClass" text="自定义滚动条"/>
+			<group name="supportPullDownOption" text="下拉能力属性">
+				<property name="pullDownLabel" required="false" default-value="下划刷新..."/>
+				<property name="pullDownMoveLabel"  required="false" default-value="松开刷新..."/>
+				<property name="pullDownLoadingLabel"  required="false" default-value="加载中..."/>      
+			</group>
+			<group name="supportPullUpOption" text="上划能力属性">
+				<property name="pullUpLabel" required="false" default-value="加载更多..."/>
+				<property name="pullUpMoveLabel"  required="false" default-value="释放加载..."/>
+				<property name="pullUpLoadingLabel"  required="false" default-value="加载中..."/>
+				<property name="noMoreLoadLabel"  required="false" default-value="已经到最后."/>      
+			</group>
+		</properties>
+		<toolbar>
+			<item text="启用下拉能力" method="enablePullDown"/>
+			<item text="启用上滑能力" method="enablePullUp"/>
+			<item text="禁用下拉能力" method="disablePullDown"/>
+			<item text="禁用上滑能力" method="disablePullUp"/>
+		</toolbar>
+		<events>
+			<event name="onScrollMove" />
+			<event name="onScrollEnd" />
+			<event name="onPullDown" />
+			<event name="onPullUp" />
+		</events>
+		<templates>
+		   <template name="default">
+		   <![CDATA[
+			    <div class="x-scroll" component="$UI/system/components/justep/scrollView/scrollView">
+			    	<div class="x-content-center x-pull-down container">
+					      <i class="x-pull-down-img glyphicon x-icon-pull-down"></i>
+					      <span class="x-pull-down-label">下拉刷新...</span>
+					</div>
+					<div class="x-scroll-content">
+					</div>
+				    <div class="x-content-center x-pull-up">
+				        <span class="x-pull-up-label">加载更多...</span>
+				    </div>
+			    </div>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

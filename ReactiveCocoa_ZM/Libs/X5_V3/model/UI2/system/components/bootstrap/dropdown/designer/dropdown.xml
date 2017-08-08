@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/dropdown/dropdown" tag-name="div" icon="menu.gif" text="下拉菜单"  
+	    binding-component="$UI/system/components/bootstrap/dropdown/dropdown"  
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "dropdown",
+						require: true
+					},	 
+					"dropup":{
+						label: "向上弹出",
+						value: "dropup",
+						require: false
+					} 
+				}
+				]]></editor-parameter>
+			</property>
+<!-- 			<property name="style" text="样式" editor-ref="styleDialog" use-default="true"/> -->
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<property-editors>
+			<property-editor name="tabList" type="list">
+				<dynamic-data xpath="./*[local-name(.)='ul']/*[local-name(.)='li']/@xid" search-start="bsTabs"/>						
+			</property-editor>
+		</property-editors>
+		
+		<toolbar>
+			<item text="显示菜单" method="showMenu"/>
+			<item text="隐藏菜单" method="hideMenu"/>
+		</toolbar>
+		
+		<events>
+<!-- 			<event name="onDeselect" type="event" text="页签隐藏" parameters="event" is-script="true"/> -->
+<!-- 			<event name="onSelect" type="event" text="页签显示" parameters="event" is-script="true"/> -->
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div class="dropdown btn-group" component="$UI/system/components/bootstrap/dropdown/dropdown">
+				  <a component="$UI/system/components/justep/button/button" class="btn btn-default btn-icon-right dropdown-toggle" label="dropdown" icon="icon-arrow-down-b">
+				   		<i class="icon-arrow-down-b"></i> 
+				   		<span></span>
+				   </a>
+				  <ul component="$UI/system/components/justep/menu/menu" class="x-menu dropdown-menu" >
+				    
+				    <li class="x-menu-item"> 
+				      <a component="$UI/system/components/justep/button/button" class="btn btn-link" label="菜单111"> 
+				        <i/>  
+				        <span></span>
+				      </a> 
+				    </li> 
+				     
+				    <li class="x-menu-item"> 
+				      <a component="$UI/system/components/justep/button/button" class="btn btn-link" label="菜单2"> 
+				        <i/>  
+				        <span></span>
+				      </a> 
+				    </li>  
+				  </ul>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

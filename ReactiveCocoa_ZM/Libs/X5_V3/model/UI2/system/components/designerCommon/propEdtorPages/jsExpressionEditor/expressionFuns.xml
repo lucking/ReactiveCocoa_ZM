@@ -1,0 +1,64 @@
+<config>
+		<funcs>
+			
+		
+			<item nodeType="category" name="" text="字符串函数" asPath="false">
+				<item nodeType="function" name="justep.String.trim()" text="justep.String.trim(str)--清除前后两端的空白字符" />
+				<item nodeType="function" name="justep.String.splitAndTrim()" text="justep.String.splitAndTrim(str, spliter)--用指定的元素分隔成字符串数组, 并对每个元素执行trim" />
+				<item nodeType="function" name="justep.String.format()" text="justep.String.format(str, ...)--字符串格式化" />
+				<item nodeType="function" name="justep.String.toInt()" text="justep.String.toInt(str, default)--转换成整数" />
+				<item nodeType="function" name="justep.String.toFloat()" text="justep.String.toFloat(str, default)--转换成浮点数" />
+				<item nodeType="function" name="justep.String.HTMLEncode()" text="justep.String.HTMLEncode(str)--HTML编码" />
+				<item nodeType="function" name="justep.String.HTMLDecode()" text="justep.String.HTMLDecode(str)--HTML解码" />
+				<item nodeType="function" name="justep.String.zeros()" text="justep.String.zeros(str, len, right)--补零" />
+				<item nodeType="function" name="justep.String.Encrypt()" text="justep.String.Encrypt(str, pwd)--字符串加密" />
+				<item nodeType="function" name="justep.String.Decrypt()" text="justep.String.Decrypt(str, pwd)--字符串解密" />
+				<item nodeType="function" name="justep.String.camelize()" text="justep.String.camelize(str)--首字母转大写" />
+			</item>
+			
+			<item nodeType="category" name="" text="日期函数" asPath="false">
+				<item nodeType="function" name="justep.Date.isLeapYear()" text="justep.Date.isLeapYear(date)--判断是否是闰年" />				
+				<item nodeType="function" name="justep.Date.fromString()" text="justep.Date.fromString(str, format)--按照给定的日期格式，把字符串转换成日期对象" />
+				<item nodeType="property" name="justep.Date.STANDART_FORMAT" text="justep.Date.STANDART_FORMAT--时间格式yyyy-MM-ddThh:mm:ss.fffZ" />
+				<item nodeType="property" name="justep.Date.STANDART_FORMAT_SHOT" text="justep.Date.STANDART_FORMAT--时间格式yyyy-MM-dd" />
+				<item nodeType="property" name="justep.Date.DEFAULT_FORMAT" text="justep.Date.DEFAULT_FORMAT--时间格式yyyy/MM/dd hh:mm:ss" />
+				<item nodeType="property" name="justep.Date.DEFAULT_FORMAT_SHOT" text="justep.Date.DEFAULT_FORMAT_SHOT--时间格式yyyy/MM/dd" />
+				<item nodeType="function" name="justep.Date.toString()" text="justep.Date.toString(dateTime, formatStr)--按照给定的日期格式，把日期对象转换成字符串" />
+				<item nodeType="function" name="justep.Date.increase" text="justep.Date.increase(dateTime, num, interval)--根据日期的规则，为给定的日期添加指定的时间量。interval表示时间单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年" />
+				<item nodeType="function" name="justep.Date.decrease" text="justep.Date.decrease(dateTime, num, interval)--根据日期的规则，为给定的日期减去指定的时间量。interval表示时间单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年" />
+				<item nodeType="function" name="justep.Date.diff" text="justep.Date.diff(start, end, interval)--计算两个日期的差。interval表示时间单位，默认是以天为单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年" />
+				<item nodeType="function" name="justep.Date.between" text="justep.Date.between(start, end)--计算两个日期相差几天，和diff很相似，返回永远是正整数" />
+			</item>
+			
+			<item nodeType="category" name="" text="数组函数" asPath="false">
+				<item nodeType="function" name="justep.Array.indexOf()" text="justep.Array.indexOf(array, item)--获取元素的序号" />
+				<item nodeType="function" name="justep.Array.first()" text="justep.Array.first(array, predicate, predicateOwner)--获取满足条件的第一个元素" />
+				<item nodeType="function" name="justep.Array.filter()" text="justep.Array.filter(array, filter)--获取数组中满足指定条件的元素列表" />
+			</item>
+		
+			<item nodeType="category" name="" text="Base64" asPath="false">
+				<item nodeType="function" name="justep.Base64.encode()" text="justep.Base64.encode(input)--Base64编码" />				
+				<item nodeType="function" name="justep.Base64.decode()" text="justep.Base64.decode(input)--Base64解码" />				
+			</item>
+					
+			<item nodeType="category" name="" text="其他函数" asPath="false">
+				<item nodeType="function" name="justep.UUID.createUUID()" text="justep.UUID.createUUID()--返回UUID字符串" />				
+				<item nodeType="function" name="eval()" text="eval(string)--执行script脚本" />				
+				<item nodeType="function" name="justep.Browser.isPC()" text="justep.Browser.isPC()--判断是否是PC" />				
+				<item nodeType="function" name="justep.Browser.isPhone()" text="justep.Browser.isPhone()--判断是否是手机" />				
+				<item nodeType="function" name="justep.Browser.isPad()" text="justep.Browser.isPad()--判断是否是平板" />				
+				<item nodeType="function" name="justep.URL.getBSessionID()" text="justep.URL.getBSessionID()--获取bsessionid" />				
+				<item nodeType="function" name="justep.URL.getSkin()" text="justep.URL.getSkin()--获取皮肤" />				
+				<item nodeType="function" name="justep.URL.getLanguage()" text="justep.URL.getLanguage()--获取语言" />				
+				<item nodeType="function" name="justep.Util.isBoolean()" text="justep.Util.isBoolean(value)--判断值的类型是否是Boolean类型" />				
+				<item nodeType="function" name="justep.Util.isString()" text="justep.Util.isString(value)--判断值的类型是否是String类型" />				
+				<item nodeType="function" name="justep.Util.isFunction()" text="justep.Util.isFunction(value)--判断是否是函数" />
+				<item nodeType="function" name="justep.Util.isArray()" text="justep.Util.isArray(value)--判断是否是数组" />
+				<item nodeType="function" name="justep.Util.isObject()" text="justep.Util.isObject(value)--判断值的类型是否是Object" />
+				<item nodeType="function" name="justep.Util.toArray()" text="justep.Util.toArray(iterable, start, end)--转换成数组" />
+				<item nodeType="function" name="justep.Util.clone()" text="justep.Util.close(value)--对象克隆" />
+				<item nodeType="function" name="justep.Util.getCookie()" text="justep.Util.getCookie(name)--获取cookie值" />
+								
+			</item>
+		</funcs>
+	</config>

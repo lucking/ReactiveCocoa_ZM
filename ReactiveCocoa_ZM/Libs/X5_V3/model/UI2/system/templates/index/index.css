@@ -1,0 +1,9 @@
+@import url("../../components/designerCommon/css/common.css");
+
+body {
+	padding: 0;
+	padding-top: 51px;
+	padding-bottom: 54px;
+	margin: 0;
+	overflow: hidden;
+}

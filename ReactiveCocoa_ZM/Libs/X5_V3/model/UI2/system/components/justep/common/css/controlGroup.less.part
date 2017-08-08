@@ -1,0 +1,63 @@
+/** control-group b---------- **/
+/* control-group border orange green red yellow gray 子有title*/
+.x-control-group{
+	width: auto;
+	height: auto;
+	padding: 0.625em;
+	box-sizing: border-box;
+	background: @body-bg;
+}
+.x-control-group-title{
+	background-color: @navbar-default-bg;
+	margin-bottom: 0.625em;
+	padding: 0.625em;
+	border-radius:@navbar-border-radius;
+	color: @navbar-default-link-color;
+	font-weight: bold;
+	font-size: 1.125em;
+}
+
+.x-control-group-title-primary{
+  color: @btn-primary-color;
+  background-color: @btn-primary-bg;
+}
+.x-control-group-title-success{
+  color: @btn-success-color;
+  background-color: @btn-success-bg;
+}
+.x-control-group-title-info{
+  color: @btn-info-color;
+  background-color: @btn-info-bg;
+}
+.x-control-group-title-warning{
+  color: @btn-warning-color;
+  background-color: @btn-warning-bg;
+}
+.x-control-group-title-danger{
+  color: @btn-danger-color;
+  background-color: @btn-danger-bg;
+}
+.x-blue.x-control-group-title{
+	background-color: rgb(82,155,234);
+	color: #fff;
+}
+.x-orange.x-control-group-title{
+	background-color: #FF8000;
+	text-shadow: 0 -1px 0 #666;
+}
+.x-green.x-control-group-title{
+	background: #009C0C;
+}
+.x-red.x-control-group-title{
+	background: #B20000;
+}
+.x-yellow.x-control-group-title{
+	background-color: #F1C222;
+	color: #000;
+}
+.x-gray.x-control-group-title{
+	color: #000;
+	background: #999;
+}
+
+/** control-group e---------- **/

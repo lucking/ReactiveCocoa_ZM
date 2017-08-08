@@ -1,0 +1,185 @@
+/**
+	@name Contents
+	@component $UI/system/components/justep/contents/contents
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description contents组件, 多区域可切换布局组件
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+	@name Contents#xid
+	@attribute 
+	@type string
+	@description 
+*/
+
+/**
+	@name Contents#active
+	@attribute 
+	@type integer
+	@description 当前content的索引
+*/
+	
+/**
+	@name Contents#slidable
+	@attribute 
+	@type boolean
+	@description 是否采用滑动动画
+*/
+
+/**
+	@name Contents#wrap
+	@attribute 
+	@type boolean
+	@description 是否可循环切换
+*/
+
+/**
+	@name Contents#swipe
+	@attribute 
+	@type boolean
+	@description 是否支持手势
+*/
+
+/**
+	@name Contents#onActiveChange
+	@event
+	@description <b>[回调型事件]</b>当active改变时触发
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"to": 新的active值,
+		"from": 原来的active值,
+		"type": "prev"是向前, "next"是向后
+	}
+	</xmp>
+*/
+
+/**
+ @name Contents#get
+ @function
+ @param {String} name 属性名称，取值范围："slidable", "wrap", "swipe"
+ @returns 返回属性值
+ @description 获取contents的属性
+*/
+
+/**
+ @name Contents#set
+ @function
+ @param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"slidable" : {boolean} 是否采用滑动动画
+		"wrap" : {boolean} 是否可循环切换 
+		"swipe" : {boolean} 是否支持手势
+	}
+	</xmp>	
+ @description 设置contents的属性
+*/
+
+/**
+ @name Contents#getActiveIndex
+ @function
+ @returns integer
+ @description 获取当前active索引
+*/
+
+/**
+ @name Contents#getIndexByXid
+ @function
+ @param {string} xid content的xid
+ @returns integer
+ @description 通过content的xid获取索引
+*/
+
+/**
+ @name Contents#getActiveXid
+ @function
+ @returns string
+ @description 获取当前激活content的xid
+*/
+
+/**
+ @name Contents#to
+ @function
+ @param {integer|String} xidOrIdx panel的xid或者索引
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到指定的content
+*/
+
+/**
+ @name Contents#next
+ @function
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到下一个content
+*/
+
+/**
+ @name Contents#prev
+ @function
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到前一个content
+*/
+
+/**
+ @name Contents#slide
+ @function
+ @param {string} transDir 切换的方向, 'prev'或'next'
+ @param {integer} transIdx 目标的索引
+ @param {function} fn 切换完成执行的方法, 可选
+ @description 切换到指定content, 同时可以指定切换的方向
+*/
+
+/**
+ @name Contents#add
+ @function
+ @param {object} content配置
+ @returns {Content}
+ @description 添加一个content
+*/
+
+/**
+ @name Contents#remove
+ @function
+ @param {integer} index 删除的content索引
+ @param {integer} to 删除后切换到的content索引， 可选
+ @description 删除一个content
+*/
+
+/**
+ @name Contents#getLength
+ @function
+ @description 获得content个数
+*/
+
+/**
+ @name Contents#to
+ @operation
+ @see Contents#to
+ @param {String} xid
+ @description 切换到指定的content
+ @returns {void}
+*/
+
+/**
+ @name Contents#next
+ @operation
+ @see Contents#next
+ @description 切换到下一个content
+ @returns {void}
+*/
+
+/**
+ @name Contents#prev
+ @operation
+ @see Contents#prev
+ @description 切换到前一个content
+ @returns {void}
+*/

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FirstViewController">
+            <connections>
+                <outlet property="Btn1" destination="Men-f3-TZn" id="Jrc-94-Ccu"/>
+                <outlet property="Btn2" destination="TNZ-TT-Gzx" id="kFB-Od-1l9"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" tag="222" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNZ-TT-Gzx">
+                    <rect key="frame" x="236" y="575" width="76" height="35"/>
+                    <color key="backgroundColor" red="0.80048377449999997" green="0.84203706540000001" blue="0.88200363010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="guv-3e-kow"/>
+                        <constraint firstAttribute="width" constant="76" id="nbV-WS-zCr"/>
+                    </constraints>
+                    <state key="normal" title="Btn2">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="BtnClick:" destination="-1" eventType="touchUpInside" id="SI6-FG-gWl"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="111" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Men-f3-TZn">
+                    <rect key="frame" x="55" y="575" width="76" height="35"/>
+                    <color key="backgroundColor" red="0.80048377449999997" green="0.84203706540000001" blue="0.88200363010000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="35" id="6V8-aL-ERJ"/>
+                        <constraint firstAttribute="width" constant="76" id="8Kh-4f-yhC"/>
+                    </constraints>
+                    <state key="normal" title="Btn1">
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="BtnClick:" destination="-1" eventType="touchUpInside" id="U9c-vD-dLS"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="TNZ-TT-Gzx" secondAttribute="trailing" constant="63" id="7Un-fE-9RQ"/>
+                <constraint firstItem="Men-f3-TZn" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="55" id="8zW-kM-5Z4"/>
+                <constraint firstAttribute="bottom" secondItem="Men-f3-TZn" secondAttribute="bottom" constant="57" id="Ac2-Ak-gIP"/>
+                <constraint firstAttribute="bottom" secondItem="TNZ-TT-Gzx" secondAttribute="bottom" constant="57" id="aCN-gW-p67"/>
+            </constraints>
+            <point key="canvasLocation" x="83" y="16"/>
+        </view>
+    </objects>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

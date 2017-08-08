@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/dialog/dialog"  tag-name="span" icon="dialog_icon_min.png"
+		binding-component="$UI/system/components/justep/dialog/dialog" resizable="false"
+		component-type="formControl" parent-range="$UI/system/components/justep/window/window"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+			<property name="title" text="对话框标题"/>
+			<property name="showTitle" text="显示标题栏" editor-ref="booleanList" readonly="true" default-value="false"/>
+			<property name="status" text="初始化状态" editor-ref="dialog-status" readonly="true" default-value="maximize"/>
+			<property name="width" text="宽，支持%相对于当前窗口" editor-ref="width-height" default-value="80%"/>
+			<property name="height" text="高，支持%相对于当前窗口" editor-ref="width-height" default-value="80%"/>
+			<property name="top" text="上偏移，支持%相对于当前窗口，缺省居中" />
+			<property name="left" text="左偏移，支持%相对于当前窗口，缺省居中" />
+		</properties>
+		
+		<property-editors>
+			<property-editor name="dialog-status" type="list">
+				<static-data value="normal:normal,:maximize" />
+			</property-editor>
+			<property-editor name="width-height" type="list">
+				<static-data value="auto,80%,100%" />
+			</property-editor>
+		</property-editors>
+		
+		<events>
+			<event name="onOpen" />
+			<event name="onClose" />
+		</events>
+		<templates>
+			<template name="default"><![CDATA[ 
+				<span component="$UI/system/components/justep/dialog/dialog"/> 
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

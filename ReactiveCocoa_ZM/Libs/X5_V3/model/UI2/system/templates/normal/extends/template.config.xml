@@ -1,0 +1,9 @@
+<template text="继承" desc="继承的窗体将继承父窗体的所有特性，可以根据需要对布局、逻辑等做调整">
+	<images>
+		<image src="extends.png" />
+	</images>
+	<items>
+		<item file="template/extends.m.w"/>
+		<item file="template/extends.m.js"/>
+	</items>
+</template>

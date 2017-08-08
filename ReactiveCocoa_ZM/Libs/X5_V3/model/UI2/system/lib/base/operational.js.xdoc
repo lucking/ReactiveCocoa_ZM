@@ -1,0 +1,260 @@
+/**
+	@name Operation
+	@class 
+	@extends Object
+	@extendurl $UI/system/lib/base/object
+	@mixes  Observable
+	@category javascript
+	@model UI2
+	@description 操作基类
+*/
+
+/**
+	@name Operation#constructor
+	@function
+	@description 构造函数
+	@param config 操作配置
+	@param owner 操作拥有者
+	@return {void}
+*/
+
+/**
+	@name Operation#getLabel
+	@function
+	@description 获取显示名称
+	@return {String}
+*/
+
+/**
+	@name Operation#setLabel
+	@function
+	@description 设置显示名称
+	@param {String} value 显示名称
+	@return {void}
+*/
+
+/**
+	@name Operation#getIcon
+	@function
+	@description 获取图标样式
+	@return {String}
+*/
+
+/**
+	@name Operation#setIcon
+	@function
+	@description 设置图标样式
+	@param {String} value 图标样式
+	@return {void}
+*/
+
+/**
+	@name Operation#getEnable
+	@function
+	@description 获取是否可用
+	@return {Boolean}
+*/
+
+/**
+	@name Operation#setEnable
+	@function
+	@description 设置是否可用
+	@param {Boolean} value
+	@return {void}
+*/
+
+/**
+	@name Operation#getVisible
+	@function
+	@description 获取是否可见
+	@return {Boolean}
+*/
+
+/**
+	@name Operation#setVisible
+	@function
+	@description 设置是否可见
+	@param {Boolean} value
+	@return {void}
+*/
+
+
+/**
+	@name Operation#execute
+	@function
+	@description 执行操作
+	@param context
+	@return obj
+*/
+
+/**
+	@name Operational
+	@url $UI/system/lib/base/operation
+	@class 
+	@extends Object
+	@extendurl $UI/system/lib/base/object
+	@category javascript
+	@model UI2
+	@description 具有操作功能的基类
+*/
+
+/**
+	@name Operational#constructor
+	@function
+	@description 构造函数
+	@param config 操作配置
+	@return {void}
+*/
+
+/**
+	@name Operational#initOperation
+	@function
+	@description 初始化操作，后代类重载这个方法，定义自己的操作
+	@return {void}
+*/
+
+/**
+	@name Operational#customOperation
+	@function
+	@description 定制操作， 如果已存在修改以有值，如果不存则创建新的操作
+	@param {Object} ops 
+	@return {void}
+*/
+
+/**
+	@name Operational#hasOperation
+	@function
+	@description 查询是否支持操作的方法
+	@param {String} name 操作名称
+	@return {Boolean}
+*/
+
+/**
+	@name Operational#getOperation
+	@function
+	@description 获取操作
+	@param {String} name 操作名称
+	@return {Operation}
+*/
+
+/**
+	@name Operational#onOpChange
+	@function
+	@description 注册监听某个操作变化的方法， 如果操作发生变化将回到对象的operationNotify方法
+	@param {String} name 操作名称
+	@param {Function} fn
+	@return {void}
+*/
+
+/**
+	@name Operational#unOpChange
+	@function
+	@description 取消监听的方法
+	@param {String} name 操作名称
+	@param {Object} obj
+	@return {void}
+*/
+
+/**
+	@name Operational#defineOperation
+	@function
+	@description 定义操作
+	@param {String} name 操作名称
+	@param {Object} config
+	@return {void}
+	@example
+	<xmp>
+		 	this.addOperation('save', {
+				label: '保存',
+				src: 'image_path',
+				disSrc: 'image_path',
+				method: function(){ 'some code here' }	
+			});
+	</xmp>		
+*/
+		
+/**
+	@name Operational#executeOperation
+	@function
+	@description 执行操作
+	@param {String} name 操作名称
+	@return obj
+*/
+
+/**
+	@name Operational#setOperationEnable
+	@function
+	@description 设置操作是否可用
+	@param {String} name 操作名称
+	@param {Boolean} value
+	@return {void}
+*/
+
+/**
+	@name Operational#getOperationEnable
+	@function
+	@description 获取操作是否可用
+	@param {String} name 操作名称 
+	@return {Boolean}
+*/
+
+/**
+	@name Operational#setOperationVisible
+	@function
+	@description 设置操作是否可见
+	@param {String} name 操作名称 
+	@param {Boolean} value
+	@return {void}
+*/
+
+/**
+	@name Operational#getOperationVisible
+	@function
+	@description 获取操作是否可见
+	@param {String} name 操作名称 
+	@return {Boolean}
+*/
+
+/**
+	@name Operational#setOperationAllEnable
+	@function
+	@description 设置所有操作是否可用
+	@param {Boolean} value 
+	@return {void}
+*/
+
+/**
+	@name Operational#setOperationLabel
+	@function
+	@description 设置操作的显示名称
+	@param {String} name 操作名称 
+	@param {String} value 
+	@return {void}
+*/
+
+/**
+	@name Operational#getOperationLabel
+	@function
+	@description 获取操作的显示名称
+	@param {String} name 操作名称 
+	@return {String}
+*/
+
+
+/**
+	@name Operational#setOperationIcon
+	@function
+	@description 设置操作的图标样式
+	@param {String} name 操作名称 
+	@param {String} value 
+	@return {void}
+*/
+
+/**
+	@name Operational#getOperationIcon
+	@function
+	@description 获取操作的图标样式
+	@param {String} name 操作名称 
+	@return {String}
+*/
+

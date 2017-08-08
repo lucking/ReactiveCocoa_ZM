@@ -1,0 +1,33 @@
+/**
+	@name Child
+	@component $UI/system/components/justep/panel/child
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description panel组件使用的内部类, 不能独立使用
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/
+
+/**
+ @name Child#get
+ @function
+ @param {string} name 属性名
+ @returns 返回属性值
+ @description 获取child的属性
+*/
+
+/**
+ @name Child#set
+ @function
+ @param {string} name 属性名
+ @param value 属性值
+ @description 设置child的属性
+*/
+
+/**
+ @name Child#dispose
+ @function
+ @description 销毁child对象
+*/

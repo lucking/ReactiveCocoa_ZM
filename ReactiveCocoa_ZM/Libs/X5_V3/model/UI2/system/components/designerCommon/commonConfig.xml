@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<common-config>
+	<!-- 公共属性编辑器注册 -->
+	<common-property-editors>
+		<property-editor name="jSExpressionEditor" type="dialog">
+			<dialog-page
+				class-name="com.justep.studio.ui.editors.propertypage.JSExpressionEditor" >
+
+				</dialog-page>
+		</property-editor>
+		<!--数据引用 -->
+		<property-editor name="dataRef" type="dialog">
+			<dynamic-data
+				class-name="com.justep.studio.ui.editors.property.datasource.RefPropertyDatasource"
+				method="getDatasource" />
+			<dialog-page
+				class-name="com.justep.studio.ui.editors.propertypage.RefPropertyPage" />
+		</property-editor>
+
+		<property-editor name="dataPropDlg" type="dialog">
+			<dynamic-data
+				class-name="com.justep.studio.ui.editors.property.datasource.DataDatasource"
+				method="getDatasource" />
+			<dialog-page class-name="com.justep.studio.ui.editors.propertypage.DataPropertyPage" />
+		</property-editor>
+
+		<property-editor name="dataDlg" type="dialog">
+			<dynamic-data
+				class-name="com.justep.studio.ui.editors.property.datasource.DataDatasource"
+				method="getDatasource" />
+			<dialog-page class-name="com.justep.studio.ui.editors.propertypage.DataPage" />
+		</property-editor>
+
+		<property-editor name="contextComponent" type="list">
+			<dynamic-data class-name="com.justep.studio.ui.editors.property.datasource.ContextElementDataSource"
+				method="getIdsByBaseClass" />
+		</property-editor>
+
+		<property-editor name="dataTypeList" type="list">
+			<static-data
+				value="String,Integer,Float,Date,Time,DateTime" />
+		</property-editor>
+
+		<!-- boolean数据选择列表 -->
+		<property-editor name="booleanList" type="list">
+			<static-data value="true,false" /> <!--直接定义的静态数据 -->
+		</property-editor>
+
+		<!--常用的字号列表 -->
+		<property-editor name="fontSize" type="list">
+			<static-data value="6,8,9,10,11,12,14,16,18,20,22,24,28,36,48,72" /> <!--直接定义的静态数据 -->
+		</property-editor>
+
+		<!-- 边框 -->
+		<property-editor name="border" type="dialog">
+			<dialog-page class-name="com.justep.studio.ui.editors.propertypage.BorderPage" />
+		</property-editor>
+
+		<!-- 背景颜色 -->
+		<property-editor name="background" type="dialog">
+			<dialog-page
+				class-name="com.justep.studio.ui.editors.propertypage.BackgroundPage" />
+		</property-editor>
+
+		<!-- 概念 -->
+		<property-editor name="conceptDlg" type="dialog">
+			<dynamic-data
+				class-name="com.justep.studio.ui.editors.property.datasource.ConceptDatasource"
+				method="getDatasource" />
+			<dialog-page class-name="com.justep.studio.ui.editors.propertypage.ConceptPage" />
+		</property-editor>
+
+		<!-- 关系多选 -->
+		<property-editor name="relationsDlg" type="dialog">
+			<dynamic-data
+				class-name="com.justep.studio.ui.editors.property.datasource.RelationDatasource"
+				method="getDatasource" />
+			<dialog-page class-name="com.justep.studio.ui.editors.propertypage.RelationPage" />
+		</property-editor>
+		
+		<!-- 关系单选 -->
+		<property-editor name="relationDlg" type="dialog">
+			<dynamic-data
+				class-name="com.justep.studio.ui.editors.property.datasource.RelationDatasource"
+				method="getDatasource" />
+			<dialog-page class-name="com.justep.studio.ui.editors.propertypage.ConceptPage" />
+		</property-editor>
+		
+		<property-editor name="relationDlgHasRowID" type="dialog">
+			<dynamic-data
+				class-name="com.justep.studio.ui.editors.property.datasource.RelationDatasource"
+				method="getDatasourceHasRowID" />
+			<dialog-page class-name="com.justep.studio.ui.editors.propertypage.ConceptPage" />
+		</property-editor>
+
+		<property-editor name="regexList" type="list">
+			<static-data
+				value=",^[0-9]*[1-9][0-9]*$:正整数,^\-{1}\d*$:负整数,^[A-Za-z]+$:大小写字母,^[A-Z]+$:大写字母,^[a-z]+$:小写字母" />
+		</property-editor>
+		<property-editor name="formatList" type="list">
+			<static-data value=",yyyy-MM-dd,yyyy-MM-dd hh{semicolon}mm" />
+		</property-editor>
+		<property-editor name="simplecolor" type="list">
+			<static-data value=",transparent,red,black,white,blue,green" />
+		</property-editor>
+		<property-editor name="styleHeightWidth" type="list">
+			<static-data value=",100%" />
+		</property-editor>
+
+
+		<!-- 文件选择框 -->
+		<property-editor name="fileDialog" type="dialog"
+			class-name="com.justep.studio.ui.editors.property.dialog.SelectFileDialog" />
+
+		<!-- 后台数据模型选择框 -->
+		<property-editor name="dataModelDialog" type="dialog"
+			class-name="com.justep.studio.ui.editors.property.dialog.DataModelDialog" />
+
+		<!-- 文件树选择框 -->
+		<!-- 用法参考UI\system\components\window\designer\window.xml 的extends属性 -->
+		<property-editor name="fileTreeDialog" type="dialog"
+			class-name="com.justep.studio.ui.editors.property.dialog.SelectFileTreeDialog" />
+
+		<!-- editor-ref：设置style编辑器对话框 editor-parameter：设置可包含的面板及默认打开的面板 取值： "字体,块,背景,边框,方框,定位,布局,列表,表格" 
+			中任意一个或多个 设置包含的面板*代表所有 默认显示的面板用[]括起来如：字体,[块] *,[方框] -->
+		<property-editor name="styleDialog" type="dialog"
+			class-name="com.justep.studio.ui.editors.stylepage.EditStyleDialog" />
+
+		<property-editor name="edit-disabled" type="list">
+			<static-data value=":false,true:true" />
+		</property-editor>
+		<property-editor name="edit-readonly" type="list">
+			<static-data value=":false,true:true" />
+		</property-editor>
+		<property-editor name="edit-dir" type="list">
+			<static-data value="ltr,rtl" />
+		</property-editor>
+		<property-editor name="edit-input-align" type="list">
+			<static-data value="bottom,left,middle,right,top" />
+		</property-editor>
+		<property-editor name="edit-checked" type="list">
+			<static-data value=":false,checked:true" />
+		</property-editor>
+		<!--条码生成-->
+		<property-editor name="barcode-type" type="list">
+			<static-data value="code39,code93,code128,codabar,intl2of5,itf14,upc-a,upc-e,ean-13,ean-8,ean-128,postnet,royal-mail-cbc,usps4cb,pdf417,qr,datamatrix" />
+		</property-editor>
+
+		<property-editor name="edit-commands" type="list">
+			<dynamic-data class-name="com.justep.studio.ui.editors.property.datasource.CommandsDatasource" method="getList" />
+		</property-editor>
+		
+			<property-editor name="actionDlg" type="dialog">
+				<dynamic-data class-name="com.justep.studio.ui.editors.property.datasource.BizDataActionDatasource" method="getHasActionDatasource"/>
+				<dialog-page class-name="com.justep.studio.ui.editors.propertypage.ActionsCompoiste"/>				
+			</property-editor>
+		
+			<property-editor name="btnDisplayModes" type="list">
+				<static-data value=":图标,TXT:文字,IMG_TXT_LR:图标文字(左右),IMG_TXT_TB:图标文字(上下)"></static-data>
+			</property-editor>
+
+			<property-editor name="pageNavDisplayItems" type="list" mutil-selection='true'>
+				<static-data value="first:首页,pre:上页,page:页码快捷,next:下页,last:尾页,ext:自定义跳转"></static-data>
+			</property-editor>
+			
+			<property-editor name="operationOwnerList" type="list">
+				<dynamic-data class-name="com.justep.designer.components.OperationManager" method="getOperationOwnerList"/>
+			</property-editor>
+			
+			<property-editor name="operationList" type="list">
+				<dynamic-data class-name="com.justep.designer.components.OperationManager" method="getOperationList"/>
+			</property-editor>
+			<!-- 图标选择编辑器 -->
+  			<property-editor name="iconSelectionDlg" type="dialog">
+				<dialog-page class-name="com.justep.studio.ui.editors.propertypage.WebPage"  />				
+			</property-editor>
+			
+			<!-- 组织机构类型 -->
+			<property-editor name="orgKindsList" type="list" mutil-selection="true">
+				<dynamic-data class-name="com.justep.studio.ui.editors.property.org.OrgKinds" method="getOrgKindsList"/>
+			</property-editor>
+
+			<property-editor name="commonWebPage" type="dialog"  >
+				<dialog-page class-name="com.justep.studio.ui.editors.propertypage.TestWebPage" content-url="http://localhost:8080/x5/UI2/system/components/designerCommon/propEdtorPages/test/webEditorDemo.w" size="700,450"/>		<!-- http://localhost:8080/x5/UI2/system/components/designerCommon/propEdtorPages/test/webEditorDemo.w -->	
+			</property-editor>
+
+			<property-editor name="operationEditor" type="dialog"  url="$UI/system/components/designerCommon/propEdtorPages/operationSelector/operationSelector.w" editor-parameter="{width:800,height:600}">
+               
+			</property-editor>
+			
+			<property-editor name="iconWebPage" type="dialog" url="$UI/system/components/designerCommon/propEdtorPages/icon/selectIcon.w" editor-parameter="{width:800,height:600}" >
+                 <dynamic-params class-name="com.justep.studio.ui.editors.propertypage.IconWebPage" method="buildIconList"/>
+			</property-editor>
+
+			
+		<property-editor name="classList" type="list" mutil-selection='true'>
+			<static-data value="" /> <!--直接定义的静态数据 -->
+		</property-editor>
+		
+		<property-editor name="buttonClassList" type="list">
+			<static-data value="button-blue,button-green,button-yellow,button-orange,button-purple,button-darkcyan,button-hotpink" />
+		</property-editor>
+		
+		<!-- class 多选 -->
+		<property-editor name="cssClassDlg" type="dialog">
+			<dynamic-data
+				class-name="com.justep.studio.ui.editors.property.datasource.CSSClassDatasource"
+				method="getDatasource" />
+			<dialog-page class-name="com.justep.studio.ui.editors.propertypage.CSSClassPage" />
+		</property-editor>
+		
+		
+		<property-editor name="classSelector" type="dialog" 
+			url="$UI/system/components/designerCommon/propEdtorPages/cssClassSelector/cssClassSelector.w"
+			editor-parameter="{width:800,height:600}" >
+		</property-editor>
+			
+	</common-property-editors>
+	
+	
+	<common-properties>
+		<property name="style" text="样式" editor-ref="styleDialog">
+			<property name="left" text="位置左" is-style="true" />
+			<property name="top" text="位置上" is-style="true" />
+			<property name="height" text="高度" is-style="true"
+				editor-ref="styleHeightWidth" />
+			<property name="width" text="宽度" is-style="true" editor-ref="styleHeightWidth" />
+			<property name="background-color" text="背景颜色" is-style="true"
+				editor-ref="simplecolor" />
+		</property>
+		
+		<property name="xid" text="编号"  required="true"/>
+		<property name="bind-ref" text="引用" editor-ref="dataRef"  editor-parameter='{"hasLabel":"false"}'/>
+		<property name="bind-text" text="文本引用" editor-ref="dataRef"  />
+		<property name="bind-value" text="值引用" editor-ref="dataRef"  editor-parameter='{"hasLabel":"false"}'/>
+		<property name="bind-labelRef" text="label引用" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>
+		
+		<property name="icon" text="图标" editor-ref="iconWebPage" />
+		<property name="class" text="class" editor-ref="classSelector"></property>
+		
+		<group  name="bind">
+			<property name="bind-visible" editor-ref="jSExpressionEditor"/>
+			<property name="bind-text" editor-ref="jSExpressionEditor"/>
+			<property name="bind-html" editor-ref="jSExpressionEditor"/>
+			<property name="bind-css" editor-ref="jSExpressionEditor"/>
+			<property name="bind-style" editor-ref="jSExpressionEditor"/>
+			
+			
+			<property name="bind-foreach" editor-ref="jSExpressionEditor"/>
+			<property name="bind-if" editor-ref="jSExpressionEditor"/>
+			<property name="bind-ifnot" editor-ref="jSExpressionEditor"/>
+			<property name="bind-with" editor-ref="jSExpressionEditor"/>
+			
+			<property name="bind-enable" editor-ref="jSExpressionEditor"/>
+			<property name="bind-disable" editor-ref="jSExpressionEditor"/>
+			<property name="bind-value" editor-ref="jSExpressionEditor"/>
+			<property name="bind-hasFocus" editor-ref="jSExpressionEditor"/>
+			<property name="bind-checked" editor-ref="jSExpressionEditor" />
+			<!-- 
+			<property name="bind-options" />
+			<property name="bind-optionsText" />
+			<property name="bind-optionsCaption" />
+			<property name="bind-selectedOptions" />
+			 -->
+			<property name="bind-uniqueName" editor-ref="jSExpressionEditor"/>
+			<property name="bind-validationMessage" text="规则提示" editor-ref="jSExpressionEditor"/>
+		</group>
+	</common-properties>
+	
+	<common-evens>
+
+	   <html-evens>
+	   		<group  name="focus">
+				<event name="bind-focus"/>
+				<event name="bind-blur"/>
+				<event name="bind-select"/>				
+	   		</group>
+	   		<group name="click">
+				<event name="bind-click"/>
+				<event name="bind-dblclick"/>
+	   		</group>
+            <group name="mouse">
+				<event name="bind-mousedown"/>
+				<event name="bind-mouseup"/>
+				<event name="bind-mouseover"/>
+				<event name="bind-mousemove"/>
+				<event name="bind-mouseout"/>
+				<event name="bind-mouseenter"/>
+				<event name="bind-mouseleave"/>
+            </group>
+            <group name="key">
+				<event name="bind-keypress"/>
+				<event name="bind-keydown"/>
+				<event name="bind-keyup"/>
+            </group>
+            <group name="touch">
+				<event name="bind-touchstart"/>
+				<event name="bind-touchmove"/>
+				<event name="bind-touchend"/>
+            </group>
+	   </html-evens>
+	</common-evens>
+</common-config>

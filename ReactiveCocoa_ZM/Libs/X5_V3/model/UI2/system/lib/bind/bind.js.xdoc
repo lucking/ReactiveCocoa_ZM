@@ -1,0 +1,185 @@
+/**
+	@name Bind
+	@url $UI/system/lib/bind/bind
+	@class
+	@category javascript
+	@model UI2
+	@description Bind工具类
+*/
+
+/**
+	@name Bind.cleanNode
+	@function
+	@description 清空节点
+	@param {Element} node
+	@returns {void}
+*/
+
+/**
+	@name Bind.removeNode
+	@function
+	@description 删除节点
+	@param {Element} node
+	@returns {void}
+*/
+
+/**
+	@name Bind.observable
+	@function
+	@description 创建可观察对象
+	@param {Object} val
+	@returns {Object} 可观察对象
+*/
+
+/**
+	@name Bind.isObservable
+	@function
+	@description 判断是否是可观察对象
+	@param {Object} obj
+	@returns {Boolean}
+*/
+
+/**
+	@name Bind.isWriteableObservable
+	@function
+	@description 判断是否是可写的观察对象
+	@param {Object} obj
+	@returns {Boolean}
+*/
+
+/**
+	@name Bind.observableArray
+	@function
+	@description 创建可观察数组
+	@param {Object} obj 数组
+	@returns {Object} 可观察数组
+*/
+
+/**
+	@name Bind.isObservableArray
+	@function
+	@description 判断是否是可观察数组
+	@param {Object} obj
+	@returns {Boolean}
+*/
+
+/**
+	@name Bind.computed
+	@function
+	@description 创建计算字段
+	@param {Object} evaluatorFunctionOrOptions
+	@param {Object} evaluatorFunctionTarget
+	@param {Object} options
+	@returns {Object} 
+*/
+
+
+/**
+	@name Bind.isComputed
+	@function
+	@description 判断是否是计算字段
+	@param {Object} obj 
+	@returns {Boolean}
+*/
+
+/**
+	@name Bind.pureComputed
+	@function
+	@description 创建计算字段
+	@param {Object} evaluatorFunctionOrOptions
+	@param {Object} evaluatorFunctionTarget
+	@returns {Object} 
+*/
+
+/**
+	@name Bind.applyBindings
+	@function
+	@description 执行数据绑定
+	@param {Object} viewModelOrBindingContext
+	@param {Element} rootNode
+	@returns {void} 
+*/
+
+/**
+	@name Bind.applyBindingsToDescendants
+	@function
+	@description 对子孙节点执行数据绑定
+	@param {Object} viewModelOrBindingContext
+	@param {Element} rootNode
+	@returns {void} 
+*/
+
+/**
+	@name Bind.contextFor
+	@function
+	@description 获取节点的绑定上下文对象
+	@param {Element} rootNode
+	@returns {Object} 绑定上下文对象
+	@example
+	绑定上下文对象有以下字段：
+	<xmp>
+{
+	$model: model, //当前页面的VM
+	$object: object, //当前上下文中的数据
+	$parent: parent, //父上下文
+	$element: element //当前节点
+} 
+	</xmp>
+*/
+
+/**
+	@name Bind.addNodes
+	@function
+	@description 添加节点
+	@param {Element} parentElement 父节点
+	@param {List<Element>} elements 节点列表
+	@param {Element} targetElement 插入位置
+	@returns {void} 
+*/
+
+/**
+	@name Bind.addNode
+	@function
+	@description 添加节点
+	@param {Element} parentElement 父节点
+	@param {Element} element 节点
+	@param {Element} targetElement 插入位置
+	@returns {void} 
+*/
+
+/**
+	@name Bind.isBound
+	@function
+	@description 节点是否已经绑定数据
+	@param {Element} element
+	@returns {Boolean} 
+*/
+
+
+
+/**
+	@name Bind.utils.domNodeDisposal
+	@class
+	@category javascript
+	@model UI2
+	@description 节点卸载工具类
+*/
+
+/**
+	@name Bind.utils.domNodeDisposal.addDisposeCallback
+	@function
+	@description 添加节点删除的回调函数
+	@param {Element} node 节点
+	@param {Function} callback 回调函数
+	@returns {void}
+*/
+
+/**
+	@name Bind.utils.domNodeDisposal.removeDisposeCallback
+	@function
+	@description 删除节点删除的回调函数
+	@param {Element} node 节点
+	@param {Function} callback 回调函数
+	@returns {void}
+*/
+

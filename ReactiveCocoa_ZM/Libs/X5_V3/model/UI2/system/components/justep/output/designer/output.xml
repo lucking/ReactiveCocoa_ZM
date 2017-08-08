@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/output/output" tag-name="div" icon="output.gif"
+		binding-component="$UI/system/components/justep/output/output" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>
+			<!-- 
+			<property name="data" text="关联的data"/>	
+			 -->
+			<property name="dataType" text="数据类型,当有bind-ref时使用bind-ref的数据类型" enabled-condition="not(@bind-ref)" editor-ref="dataTypeList"/>	
+			<property name="format" text="格式化，当绑定数据类型为Date、DateTime、Time时的显示格式" editor-ref="formatList"  readonly="false"/>
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-output"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+			<property-editor name="dataTypeList" type="list" >
+				<static-data value="String,Integer,Float,Date,Time,DateTime"/>
+			</property-editor>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onRender" text="显示渲染事件"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/output/output" class="x-output"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

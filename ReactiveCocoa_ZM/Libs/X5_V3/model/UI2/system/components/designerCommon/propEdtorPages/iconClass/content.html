@@ -1,0 +1,256 @@
+<!DOCTYPE>
+<html style="height:100%;width:100%;padding:0px;margin:0px;">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<style type="text/css">
+			body {
+				margin:0;
+				padding:0px;
+				width:100%;
+				height:100%;
+				overflow: auto;
+			}
+			.search-block {
+				padding: 10px 0 0 10px;
+			}
+			.view-style-block{
+				padding: 10px 20px 0 0;
+				position: absolute;
+				right: 0;
+				top: 0;
+				height: 35px;
+				width: 160px;
+				font-size: 14px;
+			}
+			.view-style-block ul{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.view-style-block ul li{
+				display: inline-block;
+				*display: inline;
+				*zoom: 1;
+				padding: 3px 8px;
+				border: 1px solid white;
+				margin: 0 5px;
+				color: lightgray;
+				cursor: pointer;
+			}
+			.view-style-block ul li i{
+				font-size: 18px;
+			}
+			.view-style-block ul li.active{
+				border-color: gray;
+				color: gray;
+			}
+			.head {
+				height: 50px;
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				border-bottom: 2px solid #DDD;
+	 			
+			}
+			.list, .block {
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.list li{
+				display: inline-block;
+				*display: inline;
+				*zoom: 1;
+				width: 300px;
+				padding-top: 4px;
+				padding-bottom: 4px;
+			}
+			.block li{
+				display: inline-block;
+				*display: inline;
+				*zoom: 1;
+				width: 50px;
+				height: 60px;
+				margin: 5px;
+				text-align: center;
+			}
+			.block li label{
+				cursor: pointer;
+			}
+			.block li i{
+				font-size: 36px;
+			}
+			.list li label{
+				display: inline-block;
+				*display: inline;
+				*zoom: 1;
+			}
+			.list li span{
+				color: black;
+			}
+			.list li:hover{
+				background-color: #EEE;
+			}
+			.list li label:hover,
+			.list li input:hover{
+				cursor: pointer;
+			}
+			.container{
+				margin: 60px 10px 10px 10px;
+			}	
+			.container li{
+				color: #444;
+			}
+			.container li.active{
+				background-color: #F2BA29;
+			}
+			.title{
+				padding: 6px 10px 12px 10px;
+				color: #444;
+			}
+			.icon36{
+				margin-left:5px;
+			}
+		</style>
+		<script type="text/javascript" src="../public/js/jquery-1.4.2.min.js"></script>
+		<script type="text/javascript">
+			var style = 'block';
+			var filter = '';
+			var selected = '';
+			var data = {};
+			var files = [];
+			function init(filePath,currentValue,cssItems){
+				files = filePath.split(';');
+				cssItems = cssItems.split(';');
+				for(var i in files){
+					data[files[i]] = cssItems[i];
+				}
+				$('#block-btn').click(function(){
+					if(style == 'block') return false;
+					style = 'block';
+					$(this).toggleClass('active');
+					$('#list-btn').toggleClass('active');
+					render();
+				});
+				$('#list-btn').click(function(){
+					if(style == 'list') return false;
+					style = 'list';
+					$(this).toggleClass('active');
+					$('#block-btn').toggleClass('active');
+					render();
+				});
+				$('#search-btn').click(function(){
+					var v = $('#filter').val();
+					if(filter == v) return false;
+					filter = v;
+					query(v);
+				});
+				
+				//加载css文件
+				for(var i in files){
+					if(!files[i]) continue;
+					$('head').append('<link rel="stylesheet" href="' + files[i] + '" type="text/css" />');
+				}
+				
+				render();
+				onSelect(currentValue);
+			}
+			function query(s){
+				if(!s){
+					$('.container li').show();
+				}else{
+					var re = new RegExp('.*' + s + '.*');
+					$('.container li').each(function(){
+						var icon = $('i', this).attr('class');
+						if(re.exec(icon) != null)
+							$(this).show();
+						else	
+							$(this).hide();
+					});
+				}
+			}
+			function render(){
+				var s = [], icons,
+					container = $('.container'),
+					id, had = {};
+				container.html('');
+
+				for(var i = files.length-1; i>=0; i--){
+					var file = files[i];
+					if(!data[file]) continue;				
+					icons = data[file].split(',');
+					var f = file.substring(file.indexOf('UI'));
+					s.push('<div class="title">图标来源 : ' + f + '</div>');
+					if(style == 'block'){
+						s.push('<ul class="block">');
+						for(var j in icons){
+							id= guid();
+							var icon = icons[j];
+							if(had[icon]) continue;
+							had[icon] = true;
+							s.push('<li id="' + id + '" icon="' + icon + '" title="' + icon + '"><label for="' + id + '-radio"><i class="icon36 ' + icon + '"></i></label><br><input id="' + id + '-radio" type="radio" name="value" value="' + icon + '"/></li>');
+						}
+						s.push('</ul>');
+					}else{
+						s.push('<ul class="list">');
+						for(var j in icons){
+							id= guid();
+							var icon = icons[j];
+							if(had[icon]) continue;
+							had[icon] = true;
+							s.push('<li id="' + id + '" icon="' + icon + '"><input id="' + id + '-radio" type="radio" name="value" value="' + icon + '"/><label for="' + id + '-radio"><i class="' + icon + '"></i><span>&nbsp;' + icon + '</span></label></li>');
+						}
+						s.push('</ul>');
+					}
+				}
+				
+				container.html(s.join(''));
+				$('li', container).click(function(){
+					var icon = $(this).attr('icon');
+					onSelect(icon);
+				});
+				
+				onSelect(selected);
+				query(filter);
+			}
+			function getValue(icons){
+				return $("input[name='value']:checked").val();
+			}
+			function onSelect(name){
+				if(!name) return;
+				selected = name;
+				var current = $('li[icon=' + name + '] input[type=radio]').get(0);
+				if(current) current.checked = true;
+				$('.container li').removeClass('active');
+				$('li[icon=' + name + ']').addClass('active');
+			}
+			(function(){
+				function S4() {
+				   return (((1+Math.random())*0x10000)|0).toString(16).substring(1);
+				};
+				
+				// Generate a pseudo-GUID by concatenating random hexadecimal.
+				guid = function(){
+				   return (S4()+S4()+"-"+S4()+"-"+S4()+"-"+S4()+"-"+S4()+S4()+S4());
+				};
+			})();
+			
+		</script>
+	</head>
+	<body>
+		<div class="head" id="head">
+			<div class="search-block">
+				<input id="filter"/><button id="search-btn"><i class="icon-system-search"></i><span>&nbsp;查找</span></button>
+			</div>
+			<div class="view-style-block">
+				<ul>
+					<li id="block-btn" class="active"><i class="icon-system-layout"></i><span>&nbsp;图标</span></li>
+					<li id="list-btn" ><i class="icon-system-menu"></i><span>&nbsp;列表</span></li>
+				</ul>
+			</div>
+		</div>
+		<div class="container">
+		</div>
+	</body>
+</html>

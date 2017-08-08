@@ -1,0 +1,13 @@
+.x-radio input[type="radio"] + label, .x-checkbox input[type="checkbox"] + label {
+	left: 0;
+}
+
+.x-radio input[type="radio"]+label:before, .x-checkbox input[type="checkbox"]+label:before {
+	display: none;
+	content: "*";/*特殊写法刺激重画*/
+}
+
+.x-radio input[type="radio"],  .x-checkbox input[type="checkbox"] , .x-toggle input{
+	display: inline-block;
+}
+

@@ -1,0 +1,21 @@
+{
+	"base": "btn", 
+	"color":"btn-default|btn-primary|btn-success|btn-info|btn-warning|btn-danger|btn-link", 
+	"size": "btn-lg|btn-sm|btn-xs"
+}
+
+{
+	"base": {
+		label: "基础样式",
+		value: "btn"
+	},	 
+	"color":{
+		label: "颜色样式",
+		value: "btn-default|btn-primary|btn-success|btn-info|btn-warning|btn-danger|btn-link"
+	}, 
+	"size": {
+		label: "尺寸样式",
+		value: "btn-lg|btn-sm|btn-xs",
+		require: false
+	}
+}

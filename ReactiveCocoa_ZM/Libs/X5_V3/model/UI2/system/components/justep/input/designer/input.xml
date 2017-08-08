@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/input/input" tag-name="input" icon="input.gif" 
+		binding-component="$UI/system/components/justep/input/input" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>	
+			<!-- 
+			<property name="data" text="关联的data" editor-ref="contextComponent" editor-parameter="data"/>	
+			 -->
+			<property name="dataType" text="数据类型,当有bind-ref时使用bind-ref的数据类型" enabled-condition="not(@bind-ref)" editor-ref="dataTypeList"/>	
+			<property name="format" text="格式化，当绑定数据类型为Date、DateTime、Time时的显示格式" editor-ref="formatList"  readonly="false"/>
+			<property name="min" text="最小值，当绑定数据类型为Date、DateTime、Time时控制选择时间" editor-ref="minList"  readonly="false"/>
+			<property name="max" text="最大值，当绑定数据类型为Date、DateTime、Time时控制选择时间" editor-ref="maxList"  readonly="false"/>
+			<property name="placeHolder" text="提示信息"/>
+			<property name="pattern" text="正则拼写规则，如：数字 [0-9]"/>
+			<property name="autoFocus" text="在页面加载时是否获得焦点" default-value="false" data-type="boolean"/>
+			<property name="autoComplete" text="使用输入字段的自动完成功能" default-value="false" data-type="boolean"/>
+			
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "form-control"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "input-lg|input-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+			<property-editor name="dataTypeList" type="list" >
+				<static-data value="String,Integer,Float,Date,Time,DateTime"/>
+			</property-editor>
+			<property-editor name="minList" type="list" >
+				<static-data value="js{semicolon}new Date():今天"/>
+			</property-editor>
+			<property-editor name="maxList" type="list" >
+				<static-data value="js{semicolon}new Date():今天"/>
+			</property-editor>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onChange" text="值改变事件"/>
+			<event name="onRender" text="显示渲染事件"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<input component="$UI/system/components/justep/input/input" class="form-control"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/justep/input/password" tag-name="input" icon="password.gif" 
+		binding-component="$UI/system/components/justep/input/password" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>	
+			<property name="placeHolder" text="提示信息"/>
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "form-control"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "input-lg|input-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onChange" text="值改变事件"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<input component="$UI/system/components/justep/input/password" class="form-control"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/justep/input/range" tag-name="input" icon="range.gif" 
+		binding-component="$UI/system/components/justep/input/range" 
+        component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" editor-parameter='{"hasLabel":"false"}'/>	
+			<property name="min" text="最小值" data-type="integer" />	
+			<property name="max" text="最大值" data-type="integer" />	
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onChange" text="值改变事件"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<input component="$UI/system/components/justep/input/range"/>
+		   ]]></template>
+		</templates>
+	</element>
+
+
+	
+</elements>

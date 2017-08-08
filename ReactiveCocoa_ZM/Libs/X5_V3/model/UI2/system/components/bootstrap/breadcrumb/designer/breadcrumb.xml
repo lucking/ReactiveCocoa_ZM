@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/breadcrumb/breadcrumb" tag-name="ul" icon="breadcrumb.png"  
+	    binding-component="$UI/system/components/bootstrap/breadcrumb/breadcrumb" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-radio-group"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="true"/>
+		</properties>
+		<toolbar>
+			<!-- 
+			<item text="添加项" method="addItem"/>
+			 -->
+		</toolbar>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+		   		<ul class="breadcrumb" component="$UI/system/components/bootstrap/breadcrumb/breadcrumb">
+		      	</ul>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	
+</elements>

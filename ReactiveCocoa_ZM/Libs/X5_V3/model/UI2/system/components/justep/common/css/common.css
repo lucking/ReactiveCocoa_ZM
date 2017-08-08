@@ -1,0 +1,14 @@
+.aler-message {
+	background: #F0E68C;
+	height: 48px;
+	width: 100%;
+	text-align: center;
+	padding: 12px;
+	position: fixed;
+	float: none;
+	display: none;
+	top: 0px;
+	font-weight: bold;
+	font-size: 16px;
+	margin: auto;
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feature
+	id="org.eclipse.babel.nls_modeling.gmp.graphiti_zh"
+	label="Babel Language Pack for modeling.gmp.graphiti in Chinese (Simplified) (30.97%)"
+	image="eclipse_update_120.jpg"
+	provider-name="%providerName"
+	version="4.2.0.v20140623050659">
+	<copyright>
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<description>Babel Language Pack for modeling.gmp.graphiti in Chinese (Simplified)</description>
+	<plugin fragment="true" id="org.eclipse.graphiti.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2085" install-size="2085" />
+	<plugin fragment="true" id="org.eclipse.graphiti.tools.newprojectwizard.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1377" install-size="1377" />
+	<plugin fragment="true" id="org.eclipse.graphiti.ui.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2856" install-size="2856" />
+</feature>

@@ -1,0 +1,2353 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Component</div>
+				<h1>
+					
+					Wing
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/components/justep/wing/wing</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+
+		
+		<li><a href="#properties">Properties</a></li>
+		
+
+		
+
+		
+		<li><a href="#methods">Methods</a></li>
+		
+
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>component </span>
+				<strong>
+					Wing
+				</strong>
+
+				
+				<span> extends <a href="ViewComponent.html" ><abbr title="ViewComponent">ViewComponent</abbr></a></span>
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>wing组件, 具有两侧边栏的容器</p><pre class="example sh_javascript">	<xmp>
+	</xmp></pre></div>
+
+			
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+			<h2>
+				<a name='properties'></a>
+				Properties
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#animate">
+        	<abbr title="Wing#animate">
+        		animate
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>是否使用滑动动画</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#dismissible">
+        	<abbr title="Wing#dismissible">
+        		dismissible
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>点击content区域是否隐藏边栏</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#display">
+        	<abbr title="Wing#display">
+        		display
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>边栏展示方式, 默认值"overlay", "push"或"reveal"</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#xid">
+        	<abbr title="Wing#xid">
+        		xid
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+			<h2>
+				<a name='methods'></a>
+				Methods
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#get">
+				<abbr title="Wing#get">
+					get
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(string name)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	integer
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#getSize">
+				<abbr title="Wing#getSize">
+					getSize
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(string name)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#hide">
+				<abbr title="Wing#hide">
+					hide
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(string name)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#hideLeft">
+				<abbr title="Wing#hideLeft">
+					hideLeft
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(function fn)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#hideRight">
+				<abbr title="Wing#hideRight">
+					hideRight
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(function fn)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#set">
+				<abbr title="Wing#set">
+					set
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(json arg)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#setSize">
+				<abbr title="Wing#setSize">
+					setSize
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(string name, integer value)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#show">
+				<abbr title="Wing#show">
+					show
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(string name)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#showLeft">
+				<abbr title="Wing#showLeft">
+					showLeft
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(function fn)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#showRight">
+				<abbr title="Wing#showRight">
+					showRight
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(function fn)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#toggleLeft">
+				<abbr title="Wing#toggleLeft">
+					toggleLeft
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#toggleRight">
+				<abbr title="Wing#toggleRight">
+					toggleRight
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+			<h2>
+				<a name='operations'></a>
+				Operations
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#toggleLeft">
+				<abbr title="Wing#toggleLeft">
+					toggleLeft
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#toggleRight">
+				<abbr title="Wing#toggleRight">
+					toggleRight
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+			<h2>
+				<a name='properties_details'></a>
+				Properties Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="animate" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno5">wing.js.xdoc</a> at line 5
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      boolean
+    </span>
+	  
+  
+		<strong>animate</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>是否使用滑动动画</p></div>
+<h3 id="dismissible" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno9">wing.js.xdoc</a> at line 9
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      boolean
+    </span>
+	  
+  
+		<strong>dismissible</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>点击content区域是否隐藏边栏</p></div>
+<h3 id="display" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno7">wing.js.xdoc</a> at line 7
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>display</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>边栏展示方式, 默认值"overlay", "push"或"reveal"</p></div>
+<h3 id="xid" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno3">wing.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>xid</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+
+
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+			<h2>
+				<a name='methods_details'></a>
+				Methods Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="get"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno36">wing.js.xdoc</a> at line 36
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      
+	    </span>
+    
+	  
+	  
+  
+		<strong>get</strong>
+		
+    <span class="params">
+      (string name)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取Wing的属性</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				string
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>name</a><p>属性名, 值范围: "animate", "display", "dismissible"</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>返回属性值</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="getSize"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno14">wing.js.xdoc</a> at line 14
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      integer
+	    </span>
+    
+	  
+	  
+  
+		<strong>getSize</strong>
+		
+    <span class="params">
+      (string name)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取侧边栏的宽度</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				string
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>name</a><p>"left"或"right"</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				integer
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="hide"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno30">wing.js.xdoc</a> at line 30
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>hide</strong>
+		
+    <span class="params">
+      (string name)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>隐藏区域</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				string
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>name</a><p>"left"或者"right"</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="hideLeft"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno18">wing.js.xdoc</a> at line 18
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>hideLeft</strong>
+		
+    <span class="params">
+      (function fn)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>隐藏左边栏区域</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				function
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>fn</a><p>显示后执行回调方法</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="hideRight"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno24">wing.js.xdoc</a> at line 24
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>hideRight</strong>
+		
+    <span class="params">
+      (function fn)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>隐藏右边栏区域</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				function
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>fn</a><p>显示后执行回调方法</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="set"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno38">wing.js.xdoc</a> at line 38
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>set</strong>
+		
+    <span class="params">
+      (json arg)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>设置Wing的属性</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				json
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>arg</a><p>属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"animate" : 是否使用滑动动画
+		"display" : 边栏展示方式, 默认值"overlay", "push"或"reveal"
+		"dismissible" : 点击content区域是否隐藏边栏
+	}
+	</xmp></p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="setSize"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno12">wing.js.xdoc</a> at line 12
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>setSize</strong>
+		
+    <span class="params">
+      (string name, integer value)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>设置侧边栏的宽度</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				string
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>name</a><p>"left"或"right"</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				integer
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>value</a>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="show"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno28">wing.js.xdoc</a> at line 28
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>show</strong>
+		
+    <span class="params">
+      (string name)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>显示区域</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				string
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>name</a><p>"content" "left"或者"right"</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="showLeft"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno16">wing.js.xdoc</a> at line 16
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>showLeft</strong>
+		
+    <span class="params">
+      (function fn)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>显示左边栏区域</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				function
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>fn</a><p>显示后执行回调方法</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="showRight"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno22">wing.js.xdoc</a> at line 22
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>showRight</strong>
+		
+    <span class="params">
+      (function fn)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>显示右边栏区域</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				function
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>fn</a><p>显示后执行回调方法</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="toggleLeft"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno20">wing.js.xdoc</a> at line 20
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>toggleLeft</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>切换左边区域显示或隐藏</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="toggleRight"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno26">wing.js.xdoc</a> at line 26
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>toggleRight</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>切换右边区域显示或隐藏</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+			<h2>
+				<a name='operations_details'></a>
+				Operations Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="toggleLeft"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno32">wing.js.xdoc</a> at line 32
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>toggleLeft</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>切换左侧区域显示或隐藏</p><p>See <a href="Wing.html#toggleLeft" ><abbr title="Wing#toggleLeft">Wing#toggleLeft</abbr></a></p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="toggleRight"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_wing_js_xdoc.html#lineno34">wing.js.xdoc</a> at line 34
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>toggleRight</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>切换右侧区域显示或隐藏</p><p>See <a href="Wing.html#toggleRight" ><abbr title="Wing#toggleRight">Wing#toggleRight</abbr></a></p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:03:13 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

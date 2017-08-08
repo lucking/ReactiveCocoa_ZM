@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/alert/alert" tag-type="rich" tag-name="div" icon="alert.png" text="工具条"  
+	    binding-component="$UI/system/components/bootstrap/alert/alert" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="title" text="标题" required="false" editor-discriptor-ref=""/>  
+			<property name="autoHide" text="自动隐藏" required="false"/>  
+			<property name="visible" text="初始显示" required="false" editor-ref="booleanList" default-value="false" data-type="boolean"/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "alert"
+					},
+					"1type": {
+						label: "类型",
+						value: "alert-success|alert-info|alert-warning|alert-danger"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[
+				<div class="alert alert-warning" component="$UI/system/components/bootstrap/alert/alert">
+					<button type="button" class="close">
+						<span aria-hidden="true">×</span><span class="sr-only">Close</span>
+					</button>
+					<span>some text here</span>
+				</div>
+    		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+</elements>

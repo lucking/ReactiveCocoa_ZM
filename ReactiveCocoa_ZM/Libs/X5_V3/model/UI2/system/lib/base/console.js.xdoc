@@ -1,0 +1,16 @@
+/**
+	@name Console
+	@url $UI/system/lib/base/console
+	@class
+	@category javascript
+	@model UI2
+	@description 控制台工具类
+*/
+
+/**
+	@name Browser.hint
+	@function
+	@description 提示消息
+	@param {String} text 消息内容
+	@param {String} title 消息标题
+*/

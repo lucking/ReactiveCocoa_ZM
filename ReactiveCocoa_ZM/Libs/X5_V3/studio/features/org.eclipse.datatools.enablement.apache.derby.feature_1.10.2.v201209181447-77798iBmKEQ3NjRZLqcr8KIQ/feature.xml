@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.datatools.enablement.apache.derby.feature"
+      label="%featureName"
+      version="1.10.2.v201209181447-77798iBmKEQ3NjRZLqcr8KIQ"
+      provider-name="%providerName"
+      plugin="org.eclipse.datatools.enablement.sybase"
+      image="eclipse_update_120.jpg">
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %featureCopyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <url>
+      <update label="%updateSiteName" url="http://download.eclipse.org/datatools/updates"/>
+      <discovery label="%updateSiteName" url="http://download.eclipse.org/datatools/updates"/>
+   </url>
+
+   <includes
+         id="org.eclipse.datatools.enablement.jdbc.feature"
+         version="1.10.2.v201209181447-4-39oB5896KB97JHP"/>
+
+   <requires>
+      <import feature="org.eclipse.datatools.modelbase.feature" version="1.8.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.datatools.connectivity.feature" version="1.8.0" match="greaterOrEqual"/>
+      <import feature="org.eclipse.datatools.sqldevtools.feature" version="1.8.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.datatools.connectivity.apache.derby.dbdefinition"
+         download-size="0"
+         install-size="0"
+         version="1.0.2.v201107221459"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.datatools.connectivity.apache.derby.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.3.v201107221459"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.datatools.connectivity.apache.derby"
+         download-size="0"
+         install-size="0"
+         version="1.0.103.v201212070447"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.datatools.modelbase.derby"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.v201107221519"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.datatools.sqltools.db.derby"
+         download-size="0"
+         install-size="0"
+         version="1.0.0.v201107221520"
+         unpack="false"/>
+
+</feature>

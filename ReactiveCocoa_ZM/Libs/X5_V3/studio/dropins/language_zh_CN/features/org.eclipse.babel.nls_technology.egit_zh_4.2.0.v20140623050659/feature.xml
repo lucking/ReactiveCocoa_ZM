@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feature
+	id="org.eclipse.babel.nls_technology.egit_zh"
+	label="Babel Language Pack for technology.egit in Chinese (Simplified) (26.3%)"
+	image="eclipse_update_120.jpg"
+	provider-name="%providerName"
+	version="4.2.0.v20140623050659">
+	<copyright>
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<description>Babel Language Pack for technology.egit in Chinese (Simplified)</description>
+	<plugin fragment="true" id="org.eclipse.egit.core.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="5161" install-size="5161" />
+	<plugin fragment="true" id="org.eclipse.egit.doc.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1574" install-size="1574" />
+	<plugin fragment="true" id="org.eclipse.egit.import.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2424" install-size="2424" />
+	<plugin fragment="true" id="org.eclipse.egit.mylyn.ui.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1362" install-size="1362" />
+	<plugin fragment="true" id="org.eclipse.egit.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1398" install-size="1398" />
+	<plugin fragment="true" id="org.eclipse.egit.ui.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="8372" install-size="8372" />
+</feature>

@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/progress/progress" tag-name="div" icon="element.gif" text="进度条"  
+	    binding-component="$UI/system/components/bootstrap/progress/progress"
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "progress",
+						require: true
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="valuenow" text="当前值" data-type="float"></property>
+			<property name="textVisible" text="进度文本是否可见" data-type="boolean" default-value="true"></property>
+			<property name="valuemax" text="最大值" data-type="integer" default-value="100"></property>
+<!-- 			<property name="valuemin" text="最小值" data-type="integer" default-value="0"></property> -->
+<!-- 			<property name="style" text="样式" editor-ref="styleDialog" use-default="true"/> -->
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<events>
+<!-- 			<event name="onDeselect" type="event" text="页签隐藏" parameters="event" is-script="true"/> -->
+			<event name="onRender" type="event" text="进度描述文本渲染" parameters="event" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+			  <div class="progress" component="$UI/system/components/bootstrap/progress/progress">
+			  <div class="progress-bar progress-bar-success" role="progressbar" >
+			    <span>0%</span>
+			  </div>
+			</div>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/bootstrap/progress/progress#progressBar" tag-name="div" icon="element.gif" text="进度条"  
+	     discriminate-condition="hasClass('progress-bar')"
+		  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "progress-bar",
+						require: true
+					},
+					"color": {
+						label: "颜色样式",
+						value: "progress-bar-default|progress-bar-primary|progress-bar-success|progress-bar-info|progress-bar-warning|progress-bar-danger",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+
+	</element>
+</elements>

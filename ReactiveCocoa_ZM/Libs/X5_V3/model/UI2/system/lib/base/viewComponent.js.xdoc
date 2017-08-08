@@ -1,0 +1,179 @@
+/**
+	@name ViewComponent
+	@url $UI/system/lib/base/viewComponent
+	@class 
+	@category javascript
+	@extends Component
+	@extendurl $UI/system/lib/base/component
+	@model UI2
+	@description 可视组件基类
+*/
+
+/**
+	@name ViewComponent#constructor
+	@function
+	@description 构造函数
+	@param options 参数选项
+	@return {void}
+	@example
+	<xmp>
+		参数options格式类似{parent:xx, config:{}}，parent是组件的父节点，允许为空或不指定，config是组件的参数选项
+	</xmp> 
+*/
+
+/**
+	@name ViewComponent#setCSS
+	@function
+	@description 设置组件节点的样式
+	@param {String} css
+	@return {void}
+*/
+
+/**
+	@name ViewComponent#addClass
+	@function
+	@description 组件节点上添加css class
+	@param {String} cls
+	@return {void}
+*/
+
+/**
+	@name ViewComponent#removeClass
+	@function
+	@description 组件节点上删除css class
+	@param {String} cls
+	@return {void}
+*/
+
+/**
+	@name ViewComponent#toggleClass
+	@function
+	@description 添加或删除组件节点上css class
+	@param {String} cls
+	@return {void}
+*/
+
+
+/**
+	@name ViewComponent#dispose
+	@function
+	@description 析构函数
+	@return {void}
+*/
+
+/**
+	@name ViewComponent#inited
+	@function
+	@description 组件初始化完成
+	@return {void}
+	@example
+	inited方法是给组件开发者使用的，用来标记组件已经初始化完成。大部分情况下组件开发者不需要调用这个
+方法，只有当组件的init中需要依赖其它组件时，才需要在异步的回调中调用组件自身的inited标记当前组件已经
+初始化完成。代码类似：
+        init: function(value, bindingContext){
+	        this.callParent(value, bindingContext);
+           	var self = this;
+           	this.getModel().componentPromise("otherComponentXid").done(function(otherComponent){
+            		self.inited();
+            	}).fail(function(err){
+            		alert(err);
+           	});
+           	return {dependence: true};
+        }
+*/
+
+/**
+	@name ViewComponent#processComponentAttr
+	@function
+	@description 处理组件关联的数据项
+	@param element 绑定组件的节点
+	@param attrs 需要生成数据项的属性，是一个json数据，其中key是节点的属性名称，value是生成的数据项名称
+	@return {void}
+*/
+
+/**
+	@name ViewComponent#buildTemplate
+	@function
+	@description 生成组件模板
+	@param config 组件选项
+	@return {String} 字符串格式的组件模板
+	@example
+	<xmp>
+	参数config来自于new组件时参数{parent:xx, config:{}}中的config的值。
+	buildTemplate只有在js动态创建时才被调用，在W文件中声明使用组件时，组件模板通过服务端java解析；
+支持js动态创建的组件必须重载buildTemplate方法。
+	</xmp>
+*/
+
+/**
+	@name ViewComponent#init
+	@function
+	@description 初始化组件
+	@param value 组件关联的数据项的值
+	@param bindingContext 数据上下文
+	@return obj 返回值类似\{dependence: true/false\}，其中dependence表示组件是否异步依赖别的组件
+	@example
+	<xmp>
+	 如果返回{ dependence:true}时，表示组件还没有初始化完成，它依赖其它组件，在要获取其其它组件
+的promise的回调中调用当前组件的inited方法，通知界面引擎组件初始化完成。
+	</xmp>
+*/
+
+/**
+	@name ViewComponent#update
+	@function
+	@description 更新组件
+	@param value 组件关联的数据项的值
+	@param bindingContext 数据上下文
+	@return {void}
+	@example
+	当组件关联的数据项的值发生改变时，会调用组件实例的update方法。 
+*/
+
+/**
+	@name ViewComponent#controlsDescendantBindings
+	@function
+	@description 组件是否自己控制子节点的数据绑定
+	@return {Boolean}
+	@example
+	如果组件自己控制子节点的数据绑定，界面引擎将不会遍历组件的子节点，需要
+由组件自己处理。 
+*/
+
+
+/**
+	@name ViewComponent#getComponentByCompID
+	@function
+	@description 在当前组件的子节点中，根据compId查找组件
+	@return {ViewComponent} 组件实例
+*/
+
+/**
+	@name ViewComponent#getElementByCompID
+	@function
+	@description 在当前组件的子节点中，根据compId查找节点
+	@return element
+*/
+
+/**
+	@name ViewComponent.DATA_CHANGED
+	@property "onDataChanged"
+	@description 组件关联的数据项值变化事件
+	@default "onDataChanged"
+	@example
+	<xmp>
+	事件对象的内容如下：
+{
+    name: name, //数据项名称
+    value: value, //数据项新值
+    oldValue: oldValue, //数据项旧值
+    allValue: allValue, //所有数据项新值
+    allOldValue: allOldValue, //所有数据项旧值
+    source: this //组件自身
+}
+	</xmp>
+*/
+
+
+
+

@@ -1,0 +1,139 @@
+/**
+	@name Dialog
+	@component $UI/system/components/justep/dialog/dialog
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Dialog
+*/
+
+/**
+	@name Dialog#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name Dialog#title
+	@attribute 
+	@type string
+	@description 对话框标题，当showTitle=true时有效
+*/
+
+/**
+	@name Dialog#showTitle
+	@attribute 
+	@type boolean
+	@description 是否显示标题栏，缺省：flase
+*/
+
+/**
+	@name Dialog#status
+	@attribute 
+	@type string
+	@description 对话框显示状态，取值范围：normal,maximize
+*/
+
+/**
+	@name Dialog#width
+	@attribute 
+	@type string
+	@description 对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%
+*/
+
+/**
+	@name Dialog#height
+	@attribute 
+	@type string
+	@description 对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%
+*/
+
+/**
+	@name Dialog#top
+	@attribute 
+	@type string
+	@description 对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中
+*/
+
+/**
+	@name Dialog#left
+	@attribute 
+	@type string
+	@description 对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中
+*/
+
+/**
+	@name Dialog#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : {string} 对话框标题
+		"showTitle" : {boolean} 是否显示标题
+		"status": {string} 对话框显示状态，取值范围：normal,maximize
+		"width": {string} 对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"height": {string} 对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"top": {string} 对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中		
+		"left": {string} 对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中	
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name Dialog#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："title"、"showTitle"、"status"、 "width"、"height"、"top"、"left"
+	@return {Object} 
+*/
+
+/**
+	@name Dialog#open
+	@function
+	@description 打开对话框
+*/
+
+/**
+	@name Dialog#close
+	@function
+	@description 关闭对话框
+*/
+
+/**
+	@name Dialog#setContent
+	@function
+	@param	{string} content 对话框的内容
+	@description 设置对话框显示的html内容
+*/
+
+/**
+	@name Dialog#onOpen
+	@event
+	@description <b>[回调型事件]</b>打开事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/
+
+/**
+	@name Dialog#onClose
+	@event
+	@description <b>[回调型事件]</b>关闭事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

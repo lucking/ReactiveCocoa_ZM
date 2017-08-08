@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/menu/menu" tag-type="rich" tag-name="ul" icon="menu.png" text="panel布局"  
+	    binding-component="$UI/system/components/justep/menu/menu" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-menu"
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<toolbar>
+			<item text="添加Item" method="addItem"/>
+			<item text="添加分割线" method="addDivider"/>
+		</toolbar>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    <ul component="$UI/system/components/justep/menu/menu" class="x-menu dropdown-menu">
+		    </ul>	 
+		   ]]></template>
+		</templates>
+ 
+	</element>
+	
+	<element name="$UI/system/components/justep/menu/menu#item" tag-name="li" icon="item.png" text="item"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/menu/menu' and contains(@class, 'x-menu-item'))" 
+		component-class="" resizable="false">
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-menu-item"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    	<li class="x-menu-item">
+					<a component="$UI/system/components/justep/button/button" class="btn btn-link" label="button">
+						<i/><span>button</span>
+					</a>
+		    	</li>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/justep/menu/menu#divider" tag-name="li" icon="divider.png" text="divider"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/justep/menu/menu' and contains(@class, 'x-menu-divider'))" 
+		component-class="" resizable="false">
+		<properties>
+			<property name="xid" text="编号" required="false"/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-menu-divider"
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+		</properties>
+		<events>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+		    	<li class="x-menu-divider divider"></li>
+		   ]]></template>
+		</templates>
+	</element>
+
+</elements>

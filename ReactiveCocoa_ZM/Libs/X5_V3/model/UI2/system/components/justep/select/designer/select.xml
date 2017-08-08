@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+
+	<element name="$UI/system/components/justep/select/select" tag-name="select" icon="select.gif" text="下拉选择" 
+		binding-component="$UI/system/components/justep/select/select" 
+		component-type="formControl"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+			<property name="bind-labelRef" text="label引用" editor-ref="dataRef" />	
+
+			<group name="options">
+				<property name="autoLoad" path="@optionsAutoLoad" text="自动加载options数据" default-value="true"  editor-ref="booleanList" data-type="boolean"/>
+				<property name="bind-options" path="@bind-options" required="true"  editor-ref="dataPropDlg" />
+				<property name="bind-optionsCaption" path="@bind-optionsCaption" />
+				<property name="bind-optionsValue" path="@bind-optionsValue" editor-ref="dataRef" editor-parameter='{"isRelation":"true","data":"bind-options","hasLabel":"false"}'/>
+				<property name="bind-optionsLabel" path="@bind-optionsLabel" editor-ref="dataRef" editor-parameter='{"isRelation":"true","data":"bind-options","hasLabel":"false"}'/>
+			</group>
+			
+			<property name="class"  text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "form-control"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "input-lg|input-sm",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		 
+		<toolbar>	
+		</toolbar>
+
+		<events>  <!--组件事件-->		
+			<event name="onChange"  text="值变化后"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<select component="$UI/system/components/justep/select/select" class="form-control"/> 
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/select/checkboxGroup" tag-name="span" icon="checkbox.gif" 
+		binding-component="$UI/system/components/justep/select/checkboxGroup" 
+        component-type="formControl"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+
+			<group name="itemset">
+				<property name="bind-itemset" path="@bind-itemset" required="true"  editor-ref="dataPropDlg" is-id-ref="true"/>
+				<property name="bind-itemsetValue" path="@bind-itemsetValue" editor-ref="dataRef" editor-parameter='{"type":"foreachRef","data":"bind-itemset","hasLabel":"false"}'/>
+				<property name="bind-itemsetLabel" path="@bind-itemsetLabel" editor-ref="dataRef" editor-parameter='{"type":"foreachRef","data":"bind-itemset","hasLabel":"false"}'/>
+			</group>
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-checkbox-group"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "x-checkbox-group-lg|x-checkbox-group-sm|x-checkbox-group-xs",
+						require: false
+					},
+					"3icon": {
+						label: "排列方式",
+						value: "x-checkbox-group-vertical",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="itemClass"  text="项class" >
+				<editor-parameter><![CDATA[
+				{
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="itemStyle" text="项样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>
+		
+		
+		<toolbar>			
+		</toolbar>
+		
+		<events>  <!--组件事件-->		
+		    <event name="onChange"  text="值变化后"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<span component="$UI/system/components/justep/select/checkboxGroup" class="x-checkbox-group"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/justep/select/radioGroup" tag-name="span" icon="radio.gif" 
+		binding-component="$UI/system/components/justep/select/radioGroup" 
+        component-type="formControl"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号"  required="true"/>	
+			<property name="bind-ref" text="引用" editor-ref="dataRef" />	
+
+			<group name="itemset">
+				<property name="bind-itemset" path="@bind-itemset" required="true"  editor-ref="dataPropDlg" is-id-ref="true"/>
+				<property name="bind-itemsetValue" path="@bind-itemsetValue" editor-ref="dataRef" editor-parameter='{"type":"foreachRef","data":"bind-itemset","hasLabel":"false"}'/>
+				<property name="bind-itemsetLabel" path="@bind-itemsetLabel" editor-ref="dataRef" editor-parameter='{"type":"foreachRef","data":"bind-itemset","hasLabel":"false"}'/>
+			</group>
+			
+			<property name="class"  text="class" >
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-radio-group"
+					},	 
+					"2size": {
+						label: "尺寸样式",
+						value: "x-radio-group-lg|x-radio-group-sm|x-radio-group-xs",
+						require: false
+					},
+					"3icon": {
+						label: "排列方式",
+						value: "x-radio-group-vertical",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog"/>
+			<property name="itemClass"  text="项class" >
+				<editor-parameter><![CDATA[
+				{
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="itemStyle" text="项样式" editor-ref="styleDialog"/>
+			<property name="tabindex" text="Tab键顺序" data-type="integer" />
+			<property name="accesskey" text="快捷键" />
+			<property name="readonly" text="只读" editor-ref="edit-readonly" default-value="false" data-type="boolean"/>
+			<property name="disabled" text="禁用" editor-ref="edit-disabled" default-value="false" data-type="boolean"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>
+		
+		
+		<toolbar>			
+		</toolbar>
+		
+		<events>  <!--组件事件-->		
+		    <event name="onChange"  text="值变化后"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+				<span component="$UI/system/components/justep/select/radioGroup" class="x-radio-group"/>
+		   ]]></template>
+		</templates>
+	</element>
+
+	
+</elements>

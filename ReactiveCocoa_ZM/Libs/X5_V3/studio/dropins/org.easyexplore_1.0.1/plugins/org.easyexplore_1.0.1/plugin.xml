@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin
+   id="org.easyexplore"
+   name="Easy Explore Plugin"
+   version="1.0.1"
+   provider-name="Emmanuel Boudrant"
+   class="org.easyexplore.EasyExplorePlugin">
+
+   <runtime>
+      <library name="easyexplore.jar"/>
+   </runtime>
+   <requires>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.jdt.core"/>
+   </requires>
+
+
+   <extension
+         point="org.eclipse.ui.popupMenus">
+		 
+		<objectContribution
+            objectClass="org.eclipse.jdt.core.IOpenable"
+            id="org.easyexplore.contribution">
+         <action
+               label="%export"
+               icon="icon/easyexplore.gif"
+               class="org.easyexplore.actions.EasyExploreAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.easyexplore.actions.EasyExploreAction">
+         </action>
+      </objectContribution>
+		 
+      <objectContribution
+            objectClass="org.eclipse.core.resources.IResource"
+            id="org.easyexplore.contribution">
+         <action
+               label="%export"
+               icon="icon/easyexplore.gif"
+               class="org.easyexplore.actions.EasyExploreAction"
+               menubarPath="additions"
+               enablesFor="1"
+               id="org.easyexplore.actions.EasyExploreAction">
+         </action>
+      </objectContribution>
+
+	  
+	  
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            name="Easy Explore"
+            class="org.easyexplore.preferences.EasyExplorePreferencePage"
+            id="org.easyexplore.preferences.EasyExplorePreferencePage">
+      </page>
+   </extension>
+
+</plugin>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feature
+	id="org.eclipse.babel.nls_tools.gef_zh"
+	label="Babel Language Pack for tools.gef in Chinese (Simplified) (75.72%)"
+	image="eclipse_update_120.jpg"
+	provider-name="%providerName"
+	version="4.2.0.v20140623050659">
+	<copyright>
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<description>Babel Language Pack for tools.gef in Chinese (Simplified)</description>
+	<plugin fragment="true" id="org.eclipse.draw2d.doc.isv.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1393" install-size="1393" />
+	<plugin fragment="true" id="org.eclipse.draw2d.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1358" install-size="1358" />
+	<plugin fragment="true" id="org.eclipse.gef.doc.isv.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1411" install-size="1411" />
+	<plugin fragment="true" id="org.eclipse.gef.examples.flow.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1365" install-size="1365" />
+	<plugin fragment="true" id="org.eclipse.gef.examples.logic.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="3140" install-size="3140" />
+	<plugin fragment="true" id="org.eclipse.gef.examples.shapes.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1366" install-size="1366" />
+	<plugin fragment="true" id="org.eclipse.gef.examples.text.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1365" install-size="1365" />
+	<plugin fragment="true" id="org.eclipse.gef.examples.ui.pde.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="3113" install-size="3113" />
+	<plugin fragment="true" id="org.eclipse.gef.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="5153" install-size="5153" />
+	<plugin fragment="true" id="org.eclipse.zest.core.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1552" install-size="1552" />
+	<plugin fragment="true" id="org.eclipse.zest.doc.isv.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1361" install-size="1361" />
+	<plugin fragment="true" id="org.eclipse.zest.layouts.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1362" install-size="1362" />
+</feature>

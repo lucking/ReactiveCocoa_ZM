@@ -1,0 +1,77 @@
+/**
+	@name WindowReceiver
+	@component $UI/system/components/justep/windowReceiver/windowReceiver
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description WindowReceiver
+*/
+
+/**
+	@name WindowReceiver#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name WindowReceiver#sendData
+	@function
+	@param {object} data 传送的数据
+	@description 向调用者传送数据
+*/
+
+/**
+	@name WindowReceiver#windowEnsure
+	@function
+	@param {object} data 传送的数据
+	@description 向调用者传送数据并且关闭
+*/
+
+/**
+	@name WindowReceiver#windowCancel
+	@function
+	@description 取消关闭
+*/
+
+/**
+	@name WindowReceiver#onReceive
+	@event
+	@description <b>[回调型事件]</b>接收数据事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"data" : 接收到的数据,
+		"sender" : 发送数据的组件js对象，如：WindowDialog
+	}
+	</xmp>	
+*/
+
+/**
+ @name WindowReceiver#windowCancel
+ @operation
+ @see WindowReceiver#windowCancel
+ @description 取消关闭
+ @returns {void}
+*/
+
+/**
+ @name WindowReceiver#windowEnsure
+ @operation
+ @see WindowReceiver#windowEnsure
+ @param {object} data 传送的数据
+ @description 向调用者传送数据并且关闭
+ @returns {void}
+*/
+
+/**
+ @name WindowReceiver#sendData
+ @operation
+ @see WindowReceiver#sendData
+ @param {object} data 传送的数据
+ @description 向调用者传送数据
+ @returns {void}
+*/

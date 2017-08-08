@@ -1,0 +1,618 @@
+/**
+	@name com.justep.ui.system.UISystemMessages
+	@class
+	@category java
+	@model UI2
+	@description UI系统应用消息
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.PROCESS_OF_PROCESS_BAR_NULL
+	@constant
+	@description processBar组件的process属性不允许为空
+	@default "JUSTEP190000"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.ID_OF_MODEL_NULL
+	@constant
+	@description model元素必须有id属性
+	@default "JUSTEP190001"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.MODEL_OF_WINDOW_NULL
+	@constant
+	@description processBar组件所在的window必须有model元素
+	@default "JUSTEP190002"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.ITEM_OF_PROCESS_BAR_NOT_SUPPORT1
+	@constant
+	@description processBar组件中不支持name="{0}"的item
+	@default "JUSTEP190003"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UNKNOWN_ERROR
+	@constant
+	@description 未知错误，{0}
+	@default "JUSTEP191000"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.LOGIN_BIZSERVER_ERROR
+	@constant
+	@description 业务服务器连接异常, 请与管理员联系检查服务器状况
+	@default "JUSTEP191001"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_WINDOW_PLACE_ERROR
+	@constant
+	@description window定义出错:xui:place节点没有指定{0}或{1}属性,{2}
+	@default "JUSTEP191002"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_WINDOW_PLACE_LABEL_NOT_EXIST
+	@constant
+	@description window定义出错:xui:place中{0}指定的{1}(control)不存在,{2}
+	@default "JUSTEP191003"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_WINDOW_PLACE_NOT_EXIST
+	@constant
+	@description window定义出错:xui:place指定的{0}(control)不存在,{1}
+	@default "JUSTEP191004"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_WINDOW_LAYOUT_FILE_NOT_EXIST
+	@constant
+	@description 没有找到layout文件:{0}
+	@default "JUSTEP191005"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_WINDOW_DEFAULT_LAYOUT_ERROR
+	@constant
+	@description Window组件中语法错误[{0}中不支持默认布局]
+	@default "JUSTEP191006"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_WINDOW_LAYOUT_ERROR
+	@constant
+	@description layout生成出错
+	@default "JUSTEP191007"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_WINDOW_READ_VIEW_TEMPLATE_ERROR
+	@constant
+	@description 读取Window组件模板出错
+	@default "JUSTEP191008"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_DATA_ERROR
+	@constant
+	@description reportData组件描述中没有发现source节点
+	@default "JUSTEP191009"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_CELLLAYOUT_ERROR
+	@constant
+	@description report组件cellLayout转换成excel失败
+	@default "JUSTEP191010"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_PAGE_CONFIG_ERROR
+	@constant
+	@description report组件解析页面设置出错
+	@default "JUSTEP191011"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_CHART_CACHE_ERROR
+	@constant
+	@description report组件生成Chart模板出错
+	@default "JUSTEP191012"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_TEMPLATE_CACHE_ERROR
+	@constant
+	@description report组件生成模板出错
+	@default "JUSTEP191013"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_REQUEST_TEMPLATE_CACHE_ERROR
+	@constant
+	@description report组件生成请求模板出错
+	@default "JUSTEP191014"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_READ_DEFINE_ERROR
+	@constant
+	@description report组件读取定义信息文件出错
+	@default "JUSTEP191015"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_CELL_ERROR
+	@constant
+	@description 报表对象单元格引用不能为空
+	@default "JUSTEP191016"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_CELL_REF_ERROR
+	@constant
+	@description 报表对象单元格引用的对象{0}不存在
+	@default "JUSTEP191017"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_REPORT_CREATE_MAPPING_ERROR
+	@constant
+	@description report组件生成Mapping文件出错
+	@default "JUSTEP191018"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_ORGTREE_TREE_DEFINE_ERROR
+	@constant
+	@description 解析orgtree定义失败，没有定义tree部分,{0}
+	@default "JUSTEP191019"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_ORG_VIRTUAL_ROOT
+	@constant
+	@description 组织机构
+	@default "JUSTEP191020"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_ORGSELECT_SELECT_DEFINE_ERROR
+	@constant
+	@description 解析orgSelect定义失败，没有定义select部分,{0}
+	@default "JUSTEP191021"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_MENU_CREATE_ERROR
+	@constant
+	@description menu组件解析出错
+	@default "JUSTEP191022"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_EXCEL_LAYOUT_FILE_NOT_EXIST
+	@constant
+	@description excelLayout组件没有找到layout文件{0}
+	@default "JUSTEP191023"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_EXCEL_LAYOUT_CONTROL_NOT_EXIST
+	@constant
+	@description excelLayout组件定义中的view({0})下没有找到control({1}) 
+	@default "JUSTEP191024"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_EXCEL_LAYOUT_CREATE_ERROR
+	@constant
+	@description excelLayout组件解析出错
+	@default "JUSTEP191025"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_EXCEL_UPLOAD_ERROR
+	@constant
+	@description excel导入上载文件失败 
+	@default "JUSTEP191026"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DECISIONDATA_GENERATE_INSTANCE_ERROR
+	@constant
+	@description decisionData组件解析出错 
+	@default "JUSTEP191027"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DECISIONDATA_CREATE_DATA_ERROR
+	@constant
+	@description decisionData组件创建data出错 
+	@default "JUSTEP191028"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_CONFIGBAR_DEFINE_ERROR
+	@constant
+	@description configBar组件必须指定decision属性
+	@default "JUSTEP191029"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_CONFIGBAR_ITEM_DEFINE_ERROR
+	@constant
+	@description configBar组件中不支持name={0}的item
+	@default "JUSTEP191030"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DECISIONBAR_DEFINE_ERROR
+	@constant
+	@description decisionBar组件必须指定decision属性
+	@default "JUSTEP191031"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DECISIONBAR_ITEM_DEFINE_ERROR
+	@constant
+	@description decisionBar组件中不支持name={0}的item
+	@default "JUSTEP191032"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DRILLBAR_DEFINE_ERROR
+	@constant
+	@description drillBar组件必须指定decision属性
+	@default "JUSTEP191033"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DRILLBAR_ITEM_DEFINE_ERROR
+	@constant
+	@description drillBar组件中不支持name={0}的item
+	@default "JUSTEP191034"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_OPERATORBAR_DEFINE_ERROR
+	@constant
+	@description operatorBar组件必须指定decision属性
+	@default "JUSTEP191035"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_OPERATORBAR_ITEM_DEFINE_ERROR
+	@constant
+	@description operatorBar组件中不支持name={0}的item
+	@default "JUSTEP191036"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_ALL
+	@constant
+	@description 全部
+	@default "JUSTEP191037"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_TODAY
+	@constant
+	@description 今天
+	@default "JUSTEP191038"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_YESTERDAY
+	@constant
+	@description 昨天
+	@default "JUSTEP191039"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_THIS_WEEK
+	@constant
+	@description 本周
+	@default "JUSTEP191040"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_LAST_WEEK
+	@constant
+	@description 上周
+	@default "JUSTEP191041"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_THIS_MONTH
+	@constant
+	@description 本月
+	@default "JUSTEP191042"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_LAST_MONTH
+	@constant
+	@description 上月
+	@default "JUSTEP191043"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_THIS_YEAR
+	@constant
+	@description 今年
+	@default "JUSTEP191044"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_LAST_YEAR
+	@constant
+	@description 去年
+	@default "JUSTEP191045"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_CUSTOM
+	@constant
+	@description 自定义...
+	@default "JUSTEP191046"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_START_DATE
+	@constant
+	@description 开始日期
+	@default "JUSTEP191047"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_END_DATE
+	@constant
+	@description 结束日期
+	@default "JUSTEP191048"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_OK
+	@constant
+	@description 确定
+	@default "JUSTEP191049"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATEFILTER_LABEL_CANCEL
+	@constant
+	@description 取消
+	@default "JUSTEP191050"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_BIZDATA_DEFINE_ERROR
+	@constant
+	@description 解析BizData({0})定义失败,{1}
+	@default "JUSTEP191051"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_BIZDATA_MASTER_DEFINE_ERROR
+	@constant
+	@description BizData({0})属性master缺少relation项定义
+	@default "JUSTEP191052"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_BIZDATA_CONCEPT_DEFINE_ERROR
+	@constant
+	@description rule定义中concept和data定义不一致,{0}
+	@default "JUSTEP191053"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_BIZDATA_RELATION_DEFINE_ERROR
+	@constant
+	@description BizData({0})中不能使用不存在的relation({1})
+	@default "JUSTEP191054"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_BIZDATA_AUTO_DEFINE_ERROR
+	@constant
+	@description 解析BizData({0})异常，auto-load和auto-new属性不能同时为true
+	@default "JUSTEP191055"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATA_DEFINE_ERROR
+	@constant
+	@description 解析Data({0})定义失败,{1}
+	@default "JUSTEP191056"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_DATA_AUTO_DEFINE_ERROR
+	@constant
+	@description 解析Data({0})异常，auto-load和auto-new属性不能同时为true
+	@default "JUSTEP191057"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_NAVIGATORBAR_DATA_DEFINE_ERROR
+	@constant
+	@description 解析navigatorBar失败,指定的data({0})不存在
+	@default "JUSTEP191058"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_NAVIGATORBAR_DATA_DEFINE_ERROR1
+	@constant
+	@description 解析navigatorBar失败,指定的data({0})解析出错
+	@default "JUSTEP191059"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.SERVICE_BEGIN_EXECUTE_ERROR
+	@constant
+	@description 启动批操作失败
+	@default "JUSTEP191060"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.SERVICE_BIZ_ACTION_ERROR
+	@constant
+	@description Biz Action执行失败
+	@default "JUSTEP191061"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.SERVICE_CANCEL_EXECUTE_ERROR
+	@constant
+	@description 取消批操作失败
+	@default "JUSTEP191062"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.SERVICE_END_EXECUTE_ERROR
+	@constant
+	@description 结束批操作失败
+	@default "JUSTEP191063"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_BIZ_ACTION_TIMEOUT
+	@constant
+	@description 服务器连接超时，重新登录后再试
+	@default "JUSTEP191064"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_EXCEL_EXPORT_DOWNLOAD_ERROR
+	@constant
+	@description excel导出下载文件失败
+	@default "JUSTEP191065"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_ERROR
+	@constant
+	@description 上传文件失败
+	@default "JUSTEP191066"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_NOFILE_ERROR
+	@constant
+	@description 未包含文件上传域
+	@default "JUSTEP191067"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_TYPE_ERROR
+	@constant
+	@description 不允许的文件格式
+	@default "JUSTEP191068"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_SIZE_ERROR
+	@constant
+	@description 文件大小超出限制
+	@default "JUSTEP191069"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_ENTYPE_ERROR
+	@constant
+	@description 请求类型ENTYPE错误
+	@default "JUSTEP191070"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_REQUEST_ERROR
+	@constant
+	@description 上传请求异常
+	@default "JUSTEP191071"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_IO_ERROR
+	@constant
+	@description IO异常
+	@default "JUSTEP191072"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_DIR_ERROR
+	@constant
+	@description 目录创建失败
+	@default "JUSTEP191073"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_UPLOAD_UNKNOWN_ERROR
+	@constant
+	@description 未知错误
+	@default "JUSTEP191074"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_REQUEST_DOCSERVER_ERROR
+	@constant
+	@description 请求文档服务器失败,{0}
+	@default "JUSTEP191075"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.XBL_UEDITOR_GET_URL_ERROR
+	@constant
+	@description 获取文档URL失败
+	@default "JUSTEP191076"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.INPUT_REF_ERROR1
+	@constant
+	@description Input组件"{0}"必须设置ref属性
+	@default "JUSTEP192000"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.RELATIVE_ORG_DATA_ERROR1
+	@constant
+	@description RelativeOrg组件"{0}"必须设置data属性
+	@default "JUSTEP192001"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.RELATIVE_ORG_DATA_ERROR2
+	@constant
+	@description RelativeOrg组件"{0}"必须引用的data "{1}"不存在
+	@default "JUSTEP192002"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.RELATIVE_ORG_NAME_REF_ERROR1
+	@constant
+	@description RelativeOrg组件"{0}"必须设置bind-nameRef属性
+	@default "JUSTEP192003"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.GET_WINDOW_CONTENT_PARAM_NULL1
+	@constant
+	@description 获取Window内容时, 参数"{0}"不允许为空
+	@default "JUSTEP192004"
+*/
+
+/**
+	@name com.justep.ui.system.UISystemMessages.GET_WINDOW_CONTENT_XID_NOT_EXIST2
+	@constant
+	@description Window文件"{0}"中找不到xid="{1}"节点
+	@default "JUSTEP192005"
+*/
+
+

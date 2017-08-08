@@ -1,0 +1,175 @@
+<html>
+<head>
+<title>Subclipse Changelog</title>
+<style>
+li {
+	margin-top: 6px;
+	margin-bottom: 3px;
+}
+li p {
+	margin-top: 3px;
+	margin-bottom: 3px;
+}
+</style>
+</head>
+<body>
+<h1>Subclipse Changelog</h1>
+<p>This file documents all of the changes that have been made to <a
+ href="http://subclipse.tigris.org/">Subclipse</a> beginning with the 1.10.0 release process.
+Please visit <a href="http://subclipse.tigris.org/">
+http://subclipse.tigris.org/</a> for the latest information on Subclipse.</p>
+<p>The latest version of this file can be viewed directly from our
+website at <a
+ href="http://subclipse.tigris.org/subclipse_1.10.x/changes.html">
+http://subclipse.tigris.org/subclipse_1.10.x/changes.html</a>. Please
+note that the file on the website may contain information about changes
+that have not yet been made available in a release. Generally, these changes
+will be available in the next release but it is also possible that a change
+will be pulled out due to testing problems.</p>
+
+<p><b>NOTE:</b> As of Subclipse 1.10.0, the minimum Subversion JavaHL requirement is
+1.8.0.</p> 
+
+<p><b>NOTE:</b> SVNKit support is NOT currently available for Subversion 1.8.  You must
+either use JavaHL or stick with Subclipse 1.8.x releases until SVNKit is available.</p> 
+
+<hr />
+<a name="1.10.5"></a>
+<h4>Version 1.10.5<br>
+May 15, 2014</h4>
+<p>from: /trunk<br>
+<a href="http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.5">
+http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.5</a></p>
+<ul>
+ <li>JavaHL 1.8.9</li>
+ <li>SVNKit 1.8.5</li>
+ <li>Fix potential deadlocks between update and other operations. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1541">1541</a>)</li>
+ <li>Don't do a local refresh after a failed commit. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1541">1541</a>)</li>
+ <li>Fix compare of multiple files to base revision when one or more file is unversioned. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1590">1590</a>)</li>
+ <li>Fix show annotations NPE when revision range includes unchanged lines. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1589">1589</a>)</li>
+ <li>Automatically map nested projects to repository provider when parent project shared. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1593">1593</a>)</li>
+</ul>
+
+<hr />
+<a name="1.10.4"></a>
+<h4>Version 1.10.4<br>
+Feb 25, 2014</h4>
+<p>from: /trunk<br>
+<a href="http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.4">
+http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.4</a></p>
+<ul>
+ <li>JavaHL 1.8.8</li>
+ <li>SVNKit 1.8.3</li>
+ <li>Ensure that label decorations refresh automatically after switch. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1565">1565</a>)</li>
+ <li>Improvements in nested resource support. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1567">1567</a>)</li>
+ <li>Preference to control how many previously-entered comments are saved. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1569">1569</a>)</li>
+ <li>Include working sets selection in checkout wizard (Eclipse 3.4+). (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1167">1167</a>)</li>
+ <li>Null check before all JhlConverter switch statements. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1570">1570</a>)</li>
+ <li>Check that project is accessible before trying to autoshare it.</li>
+ <li>Fix logic for finding closest property for bugtraq and other properties. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1578">1578</a>)</li>
+ </ul>
+
+<hr />
+<a name="1.10.3"></a>
+<h4>Version 1.10.3<br>
+Oct 16, 2013</h4>
+<p>from: /trunk<br>
+<a href="http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.3">
+http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.3</a></p>
+<ul>
+ <li>SVNKit 1.8.0-Beta2</li>
+ <li>Performance - make check for read-only file decorators optional and off by default. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1540">1540</a>)</li>
+ <li>Improvements to compare with branch to resolve tree conflict scenarios. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1549">1549</a>)</li>
+ <li>Enhance Replace with Branch/Tag dialog. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1552">1552</a>)</li>
+ </ul>
+
+<hr />
+<a name="1.10.2"></a>
+<h4>Version 1.10.2<br>
+Sept 3, 2013</h4>
+<p>from: /trunk<br>
+<a href="http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.2">
+http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.2</a></p>
+<ul>
+ <li>Update JavaHL to SVN 1.8.3</li>
+ <li>SVNKit 1.8.0-Beta</li>
+ <li>Fix RevisionRange passed to merge API so that it will correctly determine type of merge to run. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1544">1544</a>)</li>
+ <li>Don't log an error when trying to get info for an unversioned folder. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1538">1538</a>)</li>
+ <li>Fix SVNMoveDeleteHook so that it does not interfere with moving a file or folder to a project that is not under version control. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1536">1536</a>)</li>
+ <li>Null proof CleanupResourcesCommand. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1535">1535</a>)</li>
+ <li>Fix potential NPE in history view when log entry containing a bug id is selected (with certain bugtraq:logregex patterns). (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1539">1539</a>)</li>
+ <li>Don't show multiple prompts when files from multiple projects added to svn:ignore from sync view. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1543">1543</a>)</li>
+</ul>
+
+<hr />
+<a name="1.10.1"></a>
+<h4>Version 1.10.1<br>
+July 25, 2013</h4>
+<p>from: /trunk<br>
+<a href="http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.1">
+http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.1</a></p>
+<ul>
+ <li>Update JavaHL to SVN 1.8.1</li>
+ <li>Fix commit error when bugtraq:message is defined, but not bugtraq:label. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1526">1526</a>)</li>
+ <li>Automatically refesh SVN Properties view after property is added, deleted or modified. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1527">1527</a>)</li>
+ <li>When updating status cache, do not attempt to get statuses from unversioned folder. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1531">1531</a>)</li>
+ <li>Null proof CleanupResourcesCommand. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1535">1535</a>)</li>
+</ul>
+
+<hr />
+<a name="1.10.0"></a>
+<h4>Version 1.10.0<br>
+June 18, 2013</h4>
+<p>from: /trunk<br>
+<a href="http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.0">
+http://subclipse.tigris.org/svn/subclipse/tags/subclipse/1.10.0</a></p>
+<ul>
+ <li>Update JavaHL to SVN 1.8.0</li>
+ <li>Include svn:auto-props and svn:global-ignores in list of known properties. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1512">1512</a>)</li>
+ <li>Custom decorator for moved resources. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1510">1510</a>)</li>
+ <li>Show where item was moved from/to in Commit/Revert dialogs, and Sync view. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1510">1510</a>)</li>
+ <li>Tree conflict resolution enhancements. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1517">1517</a>)</li>
+ <li>Use new inherited properties support to get bugtraq properties rather than walking the working copy ourselves. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1511">1511</a>)</li>
+ <li>Use new inherited properties support to check for DeferFileDelete property, rather than walking up the working copy ourselves. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1511">1511</a>)</li>
+ <li>Use diff --summarize to compare working copy to latest from repository. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1516">1516</a>)</li>
+ <li>Use diff --summarize to compare with Branch/Tag. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1516">1516</a>)</li>
+ <li>Fix exporting SVN Repositories preferences. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1520">1520</a>)</li>
+ <li>Fix potential deadlocks between RevertResourceManager jobs and other Subclipse jobs. (<a
+  href="http://subclipse.tigris.org/issues/show_bug.cgi?id=1523">1523</a>)</li>
+</ul>
+
+</body>
+</html>

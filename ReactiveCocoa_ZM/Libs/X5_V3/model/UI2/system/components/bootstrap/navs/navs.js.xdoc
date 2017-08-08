@@ -1,0 +1,18 @@
+/**
+	@name Navs
+	@component $UI/system/components/boostrap/navs/navs
+	@extends ViewComponent
+	@extendurl $UI/system/lib/base/viewComponent
+	@description navs组件
+	@model UI2
+	@example
+	<xmp>
+	</xmp>
+*/	
+
+/**
+	@name Navs#xid
+	@attribute 
+	@type string
+	@description 
+*/

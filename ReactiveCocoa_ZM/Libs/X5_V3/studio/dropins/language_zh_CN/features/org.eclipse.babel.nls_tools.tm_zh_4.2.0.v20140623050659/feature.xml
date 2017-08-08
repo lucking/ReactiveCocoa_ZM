@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<feature
+	id="org.eclipse.babel.nls_tools.tm_zh"
+	label="Babel Language Pack for tools.tm in Chinese (Simplified) (21.28%)"
+	image="eclipse_update_120.jpg"
+	provider-name="%providerName"
+	version="4.2.0.v20140623050659">
+	<copyright>
+		%copyright
+	</copyright>
+	<license url="%licenseURL">
+		%license
+	</license>
+	<description>Babel Language Pack for tools.tm in Chinese (Simplified)</description>
+	<plugin fragment="true" id="org.eclipse.rse.connectorservice.ssh.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2558" install-size="2558" />
+	<plugin fragment="true" id="org.eclipse.rse.core.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2506" install-size="2506" />
+	<plugin fragment="true" id="org.eclipse.rse.dstore.security.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2418" install-size="2418" />
+	<plugin fragment="true" id="org.eclipse.rse.examples.tutorial.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1594" install-size="1594" />
+	<plugin fragment="true" id="org.eclipse.rse.files.ui.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="3504" install-size="3504" />
+	<plugin fragment="true" id="org.eclipse.rse.importexport.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="4387" install-size="4387" />
+	<plugin fragment="true" id="org.eclipse.rse.processes.ui.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="3259" install-size="3259" />
+	<plugin fragment="true" id="org.eclipse.rse.services.files.ftp.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2538" install-size="2538" />
+	<plugin fragment="true" id="org.eclipse.rse.services.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2862" install-size="2862" />
+	<plugin fragment="true" id="org.eclipse.rse.shells.ui.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2680" install-size="2680" />
+	<plugin fragment="true" id="org.eclipse.rse.subsystems.files.core.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2719" install-size="2719" />
+	<plugin fragment="true" id="org.eclipse.rse.subsystems.files.dstore.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1391" install-size="1391" />
+	<plugin fragment="true" id="org.eclipse.rse.subsystems.files.ftp.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1389" install-size="1389" />
+	<plugin fragment="true" id="org.eclipse.rse.subsystems.wince.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1367" install-size="1367" />
+	<plugin fragment="true" id="org.eclipse.rse.terminals.ui.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2475" install-size="2475" />
+	<plugin fragment="true" id="org.eclipse.rse.tests.framework.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="1442" install-size="1442" />
+	<plugin fragment="true" id="org.eclipse.rse.ui.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="6134" install-size="6134" />
+	<plugin fragment="true" id="org.eclipse.rse.useractions.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="3425" install-size="3425" />
+	<plugin fragment="true" id="org.eclipse.tm.terminal.local.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2582" install-size="2582" />
+	<plugin fragment="true" id="org.eclipse.tm.terminal.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2661" install-size="2661" />
+	<plugin fragment="true" id="org.eclipse.tm.terminal.serial.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2430" install-size="2430" />
+	<plugin fragment="true" id="org.eclipse.tm.terminal.ssh.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2663" install-size="2663" />
+	<plugin fragment="true" id="org.eclipse.tm.terminal.telnet.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="2208" install-size="2208" />
+	<plugin fragment="true" id="org.eclipse.tm.terminal.view.nl_zh" unpack="false" version="4.2.0.v20140623050659" download-size="3376" install-size="3376" />
+</feature>

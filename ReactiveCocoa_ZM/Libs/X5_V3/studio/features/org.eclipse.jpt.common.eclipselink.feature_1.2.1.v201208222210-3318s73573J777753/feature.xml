@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.jpt.common.eclipselink.feature"
+      label="%featureName"
+      version="1.2.1.v201208222210-3318s73573J777753"
+      provider-name="%providerName"
+      plugin="org.eclipse.jpt.common.eclipselink.branding"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.jpt.common.feature" version="1.2.0"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.jpt.common.eclipselink.core"
+         download-size="0"
+         install-size="0"
+         version="1.2.1.v201208222210"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jpt.common.eclipselink.branding"
+         download-size="0"
+         install-size="0"
+         version="1.2.1.v201208222210"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<div xmlns="http://www.w3.org/1999/xhtml" class="window" component="$model/UI2/system/components/justep/window/window" id="window1" style="height:6px;" data-bind="component:{name:'$model/UI2/system/components/justep/window/window'}" __justepbasexid__="__baseID__" components="$model/UI2/system/components/bootstrap/dialog/dialog,$model/UI2/system/components/justep/window/window,$model/UI2/system/components/justep/button/button,$model/UI2/system/components/bootstrap/navs/navs,">  
+  <div component="$model/UI2/system/components/bootstrap/dialog/dialog" class="modal fade" xid="dialog2" data-bind="component:{name:'$model/UI2/system/components/bootstrap/dialog/dialog'}" data-events="onShow:dialog2Show;onHide:dialog2Hide"> 
+    <div class="modal-dialog" xid="div6"> 
+      <div class="modal-content" xid="div7"> 
+        <div class="modal-header" xid="div8"> 
+          <button type="button" class="close" data-dismiss="modal" xid="button4"> 
+            <span aria-hidden="true" xid="span3">&amp;times;</span>  
+            <span class="sr-only" xid="span4">Close</span>
+          </button>  
+          <h4 class="modal-title" xid="h42">Modal title</h4>
+        </div>  
+        <div class="modal-body" xid="div9">
+          <ul component="$model/UI2/system/components/bootstrap/navs/navs" class="nav nav-tabs" xid="navs1" data-bind="component:{name:'$model/UI2/system/components/bootstrap/navs/navs'}"> 
+            <li role="presentation" class="active" xid="li1"> 
+              <a href="javascript:void(0)" xid="a1">Item</a>
+            </li> 
+          </ul>
+        </div>  
+        <div class="modal-footer" xid="div10"> 
+          <button type="button" class="btn btn-default" data-dismiss="modal" xid="button5">Close</button>  
+          <button type="button" class="btn btn-primary" xid="button6">Save changes</button>
+        </div> 
+      </div> 
+    </div> 
+  </div>  
+  <a component="$model/UI2/system/components/justep/button/button" class="btn btn-default" xid="openBtn" data-bind="component:{name:'$model/UI2/system/components/justep/button/button'}" data-events="onClick:{&quot;operation&quot;:&quot;dialog2.open&quot;}" data-config="{&quot;label&quot;:&quot;open&quot;}"> 
+    <i xid="i1"/>  
+    <span xid="label1">open</span>
+  </a>
+</div>

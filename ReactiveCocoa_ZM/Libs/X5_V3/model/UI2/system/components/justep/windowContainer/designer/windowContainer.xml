@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/windowContainer/windowContainer" tag-name="div" icon="windowContainer.gif" text="页面组合组件"
+		binding-component="$UI/system/components/justep/windowContainer/windowContainer" 
+        display-property="xid" component-type="formControl" 
+        design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="false"/>	
+			<property name="src" text="页面文件" editor-ref="fileDialog" editor-parameter="*.w"/>	
+			<property name="process" text="流程"/>	
+			<property name="activity" text="环节"/>
+			<property name="class"  text="class" editor-extend-data="x-window-container:x-window-container"/>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<property-editors>
+		</property-editors>		
+		<toolbar>			
+		</toolbar>
+		
+		<events>
+			<event name="onLoad" type="event" text="子页面加载完" parameters="event" is-script="true"/>
+			<event name="onLoadError" type="event" text="子页面加载出错" parameters="event" is-script="true"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div component="$UI/system/components/justep/windowContainer/windowContainer" class="x-window-container"/>
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

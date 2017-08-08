@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/row/row" tag-name="div" icon="row.png" text="行" display-property="xid" 
+			 binding-component="$UI/system/components/bootstrap/row/row"
+			 child-range="$UI/system/components/bootstrap/row/row#col"
+			 component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" />        
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "row",
+					}	 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<toolbar>	
+		   <item text="添加列" method="addCol"/>		
+		   <item text="在上边添加行" method="addRowAtBefore"/>		
+		   <item text="在下边添加行" method="addRowAtAfter"/>		
+		</toolbar>
+ 
+		<templates>
+		   <template name="default"><![CDATA[ 
+		     <div component="$UI/system/components/bootstrap/row/row" class="row">
+		        <div class="col col-xs-4">
+		          
+		        </div>
+		        <div class="col col-xs-4">
+		          
+		        </div>
+		        <div class="col col-xs-4">
+		        
+		        </div>
+		     </div>
+		   ]]></template>
+		</templates>
+		
+	</element>
+	
+    <element name="$UI/system/components/bootstrap/row/row#col" tag-name="div" icon="col.png" text="列" display-property="class"  
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/bootstrap/row/row')" 
+		parent-range="row" resizable="false"
+		component-type="layout-container" >
+		<properties>
+			<property name="xid" /> 
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "col",
+					},	 
+					"1xs-size":{
+						label: "非常小(<768px)屏幕",
+						value: "col-xs-1|col-xs-2|col-xs-3|col-xs-4|col-xs-5|col-xs-6|col-xs-7|col-xs-8|col-xs-9|col-xs-10|col-xs-11|col-xs-12",
+						require: false
+					}, 
+					"2sm-size":{
+						label: "小(≥768px)屏幕",
+						value: "col-sm-1|col-sm-2|col-sm-3|col-sm-4|col-sm-5|col-sm-6|col-sm-7|col-sm-8|col-sm-9|col-sm-10|col-sm-11|col-sm-12",
+						require: false
+					}, 
+					"3md-size":{
+						label: "中(≥992px)屏幕",
+						value: "col-md-1|col-md-2|col-md-3|col-md-4|col-md-5|col-md-6|col-md-7|col-md-8|col-md-9|col-md-10|col-md-11|col-md-12",
+						require: false
+					}, 
+					"4lg-size":{
+						label: "大(≥1200px)屏幕",
+						value: "col-lg-1|col-lg-2|col-lg-3|col-lg-4|col-lg-5|col-lg-6|col-lg-7|col-lg-8|col-lg-9|col-lg-10|col-lg-11|col-lg-12",
+						require: false
+					} 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+<!--			<property name="icon" text="图标" editor-ref="commonWebPage"/>-->
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<toolbar>	
+		   <item text="添加行" method="addRow"/>		
+		</toolbar>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			   <div class="col col-xs-1"></div>
+		   ]]></template> 
+		</templates>
+	</element>
+</elements>

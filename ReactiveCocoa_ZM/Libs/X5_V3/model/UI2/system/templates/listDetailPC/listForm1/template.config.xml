@@ -1,0 +1,14 @@
+<template text="单表—列表+详细" desc="列表详细生成一个.w文件，列表查看和删除数据，表单对数据进行编辑">
+	<images>
+		<image src="list.png" />
+		<image src="form.png" />
+	</images>
+
+	<items file="template/listForm.m.w">
+		<item text="主数据" configPage="$UI/system/templates/common/mainData.w"/>
+		<item text="列表视图" configPage="$UI/system/templates/common/listView.w"/>
+		<item text="详细视图" configPage="$UI/system/templates/common/formView.w"/>
+		<item file="template/listForm.m.js"/>
+		<item file="template/listForm.m.css"/>
+	</items>
+</template>

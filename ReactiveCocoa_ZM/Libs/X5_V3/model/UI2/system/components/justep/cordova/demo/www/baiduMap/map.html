@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+		<style type="text/css">
+			body, html,#allmap {width: 100%;height: 100%;overflow: hidden;margin:0;}
+			#golist {display: none;}
+			@media (max-device-width: 780px){#golist{display: block !important;}}
+		</style>
+		<script type="text/javascript"
+			src="http://api.map.baidu.com/api?v=2.0&ak=EzfQTH533pbevnhohMX4QZRK"></script>
+		<script type="text/javascript" src="http://developer.baidu.com/map/jsdemo/demo/convertor.js"></script>
+		<title>地图展示</title>
+		<Script language="javascript">
+			function getParameter(paraStr){
+				var url = window.location.href;
+				var result = "";
+				//获取URL中全部参数列表数据
+				var str = "&" + url.split("?")[1];
+				var paraName = paraStr + "=";
+				//判断要获取的参数是否存在
+				if(str.indexOf("&"+paraName)!=-1){
+				//如果要获取的参数到结尾是否还包含“&”
+				if(str.substring(str.indexOf(paraName),str.length).indexOf("&")!=-1){
+					//得到要获取的参数到结尾的字符串
+					var TmpStr=str.substring(str.indexOf(paraName),str.length);
+						//截取从参数开始到最近的“&”出现位置间的字符
+						result=TmpStr.substr(TmpStr.indexOf(paraName),TmpStr.indexOf("&")-TmpStr.indexOf(paraName));
+					}else{
+						result=str.substring(str.indexOf(paraName),str.length);
+					}
+				}else{
+					result="无此参数";
+				}
+				return (result.replace("&","")).split('=')[1];
+			}
+		</Script>
+	</head>
+	<body>
+		<div id="allmap"></div>
+	</body>
+</html>
+<script type="text/javascript">
+	var longitude = getParameter('longitude');
+	var latitude = getParameter('latitude');
+	if(longitude && latitude){
+		var gpsPoint = new BMap.Point(longitude,latitude);
+		var bm = new BMap.Map("allmap");
+		bm.centerAndZoom(gpsPoint, 15);
+		bm.addControl(new BMap.NavigationControl());
+		translateCallback = function (point){
+			var marker = new BMap.Marker(point);
+			bm.addOverlay(marker);
+			var label = new BMap.Label("当前位置",{offset:new BMap.Size(20,-10)});
+			marker.setLabel(label);
+			bm.setCenter(point);
+		}
+		setTimeout(function(){
+			BMap.Convertor.translate(gpsPoint,0,translateCallback);
+		}, 2000);
+	}else{
+		var map = new BMap.Map("allmap");
+		map.centerAndZoom(new BMap.Point(116.404, 39.915), 11);
+		map.addControl(new BMap.MapTypeControl());
+		map.setCurrentCity("北京");
+	}
+</script>

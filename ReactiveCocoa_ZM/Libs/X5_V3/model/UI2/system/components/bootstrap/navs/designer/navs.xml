@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/navs/navs" tag-type="rich" tag-name="ul" icon="navs.png" text="导航条"  
+	    binding-component="$UI/system/components/bootstrap/navs/navs" display-property="xid" 
+		validator="ViewValidator" design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "nav"
+					}, 
+					"2type": {
+						label: "样式",
+						value: "nav-tabs|nav-pills",
+					},
+					"3other": {
+						label: "可选",
+						value: "nav-stacked,nav-justified",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+			<event name="onClick" type="event" text="click" parameters="event" is-script="true"/>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<toolbar>
+			<item text="添加tab" method="addTab"/>
+		</toolbar>
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<ul component="$UI/system/components/bootstrap/navs/navs" class="nav nav-tabs">
+				  <li role="presentation" class="active"><a href="javascript:void(0)">Item</a></li>
+				</ul>		   
+			]]></template>
+		</templates>
+	</element>
+	<!-- 
+	<element name="$UI/system/components/bootstrap/navs/item" tag-type="rich" tag-name="li" icon="navs.png" text="导航项"
+		discriminate-condition="executeXpath(parent::node()/@component='$UI/system/components/bootstrap/navs/navs')"  
+	    display-property="xid" validator="ViewValidator" design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="label" text="标签"/>
+			<property name="class"  text="class" editor-ref="classSelector">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "x-navs-item"
+					} 
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式" editor-ref="styleDialog" />
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<events>
+		    <include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			  <li><a href="javascript:void(0)">Item</a></li>
+			]]></template>
+		</templates>
+ 
+	</element>
+	 -->
+	
+</elements>

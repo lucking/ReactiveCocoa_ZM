@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Component</div>
+				<h1>
+					
+					Dialog
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/components/justep/dialog/dialog</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+
+		
+		<li><a href="#properties">Properties</a></li>
+		
+
+		
+
+		
+		<li><a href="#methods">Methods</a></li>
+		
+
+		
+		<li><a href="#events">Events</a></li>
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>component </span>
+				<strong>
+					Dialog
+				</strong>
+
+				
+				<span> extends <a href="BindComponent.html" ><abbr title="BindComponent">BindComponent</abbr></a></span>
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>Dialog</p></div>
+
+			
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+			<h2>
+				<a name='properties'></a>
+				Properties
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#height">
+        	<abbr title="Dialog#height">
+        		height
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#left">
+        	<abbr title="Dialog#left">
+        		left
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#showTitle">
+        	<abbr title="Dialog#showTitle">
+        		showTitle
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>是否显示标题栏，缺省：flase</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#status">
+        	<abbr title="Dialog#status">
+        		status
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>对话框显示状态，取值范围：normal,maximize</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#title">
+        	<abbr title="Dialog#title">
+        		title
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>对话框标题，当showTitle=true时有效</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#top">
+        	<abbr title="Dialog#top">
+        		top
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#width">
+        	<abbr title="Dialog#width">
+        		width
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#xid">
+        	<abbr title="Dialog#xid">
+        		xid
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>组件标示</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+			<h2>
+				<a name='methods'></a>
+				Methods
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#close">
+				<abbr title="Dialog#close">
+					close
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#get">
+				<abbr title="Dialog#get">
+					get
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> name)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#open">
+				<abbr title="Dialog#open">
+					open
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#set">
+				<abbr title="Dialog#set">
+					set
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(json arg)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#setContent">
+				<abbr title="Dialog#setContent">
+					setContent
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(string content)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+			<h2>
+				<a name='events'></a>
+				Events
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+        <a href="#event:onClose">
+			<abbr title="Dialog#event:onClose">
+				
+				<a href="Dialog.html#event:onClose" ><abbr title="Dialog#event:onClose">onClose</abbr></a>
+				
+        	</abbr>
+        </a>
+        
+      	<span>
+      		(object event)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+        <a href="#event:onOpen">
+			<abbr title="Dialog#event:onOpen">
+				
+				<a href="Dialog.html#event:onOpen" ><abbr title="Dialog#event:onOpen">onOpen</abbr></a>
+				
+        	</abbr>
+        </a>
+        
+      	<span>
+      		(object event)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+			<h2>
+				<a name='properties_details'></a>
+				Properties Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="height" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno13">dialog.js.xdoc</a> at line 13
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>height</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%</p></div>
+<h3 id="left" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno17">dialog.js.xdoc</a> at line 17
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>left</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中</p></div>
+<h3 id="showTitle" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno7">dialog.js.xdoc</a> at line 7
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      boolean
+    </span>
+	  
+  
+		<strong>showTitle</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>是否显示标题栏，缺省：flase</p></div>
+<h3 id="status" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno9">dialog.js.xdoc</a> at line 9
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>status</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>对话框显示状态，取值范围：normal,maximize</p></div>
+<h3 id="title" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno5">dialog.js.xdoc</a> at line 5
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>title</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>对话框标题，当showTitle=true时有效</p></div>
+<h3 id="top" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno15">dialog.js.xdoc</a> at line 15
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>top</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中</p></div>
+<h3 id="width" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno11">dialog.js.xdoc</a> at line 11
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>width</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%</p></div>
+<h3 id="xid" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno3">dialog.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>xid</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>组件标示</p></div>
+
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+			<h2>
+				<a name='methods_details'></a>
+				Methods Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="close"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno25">dialog.js.xdoc</a> at line 25
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>close</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>关闭对话框</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="get"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno21">dialog.js.xdoc</a> at line 21
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Object.html" ><abbr title="Object">Object</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>get</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> name)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>获取属性值</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>name</a><p>属性名称，取值范围："title"、"showTitle"、"status"、 "width"、"height"、"top"、"left"</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Object.html" ><abbr title="Object">Object</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="open"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno23">dialog.js.xdoc</a> at line 23
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>open</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>打开对话框</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="set"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno19">dialog.js.xdoc</a> at line 19
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>set</strong>
+		
+    <span class="params">
+      (json arg)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>设置属性值</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				json
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>arg</a><p>属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : {string} 对话框标题
+		"showTitle" : {boolean} 是否显示标题
+		"status": {string} 对话框显示状态，取值范围：normal,maximize
+		"width": {string} 对话框宽，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"height": {string} 对话框高，支持css中所有的长度单位，如：200px、80%，缺省：80%		
+		"top": {string} 对话框上偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中		
+		"left": {string} 对话框左偏移，支持css中所有的长度单位，如：200px、10%，缺省：居中	
+	}
+	</xmp></p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="setContent"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_dialog_js_xdoc.html#lineno27">dialog.js.xdoc</a> at line 27
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>setContent</strong>
+		
+    <span class="params">
+      (string content)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>设置对话框显示的html内容</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				string
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>content</a><p>对话框的内容</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+			<h2>
+				<a name='events_details'></a>
+				Events Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="event:onClose"  class="public">
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      void
+    </span>
+	  
+  
+		<strong>onClose</strong>
+		
+    <span class="params">
+      (object event)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p><b>[回调型事件]</b>关闭事件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				object
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>event</a><p><br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp></p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+
+    <!-- TRIGGERED BY -->
+    
+
+    <!-- LISTENED BY -->
+    
+    
+	</div>
+</div>
+<h3 id="event:onOpen"  class="public">
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      void
+    </span>
+	  
+  
+		<strong>onOpen</strong>
+		
+    <span class="params">
+      (object event)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p><b>[回调型事件]</b>打开事件</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				object
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>event</a><p><br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp></p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+
+    <!-- TRIGGERED BY -->
+    
+
+    <!-- LISTENED BY -->
+    
+    
+	</div>
+</div>
+
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:02:58 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

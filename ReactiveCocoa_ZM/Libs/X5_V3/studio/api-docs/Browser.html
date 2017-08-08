@@ -1,0 +1,1797 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Class</div>
+				<h1>
+					
+					Browser
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/lib/base/browser</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+		<li><a href="#static_properties">Static Properties & Enumerations</a></li>
+		
+
+		
+
+		
+		<li><a href="#static_methods">Static Methods</a></li>
+		
+
+		
+
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>class </span>
+				<strong>
+					Browser
+				</strong>
+
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>浏览器工具类</p></div>
+
+			
+			
+			<!-- CLASS CONSTRUCTOR SUMMARY -->
+			<h2>
+				<a name='constructor'></a>
+				Constructor
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td class="type">&nbsp;</td>
+						<td class="last">
+							<a href="#Browser">Browser</a>
+							<span>()</span>
+							
+						<td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+			<h2>
+				<a name='static_properties'></a>
+				Static Properties & Enumerations
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        <a href="String.html" ><abbr title="String">String</abbr></a>
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#deviceType">
+        	<abbr title="Browser.deviceType">
+        		deviceType
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>客户端类型</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#FF">
+        	<abbr title="Browser.FF">
+        		FF
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是FireFox</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#hasTouch">
+        	<abbr title="Browser.hasTouch">
+        		hasTouch
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否支持触摸功能</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#IE">
+        	<abbr title="Browser.IE">
+        		IE
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是IE</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#IE6">
+        	<abbr title="Browser.IE6">
+        		IE6
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是IE6</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#IE7">
+        	<abbr title="Browser.IE7">
+        		IE7
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是IE7</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#IE8">
+        	<abbr title="Browser.IE8">
+        		IE8
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是IE8</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#IE9">
+        	<abbr title="Browser.IE9">
+        		IE9
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是IE9</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#IE10">
+        	<abbr title="Browser.IE10">
+        		IE10
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是IE10</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#IE11">
+        	<abbr title="Browser.IE11">
+        		IE11
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是IE11</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#isAndroid">
+        	<abbr title="Browser.isAndroid">
+        		isAndroid
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是Android</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#isIpad">
+        	<abbr title="Browser.isIpad">
+        		isIpad
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是Ipad</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        Boolean
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#isIphone">
+        	<abbr title="Browser.isIphone">
+        		isIphone
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p>判断是否是Iphone</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+			<h2>
+				<a name='static_methods'></a>
+				Static Methods
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	void
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#hint">
+				<abbr title="Browser.hint">
+					hint
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> text, <a href="String.html" ><abbr title="String">String</abbr></a> title)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Boolean
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#isIOS">
+				<abbr title="Browser.isIOS">
+					isIOS
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Boolean
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#isPad">
+				<abbr title="Browser.isPad">
+					isPad
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Boolean
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#isPC">
+				<abbr title="Browser.isPC">
+					isPC
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Boolean
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#isPhone">
+				<abbr title="Browser.isPhone">
+					isPhone
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		()
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+			<!-- CLASS CONSTRUCTOR DETAILS -->
+			<h2>
+				<a name='constructor_details'></a>
+				Constructor details
+				<small><a href="#top">Top</a></small>
+				<h3 id="Browser"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno1">browser.js.xdoc</a> at line 1
+
+  </div>
+	-->
+	<div class="signature">
+		public
+	  
+  
+		<strong>Browser</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>浏览器工具类</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+								
+			</h2>
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+			<h2>
+				<a name='static_properties_details'></a>
+				Static Properties & Enumerations Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="deviceType" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno27">browser.js.xdoc</a> at line 27
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      <a href="String.html" ><abbr title="String">String</abbr></a>
+    </span>
+	  
+  
+		<strong>deviceType</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>客户端类型</p></div>
+<h3 id="FF" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno17">browser.js.xdoc</a> at line 17
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>FF</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是FireFox</p></div>
+<h3 id="hasTouch" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno19">browser.js.xdoc</a> at line 19
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>hasTouch</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否支持触摸功能</p></div>
+<h3 id="IE" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno3">browser.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>IE</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是IE</p></div>
+<h3 id="IE6" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno5">browser.js.xdoc</a> at line 5
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>IE6</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是IE6</p></div>
+<h3 id="IE7" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno7">browser.js.xdoc</a> at line 7
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>IE7</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是IE7</p></div>
+<h3 id="IE8" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno9">browser.js.xdoc</a> at line 9
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>IE8</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是IE8</p></div>
+<h3 id="IE9" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno11">browser.js.xdoc</a> at line 11
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>IE9</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是IE9</p></div>
+<h3 id="IE10" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno13">browser.js.xdoc</a> at line 13
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>IE10</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是IE10</p></div>
+<h3 id="IE11" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno15">browser.js.xdoc</a> at line 15
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>IE11</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是IE11</p></div>
+<h3 id="isAndroid" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno21">browser.js.xdoc</a> at line 21
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>isAndroid</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是Android</p></div>
+<h3 id="isIpad" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno25">browser.js.xdoc</a> at line 25
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>isIpad</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是Ipad</p></div>
+<h3 id="isIphone" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno23">browser.js.xdoc</a> at line 23
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      Boolean
+    </span>
+	  
+  
+		<strong>isIphone</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p>判断是否是Iphone</p></div>
+
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+			<h2>
+				<a name='static_methods_details'></a>
+				Static Methods Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="hint"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_console_js_xdoc.html#lineno3">console.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      void
+	    </span>
+    
+	  
+	  
+  
+		<strong>hint</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> text, <a href="String.html" ><abbr title="String">String</abbr></a> title)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>提示消息</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>text</a><p>消息内容</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>title</a><p>消息标题</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				void
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="isIOS"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno35">browser.js.xdoc</a> at line 35
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Boolean
+	    </span>
+    
+	  
+	  
+  
+		<strong>isIOS</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>是否是IOS系统</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Boolean
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="isPad"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno33">browser.js.xdoc</a> at line 33
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Boolean
+	    </span>
+    
+	  
+	  
+  
+		<strong>isPad</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>是否是平板</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Boolean
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="isPC"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno29">browser.js.xdoc</a> at line 29
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Boolean
+	    </span>
+    
+	  
+	  
+  
+		<strong>isPC</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>是否是PC</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Boolean
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="isPhone"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_browser_js_xdoc.html#lineno31">browser.js.xdoc</a> at line 31
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Boolean
+	    </span>
+    
+	  
+	  
+  
+		<strong>isPhone</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>是否是手机</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Boolean
+			</span>
+    </td>
+    
+    <td class="last">
+    
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:02:51 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

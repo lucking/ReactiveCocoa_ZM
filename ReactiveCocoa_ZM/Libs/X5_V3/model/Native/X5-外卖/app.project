@@ -1,0 +1,14 @@
+{
+	"userID" : "C6754D9AF8B00001CA52C80066E015FB",
+	"appName" : "X5-外卖",
+	"version" : "5.3.6",
+	"packageName" : "com.justep.x5.takeout",
+	"serverURL" : "http://x5.justep.com",
+	"indexURL" : "/x5/UI2/takeout/index.w",
+	"uiResDirs" : "takeout",
+	"extBrowser" : true,
+	"autoSelectPlugins" : true,
+	"plugins" : "自动选择",
+	"resEncryption" : false,
+	"mqttServerURL" : ""
+}

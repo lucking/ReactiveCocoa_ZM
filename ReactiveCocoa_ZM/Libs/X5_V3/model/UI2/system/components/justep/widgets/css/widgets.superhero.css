@@ -1,0 +1,123 @@
+.x-widgets .widget-placeholder {
+  border: 2px dashed #aaa;
+}
+.x-widgets .x-column {
+  min-height: 30px;
+}
+.x-widgets.row {
+  margin: 0;
+}
+.ibox {
+  clear: both;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 0;
+}
+.ibox:after,
+.ibox:before {
+  display: table;
+}
+.ibox-title {
+  -moz-border-bottom-colors: none;
+  -moz-border-left-colors: none;
+  -moz-border-right-colors: none;
+  -moz-border-top-colors: none;
+  background-color: #ffffff;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 4px 0px 0;
+  color: inherit;
+  margin-bottom: 0;
+  padding: 14px 15px 7px;
+  height: 48px;
+}
+.ibox-content {
+  background-color: #ffffff;
+  color: inherit;
+  padding: 0;
+  border-color: #e7eaec;
+  border-image: none;
+  border-style: solid solid none;
+  border-width: 1px 0px;
+}
+.ibox-content {
+  clear: both;
+}
+.ibox-content.frame {
+  padding: 0;
+}
+.ibox-content > iframe {
+  width: 100%;
+  height: 100%;
+}
+.ibox-heading {
+  background-color: #f3f6fb;
+  border-bottom: none;
+}
+.ibox-heading h3 {
+  font-weight: 200;
+  font-size: 24px;
+}
+.ibox-title h5 {
+  display: inline-block;
+  font-size: 14px;
+  margin: 0 0 7px;
+  padding: 0;
+  text-overflow: ellipsis;
+  float: left;
+  font-weight: 600;
+}
+.ibox-title .label {
+  float: left;
+  margin-left: 4px;
+}
+.ibox-tools {
+  display: inline-block;
+  float: right;
+  margin-top: 0;
+  position: relative;
+  padding: 0;
+}
+.ibox-tools a {
+  cursor: pointer;
+  margin-left: 5px;
+  color: #c4c4c4;
+  padding: 0;
+}
+.ibox-tools .x-widget-toggle {
+  display: none;
+}
+.ibox-tools a.btn-primary {
+  color: #fff;
+}
+.ibox-tools .dropdown-menu > li > a {
+  padding: 4px 10px;
+  font-size: 12px;
+}
+.x-widget {
+  border-radius: 5px;
+  padding: 0;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.x-widget.style1 h2 {
+  font-size: 30px;
+}
+.x-widget h2,
+.x-widget h3 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.x-widget-text-box {
+  padding: 20px;
+  border: 1px solid #e7eaec;
+  background: #ffffff;
+}
+.x-widget-head-color-box {
+  border-radius: 5px 5px 0px 0px;
+  margin-top: 10px;
+}
+.x-widget .flot-chart {
+  height: 100px;
+}

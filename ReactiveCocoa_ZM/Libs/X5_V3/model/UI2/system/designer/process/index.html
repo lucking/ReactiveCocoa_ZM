@@ -1,0 +1,327 @@
+<html>
+	<head>
+		<title>Process Designer</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=8"> 
+<!-- 		<script type="text/javascript" src="../common/json.js"></script> -->
+		<script type="text/javascript" src="../common/jquery.js"></script>
+
+       <script type="text/javascript" src="../common/baseShapeVML.js"></script>
+ 
+       <script type="text/javascript" src="../common/baseShapeSVG.js"></script> 
+ 
+		  <script type="text/javascript" src="processDesigner.js?version=1414747205160"></script> 
+ 
+		  
+		<script type="text/javascript" src="process.min.js"></script>
+<!-- 		<script type="text/javascript" src="newTestData.js"></script> -->
+		
+		
+		<script type="text/javascript">
+
+		var designer = null;
+
+		function getEventData() {
+			var eventInfo = designer.eventData || {};//
+			eventInfo.filePath = getUrlParam("filePath");
+			return JSON.stringify(eventInfo);
+		}
+		
+		function getFigureStyles() {
+			return designer.getFigureStyles();
+		}
+ 
+		function selectAll() {
+			designer.selectAll(); 
+		}
+		
+		function removeSelections() {
+			designer.removeSelections();
+		}
+		
+		function newFigure(data) {  
+			var params = typeof data =='object'?data:eval("("+data+")"); 
+			designer.selectProcessItemType(params.newType,true);
+		}
+
+		function horzAlignFigures() {
+			designer.alignFigures("h");
+		}
+		
+		function vertAlignFigures() {
+			designer.alignFigures("v");
+		}
+
+		function loadData(data) {   
+			if (designer != null) { 
+				var params = typeof data =='object'?data:eval("("+data+")"); 
+			   
+				var jsonData = params.value;  
+				jsonData = jsonData.replace(/&quot;/g, "\\\""); 
+				designer.setProcessFile(params.processFile);
+				var processData = eval("(" + jsonData + ")"); 
+				designer.processFile = params.processFile;
+				if (document.body.offsetWidth > 1) {
+					designer.loadData(processData);
+				} else {
+					//主要是解决第一个打开studio时同时又初始化打开流程文件的时候文字位置显示不对问题
+					var inerval = setInterval(function(){
+						if(document.body.offsetWidth>1){
+							try{
+								designer.loadData(processData);
+							}catch(e){
+							}
+							clearInterval(inerval);
+						}
+					}, 250);
+				}
+			} else {
+				alert("加载流程数据失败!");
+			}
+		}
+		
+		/*function refreshFigures() {
+			if (document.body.offsetWidth > 1) {
+				if (designer != null) {
+					designer.zoom(1);
+				}
+			} else {
+				setTimeout(refreshFigures, 250);
+			}
+		}*/
+	
+		function modifyName(data) { 
+			var params = typeof data =='object'?data:eval("("+data+")"); 
+			var selections = designer.selections;
+			for (var p in selections) {
+				selections[p].modelData['name'] = params.newName;
+			}
+			designer.fireFigureStyleChanged();
+		}
+		
+		function modifyLabel(data) {  
+			var params = typeof data =='object'?data:eval("("+data+")"); 
+			var selections = designer.selections;
+			var figures = designer.figures;
+			for (var p in selections) { 
+				figureData = designer.modelData.processMainData[selections[p].id]; 
+				if (figureData != null && typeof(figureData) != "undefined") { 
+					if (figureData.name == params.name) {
+						figureData.LABEL = params.label;   
+						figures[figureData.id].setText(params.label);
+						break;
+					}else if(p.indexOf("|") !=-1){ 
+						figureData.LABEL = params.label;
+						figures[figureData.id].setText(params.label);
+					}else if(figureData){
+						figures[figureData.id].setText(params.label);
+					}
+				}else{
+					var figure = figures[selections[p].id];
+					if(figure){
+						figure.setText(params.label);
+					}
+				}
+			}
+		}
+		
+		function selectStaticActivity(data) {
+			if (designer != null) {
+				designer.clearSelection();
+			}
+		}
+	
+		function selectFigureByName(data) { //ok
+			if (designer != null) {
+				var params = typeof data =='object'?data:eval("("+data+")"); 
+				var figure = designer.getFigureByName(params.selected);
+				if(figure){
+					designer.setSelection(figure);
+				}
+			}
+		}
+		
+		function selectProcess(data) { 
+			if (designer != null) {
+				designer.clearSelection();
+				designer.selectProcessRoot();
+			}
+		}
+	
+		function cancelSelect() {
+			designer.selectProcessItemType();
+		}
+	
+		function addStart() {
+			designer.selectProcessItemType("start");
+		}
+		
+		function addBusinessActivity() {
+			designer.selectProcessItemType("businessActivity");
+		}
+		
+		function addAutoActivity() {
+			designer.selectProcessItemType("autoActivity");
+		}
+		
+		function addSubProcessActivity() {
+			designer.selectProcessItemType("subProcess");
+		}
+		
+		function addConditionActivity() {
+			designer.selectProcessItemType("conditionActivity");
+		}
+		
+		function addConditionBranch() {
+			designer.selectProcessItemType("conditionBranch");
+		}
+		
+		function addAnd() {
+			designer.selectProcessItemType("and");
+		}
+		
+		function addXor() {
+			designer.selectProcessItemType("xor");
+		}
+		
+		function addConnection() {
+			designer.selectProcessItemType("connection");
+		}
+		
+		function addEnd() {
+			designer.selectProcessItemType("end");
+		}
+		
+		function addActirityRef(params){
+		   var params = typeof params =='object'?params:eval("("+params+")"); 
+		   designer.selectProcessItemType(params.type,false,params);
+ 
+		
+		}
+		
+		function setDirection(data) {
+			var params = typeof data =='object'?data:eval("("+data+")"); 
+			designer.direction = params.value;
+		}
+		
+		function keyProcessor(event) {
+			if (designer != null) {
+				designer.keyDown2(window.event);
+			}
+		}
+		
+		function objectPropertyList(obj){
+			var str = "";
+			for (var itemTemp in obj){
+				alert("属性:"+itemTemp+"的值是 ("+ obj[itemTemp] +")\n");
+				str += "属性:"+itemTemp+"的值是 ("+ obj[itemTemp] +")\n";
+			}
+			alert(str);
+		}	
+ 
+		function savePicture(){
+			var div = document.getElementById("mydesigner");
+			div.scrollTop = 0;
+			window.setTimeout("designer.savePicture()",200);
+		}
+		
+        function initDesigner(){ 
+        	 designer = new justep.graphics.ProcessCanvas({id:"mydesigner"});
+ 			if (designer != null) {
+				//var params = {eventType: "pageLoaded", jsFunc: "loadData"};
+				//designer.dispatchEvent(params); 
+				//loadData(testData);
+			}
+        }
+        function getUrlParam(paramName) {
+        	var url = decodeURI(window.location.href);
+        	var idx = url.indexOf("?");
+        	var params = url.substring(idx + 1);
+        	if (params) {
+        		params = params.split("&");
+        		for (var i = 0; i < params.length; i+=1) {
+        			var param = params[i].split("=");
+        			if (param[0] == paramName) {
+        				return param[1];
+        			}
+        		}
+        	}
+        } 
+        
+        var socketServerUrl = getUrlParam("serverUrl");
+     // 创建一个Socket实例
+        var socket = new WebSocket(socketServerUrl); 
+        // 打开Socket 
+        socket.onopen = function(event) { 
+
+          // 监听消息
+          socket.onmessage = function(event) { 
+       
+        	  var data ;
+        	  try{
+        		 data =  eval("(" + event.data + ")");//typeof data=='string'?eval("(" + event.data + ")"):event.data;
+        	  }catch(e){
+        		 // alert("出错啦："+event.data);
+        	  }
+        	  if(data && data.eventType == 'getInitData'){
+        		  var initData = data.initData;
+
+//        		  setTimeout(function(){
+        			  loadData(initData);
+//        		  },2000);
+        	  } else{
+        		 // alert(data);
+//        		  setTimeout(function(){
+        			  if(data && typeof data !='string'){
+        				  data = JSON.stringify(data);
+        			  }
+        			  socket.send(data||"{}");
+//        		  },2000);
+        		  
+        	  }
+          }; 
+
+          // 监听Socket的关闭
+          socket.onclose = function(event) { 
+            console.log('Client notified socket has closed',event); 
+          }; 
+          
+          socket.send(JSON.stringify({eventType:'getInitData',filePath:getUrlParam("filePath")})); 
+          // 关闭Socket.... 
+          //socket.close() 
+        };
+
+        function callJava(data){ 
+        	setTimeout(function(){
+        	   socket.send(data);        		
+        	},100);
+        } 
+		</script>
+		<style type="text/css">
+			html,body{
+			  height:100%;width:100%;margin:0;padding:0;
+			}
+			div{ /*css3 box-sizing*/
+			 box-sizing: border-box;
+			 /*一些浏览器不支持css3但间接支持Css3的属性 document.namespaces.add("v","urn:schemas-microsoft-com:vml");*/
+			 -moz-box-sizing: border-box; /*Mozilla/Firefox*/
+			 -o-box-sizing: border-box; /**/
+			 -icab-box-sizing: border-box; /*opera*/
+			 -khtml-box-sizing: border-box; /*konqueror*/
+			 -webkit-box-sizing: border-box; /*safari*/
+			}
+v\:* {
+	behavior: url(#default#VML);
+}
+		</style>
+	</head>
+
+	<body onload="initDesigner();" topmargin=0 leftmargin=0 marginwidth="0" marginheight="0" scroll="no"  style="width:100%;height:100%;-moz-user-select:none;-moz-user-select:none;-webkit-user-select:none;" onselectstart="return true" >
+		<div tabindex=0 id="mydesigner" style="border:0px solid red;position:relative; width: 100%; height:100%; background-image: url(images/grid_10.png); overflow: auto" >
+		   
+		</div>
+		<button style="display:none;" onclick="display:none;document.getElementById('console').value=''">clear</button>     
+		<textarea id="console" style="display:none;width:100%;height:20%" cols=""></textarea>
+		      
+	</body>
+</html>

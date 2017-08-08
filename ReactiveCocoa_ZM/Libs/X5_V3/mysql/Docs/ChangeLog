@@ -1,0 +1,143 @@
+------------------------------------------------------------
+revno: 2588
+author: Jonathan Perkin <jperkin@sun.com>
+committer: mysqldev <mysqldev@production.mysql.com>
+branch nick: mysql-5.0.67-release
+timestamp: Mon 2008-08-04 13:45:50 +0200
+message:
+  Revert previous unintentional license change.
+------------------------------------------------------------
+revno: 2587
+author: Jonathan Perkin <jperkin@sun.com>
+committer: mysqldev <mysqldev@production.mysql.com>
+branch nick: mysql-5.0.67-release
+timestamp: Mon 2008-08-04 12:05:21 +0200
+message:
+  Change preprocessor tests to match what we will be using.
+------------------------------------------------------------
+revno: 2586
+author: Jonathan Perkin <jperkin@sun.com>
+committer: mysqldev <mysqldev@production.mysql.com>
+branch nick: mysql-5.0.67-release
+timestamp: Mon 2008-08-04 11:39:05 +0200
+message:
+  Use autoconf glue around new my_is_symlink to avoid stat(2) and friends
+  being used on systems which don't support that interface.
+------------------------------------------------------------
+revno: 2585
+committer: Alexey Botchkov <holyfoot@mysql.com>
+branch nick: 50xyz
+timestamp: Thu 2008-07-31 15:09:16 +0500
+message:
+  merging
+    ------------------------------------------------------------
+    revno: 2583.1.1
+    committer: Georgi Kodinov <kgeorge@mysql.com>
+    branch nick: mysql-5.0.67-release
+    timestamp: Thu 2008-07-31 12:41:30 +0300
+    message:
+      Bug#34159: mysql_install_db fails with sql_mode=TRADITIONAL
+            
+      Reset session sql_mode before creating system tables as it
+      is done in the mysql_fix_privilege_tables.sql script.
+------------------------------------------------------------
+revno: 2584
+committer: Alexey Botchkov <holyfoot@mysql.com>
+branch nick: 50xyz
+timestamp: Thu 2008-07-31 14:42:44 +0500
+message:
+  Buq#32167 another privilege bypass with DATA/INDEX DIRECTORY.
+  
+      test_if_data_home_dir fixed to look into real path.
+      Checks added to mi_open for symlinks into data home directory.
+  
+   per-file messages:
+          include/my_sys.h
+            Bug#32167 another privilege bypass with DATA/INDEX DIRECTORY.
+            
+            my_is_symlink interface added
+  
+          mysql-test/r/udf.result
+            test result fixed (not related to #32167)
+  
+          mysys/my_symlink.c
+            my_is_symlink() implementsd
+            my_realpath() now returns the 'realpath' even if a file isn't a symlink
+------------------------------------------------------------
+revno: 2583
+committer: Alexey Botchkov <holyfoot@mysql.com>
+branch nick: mysql-5.0.67-release
+timestamp: Mon 2008-07-28 19:22:12 +0500
+message:
+  Bug#37428 Potential security issue with UDFs - linux shellcode execution.
+        
+        plugin_dir option backported from 5.1
+  
+  per-file messages:
+    sql/mysql_priv.h
+      Bug#37428 Potential security issue with UDFs - linux shellcode execution.
+      
+      opt_plugin_dir and opt_plugin_dir_ptr declared.
+    sql/mysqld.cc
+      Bug#37428 Potential security issue with UDFs - linux shellcode execution.
+      
+      'plugin_dir' option added
+    sql/set_var.cc
+      Bug#37428 Potential security issue with UDFs - linux shellcode execution.
+      
+      'plugin_dir' option added.
+    sql/sql_udf.cc
+      Bug#37428 Potential security issue with UDFs - linux shellcode execution.
+      
+      opt_plugin_dir added to the udf->dl path. Warn if it's not specified.
+    sql/unireg.h
+      Bug#37428 Potential security issue with UDFs - linux shellcode execution.
+      
+      PLUGINDIR defined.
+------------------------------------------------------------
+revno: 2582
+author: Jonathan Perkin <jperkin@sun.com>
+committer: mysqldev <mysqldev@production.mysql.com>
+branch nick: mysql-5.0.67-release
+timestamp: Fri 2008-07-18 17:40:31 +0200
+message:
+  Merge fix for bug#38180 from mysql-5.0.66a-release
+    ------------------------------------------------------------
+    revno: 2559.103.3
+    committer: Timothy Smith <timothy.smith@sun.com>
+    branch nick: 5.0.66-bug38180
+    timestamp: Wed 2008-07-16 16:58:45 -0600
+    message:
+      Bug #38180  	options are read from ~/my.cnf instead of ~/.my.cnf
+      
+      Pull out some of unpack_dirname() into normalize_dirname(); this
+      new function does not expand "~" to the home directory.  Use this
+      function in unpack_dirname(), and use it during init_default_directories()
+      to remove duplicate entries without losing track of which directory
+      is a user's home dir.
+------------------------------------------------------------
+revno: 2581
+committer: Davi Arnaut <Davi.Arnaut@Sun.COM>
+branch nick: mysql-5.0.67-release
+timestamp: Thu 2008-07-17 20:19:13 -0300
+message:
+  Bug#33812: mysql client incorrectly parsing DELIMITER
+  
+  Revert fix for this bug as it introduced a regression
+  reported in Bug#38158.
+------------------------------------------------------------
+revno: 2580
+author: Jonathan Perkin <jperkin@sun.com>
+committer: mysqldev <mysqldev@production.mysql.com>
+branch nick: mysql-5.0.67-release
+timestamp: Thu 2008-07-17 17:39:33 +0200
+message:
+  Merge from mysql-5.0.66-release
+    ------------------------------------------------------------
+    revno: 2559.103.2
+    tags: mysql-5.0.66
+    committer: Georgi Kodinov <kgeorge@mysql.com>
+    branch nick: merge-5.0.66-release
+    timestamp: Wed 2008-07-09 13:03:48 +0300
+    message:
+      fixed a compilation warning on windows 64.

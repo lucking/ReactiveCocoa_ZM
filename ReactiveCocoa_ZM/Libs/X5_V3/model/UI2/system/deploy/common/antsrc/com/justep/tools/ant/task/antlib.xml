@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<antlib>
+	<taskdef name="ipa" classname="com.justep.tools.ant.task.IPATask" />
+	<taskdef name="apk" classname="com.justep.tools.ant.task.APKTask" />
+	<taskdef name="upload" classname="com.justep.tools.ant.task.UploadTask" />
+	<taskdef name="pack" classname="com.justep.tools.ant.task.PackTask" />
+	<taskdef name="download" classname="com.justep.tools.ant.task.DownloadTask" />
+	<taskdef name="compileUI" classname="com.justep.tools.ant.task.CompileUITask" />
+	<taskdef name="processWWW" classname="com.justep.tools.ant.task.ProcessWWWTask" />
+</antlib>

@@ -1,0 +1,15 @@
+.x-label-edit{
+	display: table;
+	width: 100%;
+}
+.x-label-edit .x-label,
+.x-label-edit .x-edit,
+.x-label-edit.x-label-left  .x-label,
+.x-label-edit.x-label-left  .x-edit{
+	display: table-cell;
+}
+.x-label-edit.x-label-top,
+.x-label-edit.x-label-top  .x-label,
+.x-label-edit.x-label-top  .x-edit {
+  display: block;
+}

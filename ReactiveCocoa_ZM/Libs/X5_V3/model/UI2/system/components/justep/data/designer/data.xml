@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/data/data#rule" tag-name="rule" icon="rule.gif" java-class="Data"
+	   _discriminate-condition="executeXpath(starts-with(../@component,'$UI/system/components/justep/data/'))">
+		<properties>
+			<property name="xid" text="编号" readonly="true"/>
+		</properties>
+		<property-editors>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<rule></rule>
+		   ]]></template>
+		</templates>
+		<toolbar>			
+			<!-- 
+			<item text="编辑规则" method="editRule"/>				
+			 -->
+		</toolbar>
+	</element>
+	
+	<element name="$UI/system/components/justep/data/data#ruleCol" tag-name="col" icon="element.gif" display-property="name"
+	   discriminate-condition="executeXpath(starts-with(../../@component,'$UI/system/components/justep/data/'))">
+		<properties>
+			<property name="name" text="列名" required="true" readonly="true"/>
+		</properties>
+		<property-editors>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<col></col>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/justep/data/data#readonly" tag-name="readonly" icon="element.gif" _display-property="name"
+	   discriminate-condition="executeXpath(starts-with(../../@component,'$UI/system/components/justep/data/') or starts-with(../../../@component,'$UI/system/components/justep/data/'))">
+		<properties>
+			<property name="expr" path="expr/text()" text="只读表达式" />
+		</properties>
+		<property-editors>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<readonly><expr/></readonly>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/data/data#calculate" tag-name="calculate" icon="element.gif"  _display-property="name"
+	   discriminate-condition="executeXpath(starts-with(../../../@component,'$UI/system/components/justep/data/'))">
+		<properties>
+			<property name="expr" path="expr/text()" text="计算表达式" />
+		</properties>
+		<property-editors>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<calculate><expr/></calculate>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/data/data#required" tag-name="required" icon="element.gif"  _display-property="name"
+	   discriminate-condition="executeXpath(starts-with(../../../@component,'$UI/system/components/justep/data/'))">
+		<properties>
+			<property name="expr" path="expr/text()" text="必填表达式" />
+			<property name="message" path="message/text()" text="不满足提示信息" />
+		</properties>
+		<property-editors>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<required><expr/></required>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/data/data#constraint" tag-name="constraint" icon="element.gif"  _display-property="name"
+	   discriminate-condition="executeXpath(starts-with(../../../@component,'$UI/system/components/justep/data/'))">
+		<properties>
+			<property name="expr" path="expr/text()" text="约束表达式" />
+			<property name="message" path="message/text()" text="不满足提示信息" />
+		</properties>
+		<property-editors>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<required><expr/></required>
+		   ]]></template>
+		</templates>
+	</element>
+
+	<element name="$UI/system/components/justep/data/data" tag-name="div" icon="commonData.gif"    
+		binding-component="$UI/system/components/justep/data/data" display-property="xid" d_resiable="false" parent-range="$UI/system/components/justep/model/model" resizable="false"
+		component-type="data" validator="DataValidator"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" />        
+			<property name="idColumn" text="标示ID的列" required="true" editor-ref="dataRef" editor-parameter='{"isRelation":"true","data":"xid","hasLabel":"false"}'/>        
+			<property name="autoLoad" text="自动加载数据，和auto-new属性互斥" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="autoNew" text="自动新增数据，和auto-load属性互斥" default-value="false"  editor-ref="booleanList" data-type="boolean"/>
+			<property name="confirmDelete" text="删除提示" default-value="true" editor-ref="booleanList"/>  
+			<property name="confirmDeleteText" text="删除提示文本"  />        
+			<property name="confirmRefresh" text="刷新提示，数据修改后刷新数据进行提示" default-value="true" editor-ref="booleanList"/>
+			<property name="confirmRefreshText" text="刷新提示文本" />
+			<group name="master" text="主从选项">
+				<property name="data" path="master/@data" text="主数据" is-id-ref="true" type="complex" editor-ref="contextComponent" editor-parameter="data"/>
+				<property name="column" path="master/@relation" text="关联关系" type="complex" editor-ref="dataRef" editor-parameter='{"isRelation":"true","data":"xid","hasLabel":"false"}'/>
+			</group>
+		</properties>
+ 
+		<property-editors><!--属性编辑器描述，可通过下拉列表或者弹出对话框来设置属性值，不这是默认问普通的文本输入框。-->
+			<property-editor name="booleanList" type="list" >
+				<static-data value="true,false" /> <!--直接定义的静态数据 -->				
+			</property-editor>
+		</property-editors>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<div component="$UI/system/components/justep/data/data" autoLoad="true">
+			</div>
+		   ]]></template>
+		</templates>
+		<events>
+           <event name="onCreate" text="创建"/>
+           <event name="onDataChange" text="数据发生变化（包括新增、刷新、删除、修改引起的变化），感知从data的变化"/>
+           <event name="onLoadSlave" text="加载从数据"/>
+           <event name="onIndexChanging" text="索引改变中"/>
+           <event name="onIndexChanged" text="索引改变"/>
+           <event name="onValueChange" text="数据改变"/>
+           <event name="onValueChanged" text="数据改变后"/>
+           <event name="onNewError" type="callback" text="新增失败"/>
+           <event name="onBeforeNew" text="新增前"/>
+           <event name="onCustomNew" text="接管新增"/>
+           <event name="onAfterNew" text="新增后"/>
+           <event name="onDeleteError" text="删除失败"/>
+           <event name="onBeforeDelete" text="删除前"/>
+           <event name="onCustomDelete" text="接管删除"/>
+           <event name="onAfterDelete" text="删除后"/>
+           <event name="onRefreshError" text="刷新失败"/>
+           <event name="onBeforeRefresh" text="刷新前"/>
+           <event name="onCustomRefresh" text="接管刷新"/>
+           <event name="onAfterRefresh" text="刷新后"/>
+           <event name="onSaveError" text="保存失败"/>
+           <event name="onBeforeSave" text="保存前"/>
+           <event name="onCustomSave" text="接管保存"/>
+           <event name="onAfterSave" text="保存后"/>
+        </events>
+		<operations>
+			<operation name="new" label="新建" enable="true" visible="true" icon="icon-plus"/>
+			<operation name="save" label="保存" enable="true" visible="true" icon="icon-save"/>
+			<operation name="delete" label="删除" enable="true" visible="true" icon="icon-minus"/>
+			<operation name="refresh" label="刷新" enable="true" visible="true" icon="icon-refresh"/>
+			<operation name="firstRow" label="第一条" enable="true" visible="true" icon="icon-chevron-left"/>
+			<operation name="prevRow" label="上一条" enable="true" visible="true" icon="icon-chevron-left"/>
+			<operation name="nextRow" label="下一条" enable="true" visible="true" icon="icon-chevron-right"/>
+			<operation name="lastRow" label="最后条" enable="true" visible="true" icon="icon-chevron-right"/>
+			<operation name="loadNextPage" label="下页" enable="true" visible="true" icon=""/>
+			<operation name="loadAllPage" label="全部" enable="true" visible="true" icon=""/>
+		</operations>
+		<toolbar>			
+			<item text="编辑列" method="editColumn"/>				
+			<item text="编辑数据" method="editData"/>				
+			<item text="编辑规则" method="editRule"/>
+			<!-- 
+			<item text="编辑操作"  method="editOperatoions"/>
+			 -->
+		</toolbar>
+	</element>
+	
+	<element name="$UI/system/components/justep/data/data#column" tag-name="column" icon="relation.gif" display-property="name"
+		discriminate-condition="executeXpath(starts-with(../@component,'$UI/system/components/justep/data/data'))">
+		<properties>
+			<property name="name" text="名称" required="true" editor-ref=""/>
+			<property name="type" text="数据类型" default-value="String" editor-ref="dataTypeList"/>
+			<property name="label" text="显示名称" />
+		</properties>
+		<templates>
+		   <template name="default"><![CDATA[ 
+			<column name="" />
+		   ]]></template>
+		</templates>
+	</element>
+	
+</elements>

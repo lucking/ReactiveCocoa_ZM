@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/justep/windowReceiver/windowReceiver" tag-name="span" icon="dialog_icon_min.png" resizable="false"
+		binding-component="$UI/system/components/justep/windowReceiver/windowReceiver"
+		component-type="formControl" parent-range="$UI/system/components/justep/window/window"
+		design-view="web-designer">
+		<properties>
+			<property name="xid" text="编号" required="true" />
+		</properties>
+		
+		<property-editors>
+		</property-editors>
+		
+		<events>
+			<event name="onReceive" parameters="event"/>
+		</events>
+		
+		<templates>
+			<template name="default"><![CDATA[ 
+			<span component="$UI/system/components/justep/windowReceiver/windowReceiver"/>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

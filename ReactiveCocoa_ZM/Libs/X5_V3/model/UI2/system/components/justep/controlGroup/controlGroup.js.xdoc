@@ -1,0 +1,83 @@
+/**
+	@name ControlGroup
+	@component $UI/system/components/justep/controlGroup/controlGroup
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description 分组布局组件
+*/
+
+/**
+	@name ControlGroup#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name ControlGroup#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-control-group(必须)
+	</xmp>
+*/
+
+/**
+	@name ControlGroup#title
+	@attribute 
+	@type string
+	@description 分组标题
+*/
+
+/**
+	@name ControlGroup#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"title" : 标题
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name ControlGroup#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："title"
+	@return {Object} 
+*/
+
+/**
+	@name ControlGroupTitle
+	@url $UI/system/components/justep/controlGroup/controlGroup#controlGroupTitle
+	@class
+	@category component
+	@model UI2
+	@description 分组标题子组件
+*/
+
+/**
+	@name ControlGroupTitle#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-control-group-title(必须)
+		颜色样式: x-control-group-title-primary、x-control-group-title-success、x-control-group-title-info、x-control-group-title-warning、x-control-group-title-danger、x-blue、x-orange、x-green、x-red、x-yellow、x-gray
+	</xmp>
+*/
+
+/**
+	@name ControlGroupTitle#text
+	@attribute 
+	@type string
+	@description 显示文本部分，可以通过设置ControlGroup的title属性修改
+*/

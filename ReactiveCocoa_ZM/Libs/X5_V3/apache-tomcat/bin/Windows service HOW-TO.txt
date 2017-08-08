@@ -1,0 +1,16 @@
+一、64位X5服务安装
+1. 双击执行installService-x64.bat，则在Windows服务中增加“Justep X5”服务（如果是Win7、Windows2008需要右键管理员运行）
+2. 如果要卸载服务，执行removeService-x64.bat即可（如果是Win7、Windows2008需要右键管理员运行）
+3. 可以通过X5w.exe来管理服务的运行参数
+
+注意：64位服务需要操作系统是64位，并且java（../../java/jre1.7）是64位
+
+二、32位X5服务安装
+1. 双击执行installService-x86.bat，则在Windows服务中增加“Justep X5”服务（如果是Win7、Windows2008需要右键管理员运行）
+2. 如果要卸载服务，执行removeService-x86.bat即可（如果是Win7、Windows2008需要右键管理员运行）
+3. 可以通过X5w.exe来管理服务的运行参数
+
+三、多个X5服务安装
+  Windows下一个服务名对应一个服务，默认为“X5”，如果有多个服务，需要修改installService-x64.bat/installService-x86.bat和removeService-x64.bat/removeService-x86.bat第二行的最后一个参数“X5”为自己需要的服务名，保证和其它的不冲突，例如“X5-1”，同时把“X5w.exe”改为“服务名w.exe"的格式，“X5-1”对应的就是“X5-1w.exe”，修改后参考上面安装说明安装。
+  备注：服务名会加“Justep”前缀，也就是参数设置“X5”，Windows服务里面看到的将是“Justep X5”
+        多个服务需要修改端口，避免冲突，相关说明参考X5部署手册

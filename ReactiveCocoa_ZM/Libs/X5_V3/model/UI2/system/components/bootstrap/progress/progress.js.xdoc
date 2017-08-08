@@ -1,0 +1,29 @@
+/**
+	@name Progress
+	@component $UI/system/components/bootstrap/progress/progress
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description Progress
+*/
+
+/**
+	@name Progress#valuenow
+	@attribute 
+	@type number
+	@description 当前进度值
+*/
+
+/**
+	@name Progress#valuemax
+	@attribute 
+	@type number
+	@description 进度最大值
+*/
+
+/**
+	@name Progress#textVisible
+	@attribute 
+	@type boolean
+	@description 是否显示进度文本描述
+*/

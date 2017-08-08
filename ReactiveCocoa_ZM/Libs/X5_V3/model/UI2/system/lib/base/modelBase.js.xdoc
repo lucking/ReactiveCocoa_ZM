@@ -1,0 +1,339 @@
+/**
+	@name ModelBase
+	@url $UI/system/lib/base/modelBase
+	@class
+	@category javascript
+	@model UI2
+	@description 页面VM
+*/
+
+/**
+	@name ModelBase#constructor
+	@function
+	@description 构造函数
+	@returns {void}
+*/
+
+/**
+	@name ModelBase#call
+	@function
+	@description 调用指定的函数
+	@param {Object} caller 函数执行上下文this
+	@param {Function} fn 函数
+	@returns {Object}
+*/
+
+/**
+	@name ModelBase#ref
+	@function
+	@description 获取列的值
+	@param {String} col 列标识
+	@returns {Object}
+*/
+
+/**
+	@name ModelBase#getParent
+	@function
+	@description 获取父VM
+	@examples 一个页面A可以通过WindowContainer嵌入子页面B，这时页面B中VM的getParent返回的是页面A的VM
+	@returns {ModelBase}
+*/
+
+/**
+	@name ModelBase#getRootNode
+	@function
+	@description 获取当前页面的根节点
+	@returns {Element}
+*/
+
+/**
+	@name ModelBase#isConctructed
+	@function
+	@description 判断当前页面是否构造完成
+	@returns {Boolean}
+*/
+
+/**
+	@name ModelBase#getStatus
+	@function
+	@description 获取页面模型构造状态
+	@returns {Integer}
+	@see ModelBase.MODEL_STATUS_CONSTRUCT
+	@see ModelBase.MODEL_STATUS_CONSTRUCTING
+	@see ModelBase.MODEL_STATUS_CONSTRUCT_DONE
+	@see ModelBase.MODEL_STATUS_LOAD
+	@see ModelBase.MODEL_STATUS_CONSTRUCTED
+*/
+
+/**
+	@name ModelBase#componentPromise
+	@function
+	@description 异步获取组件
+	@param {Object} xidOrNode 组件xid或组件节点
+	@returns {Component}
+*/
+
+/**
+	@name ModelBase#registerComponent
+	@function
+	@description 注册组件实例（只有数据组件需要自己注册）
+	@param {String} xid 组件标识
+	@param {Component} component 组件实例
+	@returns {Component}
+*/
+
+/**
+	@name ModelBase#unRegisterComponent
+	@function
+	@description 取消组件实例（只有数据组件需要自己取消）
+	@param {String} xid 组件标识
+	@returns {void}
+*/
+
+/**
+	@name ModelBase#getComponent
+	@function
+	@description 获取组件
+	@param {Object} xidOrNode 组件xid或组件节点
+	@param {Element} sourceNode 可选参数，标识从哪个节点向外找 
+	@returns {Component}
+*/
+
+/**
+	@name ModelBase#getComponents
+	@function
+	@description 获取组件
+	@param {String} xid 组件xid
+	@returns {Object} 组件数组
+*/
+
+/**
+	@name ModelBase#comp
+	@function
+	@description 获取组件
+	@param {Object} xidOrNode 组件xid或组件节点
+	@param {Element} sourceNode 可选参数，标识从哪个节点向外找 
+	@returns {Component}
+	@see ModelBase#getComponent
+*/
+
+
+/**
+	@name ModelBase#comps
+	@function
+	@description 获取组件
+	@param {String} xid 组件xid
+	@returns {Object} 组件数组
+	@see ModelBase#getComponents
+*/
+
+/**
+	@name ModelBase#getIDByXID
+	@function
+	@description 根据xid获取id
+	@param {String} xid
+	@returns {String} 
+*/
+
+/**
+	@name ModelBase#getElementByXid
+	@function
+	@description 根据xid获取Element
+	@param {String} xid
+	@returns {Element} 
+*/
+
+/**
+	@name ModelBase#getElementsByXid
+	@function
+	@description 根据xid获取Element列表
+	@param {String} xid
+	@returns {Object} Element列表 
+*/
+
+/**
+	@name ModelBase#removeElement
+	@function
+	@description 删除指定的节点
+	@param {Element} element 
+	@returns {Object} 
+*/
+
+/**
+	@name ModelBase#removeElementByXid
+	@function
+	@description 根据xid删除指定的节点
+	@param {String} xid 
+	@returns {void} 
+*/
+
+/**
+	@name ModelBase#getContextID
+	@function
+	@description 获取上下文唯一标识
+	@returns {String} 
+*/
+
+/**
+	@name ModelBase#getContext
+	@function
+	@description 获取上下文
+	@returns {Context} 
+*/
+
+/**
+	@name ModelBase#postMessage
+	@function
+	@description 向VM发送一条消息，触发{Model.MESSAGE_EVENT}事件
+	@param {String} message
+	@returns {void} 
+*/
+
+/**
+	@name ModelBase#addComponent
+	@function
+	@description 添加组件
+	@param {Element} parentElement 组件的父节点
+	@param {Component} component 组件实例
+	@param {Element} targetElement 插入位置 
+	@returns {void} 
+*/
+
+/**
+	@name ModelBase#removeComponent
+	@function
+	@description 删除组件
+	@param {Component} component 组件实例
+	@returns {void} 
+*/
+
+/**
+	@name ModelBase.ACTIVE_EVENT
+	@property
+	@default "onActive"
+	@description 页面激活事件
+*/
+
+/**
+	@name ModelBase.INACTIVE_EVENT
+	@property
+	@default "onInactive"
+	@description 页面离开事件
+*/
+
+/**
+	@name ModelBase.MESSAGE_EVENT
+	@property
+	@default "onMessage"
+	@description 页面消息事件
+	@example
+	<xmp>
+	事件对象的内容如下：
+{
+    source: this, //页面模型
+    message: message //消息内容
+}
+	</xmp>
+*/
+
+/**
+	@name ModelBase.MODEL_CONSTRUCT_EVENT
+	@property
+	@default "onModelConstruct"
+	@description 页面模型构造前事件
+	@example
+	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp>
+*/
+
+/**
+	@name ModelBase.MODEL_CONSTRUCTING_EVENT
+	@property
+	@default "onModelConstructing"
+	@description 页面模型构造中事件，主要用于数据组件加载数据
+	@example
+	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp>
+*/
+
+/**
+	@name ModelBase.MODEL_CONSTRUCT_DONE_EVENT
+	@property
+	@default "onModelConstructDone"
+	@description 页面模型构造完事件
+	@example
+	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp>
+*/
+
+/**
+	@name ModelBase.LOAD_EVENT
+	@property
+	@default "onLoad"
+	@description 页面加载完事件
+	@example
+	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp>
+*/
+
+/**
+	@name ModelBase.UNLOAD_EVENT
+	@property
+	@default "onunLoad"
+	@description 页面关闭事件
+	@example
+	<xmp>
+	事件对象的内容如下：
+{
+    source: this //页面模型
+}
+	</xmp>
+*/
+
+/**
+	@name ModelBase.MODEL_STATUS_CONSTRUCT
+	@property
+	@default 1
+	@description 页面模型构造前
+*/
+
+/**
+	@name ModelBase.MODEL_STATUS_CONSTRUCTING
+	@property
+	@default 2
+	@description 页面模型构造中
+*/
+/**
+	@name ModelBase.MODEL_STATUS_CONSTRUCT_DONE
+	@property
+	@default 3
+	@description 页面模型构造
+*/
+/**
+	@name ModelBase.MODEL_STATUS_LOAD
+	@property
+	@default 4
+	@description 页面模型构造Load事件中
+*/
+/**
+	@name ModelBase.MODEL_STATUS_CONSTRUCTED
+	@property
+	@default 5
+	@description 页面模型构造完成
+*/

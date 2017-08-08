@@ -1,0 +1,9 @@
+#debugBar {
+	position: absolute;
+	top: auto;
+	left: 3px;
+	bottom: 10px;
+	z-index: 1000;
+	opacity: 0.6;
+	/*display: none;*/
+}

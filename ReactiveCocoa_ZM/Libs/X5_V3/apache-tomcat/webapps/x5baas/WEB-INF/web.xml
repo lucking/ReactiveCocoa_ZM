@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" version="2.5">
+	<display-name>X5 Baas Server</display-name>
+	<servlet>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
+		<init-param>
+			<param-name>javax.ws.rs.Application</param-name>
+			<param-value>x5.baas.util.JerseyApplication</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Jersey REST Service</servlet-name>
+		<url-pattern>/*</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>weixin default</servlet-name>
+		<servlet-class>com.justep.weixin.mp.DefaultServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>weixin default</servlet-name>
+		<url-pattern>/weixin/default</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>weixin userInfo</servlet-name>
+		<servlet-class>com.justep.weixin.mp.UserInfoServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>weixin userInfo</servlet-name>
+		<url-pattern>/weixin/userinfo</url-pattern>
+	</servlet-mapping>
+</web-app>

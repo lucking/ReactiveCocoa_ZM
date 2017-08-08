@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.wst.web_ui.feature"
+      label="%featureName"
+      version="3.4.2.v201211061806-7O7MFu3EMkBK01NbrfU9ATE5cdZFz-OoeYjaI4d2"
+      provider-name="%providerName"
+      plugin="org.eclipse.wst.web.ui"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <includes
+         id="org.eclipse.wst.web_userdoc.feature"
+         version="3.3.0.v201102200555-31Eo8s734B3E4H7799"/>
+
+   <includes
+         id="org.eclipse.wst.web_core.feature"
+         version="3.4.2.v201211061806-7E7HFUOAJz-nBU7m2-JSGuES3ZrGS2jq"/>
+
+   <includes
+         id="org.eclipse.wst.jsdt.feature"
+         version="1.4.1.v201208171701-7H7DFg0FC7sReqSyfqesWi"/>
+
+   <includes
+         id="org.eclipse.wst.common_ui.feature"
+         version="3.4.2.v201212051536-7C7AFeFEdhOaweLhCnQfylKlOxT5UW"/>
+
+   <includes
+         id="org.eclipse.wst.server_ui.feature"
+         version="3.3.201.v20120927_1316-7B7AFMXAtMe9qFHLb-MlSZwg8BB2"/>
+
+   <includes
+         id="org.eclipse.wst.xml_ui.feature"
+         version="3.4.2.v201211061806-7H7GFeJDxumUrsn5qkiQgOEhsz0p60HAmPyU6VX"/>
+
+   <plugin
+         id="org.eclipse.wst.jsdt.web.core"
+         download-size="0"
+         install-size="0"
+         version="1.0.502.v201301101836"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.jsdt.web.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.502.v201208171701"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.html.ui.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.200.v201004150328"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.web.ui.infopop"
+         download-size="0"
+         install-size="0"
+         version="1.0.300.v200805140415"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.css.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.702.v201211262010"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.html.ui"
+         download-size="0"
+         install-size="0"
+         version="1.0.702.v201211262010"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.wst.web.ui"
+         download-size="0"
+         install-size="0"
+         version="1.1.600.v201109220400"
+         unpack="false"/>
+
+</feature>

@@ -1,0 +1,124 @@
+/**
+	@name Radio
+	@component $UI/system/components/justep/button/radio
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description radio
+*/
+
+/**
+	@name Radio#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name Radio#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-radio(必须),
+		尺寸样式: x-radio-lg、x-radio-sm、x-radio-xs
+	</xmp>
+*/
+
+/**
+	@name Radio#disabled
+	@attribute 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name Radio#name
+	@attribute 
+	@type string
+	@description 组件name，等价于html中的name属性，相同name的Radio为一组，选中是互斥的
+*/
+
+/**
+	@name Radio#label
+	@attribute 
+	@type string
+	@description 显示名
+*/
+
+/**
+	@name Radio#value
+	@attribute 
+	@type string
+	@description 等价于html中的value属性
+*/
+
+/**
+	@name Radio#checkedValue
+	@attribute 
+	@type string
+	@description 选中后的value，当bind-ref的值为checkedValue时checked=true
+*/
+
+/**
+	@name Radio#checked
+	@attribute 
+	@type string
+	@description 是否选中
+*/
+
+/**
+	@name Radio#bind-ref
+	@attribute 
+	@type string
+	@description 数据感知的绑定表达式
+*/
+
+/**
+	@name Radio#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : 禁用，
+		"label" : 显示名
+		"value" : 等价于html中的value属性
+		"checked" : 是否选中
+		"name" : 组件name，等价于html中的name属性，相同name的Radio为一组，选中是互斥的
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name Radio#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"label"、"value"、"checked"、"name"
+	@return {Object} 
+*/
+
+/**
+	@name Radio#val
+	@function
+	@description 给组件赋值或者取值
+*/
+
+/**
+	@name Radio#onChange
+	@event
+	@description <b>[回调型事件]</b>选中状态变化触发事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"checked" : 选中状态,
+		"value" : 对应的值
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+	}
+	</xmp>	
+*/

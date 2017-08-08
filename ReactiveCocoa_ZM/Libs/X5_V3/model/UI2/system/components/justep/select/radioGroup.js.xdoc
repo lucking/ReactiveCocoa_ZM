@@ -1,0 +1,110 @@
+/**
+	@name RadioGroup
+	@component $UI/system/components/justep/select/radioGroup
+	@extends BindComponent
+	@extendurl $UI/system/lib/base/bindComponent
+	@model UI2
+	@description RadioGroup
+*/
+
+/**
+	@name RadioGroup#xid
+	@attribute 
+	@type string
+	@description 组件标示
+*/
+
+/**
+	@name RadioGroup#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-radio-group(必须),
+		尺寸样式: x-radio-group-lg、x-radio-group-sm、x-radio-group-xs
+		排列方式：x-radio-group-vertical
+	</xmp>
+*/
+
+/**
+	@name RadioGroup#disabled
+	@attribute 
+	@type boolean
+	@description 禁用
+*/
+
+/**
+	@name RadioGroup#bind-ref
+	@attribute 
+	@type string
+	@description 引用
+*/
+
+/**
+	@name RadioGroup#bind-itemset
+	@attribute 
+	@type string
+	@description 显示项的数据绑定，通常指向Data组件
+*/
+
+/**
+	@name RadioGroup#bind-itemsetValue
+	@attribute 
+	@type string
+	@description itemset中表示数据的列
+*/
+
+/**
+	@name RadioGroup#bind-itemsetLabel
+	@attribute 
+	@type string
+	@description itemset中显示的列
+*/
+
+/**
+	@name RadioGroup#val
+	@function
+	@description 给组件赋值或者取值
+*/
+
+/**
+	@name RadioGroup#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : {boolean} 禁用，
+		"itemStyle" : {string} 项上增加的样式，
+		"itemClass" : {string} 项上增加的class，
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name RadioGroup#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"，"itemStyle"，"itemClass"
+	@return {Object} 
+*/
+
+/**
+	@name RadioGroup#onChanged
+	@event
+	@description <b>[回调型事件]</b>值修改事件
+	@param {object} event 
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"source" : 组件的js对象,
+		"bindingContext" : 组件绑定的上下文，包含$model、$object等具体请参考bindingContext说明
+		"value" : 新值
+	}
+	</xmp>	
+*/
+
+

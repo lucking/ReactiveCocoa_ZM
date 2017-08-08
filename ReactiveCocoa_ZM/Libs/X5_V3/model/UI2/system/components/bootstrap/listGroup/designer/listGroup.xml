@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/listGroup/listGroup" tag-name="div" icon="element.gif" text="列表组"  
+	    discriminate-condition="hasClass('list-group')" resizable="false"
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+		 
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "label",
+						require: true
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="style" text="样式"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		
+		 <toolbar>
+				<item text="添加条目" method="addItem"/>					
+		</toolbar>
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				<div class="list-group">
+				  <a href="#" class="list-group-item">groupItem</a>
+				</div>
+		   ]]></template>
+		</templates>
+	</element>
+	
+	<element name="$UI/system/components/bootstrap/listGroup/listGroup#gruopItem" tag-name="a" icon="element.gif" text="列表条目"  
+	    discriminate-condition="hasClass('list-group-item')" resizable="false" parent-range="$UI/system/components/bootstrap/listGroup/listGroup"
+		component-type="layout-container"  design-view="web-designer" >
+		<properties>
+			<property name="xid" text="编号" required="true" editor-discriptor-ref=""/>  
+		 
+			<property name="class" text="class">
+				<editor-parameter><![CDATA[
+				{
+					"0base": {
+						label: "基础样式",
+						value: "list-group-item",
+						require: true
+					},
+					"color": {
+						label: "颜色样式",
+						value: "list-group-item-default|list-group-item-primary|list-group-item-success|list-group-item-info|list-group-item-warning|list-group-item-danger",
+						require: false
+					},
+					"color": {
+						label: "选中颜色",
+						value: "active",
+						require: false
+					}
+				}
+				]]></editor-parameter>
+			</property>
+			<property name="text" text="文本" path="text()"></property>
+			<property name="href" text="href" ></property>
+			<property name="style" text="样式"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+				 <a href="#" class="list-group-item">groupItem</a>
+		   ]]></template>
+		</templates>
+	</element>
+</elements>

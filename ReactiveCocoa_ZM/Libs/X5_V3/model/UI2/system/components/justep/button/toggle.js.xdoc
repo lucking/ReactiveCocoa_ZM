@@ -1,0 +1,68 @@
+/**
+	@name Toggle
+	@component $UI/system/components/justep/button/toggle
+	@extends Radio
+	@extendurl $UI/system/components/justep/button/radio
+	@model UI2
+	@description Toggle
+*/
+
+/**
+	@name Toggle#class
+	@attribute 
+	@type string
+	@description 组件class
+	@example
+	<xmp>
+		基础样式: x-toggle(必须),
+		尺寸样式: x-toggle-lg、x-toggle-sm、x-toggle-xs
+	</xmp>
+*/
+
+/**
+	@name Toggle#label
+	@attribute 
+	@type string
+	@description 组件显示名称
+	@example
+	<xmp>
+		包括两部分：
+		on: 选中名称
+		off: 未选中名称
+		this.comp('toggle').set(label:{on:'开',off:'关'});
+	</xmp>
+*/
+
+/**
+	@name Toggle#type
+	@attribute 
+	@type string
+	@description 组件类型，取值范围：checkbox/radio;
+*/
+
+/**
+	@name Toggle#set
+	@function
+	@description 设置属性值
+	@param {json} arg 属性值对
+	<br/><b>结构如下：</b>
+	<xmp> 
+	{
+		"disabled" : 禁用，
+		"label" : 显示名，包括两部分：on: 选中名称 off: 未选中名称；如：this.comp('toggle').set(label:{on:'开',off:'关'});
+		"value" : 等价于html中的value属性
+		"checked" : 是否选中
+		"name" : 组件name，等价于html中的name属性，相同name的Radio为一组，选中是互斥的
+		"type" : 类型，checkbox/radio
+	}
+	</xmp>	
+	@return {void} 
+*/
+
+/**
+	@name Toggle#get
+	@function
+	@description 获取属性值
+	@param {String} name 属性名称，取值范围："disabled"、"label"、"value"、"checked"、"name"、"type"
+	@return {Object} 
+*/

@@ -1,0 +1,1648 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />	
+		<link rel="stylesheet" type="text/css" href="styles/stylesheet.css">
+		<title>Documentation</title>
+	</head>
+	<body id="_class">
+
+		<header>
+			<div class="header">
+				<script type="text/javascript" src="js/jQuery.172.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+	var header = $('.header'),
+		content = $('.content')
+		footer = $('footer')
+	;
+
+	function mtn(str){
+		if(
+			'' === str
+			|| undefined === str
+			|| null === str
+		){
+			return 0;
+		}else{
+			var a = parseInt(str.replace(/px|ex|em/, ''), 10);
+			if(isNaN(a)){
+				a = 0;
+			}
+			return a;
+		}
+	}
+	
+	function resize(){
+		var availableHeight = $(window).height() - (header.outerHeight() + footer.outerHeight()),
+			availableWidth = $(window).width(),
+			contentOffsetH = mtn(content.css('borderTopWidth')) + 
+				mtn(content.css('marginTop')) +
+				mtn(content.css('paddingTop')) +
+				
+				mtn(content.css('paddingBottom')) +
+				mtn(content.css('marginBottom')) +
+				mtn(content.css('borderBottomWidth')),
+			contentOffsetW = mtn(content.css('borderLeftWidth')) + 
+				mtn(content.css('marginLeft')) +
+				mtn(content.css('paddingLeft')) +
+				
+				mtn(content.css('paddingRight')) +
+				mtn(content.css('marginRight')) +
+				mtn(content.css('borderRightWidth'))
+		;
+		content.height(availableHeight - contentOffsetH);
+		content.width(availableWidth - contentOffsetW);
+	}
+	resize();
+	$(window).resize(resize);
+});
+</script>
+
+<ul>
+	
+	<li><a href="class_index.html">Classes</a></li>
+	
+	
+	
+	
+	
+	
+	
+	<li><a href="event_index.html">Events</a></li>
+	
+	
+	<li><a href="constant_index.html">Constants</a></li>
+	
+	
+	<li><a href="function_index.html">Methods/Functions</a></li>
+	
+	
+	<li><a href="global.html">Globals</a></li>
+	
+	<!--
+	<li><a href="file_index.html">Files</a></li>
+	-->
+	<li><a href="doc-index.html">Index</a></li>
+</ul>
+
+<div id="_title">
+	
+
+		API
+
+		
+</div>
+				<div class="type">Class</div>
+				<h1>
+					
+					Date
+				</h1>
+			</div>
+		</header>
+	
+		
+	
+		<div class="content">
+			<div id="top"></div>
+			<p>使用范围：<b>UI2</b></p>
+			
+			
+				<p>路径：<b>$UI/system/lib/base/date</b></p>
+			
+			
+			<div class="anchor_list">
+	<h2>Contents</h2>
+	<ul>
+		
+		
+		
+		
+		
+
+		
+
+		
+		<li><a href="#static_properties">Static Properties & Enumerations</a></li>
+		
+
+		
+
+		
+		<li><a href="#static_methods">Static Methods</a></li>
+		
+
+		
+
+			
+	</ul>
+</div>
+			
+			<!-- CLASS SIGNATURE -->
+			<p class="PrincipalTitle">
+				<span> </span>
+				<span>class </span>
+				<strong>
+					Date
+				</strong>
+
+				
+
+				
+
+				
+			</p>
+			
+			
+
+
+			<!-- CLASS DESCRIPTION -->
+			<div class="description "><p>常用的日期操作</p></div>
+
+			
+			
+			<!-- CLASS CONSTRUCTOR SUMMARY -->
+			<h2>
+				<a name='constructor'></a>
+				Constructor
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+				<tbody>
+					<tr>
+						<td class="type">&nbsp;</td>
+						<td class="last">
+							<a href="#Date">Date</a>
+							<span>()</span>
+							
+						<td>
+						<td></td>
+					</tr>
+					
+				</tbody>
+			</table>
+			
+
+
+			<!-- CLASS REQUIRES -->
+
+			<!-- NAMESPACE SUB-NAMESPACES -->
+						
+
+			<!-- CLASS CONSTANTS SUMMARY -->
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS SUMMARY -->
+			
+			<h2>
+				<a name='static_properties'></a>
+				Static Properties & Enumerations
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#DEFAULT_FORMAT">
+        	<abbr title="Date.DEFAULT_FORMAT">
+        		DEFAULT_FORMAT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p><b>[filed]</b>时间格式常量  = "yyyy/MM/dd hh:mm:ss"</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#DEFAULT_FORMAT_SHOT">
+        	<abbr title="Date.DEFAULT_FORMAT_SHOT">
+        		DEFAULT_FORMAT_SHOT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p><b>[filed]</b>时间格式常量  = "yyyy/MM/dd"</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#STANDART_FORMAT">
+        	<abbr title="Date.STANDART_FORMAT">
+        		STANDART_FORMAT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p><b>[filed]</b>时间格式常量  = "yyyy-MM-ddThh:mm:ss.fffZ"</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+
+    <tr class="public">
+      <td class="type">
+      	<span>
+      	
+      	</span>
+        	
+      	<span>
+        string
+        </span>
+      </td>
+      
+      <td class="last">
+        <a href="#STANDART_FORMAT_SHOT">
+        	<abbr title="Date.STANDART_FORMAT_SHOT">
+        		STANDART_FORMAT_SHOT
+        	</abbr>
+        </a>
+        
+        <span class="value">
+        
+        </span>
+        
+        
+        	<p><b>[filed]</b>时间格式常量   = "yyyy-MM-dd"</p>
+        
+		
+
+      <td>
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS PROPERTIES SUMMARY -->
+			
+
+			<!-- CLASS STATIC METHODS SUMMARY -->
+			
+			<h2>
+				<a name='static_methods'></a>
+				Static Methods
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<table>
+  <tbody>
+  
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Number
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#between">
+				<abbr title="Date.between">
+					between
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Date.html" ><abbr title="Date">Date</abbr></a> start, <a href="Date.html" ><abbr title="Date">Date</abbr></a> end)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#decrease">
+				<abbr title="Date.decrease">
+					decrease
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Date.html" ><abbr title="Date">Date</abbr></a> datetime, Number num, <a href="String.html" ><abbr title="String">String</abbr></a> interval)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Number
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#diff">
+				<abbr title="Date.diff">
+					diff
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Date.html" ><abbr title="Date">Date</abbr></a> start, <a href="Date.html" ><abbr title="Date">Date</abbr></a> end, <a href="String.html" ><abbr title="String">String</abbr></a> interval)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#fromString">
+				<abbr title="Date.fromString">
+					fromString
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="String.html" ><abbr title="String">String</abbr></a> str, <a href="String.html" ><abbr title="String">String</abbr></a> format)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#increase">
+				<abbr title="Date.increase">
+					increase
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Date.html" ><abbr title="Date">Date</abbr></a> datetime, Number num, <a href="String.html" ><abbr title="String">String</abbr></a> interval)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	Boolean
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#isLeapYear">
+				<abbr title="Date.isLeapYear">
+					isLeapYear
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Date.html" ><abbr title="Date">Date</abbr></a> date)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+
+    <tr  class="public">
+      <td class="type">
+      	<span>
+      	<a href="String.html" ><abbr title="String">String</abbr></a>
+      	</span>
+      </td>
+      
+      <td class="last">
+		
+			<a href="#toString">
+				<abbr title="Date.toString">
+					toString
+				</abbr>
+			</a>
+		
+        
+      	<span>
+      		(<a href="Date.html" ><abbr title="Date">Date</abbr></a> dateTime, <a href="String.html" ><abbr title="String">String</abbr></a> formatStr)
+      	</span>
+        
+        
+		
+		
+
+		
+      </td>
+      
+      <td>
+      	
+      </td>
+    </tr>
+    
+    
+  </tbody>
+</table>
+			
+
+			<!-- CLASS METHODS SUMMARY -->
+			
+
+			<!-- CLASS OPERATIONS SUMMARY -->
+			
+
+
+			<!-- CLASS EVENTS SUMMARY -->
+			
+
+			<!--
+			################################################################################
+			## DETAILS
+			################################################################################
+			-->
+
+			
+			<!-- CLASS CONSTRUCTOR DETAILS -->
+			<h2>
+				<a name='constructor_details'></a>
+				Constructor details
+				<small><a href="#top">Top</a></small>
+				<h3 id="Date"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno1">date.js.xdoc</a> at line 1
+
+  </div>
+	-->
+	<div class="signature">
+		public
+	  
+  
+		<strong>Date</strong>
+		
+    <span class="params">
+      ()
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>常用的日期操作</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+
+    <!-- RETURN VALUE -->
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+								
+			</h2>
+			
+
+
+			<!-- CLASS STATIC PROPERTIES & ENUMERATIONS DETAIL -->
+			
+			<h2>
+				<a name='static_properties_details'></a>
+				Static Properties & Enumerations Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="DEFAULT_FORMAT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno9">date.js.xdoc</a> at line 9
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>DEFAULT_FORMAT</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p><b>[filed]</b>时间格式常量  = "yyyy/MM/dd hh:mm:ss"</p></div>
+<h3 id="DEFAULT_FORMAT_SHOT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno7">date.js.xdoc</a> at line 7
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>DEFAULT_FORMAT_SHOT</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p><b>[filed]</b>时间格式常量  = "yyyy/MM/dd"</p></div>
+<h3 id="STANDART_FORMAT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno13">date.js.xdoc</a> at line 13
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>STANDART_FORMAT</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p><b>[filed]</b>时间格式常量  = "yyyy-MM-ddThh:mm:ss.fffZ"</p></div>
+<h3 id="STANDART_FORMAT_SHOT" class="public">
+	<!--  
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno11">date.js.xdoc</a> at line 11
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+	  
+    <span class="returnvalues">
+      string
+    </span>
+	  
+  
+		<strong>STANDART_FORMAT_SHOT</strong>
+	  
+	  <span class="defaultvalue">
+	    
+	  </span>
+	</div>
+</h3>
+
+<div class="description "><p><b>[filed]</b>时间格式常量   = "yyyy-MM-dd"</p></div>
+
+			
+
+
+			<!-- CLASS STATIC METHODS DETAIL -->
+			
+			<h2>
+				<a name='static_methods_details'></a>
+				Static Methods Detail
+				<small><a href="#top">Top</a></small>
+			</h2>
+			<h3 id="between"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno23">date.js.xdoc</a> at line 23
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Number
+	    </span>
+    
+	  
+	  
+  
+		<strong>between</strong>
+		
+    <span class="params">
+      (<a href="Date.html" ><abbr title="Date">Date</abbr></a> start, <a href="Date.html" ><abbr title="Date">Date</abbr></a> end)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>计算两个日期相差几天，和diff很相似，返回永远是正整数</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>start</a><p>起始日期</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>end</a><p>结束日期</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Number
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>返回相差几天</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="decrease"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno19">date.js.xdoc</a> at line 19
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Date.html" ><abbr title="Date">Date</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>decrease</strong>
+		
+    <span class="params">
+      (<a href="Date.html" ><abbr title="Date">Date</abbr></a> datetime, Number num, <a href="String.html" ><abbr title="String">String</abbr></a> interval)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>根据日期的规则，为给定的日期减去指定的时间量</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>datetime</a><p>要处理的日期对象</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				Number
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>num</a><p>减去的时间量</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>interval</a><p>减去的时间单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>返回日期</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="diff"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno21">date.js.xdoc</a> at line 21
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Number
+	    </span>
+    
+	  
+	  
+  
+		<strong>diff</strong>
+		
+    <span class="params">
+      (<a href="Date.html" ><abbr title="Date">Date</abbr></a> start, <a href="Date.html" ><abbr title="Date">Date</abbr></a> end, <a href="String.html" ><abbr title="String">String</abbr></a> interval)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>计算两个日期的差</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>start</a><p>起始日期</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>end</a><p>结束日期</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>interval</a><p>时间单位，默认是以天为单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Number
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>返回结果，如果起始日期小于结束日期返回正整数，否则返回负整数</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="fromString"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno5">date.js.xdoc</a> at line 5
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Date.html" ><abbr title="Date">Date</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>fromString</strong>
+		
+    <span class="params">
+      (<a href="String.html" ><abbr title="String">String</abbr></a> str, <a href="String.html" ><abbr title="String">String</abbr></a> format)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>按照给定的日期格式，把字符串转换成日期对象</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>str</a><p>字符串</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>format</a><p>日期格式</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>返回日期</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="increase"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno17">date.js.xdoc</a> at line 17
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="Date.html" ><abbr title="Date">Date</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>increase</strong>
+		
+    <span class="params">
+      (<a href="Date.html" ><abbr title="Date">Date</abbr></a> datetime, Number num, <a href="String.html" ><abbr title="String">String</abbr></a> interval)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>根据日期的规则，为给定的日期添加指定的时间量</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>datetime</a><p>要处理的日期对象</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				Number
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>num</a><p>添加的时间量</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>interval</a><p>添加的时间单位，'s'代表秒，'n'代表分钟，'h'代表小时 ，'d'代表天， 'w'代表 周 ，'m'代表月，'q'代表季度，'y'代表年</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>返回日期</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="isLeapYear"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno3">date.js.xdoc</a> at line 3
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      Boolean
+	    </span>
+    
+	  
+	  
+  
+		<strong>isLeapYear</strong>
+		
+    <span class="params">
+      (<a href="Date.html" ><abbr title="Date">Date</abbr></a> date)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>判断日期是否是闰年</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>date</a><p>日期</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				Boolean
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>如果是闰年返回true，否则返回false</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+<h3 id="toString"  class="public">
+  <!--
+  <div class="location">
+
+  	<a href="D__x5_workspace_trunk_ide_api-docs_build-openSource_src_date_js_xdoc.html#lineno15">date.js.xdoc</a> at line 15
+
+  </div>
+	-->
+	<div class="signature">
+		
+	  <span class="virtual">
+	    
+	  </span>
+	  
+	  <span class="scope">
+	    static
+	  </span>
+	  
+	  <span class="accesslevel">
+	    public
+	  </span>
+		
+	    <span class="returnvalues">
+	      <a href="String.html" ><abbr title="String">String</abbr></a>
+	    </span>
+    
+	  
+	  
+  
+		<strong>toString</strong>
+		
+    <span class="params">
+      (<a href="Date.html" ><abbr title="Date">Date</abbr></a> dateTime, <a href="String.html" ><abbr title="String">String</abbr></a> formatStr)
+    </span>
+	</div>
+</h3>
+
+
+<div class="description "><p>按照给定的日期格式，把日期对象转换成字符串</p></div>
+
+<div class="details ">
+	<div class="tags">
+	
+    <!-- PARAMS -->
+    
+    <h4>Parameters</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="Date.html" ><abbr title="Date">Date</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>dateTime</a><p>要处理的日期对象</p>
+    </td>
+    
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <a>formatStr</a><p>日期格式</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- RETURN VALUE -->
+    
+    <h4>Return Value</h4>
+    
+
+<table>
+  <tbody>
+
+  
+  <tr>
+    <td class="type">
+			<span>
+				<a href="String.html" ><abbr title="String">String</abbr></a>
+			</span>
+    </td>
+    
+    <td class="last">
+    <p>返回字符串</p>
+    </td>
+    
+  
+
+  </tbody>
+</table>
+    
+
+    <!-- EXCEPTIONS -->
+    
+    
+	</div>
+</div>
+
+			
+
+
+			<!-- CLASS PROPERTIES DETAIL -->
+			
+
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+			<!-- CLASS METHODS DETAIL -->
+			
+
+
+
+			<!-- CLASS EVENTS DETAIL -->
+			
+
+		</div>
+			
+
+		<footer>
+	Documentation generated by <a href="http://www.justep.com">北京起步科技有限公司</a>  on Fri Nov 07 2014 17:02:57 GMT+0800 (CST)
+</footer>
+
+	</body>
+</html>

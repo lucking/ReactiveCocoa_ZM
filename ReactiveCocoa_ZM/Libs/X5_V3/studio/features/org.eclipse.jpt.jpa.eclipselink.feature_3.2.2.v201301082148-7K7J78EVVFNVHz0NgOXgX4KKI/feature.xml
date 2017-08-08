@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.jpt.jpa.eclipselink.feature"
+      label="%featureName"
+      version="3.2.2.v201301082148-7K7J78EVVFNVHz0NgOXgX4KKI"
+      provider-name="%providerName"
+      plugin="org.eclipse.jpt.jpa.eclipselink.branding"
+      
+      >
+
+   <description>
+      %description
+   </description>
+
+   <copyright>
+      %copyright
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <requires>
+      <import feature="org.eclipse.jpt.jpa.feature" version="3.2.0"/>
+      <import feature="org.eclipse.jpt.common.eclipselink.feature" version="1.2.0"/>
+   </requires>
+
+   <plugin
+         id="org.eclipse.persistence.antlr"
+         download-size="0"
+         install-size="0"
+         version="3.2.0.v201206041011"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.persistence.asm"
+         download-size="0"
+         install-size="0"
+         version="3.3.1.v201206041142"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.persistence.core"
+         download-size="0"
+         install-size="0"
+         version="2.4.2.v20121206-a9d0e8d"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.persistence.jpa"
+         download-size="0"
+         install-size="0"
+         version="2.4.2.v20121206-a9d0e8d"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jpt.jpa.eclipselink.core"
+         download-size="0"
+         install-size="0"
+         version="2.2.1.v201208222210"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jpt.jpa.eclipselink.ui"
+         download-size="0"
+         install-size="0"
+         version="2.2.1.v201208222210"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jpt.jpa.eclipselink.core.ddlgen"
+         download-size="0"
+         install-size="0"
+         version="2.1.1.v201208222210"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.jpt.jpa.eclipselink.branding"
+         download-size="0"
+         install-size="0"
+         version="3.2.1.v201208222210"
+         unpack="false"/>
+
+</feature>

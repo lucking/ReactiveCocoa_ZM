@@ -1,0 +1,74 @@
+<config>
+	<xpath>
+		<funcs>			
+			<item nodeType="category" name="" text="字符串函数" asPath="false">
+				<item nodeType="function" name="string()" text="string(arg)--返回自变量的字符串值。这个自变量可以是一个数字、逻辑值或节点集" />
+				<item nodeType="function" name="contains()" text="contains(string1,string2)--如果字符串2与字符串1的全部或部分相匹配，则返回true；否则返回 false "/>
+				<item nodeType="function" name="starts-with()" text="starts-with(string1,string2)--如果string 1以 string 2 为开头，则返回true；否则返回 false"/>
+				<item nodeType="function" name="substring-before()" text="substring-before(string1,string2)--返回string2之前的字符串"/>
+				<item nodeType="function" name="substring-after()" text="substring-after(string1,string2)--返回string2之后的字符串"/>
+				<item nodeType="function" name="substring()" text="substring(string,start,len)--返回一个从起始位置算起到指定长度的子字符串。第一字符索引是1；如果长度未定义，则返回整段子字符串。 "/>
+				<item nodeType="function" name="string-length()" text="string-length(string)--返回所指定字符串的长度"/>
+				<item nodeType="function" name="concat()" text="concat(string,string,...)--返回字符串的串联"/>
+				<item nodeType="function" name="replace()" text="replace(string,pattern,replace)--使用给定的样式字符替换指定字符串自变量中的字符，并输出替换后的字符串 "/>
+				<item nodeType="function" name="upper-case()" text="upper-case(string)--把字符串自变量转换成大写字母"/>
+				<item nodeType="function" name="apos()" text="apos(string)--把字符串自变量转换‘...’格式"/> 
+				<item nodeType="function" name="normalize-space()" text="normalize-space(string)--从指定字符串中删除最前端和最后端的空格" />
+				<item nodeType="function" name="translate()" text="translate(string1,string2,string3)--通过使用字符串3替换字符串2实现字符串1的转换"/>
+			</item>	
+			<item nodeType="category" name="" text="逻辑函数" asPath="false">
+				<item nodeType="function" name="boolean()" text="boolean(arg)--返回一个数字、字符串及节点集的逻辑值" />				
+				<item nodeType="function" name="not()" text="not(arg)--通过使用请求 boolean() 函数将自变量转变成一个逻辑值。如果逻辑值是 false 则输出 true；如果逻辑值是true则输出false"/>
+				<item nodeType="function" name="true()" text="true()--返回的逻辑值为true"/>
+				<item nodeType="function" name="false()" text="false()--返回的逻辑值为false"/>
+				<item nodeType="function" name="if()" text="if(condition, onTrue, onFalse)--根据condition结果执行onTrue和onFalse"/>
+				<item nodeType="function" name="boolean-from-string()" text="boolean-from-string(string)--返回字符串表示的布尔值，‘true’,‘1’为true，其他为false"/>
+			</item>
+			<item nodeType="category" name="" text="算术函数" asPath="false">
+				<item nodeType="function" name="number()" text="number(arg)--返回一个字符串的数值" />				
+				<item nodeType="function" name="floor()" text="floor(arg)--数进行下舍入"/>
+				<item nodeType="function" name="ceiling()" text="ceiling(arg)--数进行上舍入"/>
+				<item nodeType="function" name="round()" text="round(arg)--返回数四舍五入为最接近的整数"/>
+			</item>
+			<item nodeType="category" name="" text="时间函数" asPath="false">
+				<item nodeType="function" name="now()" text="now()--返回当前日期时间" />				
+			</item>
+			<item nodeType="category" name="" text="xforms相关函数" asPath="false">
+				<item nodeType="function" name="data()" text="data(string)--返回指定id的data" />				
+				<item nodeType="function" name="readonly()" text="readonly(arg)--返回指定节点的readonly状态"/>
+				<item nodeType="function" name="required()" text="required(arg)--返回指定节点的required状态"/>
+				<item nodeType="function" name="relevant()" text="relevant(arg)--返回指定节点的relevant状态"/>
+				<item nodeType="function" name="valid()" text="valid(arg)--返回指定节点的valid状态"/>
+				<item nodeType="function" name="invalid-info()" text="invalid-info(arg)--返回指定节点违反约束的提示信息"/>
+			</item>
+			<item nodeType="category" name="" text="其他函数" asPath="false">
+				<item nodeType="function" name="call()" text="call(functionName,arg)--执行script函数" />				
+				<item nodeType="function" name="eval()" text="eval(string)--执行script脚本" />				
+				<item nodeType="function" name="event()" text="event(name)--获取事件中的event参数值" />				
+				<item nodeType="function" name="uuid()" text="uuid()--返回UUID字符串" />				
+				<item nodeType="function" name="convert-url()" text="convert-url(url, isResource)--转换url" />				
+			</item>
+		</funcs>
+		<operators>			
+			<item nodeType="category" name="" text="逻辑操作符" asPath="false">
+				<item nodeType="operator" name="and" text="与(and)"/>
+				<item nodeType="operator" name="or" text="表达式或(or)"/>				
+			</item>
+			<item nodeType="category" name="" text="算术运算符" asPath="false">
+				<item nodeType="operator" name="+" text="加(+)"/>
+				<item nodeType="operator" name="-" text="减(-)"/>
+				<item nodeType="operator" name="*" text="乘(*)"/>
+				<item nodeType="operator" name="div" text="除(div)"/>
+				<item nodeType="operator" name="mod" text="求模(mod)"/>
+			</item> 
+			<item nodeType="category" name="" text="关系运算符" asPath="false"> 
+				<item nodeType="operator" name="=" text="等于(=)"/>
+				<item nodeType="operator" name="!=" text="不等于(!=)"/>
+				<item nodeType="operator" name=">" text="大于(>)"/>
+				<item nodeType="operator" name=">=" text="大于等于(>=)"/>
+				<item nodeType="operator" name="&lt;" text="小于(&lt;)"/> 
+				<item nodeType="operator" name="&lt;=" text="小于等于(&lt;=)"/>
+			</item>			
+		</operators>
+	</xpath>
+</config>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+<web-app>
+  <display-name>UI Server</display-name>
+  <description/>
+   
+  <!-- Initialize main resource manager -->
+  <context-param>
+    <param-name>oxf.resources.factory</param-name>
+    <param-value>com.justep.ui.resources.PriorityResourceManagerFactory</param-value>
+  </context-param>
+  <context-param>
+    <param-name>oxf.resources.priority.1</param-name>
+    <param-value>com.justep.ui.resources.WebAppResourceManagerFactory</param-value>
+  </context-param>
+  <context-param>
+    <param-name>oxf.resources.priority.1.oxf.resources.webapp.rootdir</param-name>
+    <param-value>/WEB-INF/resources</param-value>
+  </context-param>
+  <context-param>
+    <param-name>oxf.resources.priority.2</param-name>
+    <param-value>com.justep.ui.resources.ClassLoaderResourceManagerFactory</param-value>
+  </context-param>
+  
+  <context-param>
+    <param-name>mobile.login.path</param-name>
+    <param-value>/UI2/demo/index.w?device=m</param-value>
+  </context-param>
+  <context-param>
+    <param-name>pc.login.path</param-name>
+    <param-value>/UI2/demo/index.w?device=pc</param-value>
+  </context-param>
+  <filter>
+    <filter-name>redirfilter</filter-name>
+    <filter-class>com.justep.portal.filter.RedirectFilter</filter-class>
+  </filter>
+  <!--  
+  <filter>
+    <filter-name>JFilter</filter-name>
+    <filter-class>com.justep.servlet.filter.JFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>JFilter</filter-name>
+    <url-pattern>*.j</url-pattern>
+  </filter-mapping>
+  -->
+  <filter-mapping>
+    <filter-name>redirfilter</filter-name>
+    <url-pattern>/m</url-pattern>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>redirfilter</filter-name>
+    <url-pattern>/pc</url-pattern>
+  </filter-mapping>
+  
+  <listener>
+    <listener-class>com.justep.ui.listener.NativeLoaderListener</listener-class>
+  </listener>
+    
+  <listener>
+    <listener-class>com.justep.ui.listener.UISessionListener</listener-class>
+  </listener>
+
+  <servlet>
+    <servlet-name>Download</servlet-name>
+    <servlet-class>com.justep.update.DownloadServlet</servlet-class>
+    <init-param>
+      <param-name>default-update-path</param-name>
+      <param-value>messenger</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>main-servlet</servlet-name>
+    <servlet-class>com.justep.ui.servlet.MainServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>captcha-image</servlet-name>
+    <servlet-class>com.justep.portal.controller.CaptchaImage</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+<!--  
+  <servlet>
+    <servlet-name>Connector</servlet-name>
+    <servlet-class>com.fredck.FCKeditor.connector.ConnectorServlet</servlet-class>
+    <init-param>
+      <param-name>baseDir</param-name>
+      <param-value>/user/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>realDir</param-name>
+      <param-value>/WEB-INF/resources/user/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>SimpleUploader</servlet-name>
+    <servlet-class>com.fredck.FCKeditor.uploader.SimpleUploaderServlet</servlet-class>
+    <init-param>
+      <param-name>baseDir</param-name>
+      <param-value>/user/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>realDir</param-name>
+      <param-value>/WEB-INF/resources/user/</param-value>
+    </init-param>
+    <init-param>
+      <param-name>debug</param-name>
+      <param-value>false</param-value>
+    </init-param>
+    <init-param>
+      <param-name>enabled</param-name>
+      <param-value>true</param-value>
+    </init-param>
+    <init-param>
+      <param-name>AllowedExtensionsFile</param-name>
+      <param-value/>
+    </init-param>
+    <init-param>
+      <param-name>DeniedExtensionsFile</param-name>
+      <param-value>php|php3|php5|phtml|asp|aspx|ascx|jsp|cfm|cfc|pl|bat|exe|dll|reg|cgi</param-value>
+    </init-param>
+    <init-param>
+      <param-name>AllowedExtensionsImage</param-name>
+      <param-value>jpg|gif|jpeg|png|bmp</param-value>
+    </init-param>
+    <init-param>
+      <param-name>DeniedExtensionsImage</param-name>
+      <param-value/>
+    </init-param>
+    <init-param>
+      <param-name>AllowedExtensionsFlash</param-name>
+      <param-value>swf|fla</param-value>
+    </init-param>
+    <init-param>
+      <param-name>DeniedExtensionsFlash</param-name>
+      <param-value/>
+    </init-param>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  -->
+    
+  <servlet>
+    <servlet-name>ResourceProxy</servlet-name>
+    <servlet-class>com.justep.res.proxy.ResourceProxy</servlet-class>
+    <init-param>
+      <param-name>proxy</param-name>
+      <param-value>/WEB-INF/justep.xml</param-value>
+    </init-param>
+  </servlet>
+  
+  <servlet>
+    <servlet-name>PortalController</servlet-name>
+    <servlet-class>com.justep.portal.controller.ControllerServlet</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Download</servlet-name>
+    <url-pattern>/Update/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>PortalController</servlet-name>
+    <url-pattern>/portal/controller/*</url-pattern>
+  </servlet-mapping>
+    
+  <servlet-mapping>
+    <servlet-name>ResourceProxy</servlet-name>
+    <url-pattern>/resourceproxy</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+    <servlet-name>main-servlet</servlet-name>
+    <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  <!--  
+  <servlet-mapping>
+    <servlet-name>Connector</servlet-name>
+    <url-pattern>/ops/fckeditor/editor/filemanager/browser/default/connectors/jsp/connector</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>SimpleUploader</servlet-name>
+    <url-pattern>/ops/fckeditor/editor/filemanager/upload/simpleuploader</url-pattern>
+  </servlet-mapping>
+  -->
+  <servlet-mapping>
+    <servlet-name>captcha-image</servlet-name>
+    <url-pattern>/captchaimage</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>30</session-timeout>
+  </session-config>
+  
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list> 
+  
+<!-- 400  -->
+<error-page>
+	<error-code>400</error-code>
+	<location>/error.jsp</location>
+</error-page>
+ 
+<!-- 404 -->
+<error-page>
+	<error-code>404</error-code>
+	<location>/error.jsp</location>
+</error-page>
+ 
+<!-- 500 -->
+<error-page>
+	<error-code>500</error-code>
+	<location>/error.jsp</location>
+</error-page>
+
+  <error-page>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/error.jsp</location>
+  </error-page>
+   
+</web-app>

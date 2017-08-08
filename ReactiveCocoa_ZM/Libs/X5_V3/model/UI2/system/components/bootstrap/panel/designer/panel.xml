@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<elements>
+	<element name="$UI/system/components/bootstrap/panel/panel" tag-type="rich" tag-name="div" icon="panel.png" text="面版"  
+	    binding-component="$UI/system/components/bootstrap/panel/panel" display-property="xid" 
+		component-type="layout-container" validator="ViewValidator" design-view="web-designer" 
+		child-range="$UI/system/components/bootstrap/panel/panel#heading,$UI/system/components/bootstrap/panel/panel#body,$UI/system/components/bootstrap/panel/panel#footer">
+		<properties>
+			<property name="xid" text="编号" required="false" editor-discriptor-ref=""/>  
+			<property name="class" text="class"/>
+			<property name="style" text="样式" editor-ref="styleDialog" use-default="true"/>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//common-properties/group[@name='bind']"/>
+		</properties>
+		<toolbar>
+			<item text="添加heading" method="addHeading"/>
+			<item text="添加body" method="addBody"/>
+			<item text="添加footer" method="addFooter"/>
+		</toolbar>
+		
+		<events>
+			<include path="$UI/system/components/designerCommon/commonConfig.xml#//html-evens/*"/>
+		</events>
+		
+		
+		<templates>
+		   <template name="default"><![CDATA[ 
+		   		<div class="panel panel-default" component="$UI/system/components/bootstrap/panel/panel">
+		      		<div class="panel-heading">
+						<h4 class="panel-title">
+					        <a href="javascript:void(0)">
+					          Title
+					        </a>
+				      	</h4>
+   		      		</div>
+		        	<div class="panel-body">
+		        	</div>
+		        	<div class="panel-footer">
+		        	</div>
+		      	</div>
+		   ]]></template>
+		</templates>
+		
+	</element>
+	
+	<element name="$UI/system/components/bootstrap/panel/panel#heading" icon="top.png" text="heading" owner="$UI/system/components/bootstrap/panel/panel"
+		discriminate-condition="executeXpath(contains(./@class, 'panel-heading') and ../@component='$UI/system/components/bootstrap/panel/panel')" 
+		extend="div">
+	</element>	
+	
+	<element name="$UI/system/components/bootstrap/panel/panel#body" icon="content.png" text="body" owner="$UI/system/components/bootstrap/panel/panel"
+		discriminate-condition="executeXpath(contains(./@class, 'panel-body') and ../@component='$UI/system/components/bootstrap/panel/panel')" 
+		extend="div">
+	</element>	
+	
+	<element name="$UI/system/components/bootstrap/panel/panel#footer" icon="bottom.png" text="footer" owner="$UI/system/components/bootstrap/panel/panel"
+		discriminate-condition="executeXpath(contains(./@class, 'panel-footer') and ../@component='$UI/system/components/bootstrap/panel/panel')" 
+		extend="div">
+	</element>	
+	
+</elements>
