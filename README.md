@@ -6,12 +6,15 @@ ReactiveCocoa
 
 1.demo 里面有有些基础使用的案例
 
-2.安装pod时 报错：
-导入pch文件报错：Connot create __weak reference in file using manual reference counting   
-http://blog.csdn.net/sjcode/article/details/51014679
-http://stackoverflow.com/questions/36147625/xcode-7-3-cannot-create-weak-reference-in-file-using-manual-reference-counting
+2.安装pod时 
+
+报错：
+    导入pch文件报错：Connot create __weak reference in file using manual reference counting   
+    http://blog.csdn.net/sjcode/article/details/51014679
+    http://stackoverflow.com/questions/36147625/xcode-7-3-cannot-create-weak-reference-in-file-using-manual-reference-counting
+
 解决方法：
-点击工程启动文件 - TARGETS  -Build Settings - 在下方搜索框搜索weak  -  在Apple LLVM 7.1 - Language - Objective C选项下边 - 把Weak Reference in Manual Retain Release选项改成YES即可。
+    点击工程启动文件 - TARGETS  -Build Settings - 在下方搜索框搜索weak  -  在Apple LLVM 7.1 - Language - Objective C选项下边 - 把Weak Reference in Manual Retain Release选项改成YES即可。
 
 
 3.编程思想
