@@ -2,34 +2,9 @@
 
 
 ReactiveCocoa
-/*  苹果不允许使用热更新
-最快让你上手ReactiveCocoa之基础篇
-http://www.jianshu.com/p/87ef6720a096
-
-ReactiveCocoa结合了几种编程风格：
-函数式编程（Functional Programming）：使用高阶函数，例如函数用其他函数作为参数。
-响应式编程（Reactive Programming）：关注于数据流和变化传播。
-以后使用RAC解决问题，就不需要考虑调用顺序，直接考虑结果，把每一次操作都写成一系列嵌套的方法中，使代码高聚合，方便管理。
-
-
-ReactiveCocoa 讨论会
-http://blog.devtang.com/2016/01/03/reactive-cocoa-discussion/
-
-ReactiveCocoa 入门教程(一)
-http://www.jianshu.com/p/a2c891979e85
-http://www.cocoachina.com/ios/20150123/10994.html
-
-Xcode8导入框架出现Use Legacy Swift Language Version的报错
-http://blog.csdn.net/qq_24904667/article/details/52597175
-
-怎样导入ReactiveCocoa
-http://www.jianshu.com/p/a8ddabb218df
-
-*/
-
+1.demo 里面有有些基础使用的案例
 
 2. pod 安装时 报错：
-
 导入pch文件报错：Connot create __weak reference in file using manual reference counting   
 http://blog.csdn.net/sjcode/article/details/51014679
 http://stackoverflow.com/questions/36147625/xcode-7-3-cannot-create-weak-reference-in-file-using-manual-reference-counting
@@ -110,8 +85,32 @@ RACDisposable: 用于取消订阅或者清理资源，当信号发送完成或�
 
 •	RACSubject和RACReplaySubject简单使用:
 
-•	
 
 
+ReactiveCocoa
+/*  
+最快让你上手ReactiveCocoa之基础篇
+http://www.jianshu.com/p/87ef6720a096
+
+ReactiveCocoa结合了几种编程风格：
+函数式编程（Functional Programming）：使用高阶函数，例如函数用其他函数作为参数。
+响应式编程（Reactive Programming）：关注于数据流和变化传播。
+以后使用RAC解决问题，就不需要考虑调用顺序，直接考虑结果，把每一次操作都写成一系列嵌套的方法中，使代码高聚合，方便管理。
+
+
+ReactiveCocoa 讨论会
+http://blog.devtang.com/2016/01/03/reactive-cocoa-discussion/
+
+ReactiveCocoa 入门教程(一)
+http://www.jianshu.com/p/a2c891979e85
+http://www.cocoachina.com/ios/20150123/10994.html
+
+Xcode8导入框架出现Use Legacy Swift Language Version的报错
+http://blog.csdn.net/qq_24904667/article/details/52597175
+
+怎样导入ReactiveCocoa
+http://www.jianshu.com/p/a8ddabb218df
+
+*/
 
 
