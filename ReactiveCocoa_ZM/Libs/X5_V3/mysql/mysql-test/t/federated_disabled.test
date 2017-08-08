@@ -1,3 +1,0 @@
-source include/federated.inc;
-
-SHOW VARIABLES LIKE 'have_federated_engine';

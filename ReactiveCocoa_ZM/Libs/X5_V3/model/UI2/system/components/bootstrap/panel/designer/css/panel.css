@@ -1,7 +1,0 @@
-.panel:hover,
-.panel-heading:hover,
-.panel-body:hover,
-.panel-footer:hover
-{
-	outline: blue dashed 1px;
-}
